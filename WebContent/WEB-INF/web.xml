@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<context-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+</web-app>

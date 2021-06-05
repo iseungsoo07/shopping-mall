@@ -197,7 +197,6 @@ p {
 .main-top {
 	background: #010101;
 	padding: 10px 0px;
-	height: 49.5px;
 }
 
 .custom-select-box {
@@ -1123,42 +1122,82 @@ keyframes bounceY { 0% {
 40%
 {
 transform
+
+
 :
+
  
+
 translateY
-(-100px);
+
+
+(-100
+px
+);
+
 
     
+
 }
 65%
 {
 transform
+
+
 :
+
  
+
 translateY
-(-52px);
+
+
+(-52
+px
+);
+
 
     
+
 }
 82%
 {
 transform
+
+
 :
+
  
+
 translateY
-(-25px);
+
+
+(-25
+px
+);
+
 
     
+
 }
 92%
 {
 transform
+
+
 :
+
  
+
 translateY
-(-12px);
+
+
+(-12
+px
+);
+
 
     
+
 }
 55%,
 75%,
@@ -1167,12 +1206,22 @@ translateY
 100%
 {
 transform
+
+
 :
+
  
+
 translateY
-(0px);
+
+
+(0
+px
+);
+
 
     
+
 }
 }
 @
@@ -1183,42 +1232,82 @@ translateY
 40%
 {
 -moz-transform
+
+
 :
+
  
+
 translateY
-(-100px);
+
+
+(-100
+px
+);
+
 
     
+
 }
 65%
 {
 -moz-transform
+
+
 :
+
  
+
 translateY
-(-52px);
+
+
+(-52
+px
+);
+
 
     
+
 }
 82%
 {
 -moz-transform
+
+
 :
+
  
+
 translateY
-(-25px);
+
+
+(-25
+px
+);
+
 
     
+
 }
 92%
 {
 -moz-transform
+
+
 :
+
  
+
 translateY
-(-12px);
+
+
+(-12
+px
+);
+
 
     
+
 }
 55%,
 75%,
@@ -1227,12 +1316,22 @@ translateY
 100%
 {
 -moz-transform
+
+
 :
+
  
+
 translateY
-(0px);
+
+
+(0
+px
+);
+
 
     
+
 }
 }
 @
@@ -1243,42 +1342,82 @@ translateY
 40%
 {
 -webkit-transform
+
+
 :
+
  
+
 translateY
-(-100px);
+
+
+(-100
+px
+);
+
 
     
+
 }
 65%
 {
 -webkit-transform
+
+
 :
+
  
+
 translateY
-(-52px);
+
+
+(-52
+px
+);
+
 
     
+
 }
 82%
 {
 -webkit-transform
+
+
 :
+
  
+
 translateY
-(-25px);
+
+
+(-25
+px
+);
+
 
     
+
 }
 92%
 {
 -webkit-transform
+
+
 :
+
  
+
 translateY
-(-12px);
+
+
+(-12
+px
+);
+
 
     
+
 }
 55%,
 75%,
@@ -1287,12 +1426,22 @@ translateY
 100%
 {
 -webkit-transform
+
+
 :
+
  
+
 translateY
-(0px);
+
+
+(0
+px
+);
+
 
     
+
 }
 }
 /*------------------------------------------------------------------ Blog -------------------------------------------------------------------*/
@@ -2145,12 +2294,33 @@ translateY
 	float: left;
 }
 
-.toolbar-sorter-right .bootstrap-select.form-control:not ([class*="col-"]
-	){
-	width: 77%;
-	float: right;
-}
+.toolbar-sorter-right
+ 
+.bootstrap-select
+.form-control
+:not
+ 
+(
+[
+class
+*=
+"col-"
+]
 
+	
+){
+width
+:
+ 
+77%;
+float
+:
+ 
+right
+;
+
+
+}
 .toolbar-sorter-right .bootstrap-select.btn-group>.dropdown-toggle {
 	padding: 0px;
 	border-radius: 0px;
@@ -2620,39 +2790,57 @@ translateY
 40%
 {
 opacity
+
+
 :
+
  
+
 0
 .5
-;
 
-         
+
+;
 box-shadow
+
+
 :
+
  
+
 0
 0
 0
 2
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .1
+
+
 )
 ,
 0
 0
 10
 px
+
  
+
 10
 px
+
  
+
 #d33b33
 ,
 0
@@ -2660,46 +2848,64 @@ px
 0
 10
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .5
-);
 
-    
+
+);
 }
 100%
 {
 box-shadow
+
+
 :
+
  
+
 0
 0
 0
 2
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .1
+
+
 )
 ,
 0
 0
 10
 px
+
  
+
 10
 px
+
  
+
 #d33b33
 ,
 0
@@ -2707,29 +2913,43 @@ px
 0
 10
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .5
-);
 
-         
+
+);
 -webkit-transform
+
+
 :
+
  
+
 scale
+
+
 (1
 .5
-);
 
-         
+
+);
 opacity
+
+
 :
+
  
+
 0;
 }
 }
@@ -2741,39 +2961,57 @@ opacity
 40%
 {
 opacity
+
+
 :
+
  
+
 0
 .5
-;
 
-         
+
+;
 box-shadow
+
+
 :
+
  
+
 0
 0
 0
 2
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .1
+
+
 )
 ,
 0
 0
 10
 px
+
  
+
 10
 px
+
  
+
 #d33b33
 ,
 0
@@ -2781,46 +3019,64 @@ px
 0
 10
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .5
-);
 
-    
+
+);
 }
 100%
 {
 box-shadow
+
+
 :
+
  
+
 0
 0
 0
 2
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .1
+
+
 )
 ,
 0
 0
 10
 px
+
  
+
 10
 px
+
  
+
 #d33b33
 ,
 0
@@ -2828,29 +3084,43 @@ px
 0
 10
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .5
-);
 
-         
+
+);
 -moz-transform
+
+
 :
+
  
+
 scale
+
+
 (1
 .5
-);
 
-         
+
+);
 opacity
+
+
 :
+
  
+
 0;
 }
 }
@@ -2862,39 +3132,57 @@ keyframes sonarEffect { 0% {
 40%
 {
 opacity
+
+
 :
+
  
+
 0
 .5
-;
 
-         
+
+;
 box-shadow
+
+
 :
+
  
+
 0
 0
 0
 2
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .1
+
+
 )
 ,
 0
 0
 10
 px
+
  
+
 10
 px
+
  
+
 #d33b33
 ,
 0
@@ -2902,46 +3190,64 @@ px
 0
 10
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .5
-);
 
-    
+
+);
 }
 100%
 {
 box-shadow
+
+
 :
+
  
+
 0
 0
 0
 2
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .1
+
+
 )
 ,
 0
 0
 10
 px
+
  
+
 10
 px
+
  
+
 #3851bc
 ,
 0
@@ -2949,29 +3255,43 @@ px
 0
 10
 px
+
  
+
 rgba
+
+
 (0
 ,
 53,
 68,
 0
 .5
-);
 
-         
+
+);
 transform
+
+
 :
+
  
+
 scale
+
+
 (1
 .5
-);
 
-         
+
+);
 opacity
+
+
 :
+
  
+
 0;
 }
 }

@@ -13,6 +13,7 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
+
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- Site CSS -->
@@ -47,13 +48,13 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
+					<!-- <div class="custom-select-box">
 						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
 							<option>¥ JPY</option>
 							<option>$ USD</option>
 							<option>€ EUR</option>
 						</select>
-					</div>
+					</div> -->
 					<div class="right-phone-box">
 						<p>
 							Call US : <a href="#  ">010-1111-1111</a>
@@ -82,14 +83,14 @@
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+					<a class="navbar-brand" href="index.jsp"><img src="images/logo.png" class="logo" alt=""></a>
 				</div>
 				<!-- End Header Navigation -->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item active"><a class="nav-link" href="index.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
 						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
@@ -322,12 +323,6 @@
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 	
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/popper.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
-
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
