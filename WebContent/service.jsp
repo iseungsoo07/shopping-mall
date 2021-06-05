@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -10,8 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - 쇼핑을 즐겨라!</title>
-    <meta name="description" content="쇼핑을 즐길 수 있는 최고의 쇼핑몰 TheWayShop">
+    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -74,18 +77,18 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="custom-select-box">
                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-						<option>¥ JPY</option>
+						<option>Â¥ JPY</option>
 						<option>$ USD</option>
-						<option>€ EUR</option>
+						<option>â¬ EUR</option>
 					</select>
                     </div>
                     <div class="right-phone-box">
-                        <p>Call US : <a href="#  ">010-1111-1111</a></p>
+                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Our location</a></li>
                             <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
@@ -112,7 +115,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="dropdown megamenu-fw">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
@@ -181,7 +184,7 @@
                                 <li><a href="shop-detail.html">Shop Detail</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="service.html">Our Service</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -244,283 +247,177 @@
     </div>
     <!-- End Top Search -->
 
-    <!-- Start Slider -->
-    <div id="slides-shop" class="cover-slides">
-        <ul class="slides-container">
-            <li class="text-left">
-                <img src="images/banner-01.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Thewayshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="images/banner-02.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Thewayshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-right">
-                <img src="images/banner-03.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Thewayshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="slides-navigation">
-            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </div>
-    </div>
-    <!-- End Slider -->
-
-    <!-- Start Categories  -->
-    <div class="categories-shop">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/t-shirts-img.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">T-shirts</a>
-                    </div>
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/shirt-img.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Shirt</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/wallet-img.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Wallet</a>
-                    </div>
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/women-bag-img.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Bags</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/shoes-img.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Shoes</a>
-                    </div>
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/women-shoes-img.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Women Shoes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Categories -->
-
-    <!-- Start Products  -->
-    <div class="products-box">
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Featured Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Top featured</button>
-                            <button data-filter=".best-seller">Best seller</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row special-list">
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $7.79</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $9.79</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $10.79</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $15.79</h5>
-                        </div>
-                    </div>
+                    <h2>Services</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Services</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Products  -->
+    <!-- End All Title Box -->
 
-    <!-- Start Blog  -->
-    <div class="latest-blog">
+    <!-- Start Services  -->
+    <div class="services-box-main">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>latest blog</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+            <div class="row my-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>OUR MISSION</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>OUR VISION</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>OUR PHILOSOPHY</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Trusted</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Professional</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>OUR STORIES</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="images/blog-img.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+
+            <div class="row my-4">
+                <div class="col-12">
+                    <h2 class="noo-sh-title">Meet Our Team</h2>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="images/blog-img-01.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
                             </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
                         </div>
-                    </div>
+                        <div class="team-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        </div>
+                        <hr class="my-0"> </div>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="images/blog-img-02.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="images/img-2.jpg" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Kristiana</h3> <span class="post">Web Developer</span> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
                             </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
                         </div>
-                    </div>
+                        <div class="team-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="images/img-3.jpg" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Steve Thomas</h3> <span class="post">Web Developer</span> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        </div>
+                        <hr class="my-0"> </div>
                 </div>
             </div>
+
         </div>
     </div>
-    <!-- End Blog  -->
-
+    <!-- End Services -->
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">

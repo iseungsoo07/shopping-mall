@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -76,9 +77,9 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="custom-select-box">
                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-						<option>¥ JPY</option>
+						<option>Â¥ JPY</option>
 						<option>$ USD</option>
-						<option>€ EUR</option>
+						<option>â¬ EUR</option>
 					</select>
                     </div>
                     <div class="right-phone-box">
@@ -115,7 +116,7 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="dropdown megamenu-fw">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
                             <ul class="dropdown-menu megamenu-content" role="menu">
@@ -173,7 +174,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
                                 <li><a href="cart.html">Cart</a></li>
@@ -251,10 +252,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>ABOUT US</h2>
+                    <h2>My Account</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">ABOUT US</li>
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active">My Account</li>
                     </ul>
                 </div>
             </div>
@@ -262,156 +263,183 @@
     </div>
     <!-- End All Title Box -->
 
-    <!-- Start About Page  -->
-    <div class="about-box-main">
+    <!-- Start My Account  -->
+    <div class="my-account-box-main">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2 class="noo-sh-title">We are <span>ThewayShop</span></h2>
-                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-                        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="banner-frame"> <img class="img-thumbnail img-fluid" src="images/about-img.jpg" alt="" />
+            <div class="my-account-page">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="account-box">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <a href="#"> <i class="fa fa-gift"></i> </a>
+                                </div>
+                                <div class="service-desc">
+                                    <h4>Your Orders</h4>
+                                    <p>Track, return, or buy things again</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="account-box">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <a href="#"><i class="fa fa-lock"></i> </a>
+                                </div>
+                                <div class="service-desc">
+                                    <h4>Login &amp; security</h4>
+                                    <p>Edit login, name, and mobile number</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="account-box">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <a href="#"> <i class="fa fa-location-arrow"></i> </a>
+                                </div>
+                                <div class="service-desc">
+                                    <h4>Your Addresses</h4>
+                                    <p>Edit addresses for orders and gifts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="account-box">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <a href="#"> <i class="fa fa-credit-card"></i> </a>
+                                </div>
+                                <div class="service-desc">
+                                    <h4>Payment options</h4>
+                                    <p>Edit or add payment methods</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="account-box">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <a href="#"> <i class="fab fa-paypal"></i> </a>
+                                </div>
+                                <div class="service-desc">
+                                    <h4>PayPal</h4>
+                                    <p>View benefits and payment settings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="account-box">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <a href="#"> <i class="fab fa-amazon"></i> </a>
+                                </div>
+                                <div class="service-desc">
+                                    <h4>Amazon Pay balance</h4>
+                                    <p>Add money to your balance</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row my-5">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>We are Trusted</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <div class="bottom-box">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="account-box">
+                                <div class="service-box">
+                                    <div class="service-desc">
+                                        <h4>Gold &amp; Diamond Jewellery</h4>
+                                        <ul>
+                                            <li> <a href="#">Apps and more</a> </li>
+                                            <li> <a href="#">Content and devices</a> </li>
+                                            <li> <a href="#">Music settings</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="account-box">
+                                <div class="service-box">
+                                    <div class="service-desc">
+                                        <h4>Handloom &amp; Handicraft Store</h4>
+                                        <ul>
+                                            <li> <a href="#">Advertising preferences </a> </li>
+                                            <li> <a href="#">Communication preferences</a> </li>
+                                            <li> <a href="#">SMS alert preferences</a> </li>
+                                            <li> <a href="#">Message center</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="account-box">
+                                <div class="service-box">
+                                    <div class="service-desc">
+                                        <h4>The Designer Boutique</h4>
+                                        <ul>
+                                            <li> <a href="#">Amazon Pay</a> </li>
+                                            <li> <a href="#">Bank accounts for refunds</a> </li>
+                                            <li> <a href="#">Coupons</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="account-box">
+                                <div class="service-box">
+                                    <div class="service-desc">
+                                        <h4>Gift Boxes, Gift Tags, Greeting Cards</h4>
+                                        <ul>
+                                            <li> <a href="#">Leave delivery feedback</a> </li>
+                                            <li> <a href="#">Lists</a> </li>
+                                            <li> <a href="#">Photo ID proofs</a> </li>
+                                            <li> <a href="#">Profile</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="account-box">
+                                <div class="service-box">
+                                    <div class="service-desc">
+                                        <h4>Other accounts</h4>
+                                        <ul>
+                                            <li> <a href="#">Amazon Business registration</a> </li>
+                                            <li> <a href="#">Seller account</a> </li>
+                                            <li> <a href="#">Amazon Web Services</a> </li>
+                                            <li> <a href="#">Login with Amazon</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="account-box">
+                                <div class="service-box">
+                                    <div class="service-desc">
+                                        <h4>Shopping programs and rentals</h4>
+                                        <ul>
+                                            <li> <a href="#">Subscribe &amp; Save</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>We are Professional</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>We are Expert</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row my-4">
-                <div class="col-12">
-                    <h2 class="noo-sh-title">Meet Our Team</h2>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
-                        </div>
-                        <hr class="my-0"> </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-2.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Kristiana</h3> <span class="post">Web Developer</span> </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
-                        </div>
-                        <hr class="my-0"> </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-3.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Steve Thomas</h3> <span class="post">Web Developer</span> </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
-                        </div>
-                        <hr class="my-0"> </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
-                        </div>
-                        <hr class="my-0"> </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End About Page -->
+    <!-- End My Account -->
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">

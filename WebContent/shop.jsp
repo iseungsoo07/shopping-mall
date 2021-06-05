@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -76,9 +77,9 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="custom-select-box">
                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-						<option>¥ JPY</option>
+						<option>Â¥ JPY</option>
 						<option>$ USD</option>
-						<option>€ EUR</option>
+						<option>â¬ EUR</option>
 					</select>
                     </div>
                     <div class="right-phone-box">
@@ -402,8 +403,8 @@
                                     <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
 									<option data-display="Select">Nothing</option>
 									<option value="1">Popularity</option>
-									<option value="2">High Price → High Price</option>
-									<option value="3">Low Price → High Price</option>
+									<option value="2">High Price â High Price</option>
+									<option value="3">Low Price â High Price</option>
 									<option value="4">Best Selling</option>
 								</select>
                                 </div>

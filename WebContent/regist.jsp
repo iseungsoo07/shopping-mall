@@ -1,0 +1,437 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TheWayShop | 회원가입</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/login.css">
+<!-- Site Icons -->
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="./css/regist.css" />
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	function sample6_execDaumPostcode() {
+		new daum.Postcode(
+				{
+					oncomplete : function(data) {
+						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+						// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+						var addr = ""; // 주소 변수
+						var extraAddr = ""; // 참고항목 변수
+
+						//사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+						if (data.userSelectedType === "R") {
+							// 사용자가 도로명 주소를 선택했을 경우
+							addr = data.roadAddress;
+						} else {
+							// 사용자가 지번 주소를 선택했을 경우(J)
+							addr = data.jibunAddress;
+						}
+
+						// 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+						if (data.userSelectedType === "R") {
+							// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+							// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+							if (data.bname !== ""
+									&& /[동|로|가]$/g.test(data.bname)) {
+								extraAddr += data.bname;
+							}
+							// 건물명이 있고, 공동주택일 경우 추가한다.
+							if (data.buildingName !== ""
+									&& data.apartment === "Y") {
+								extraAddr += extraAddr !== "" ? ", "
+										+ data.buildingName : data.buildingName;
+							}
+							// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+							if (extraAddr !== "") {
+								extraAddr = " (" + extraAddr + ")";
+							}
+							// 조합된 참고항목을 해당 필드에 넣는다.
+							document.getElementById("sample6_extraAddress").value = extraAddr;
+						} else {
+							document.getElementById("sample6_extraAddress").value = "";
+						}
+
+						// 우편번호와 주소 정보를 해당 필드에 넣는다.
+						document.getElementById("sample6_postcode").value = data.zonecode;
+						document.getElementById("sample6_address").value = addr;
+						// 커서를 상세주소 필드로 이동한다.
+						document.getElementById("sample6_detailAddress")
+								.focus();
+					}
+				}).open();
+	}
+	
+	function checkEmailAddr() {
+		document.form.email2.value = document.form.selectEmail.value;
+	}
+</script>
+</head>
+<body>
+	<div class="main-top">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="text-slid-box">
+						<div id="offer-box" class="carouselTicker">
+							<ul class="offer-box">
+								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
+								<li><i class="fab fa-opencart"></i> 50% - 80% off on Fashion</li>
+								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20</li>
+								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
+								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
+								<li><i class="fab fa-opencart"></i> 50% - 80% off on Fashion</li>
+								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20</li>
+								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="custom-select-box">
+						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+							<option>¥ JPY</option>
+							<option>$ USD</option>
+							<option>€ EUR</option>
+						</select>
+					</div>
+					<div class="right-phone-box">
+						<p>
+							Call US : <a href="#  ">010-1111-1111</a>
+						</p>
+					</div>
+					<div class="our-link">
+						<ul>
+							<li><a href="./login.jsp">로그인</a></li>
+							<li><a href="#">회원가입</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Main Top -->
+
+	<!-- Start Main Top -->
+	<header class="main-header">
+		<!-- Start Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+			<div class="container">
+				<!-- Start Header Navigation -->
+				<div class="navbar-header">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+				</div>
+				<!-- End Header Navigation -->
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="navbar-menu">
+					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+						<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+							<ul class="dropdown-menu megamenu-content" role="menu">
+								<li>
+									<div class="row">
+										<div class="col-menu col-md-3">
+											<h6 class="title">Top</h6>
+											<div class="content">
+												<ul class="menu-col">
+													<li><a href="shop.html">Jackets</a></li>
+													<li><a href="shop.html">Shirts</a></li>
+													<li><a href="shop.html">Sweaters & Cardigans</a></li>
+													<li><a href="shop.html">T-shirts</a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- end col-3 -->
+										<div class="col-menu col-md-3">
+											<h6 class="title">Bottom</h6>
+											<div class="content">
+												<ul class="menu-col">
+													<li><a href="shop.html">Swimwear</a></li>
+													<li><a href="shop.html">Skirts</a></li>
+													<li><a href="shop.html">Jeans</a></li>
+													<li><a href="shop.html">Trousers</a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- end col-3 -->
+										<div class="col-menu col-md-3">
+											<h6 class="title">Clothing</h6>
+											<div class="content">
+												<ul class="menu-col">
+													<li><a href="shop.html">Top Wear</a></li>
+													<li><a href="shop.html">Party wear</a></li>
+													<li><a href="shop.html">Bottom Wear</a></li>
+													<li><a href="shop.html">Indian Wear</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-menu col-md-3">
+											<h6 class="title">Accessories</h6>
+											<div class="content">
+												<ul class="menu-col">
+													<li><a href="shop.html">Bags</a></li>
+													<li><a href="shop.html">Sunglasses</a></li>
+													<li><a href="shop.html">Fragrances</a></li>
+													<li><a href="shop.html">Wallets</a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- end col-3 -->
+									</div> <!-- end row -->
+								</li>
+							</ul></li>
+						<li class="dropdown"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+							<ul class="dropdown-menu">
+								<li><a href="cart.html">Cart</a></li>
+								<li><a href="checkout.html">Checkout</a></li>
+								<li><a href="my-account.html">My Account</a></li>
+								<li><a href="wishlist.html">Wishlist</a></li>
+								<li><a href="shop-detail.html">Shop Detail</a></li>
+							</ul></li>
+						<li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+
+				<!-- Start Atribute Navigation -->
+				<div class="attr-nav">
+					<ul>
+						<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+						<li class="side-menu"><a href="#"> <i class="fa fa-shopping-bag"></i> <span class="badge">3</span>
+						</a></li>
+					</ul>
+				</div>
+				<!-- End Atribute Navigation -->
+			</div>
+			<!-- Start Side Menu -->
+			<div class="side">
+				<a href="#" class="close-side"><i class="fa fa-times"></i></a>
+				<li class="cart-box">
+					<ul class="cart-list">
+						<li><a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+							<h6>
+								<a href="#">Delica omtantur </a>
+							</h6>
+							<p>
+								1x - <span class="price">$80.00</span>
+							</p></li>
+						<li><a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+							<h6>
+								<a href="#">Omnes ocurreret</a>
+							</h6>
+							<p>
+								1x - <span class="price">$60.00</span>
+							</p></li>
+						<li><a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+							<h6>
+								<a href="#">Agam facilisis</a>
+							</h6>
+							<p>
+								1x - <span class="price">$40.00</span>
+							</p></li>
+						<li class="total"><a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span class="float-right"><strong>Total</strong>: $180.00</span></li>
+					</ul>
+				</li>
+			</div>
+			<!-- End Side Menu -->
+		</nav>
+		<!-- End Navigation -->
+	</header>
+	<!-- End Main Top -->
+
+	<!-- container 시작 -->
+	<div id="container">
+		<!-- 본문 시작 -->
+		<div class="bodytext_area box_inner">
+			<form action="#" method="POST" class="appForm" name="form">
+				<fieldset>
+					<p class="info_pilsoo pilsoo_item">필수입력</p>
+					<ul class="app_list">
+						<li class="clear">
+                            <label for="id_lbl" class="tit_lbl pilsoo_item"> 아이디 </label>
+							<div class="app_content">
+								<input type="text" class="w100p" id="name_lbl" placeholder="아이디를 입력하세요" required />
+							</div>
+                        </li>
+						<li class="clear">
+                            <label for="pwd_lbl" class="tit_lbl pilsoo_item"> 비밀번호 </label>
+							<div class="app_content">
+								<input type="password" class="w100p" id="pwd_lbl" placeholder="비밀번호를 입력하세요" required />
+							</div>
+                        </li>
+						<li class="clear">
+                            <label for="pwd2_lbl" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
+							<div class="app_content">
+								<input type="password" class="w100p" id="pwd2_lbl" placeholder="비밀번호 확인을 입력하세요" required />
+							</div>
+                        </li>
+						<li class="clear">
+                            <label for="name_lbl" class="tit_lbl pilsoo_item"> 이름 </label>
+							<div class="app_content">
+								<input type="text" class="w100p" id="name_lbl" placeholder="이름을 입력하세요" required />
+							</div>
+                        </li>
+						<li class="clear">
+                            <label for="phone_lbl" class="tit_lbl pilsoo_item"> 연락처 </label>
+							<div class="app_content">
+								<input type="tel" class="w100p" id="phone_lbl" placeholder="휴대폰 '-' 없이 숫자만 입력하세요." required />
+							</div>
+                        </li>
+						<li class="clear">
+                            <label for="email_lbl" class="tit_lbl"> 이메일 </label>
+							<div class="app_content email_area">
+								<input type="text" class="w160" id="email_lbl" title="이메일 주소" /> <span class="ico_space">@</span> <input type="text" class="w160" name="email2" title="이메일 제공 업체 입력" />
+								<div class="select_common">
+									<select title="이메일 제공업체 목록" name="selectEmail" onchange="checkEmailAddr()">
+										<option value="">직접입력</option>
+										<option value="naver.com">naver.com</option>
+										<option value="hanmail.net">hanmail.net</option>
+										<option value="google.com">google.com</option>
+										<option value="nate.com">nate.com</option>
+									</select>
+								</div>
+							</div>
+                        </li>
+						<li class="clear">
+                            <label for="residence_lbl" class="tit_lbl pilsoo_item"> 주소 </label>
+							<div class="app_content">
+								<input type="text" id="sample6_postcode" placeholder="우편번호" style="display: inline-block; width: 50%; margin: 5px 0;" /> <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" style="display: inline-block; width: 160px; height: 45px; margin: 5px 0;" /><br /> <input type="text" id="sample6_address" placeholder="주소" style="margin: 5px 0; width: 100%" /><br /> <input type="text" id="sample6_detailAddress" placeholder="상세주소" style="margin: 5px 0; width: 49.7%; box-sizing: border-box;" /> <input type="text" id="sample6_extraAddress" placeholder="참고항목" required style="margin: 5px 0; width: 49.7%; box-sizing: border-box;" />
+							</div>
+                        </li>
+						<li class="clear">
+                            <span class="tit_lbl">성별</span>
+							<div class="app_content radio_area">
+								<input type="radio" class="css-radio" id="mmm_lbl" name="gender" /> <label for="mmm_lbl" value="남">남</label> <input type="radio" class="css-radio" id="www_lbl" name="gender" /> <label for="www_lbl" value="여">여</label>
+							</div>
+                        </li>
+
+						<li class="clear">
+                            <span class="tit_lbl"> 개인정보 활용동의 </span>
+							<div class="app_content checkbox_area">
+								<input type="checkbox" class="css-checkbox" id="agree_lbl" name="agree" /> <label for="agree_lbl">동의함</label>
+							</div>
+                        </li>
+					</ul>
+					<p class="btn_line">
+						<a href="#" class="btn_basecolor"> 등록 </a>
+					</p>
+				</fieldset>
+			</form>
+		</div>
+		<!-- 본문 끝 -->
+	</div>
+	<!-- container 끝 -->
+	<!-- Start Footer  -->
+	<footer>
+		<div class="footer-main">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-widget">
+							<h4>About ThewayShop</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<ul>
+								<li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-link">
+							<h4>Information</h4>
+							<ul>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Customer Service</a></li>
+								<li><a href="#">Our Sitemap</a></li>
+								<li><a href="#">Terms &amp; Conditions</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Delivery Information</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-link-contact">
+							<h4>Contact Us</h4>
+							<ul>
+								<li>
+									<p>
+										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213
+									</p>
+								</li>
+								<li>
+									<p>
+										<i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a>
+									</p>
+								</li>
+								<li>
+									<p>
+										<i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer  -->
+
+	<!-- Start copyright  -->
+	<div class="footer-copyright">
+		<p class="footer-company">
+			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html design</a>
+		</p>
+	</div>
+	<!-- End copyright  -->
+
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- ALL PLUGINS -->
+	<script src="js/jquery.superslides.min.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	<script src="js/inewsticker.js"></script>
+	<script src="js/bootsnav.js."></script>
+	<script src="js/images-loded.min.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/baguetteBox.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+	<script src="js/contact-form-script.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+
+
+</html>

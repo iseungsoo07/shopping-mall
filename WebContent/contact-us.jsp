@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -173,7 +174,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown active">
+                        <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
                                 <li><a href="cart.html">Cart</a></li>
@@ -184,7 +185,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -251,10 +252,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Cart</h2>
+                    <h2>Contact Us</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">Cart</li>
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"> Contact Us </li>
                     </ul>
                 </div>
             </div>
@@ -262,156 +263,67 @@
     </div>
     <!-- End All Title Box -->
 
-    <!-- Start Cart  -->
-    <div class="cart-box-main">
+    <!-- Start Contact Us  -->
+    <div class="contact-box-main">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="table-main table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Images</th>
-                                    <th>Product Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th>Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 60.0</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 30.0</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="coupon-box">
-                        <div class="input-group input-group-sm">
-                            <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
-                            <div class="input-group-append">
-                                <button class="btn btn-theme" type="button">Apply Coupon</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="update-box">
-                        <input value="Update Cart" type="submit">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-lg-4 col-sm-12">
-                    <div class="order-box">
-                        <h3>Order summary</h3>
-                        <div class="d-flex">
-                            <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> $ 130 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $ 40 </div>
-                        </div>
-                        <hr class="my-1">
-                        <div class="d-flex">
-                            <h4>Coupon Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $ 10 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Tax</h4>
-                            <div class="ml-auto font-weight-bold"> $ 2 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Shipping Cost</h4>
-                            <div class="ml-auto font-weight-bold"> Free </div>
-                        </div>
-                        <hr>
-                        <div class="d-flex gr-total">
-                            <h5>Grand Total</h5>
-                            <div class="ml-auto h5"> $ 388 </div>
-                        </div>
-                        <hr> </div>
+                    <div class="contact-info-left">
+                        <h2>CONTACT INFO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        <ul>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                <div class="col-lg-8 col-sm-12">
+                    <div class="contact-form-right">
+                        <h2>GET IN TOUCH</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio justo, ultrices ac nisl sed, lobortis porta elit. Fusce in metus ac ex venenatis ultricies at cursus mauris.</p>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="subject" name="name" placeholder="Subject" required data-error="Please enter your Subject">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
     <!-- End Cart -->
