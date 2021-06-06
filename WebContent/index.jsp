@@ -69,12 +69,12 @@
 					</div> -->
 					<div class="right-phone-box">
 						<p>
-							Call US : <a href="#  ">010-1111-1111</a>
+							Call US : <a href="#">010-1111-1111</a>
 						</p>
 					</div>
 					<div class="our-link">
 						<ul>
-							<li><a href="#">로그인</a></li>
+							<li><a href="./login.jsp">로그인</a></li>
 							<li><a href="./regist.jsp">회원가입</a></li>
 							<li><a href="#">Contact Us</a></li>
 						</ul>
@@ -103,7 +103,7 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
 						<li class="nav-item active"><a class="nav-link" href="index.jsp">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.jsp">About Us</a></li>
 						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
 								<li>
@@ -112,10 +112,10 @@
 											<h6 class="title">Top</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.html">Jackets</a></li>
-													<li><a href="shop.html">Shirts</a></li>
-													<li><a href="shop.html">Sweaters & Cardigans</a></li>
-													<li><a href="shop.html">T-shirts</a></li>
+													<li><a href="shop.jsp">Jackets</a></li>
+													<li><a href="shop.jsp">Shirts</a></li>
+													<li><a href="shop.jsp">Sweaters & Cardigans</a></li>
+													<li><a href="shop.jsp">T-shirts</a></li>
 												</ul>
 											</div>
 										</div>
@@ -124,10 +124,10 @@
 											<h6 class="title">Bottom</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.html">Swimwear</a></li>
-													<li><a href="shop.html">Skirts</a></li>
-													<li><a href="shop.html">Jeans</a></li>
-													<li><a href="shop.html">Trousers</a></li>
+													<li><a href="shop.jsp">Swimwear</a></li>
+													<li><a href="shop.jsp">Skirts</a></li>
+													<li><a href="shop.jsp">Jeans</a></li>
+													<li><a href="shop.jsp">Trousers</a></li>
 												</ul>
 											</div>
 										</div>
@@ -136,10 +136,10 @@
 											<h6 class="title">Clothing</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.html">Top Wear</a></li>
-													<li><a href="shop.html">Party wear</a></li>
-													<li><a href="shop.html">Bottom Wear</a></li>
-													<li><a href="shop.html">Indian Wear</a></li>
+													<li><a href="shop.jsp">Top Wear</a></li>
+													<li><a href="shop.jsp">Party wear</a></li>
+													<li><a href="shop.jsp">Bottom Wear</a></li>
+													<li><a href="shop.jsp">Indian Wear</a></li>
 												</ul>
 											</div>
 										</div>
@@ -147,10 +147,10 @@
 											<h6 class="title">Accessories</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.html">Bags</a></li>
-													<li><a href="shop.html">Sunglasses</a></li>
-													<li><a href="shop.html">Fragrances</a></li>
-													<li><a href="shop.html">Wallets</a></li>
+													<li><a href="shop.jsp">Bags</a></li>
+													<li><a href="shop.jsp">Sunglasses</a></li>
+													<li><a href="shop.jsp">Fragrances</a></li>
+													<li><a href="shop.jsp">Wallets</a></li>
 												</ul>
 											</div>
 										</div>
@@ -160,8 +160,8 @@
 							</ul></li>
 						<li class="dropdown"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
 							<ul class="dropdown-menu">
-								<li><a href="cart.html">Cart</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
+								<li><a href="cart.jsp">Cart</a></li>
+								<li><a href="checkout.jsp">Checkout</a></li>
 								<li><a href="my-account.html">My Account</a></li>
 								<li><a href="wishlist.html">Wishlist</a></li>
 								<li><a href="shop-detail.html">Shop Detail</a></li>
