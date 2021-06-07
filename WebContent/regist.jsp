@@ -75,9 +75,44 @@
 					}
 				}).open();
 	}
-	
+
 	function checkEmailAddr() {
 		document.form.email2.value = document.form.selectEmail.value;
+	}
+
+	function checkForm() {
+		const id = document.getElementById("id");
+		const pw = document.getElementById("pw");
+		const checkPw = document.getElementById("checkPw");
+		const phone = document.getElementById("phone");
+		const agree = document.getElementById("agree");
+		
+		// 전화번호 정규식
+		const expTel = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/
+
+		if (pw.value.length > 20) {
+			alert("비밀번호는 20자 이하로 입력하세요.");
+			pw.focus();
+			return false;
+		}
+
+		if (pw.value != checkPw.value) {
+			alert("비밀번호와 비밀번호 확인의 값이 다릅니다.");
+			pw.focus();
+			return false;
+		}
+		
+		if(!expTel.test(phone.value)) {
+			alert('전화번호 형식을 확인하세요. - 없이 입력해주세요');
+			phone.focus();
+			return false;
+		}
+
+		if (!agree.checked) {
+			alert("개인정보활용동의에 체크해주세요.");
+			return false;
+		}
+		
 	}
 </script>
 </head>
@@ -137,14 +172,14 @@
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="index.jsp"><img src="images/logo.png" class="logo" alt=""></a>
+					<a class="navbar-brand" href="home.jsp"><img src="images/logo.png" class="logo" alt=""></a>
 				</div>
 				<!-- End Header Navigation -->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-						<li class="nav-item active"><a class="nav-link" href="index.jsp">Home</a></li>
+						<li class="nav-item active"><a class="nav-link" href="home.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.jsp">About Us</a></li>
 						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
@@ -264,44 +299,40 @@
 	<div id="container">
 		<!-- 본문 시작 -->
 		<div class="bodytext_area box_inner">
-			<form action="#" method="POST" class="appForm" name="form">
+			<form action="regist.do" method="POST" class="appForm" name="form" onsubmit="return checkForm()">
 				<fieldset>
 					<p class="info_pilsoo pilsoo_item">필수입력</p>
 					<ul class="app_list">
-						<li class="clear">
-                            <label for="id_lbl" class="tit_lbl pilsoo_item"> 아이디 </label>
+						<li class="clear"><label for="id" class="tit_lbl pilsoo_item"> 아이디 </label>
 							<div class="app_content">
-								<input type="text" class="w100p" id="name_lbl" placeholder="아이디를 입력하세요" required />
+								<input type="text" class="w100p" id="id" name="id" placeholder="아이디를 입력하세요" required />
 							</div>
-                        </li>
-						<li class="clear">
-                            <label for="pwd_lbl" class="tit_lbl pilsoo_item"> 비밀번호 </label>
+						</li>
+						<li class="clear"><label for="pw" class="tit_lbl pilsoo_item"> 비밀번호 </label>
 							<div class="app_content">
-								<input type="password" class="w100p" id="pwd_lbl" placeholder="비밀번호를 입력하세요" required />
+								<input type="password" class="w100p" id="pw" name="pw" placeholder="비밀번호를 입력하세요" required />
 							</div>
-                        </li>
-						<li class="clear">
-                            <label for="pwd2_lbl" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
+						</li>
+						<li class="clear"><label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
 							<div class="app_content">
-								<input type="password" class="w100p" id="pwd2_lbl" placeholder="비밀번호 확인을 입력하세요" required />
+								<input type="password" class="w100p" id="checkPw" name="checkPw" placeholder="비밀번호 확인을 입력하세요" required />
 							</div>
-                        </li>
-						<li class="clear">
-                            <label for="name_lbl" class="tit_lbl pilsoo_item"> 이름 </label>
+						</li>
+						<li class="clear"><label for="name" class="tit_lbl pilsoo_item"> 이름 </label>
 							<div class="app_content">
-								<input type="text" class="w100p" id="name_lbl" placeholder="이름을 입력하세요" required />
+								<input type="text" class="w100p" id="name" name="name" placeholder="이름을 입력하세요" required />
 							</div>
-                        </li>
-						<li class="clear">
-                            <label for="phone_lbl" class="tit_lbl pilsoo_item"> 연락처 </label>
+						</li>
+						<li class="clear"><label for="phone" class="tit_lbl pilsoo_item"> 연락처 </label>
 							<div class="app_content">
-								<input type="tel" class="w100p" id="phone_lbl" placeholder="휴대폰 '-' 없이 숫자만 입력하세요." required />
+								<input type="tel" class="w100p" id="phone" name="phone" placeholder="휴대폰 번호는 '-' 없이 숫자만 입력해주세요." required />
 							</div>
-                        </li>
-						<li class="clear">
-                            <label for="email_lbl" class="tit_lbl"> 이메일 </label>
+						</li>
+						<li class="clear"><label for="email1" class="tit_lbl"> 이메일 </label>
 							<div class="app_content email_area">
-								<input type="text" class="w160" id="email_lbl" title="이메일 주소" /> <span class="ico_space">@</span> <input type="text" class="w160" name="email2" title="이메일 제공 업체 입력" />
+								<input type="text" class="w160" id="email1" name="email1" title="이메일 주소" />
+								<span class="ico_space">@</span> 
+								<input type="text" class="w160" name="email2" title="이메일 제공 업체 입력" />
 								<div class="select_common">
 									<select title="이메일 제공업체 목록" name="selectEmail" onchange="checkEmailAddr()">
 										<option value="">직접입력</option>
@@ -312,29 +343,31 @@
 									</select>
 								</div>
 							</div>
-                        </li>
-						<li class="clear">
-                            <label for="residence_lbl" class="tit_lbl pilsoo_item"> 주소 </label>
+						</li>
+						<li class="clear"><label for="addr" class="tit_lbl pilsoo_item"> 주소 </label>
 							<div class="app_content">
-								<input type="text" id="sample6_postcode" placeholder="우편번호" style="display: inline-block; width: 50%; margin: 5px 0;" /> <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" style="display: inline-block; width: 160px; height: 45px; margin: 5px 0;" /><br /> <input type="text" id="sample6_address" placeholder="주소" style="margin: 5px 0; width: 100%" /><br /> <input type="text" id="sample6_detailAddress" placeholder="상세주소" style="margin: 5px 0; width: 49.7%; box-sizing: border-box;" /> <input type="text" id="sample6_extraAddress" placeholder="참고항목" required style="margin: 5px 0; width: 49.7%; box-sizing: border-box;" />
+								<input type="text" id="sample6_postcode" placeholder="우편번호" style="display: inline-block; width: 50%; margin: 5px 0;" />
+								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_basecolor" style="display: inline-block; border: none; width: 160px; height: 45px; margin: 5px 0;" /><br /> 
+								<input type="text" id="sample6_address" name="addr" placeholder="주소" style="margin: 5px 0; width: 100%" /><br /> 
+								<input type="text" id="sample6_detailAddress" name="detailAddr" placeholder="상세주소" style="margin: 5px 0; width: 49.7%; box-sizing: border-box;" /> 
+								<input type="text" id="sample6_extraAddress" name="referAddr" placeholder="참고항목" required style="margin: 5px 0; width: 49.7%; box-sizing: border-box;" />
 							</div>
-                        </li>
-						<li class="clear">
+						</li>
+						<!-- <li class="clear">
                             <span class="tit_lbl">성별</span>
 							<div class="app_content radio_area">
 								<input type="radio" class="css-radio" id="mmm_lbl" name="gender" /> <label for="mmm_lbl" value="남">남</label> <input type="radio" class="css-radio" id="www_lbl" name="gender" /> <label for="www_lbl" value="여">여</label>
 							</div>
-                        </li>
+                        </li> -->
 
-						<li class="clear">
-                            <span class="tit_lbl"> 개인정보 활용동의 </span>
+						<li class="clear"><span class="tit_lbl"> 개인정보 활용동의 </span>
 							<div class="app_content checkbox_area">
-								<input type="checkbox" class="css-checkbox" id="agree_lbl" name="agree" /> <label for="agree_lbl">동의함</label>
+								<input type="checkbox" class="css-checkbox" id="agree" name="agree" /> <label for="agree">동의함</label>
 							</div>
-                        </li>
+						</li>
 					</ul>
 					<p class="btn_line">
-						<a href="#" class="btn_basecolor"> 등록 </a>
+						<input type="submit" value="등록" class="btn_basecolor" style="border: none"/>
 					</p>
 				</fieldset>
 			</form>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <!-- Basic -->
 
 <head>
@@ -11,10 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Site Metas -->
-<title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
+<title>ThewayShop - 쇼핑을 즐겨라!</title>
+<meta name="description" content="쇼핑을 즐길 수 있는 최고의 쇼핑몰 TheWayShop">
 
 <!-- Site Icons -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -62,23 +60,23 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
+					<!-- <div class="custom-select-box">
 						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
 							<option>¥ JPY</option>
 							<option>$ USD</option>
 							<option>€ EUR</option>
 						</select>
-					</div>
+					</div> -->
 					<div class="right-phone-box">
 						<p>
-							Call US :- <a href="#"> +11 900 800 100</a>
+							Call US : <a href="#">010-1111-1111</a>
 						</p>
 					</div>
 					<div class="our-link">
 						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Our location</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<li><a href="./login.jsp">로그인</a></li>
+							<li><a href="./regist.jsp">회원가입</a></li>
+							<li><a href="#">마이페이지</a></li>
 						</ul>
 					</div>
 				</div>
@@ -104,7 +102,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-						<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
+						<li class="nav-item active"><a class="nav-link" href="home.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.jsp">About Us</a></li>
 						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
@@ -160,7 +158,7 @@
 									</div> <!-- end row -->
 								</li>
 							</ul></li>
-						<li class="dropdown active"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+						<li class="dropdown"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
 							<ul class="dropdown-menu">
 								<li><a href="cart.jsp">Cart</a></li>
 								<li><a href="checkout.jsp">Checkout</a></li>
@@ -230,287 +228,291 @@
 	</div>
 	<!-- End Top Search -->
 
-	<!-- Start All Title Box -->
-	<div class="all-title-box">
+	<!-- Start Slider -->
+	<div id="slides-shop" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-left"><img src="images/banner-01.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20">
+								<strong>Welcome To <br> Thewayshop
+								</strong>
+							</h1>
+							<p class="m-b-40">
+								See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.
+							</p>
+							<p>
+								<a class="btn hvr-hover" href="#">Shop New</a>
+							</p>
+						</div>
+					</div>
+				</div></li>
+			<li class="text-center"><img src="images/banner-02.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20">
+								<strong>Welcome To <br> Thewayshop
+								</strong>
+							</h1>
+							<p class="m-b-40">
+								See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.
+							</p>
+							<p>
+								<a class="btn hvr-hover" href="#">Shop New</a>
+							</p>
+						</div>
+					</div>
+				</div></li>
+			<li class="text-right"><img src="images/banner-03.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20">
+								<strong>Welcome To <br> Thewayshop
+								</strong>
+							</h1>
+							<p class="m-b-40">
+								See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.
+							</p>
+							<p>
+								<a class="btn hvr-hover" href="#">Shop New</a>
+							</p>
+						</div>
+					</div>
+				</div></li>
+		</ul>
+		<div class="slides-navigation">
+			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+		</div>
+	</div>
+	<!-- End Slider -->
+
+	<!-- Start Categories  -->
+	<div class="categories-shop">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="shop-cat-box">
+						<img class="img-fluid" src="images/t-shirts-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">T-shirts</a>
+					</div>
+					<div class="shop-cat-box">
+						<img class="img-fluid" src="images/shirt-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Shirt</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="shop-cat-box">
+						<img class="img-fluid" src="images/wallet-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Wallet</a>
+					</div>
+					<div class="shop-cat-box">
+						<img class="img-fluid" src="images/women-bag-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Bags</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="shop-cat-box">
+						<img class="img-fluid" src="images/shoes-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Shoes</a>
+					</div>
+					<div class="shop-cat-box">
+						<img class="img-fluid" src="images/women-shoes-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Women Shoes</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Categories -->
+
+	<!-- Start Products  -->
+	<div class="products-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2>Checkout</h2>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Shop</a></li>
-						<li class="breadcrumb-item active">Checkout</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End All Title Box -->
-
-	<!-- Start Cart  -->
-	<div class="cart-box-main">
-		<div class="container">
-			<div class="row new-account-login">
-				<div class="col-sm-6 col-lg-6 mb-3">
-					<div class="title-left">
-						<h3>Account Login</h3>
+					<div class="title-all text-center">
+						<h1>Featured Products</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
 					</div>
-					<h5>
-						<a data-toggle="collapse" href="#formLogin" role="button" aria-expanded="false">Click here to Login</a>
-					</h5>
-					<form class="mt-3 collapse review-form-box" id="formLogin">
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="InputEmail" class="mb-0">Email Address</label> <input type="email" class="form-control" id="InputEmail" placeholder="Enter Email">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="InputPassword" class="mb-0">Password</label> <input type="password" class="form-control" id="InputPassword" placeholder="Password">
-							</div>
-						</div>
-						<button type="submit" class="btn hvr-hover">Login</button>
-					</form>
-				</div>
-				<div class="col-sm-6 col-lg-6 mb-3">
-					<div class="title-left">
-						<h3>Create New Account</h3>
-					</div>
-					<h5>
-						<a data-toggle="collapse" href="#formRegister" role="button" aria-expanded="false">Click here to Register</a>
-					</h5>
-					<form class="mt-3 collapse review-form-box" id="formRegister">
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="InputName" class="mb-0">First Name</label> <input type="text" class="form-control" id="InputName" placeholder="First Name">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="InputLastname" class="mb-0">Last Name</label> <input type="text" class="form-control" id="InputLastname" placeholder="Last Name">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="InputEmail1" class="mb-0">Email Address</label> <input type="email" class="form-control" id="InputEmail1" placeholder="Enter Email">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="InputPassword1" class="mb-0">Password</label> <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
-							</div>
-						</div>
-						<button type="submit" class="btn hvr-hover">Register</button>
-					</form>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-6 col-lg-6 mb-3">
-					<div class="checkout-address">
-						<div class="title-left">
-							<h3>Billing address</h3>
-						</div>
-						<form class="needs-validation" novalidate>
-							<div class="row">
-								<div class="col-md-6 mb-3">
-									<label for="firstName">First name *</label> <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-									<div class="invalid-feedback">Valid first name is required.</div>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label for="lastName">Last name *</label> <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-									<div class="invalid-feedback">Valid last name is required.</div>
-								</div>
-							</div>
-							<div class="mb-3">
-								<label for="username">Username *</label>
-								<div class="input-group">
-									<input type="text" class="form-control" id="username" placeholder="" required>
-									<div class="invalid-feedback" style="width: 100%;">Your username is required.</div>
-								</div>
-							</div>
-							<div class="mb-3">
-								<label for="email">Email Address *</label> <input type="email" class="form-control" id="email" placeholder="">
-								<div class="invalid-feedback">Please enter a valid email address for shipping updates.</div>
-							</div>
-							<div class="mb-3">
-								<label for="address">Address *</label> <input type="text" class="form-control" id="address" placeholder="" required>
-								<div class="invalid-feedback">Please enter your shipping address.</div>
-							</div>
-							<div class="mb-3">
-								<label for="address2">Address 2 *</label> <input type="text" class="form-control" id="address2" placeholder="">
-							</div>
-							<div class="row">
-								<div class="col-md-5 mb-3">
-									<label for="country">Country *</label> <select class="wide w-100" id="country">
-										<option value="Choose..." data-display="Select">Choose...</option>
-										<option value="United States">United States</option>
-									</select>
-									<div class="invalid-feedback">Please select a valid country.</div>
-								</div>
-								<div class="col-md-4 mb-3">
-									<label for="state">State *</label> <select class="wide w-100" id="state">
-										<option data-display="Select">Choose...</option>
-										<option>California</option>
-									</select>
-									<div class="invalid-feedback">Please provide a valid state.</div>
-								</div>
-								<div class="col-md-3 mb-3">
-									<label for="zip">Zip *</label> <input type="text" class="form-control" id="zip" placeholder="" required>
-									<div class="invalid-feedback">Zip code required.</div>
-								</div>
-							</div>
-							<hr class="mb-4">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="same-address"> <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-							</div>
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="save-info"> <label class="custom-control-label" for="save-info">Save this information for next time</label>
-							</div>
-							<hr class="mb-4">
-							<div class="title">
-								<span>Payment</span>
-							</div>
-							<div class="d-block my-3">
-								<div class="custom-control custom-radio">
-									<input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required> <label class="custom-control-label" for="credit">Credit card</label>
-								</div>
-								<div class="custom-control custom-radio">
-									<input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required> <label class="custom-control-label" for="debit">Debit card</label>
-								</div>
-								<div class="custom-control custom-radio">
-									<input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required> <label class="custom-control-label" for="paypal">Paypal</label>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6 mb-3">
-									<label for="cc-name">Name on card</label> <input type="text" class="form-control" id="cc-name" placeholder="" required> <small class="text-muted">Full name as displayed on card</small>
-									<div class="invalid-feedback">Name on card is required</div>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label for="cc-number">Credit card number</label> <input type="text" class="form-control" id="cc-number" placeholder="" required>
-									<div class="invalid-feedback">Credit card number is required</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 mb-3">
-									<label for="cc-expiration">Expiration</label> <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-									<div class="invalid-feedback">Expiration date required</div>
-								</div>
-								<div class="col-md-3 mb-3">
-									<label for="cc-expiration">CVV</label> <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-									<div class="invalid-feedback">Security code required</div>
-								</div>
-								<div class="col-md-6 mb-3">
-									<div class="payment-icon">
-										<ul>
-											<li><img class="img-fluid" src="images/payment-icon/1.png" alt=""></li>
-											<li><img class="img-fluid" src="images/payment-icon/2.png" alt=""></li>
-											<li><img class="img-fluid" src="images/payment-icon/3.png" alt=""></li>
-											<li><img class="img-fluid" src="images/payment-icon/5.png" alt=""></li>
-											<li><img class="img-fluid" src="images/payment-icon/7.png" alt=""></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<hr class="mb-1">
-						</form>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-6 mb-3">
-					<div class="row">
-						<div class="col-md-12 col-lg-12">
-							<div class="shipping-method-box">
-								<div class="title-left">
-									<h3>Shipping Method</h3>
-								</div>
-								<div class="mb-4">
-									<div class="custom-control custom-radio">
-										<input id="shippingOption1" name="shipping-option" class="custom-control-input" checked="checked" type="radio"> <label class="custom-control-label" for="shippingOption1">Standard Delivery</label> <span class="float-right font-weight-bold">FREE</span>
-									</div>
-									<div class="ml-4 mb-2 small">(3-7 business days)</div>
-									<div class="custom-control custom-radio">
-										<input id="shippingOption2" name="shipping-option" class="custom-control-input" type="radio"> <label class="custom-control-label" for="shippingOption2">Express Delivery</label> <span class="float-right font-weight-bold">$10.00</span>
-									</div>
-									<div class="ml-4 mb-2 small">(2-4 business days)</div>
-									<div class="custom-control custom-radio">
-										<input id="shippingOption3" name="shipping-option" class="custom-control-input" type="radio"> <label class="custom-control-label" for="shippingOption3">Next Business day</label> <span class="float-right font-weight-bold">$20.00</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-12">
-							<div class="odr-box">
-								<div class="title-left">
-									<h3>Shopping cart</h3>
-								</div>
-								<div class="rounded p-2 bg-light">
-									<div class="media mb-2 border-bottom">
-										<div class="media-body">
-											<a href="detail.html"> Lorem ipsum dolor sit amet</a>
-											<div class="small text-muted">
-												Price: $80.00 <span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: $80.00
-											</div>
-										</div>
-									</div>
-									<div class="media mb-2 border-bottom">
-										<div class="media-body">
-											<a href="detail.html"> Lorem ipsum dolor sit amet</a>
-											<div class="small text-muted">
-												Price: $60.00 <span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: $60.00
-											</div>
-										</div>
-									</div>
-									<div class="media mb-2">
-										<div class="media-body">
-											<a href="detail.html"> Lorem ipsum dolor sit amet</a>
-											<div class="small text-muted">
-												Price: $40.00 <span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: $40.00
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-12">
-							<div class="order-box">
-								<div class="title-left">
-									<h3>Your order</h3>
-								</div>
-								<div class="d-flex">
-									<div class="font-weight-bold">Product</div>
-									<div class="ml-auto font-weight-bold">Total</div>
-								</div>
-								<hr class="my-1">
-								<div class="d-flex">
-									<h4>Sub Total</h4>
-									<div class="ml-auto font-weight-bold">$ 440</div>
-								</div>
-								<div class="d-flex">
-									<h4>Discount</h4>
-									<div class="ml-auto font-weight-bold">$ 40</div>
-								</div>
-								<hr class="my-1">
-								<div class="d-flex">
-									<h4>Coupon Discount</h4>
-									<div class="ml-auto font-weight-bold">$ 10</div>
-								</div>
-								<div class="d-flex">
-									<h4>Tax</h4>
-									<div class="ml-auto font-weight-bold">$ 2</div>
-								</div>
-								<div class="d-flex">
-									<h4>Shipping Cost</h4>
-									<div class="ml-auto font-weight-bold">Free</div>
-								</div>
-								<hr>
-								<div class="d-flex gr-total">
-									<h5>Grand Total</h5>
-									<div class="ml-auto h5">$ 388</div>
-								</div>
-								<hr>
-							</div>
-						</div>
-						<div class="col-12 d-flex shopping-box">
-							<a href="checkout.jsp" class="ml-auto btn hvr-hover">Place Order</a>
+				<div class="col-lg-12">
+					<div class="special-menu text-center">
+						<div class="button-group filter-button-group">
+							<button class="active" data-filter="*">All</button>
+							<button data-filter=".top-featured">Top featured</button>
+							<button data-filter=".best-seller">Best seller</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
+			<div class="row special-list">
+				<div class="col-lg-3 col-md-6 special-grid best-seller">
+					<div class="products-single fix">
+						<div class="box-img-hover">
+							<div class="type-lb">
+								<p class="sale">Sale</p>
+							</div>
+							<img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+							<div class="mask-icon">
+								<ul>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+								</ul>
+								<a class="cart" href="#">Add to Cart</a>
+							</div>
+						</div>
+						<div class="why-text">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<h5>$7.79</h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 special-grid top-featured">
+					<div class="products-single fix">
+						<div class="box-img-hover">
+							<div class="type-lb">
+								<p class="new">New</p>
+							</div>
+							<img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+							<div class="mask-icon">
+								<ul>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+								</ul>
+								<a class="cart" href="#">Add to Cart</a>
+							</div>
+						</div>
+						<div class="why-text">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<h5>$9.79</h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 special-grid top-featured">
+					<div class="products-single fix">
+						<div class="box-img-hover">
+							<div class="type-lb">
+								<p class="sale">Sale</p>
+							</div>
+							<img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+							<div class="mask-icon">
+								<ul>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+								</ul>
+								<a class="cart" href="#">Add to Cart</a>
+							</div>
+						</div>
+						<div class="why-text">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<h5>$10.79</h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 special-grid best-seller">
+					<div class="products-single fix">
+						<div class="box-img-hover">
+							<div class="type-lb">
+								<p class="sale">Sale</p>
+							</div>
+							<img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
+							<div class="mask-icon">
+								<ul>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+								</ul>
+								<a class="cart" href="#">Add to Cart</a>
+							</div>
+						</div>
+						<div class="why-text">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<h5>$15.79</h5>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<!-- End Cart -->
+	<!-- End Products  -->
+
+	<!-- Start Blog  -->
+	<div class="latest-blog">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-all text-center">
+						<h1>latest blog</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4 col-xl-4">
+					<div class="blog-box">
+						<div class="blog-img">
+							<img class="img-fluid" src="images/blog-img.jpg" alt="" />
+						</div>
+						<div class="blog-content">
+							<div class="title-blog">
+								<h3>Fusce in augue non nisi fringilla</h3>
+								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+							</div>
+							<ul class="option-blog">
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 col-xl-4">
+					<div class="blog-box">
+						<div class="blog-img">
+							<img class="img-fluid" src="images/blog-img-01.jpg" alt="" />
+						</div>
+						<div class="blog-content">
+							<div class="title-blog">
+								<h3>Fusce in augue non nisi fringilla</h3>
+								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+							</div>
+							<ul class="option-blog">
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 col-xl-4">
+					<div class="blog-box">
+						<div class="blog-img">
+							<img class="img-fluid" src="images/blog-img-02.jpg" alt="" />
+						</div>
+						<div class="blog-content">
+							<div class="title-blog">
+								<h3>Fusce in augue non nisi fringilla</h3>
+								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+							</div>
+							<ul class="option-blog">
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
+								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Blog  -->
+
 
 	<!-- Start Instagram Feed  -->
 	<div class="instagram-box">
