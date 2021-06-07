@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MemberDAO;
-import dto.MemberBean;
+import dto.Member;
 
 public class RegistAction implements Action {
 
@@ -16,16 +16,20 @@ public class RegistAction implements Action {
 
 		ActionForward forward = new ActionForward();
 		MemberDAO memberDAO = new MemberDAO();
-		MemberBean mb = new MemberBean();
+		Member member = new Member();
 		
-		mb.setId(req.getParameter("id"));
-		mb.setPw(req.getParameter("pw"));
-		mb.setName(req.getParameter("name"));
-		mb.setPhone(req.getParameter("phone"));
-		mb.setEmail(req.getParameter("email1") + "@" + req.getParameter("email2"));
-		mb.setAddr(req.getParameter("addr") + " " + req.getParameter("detailAddr") + req.getParameter("referAddr"));
+		member.setId(req.getParameter("id"));
+		member.setPw(req.getParameter("pw"));
+		member.setName(req.getParameter("name"));
+		member.setPhone(req.getParameter("phone"));
+		member.setEmail(req.getParameter("email1") + "@" + req.getParameter("email2"));
+		member.setAddr(req.getParameter("addr") + " " + req.getParameter("detailAddr") + req.getParameter("referAddr"));
 
-		memberDAO.regist(mb);
+		if(memberDAO.regist(member)) {
+			System.out.println("회원가입 성공");
+		} else {
+			System.out.println("회원가입 실패");
+		}
 		
 		forward.setRedirect(true);
 		forward.setPath("login.jsp");
