@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
 import action.HomeAction;
+import action.LoginAction;
+import action.LogoutAction;
+import action.MyPageAction;
 import action.RegistAction;
+import action.UpdateAction;
 
 /**
  * Servlet implementation class FrontController
@@ -64,6 +68,30 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/regist.do")) {
 			try {
 				forward = new RegistAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/login.do")) {
+			try {
+				forward = new LoginAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/logout.do")) {
+			try {
+				forward = new LogoutAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/mypage.do")) {
+			try {
+				forward = new MyPageAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/update.do")) {
+			try {
+				forward = new UpdateAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

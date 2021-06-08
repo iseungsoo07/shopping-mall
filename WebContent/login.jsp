@@ -64,7 +64,7 @@
 						<ul>
 							<li><a href="#">로그인</a></li>
 							<li><a href="./regist.jsp">회원가입</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<li><a href="./mypage.do">마이페이지</a></li>
 						</ul>
 					</div>
 				</div>
@@ -232,12 +232,12 @@
 								</div>
 
 							</div>
-							<form action="#" class="signin-form">
+							<form action="login.do" class="signin-form" method="post">
 								<div class="form-group mb-3">
-									<label class="label" for="name">ID</label> <input type="text" class="form-control" placeholder="ID" required>
+									<label class="label" for="name">ID</label> <input type="text" class="form-control" name="id" placeholder="ID" required>
 								</div>
 								<div class="form-group mb-3">
-									<label class="label" for="password">Password</label> <input type="password" class="form-control" placeholder="Password" required>
+									<label class="label" for="password">Password</label> <input type="password" class="form-control" name="pw" placeholder="Password" required>
 								</div>
 								<div class="form-group">
 									<button type="submit" class="form-control btn btn-primary submit px-3">로그인</button>

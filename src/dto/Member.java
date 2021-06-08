@@ -6,6 +6,7 @@ public class Member {
 	private String name;
 	private String phone;
 	private String email;
+	private int zipcode;
 	private String addr;
 	private int rank;
 	private int point;
@@ -49,6 +50,14 @@ public class Member {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public int getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
 	}
 
 	public String getAddr() {
