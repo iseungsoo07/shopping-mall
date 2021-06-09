@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,7 +26,7 @@ public class MemberDAO {
 		}
 	}
 
-	// 회원가입
+	// �쉶�썝媛��엯
 	public boolean regist(Member member) {
 		conn = DBConnection.connect();
 
@@ -53,7 +54,7 @@ public class MemberDAO {
 		return true;
 	}
 
-	// 로그인
+	// 濡쒓렇�씤
 	public boolean login(String id, String pw) {
 		conn = DBConnection.connect();
 
@@ -77,7 +78,7 @@ public class MemberDAO {
 		return false;
 	}
 
-	// 회원 정보 가져오기
+	// �쉶�썝 �젙蹂� 媛��졇�삤湲�
 	public Member getMember(String id) {
 		conn = DBConnection.connect();
 
@@ -112,7 +113,7 @@ public class MemberDAO {
 
 	}
 
-	// 회원 정보 수정
+	// �쉶�썝 �젙蹂� �닔�젙
 	public boolean update(Member member) {
 		conn = DBConnection.connect();
 
@@ -137,7 +138,7 @@ public class MemberDAO {
 		return true;
 	}
 
-	// 회원 탈퇴
+	// �쉶�썝 �깉�눜
 	public boolean delete(String id) {
 		conn = DBConnection.connect();
 

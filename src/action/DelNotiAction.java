@@ -32,16 +32,4 @@ public class DelNotiAction implements Action{
 	}
 
 }
-//ActionForward forward=new ActionForward();
-//
-//TestDAO testDAO=new TestDAO(); // control.jsp의 4번라인역할
-//
-//testDAO.deleteDB(Integer.parseInt(req.getParameter("id")));
-//
-//ArrayList<TestBean> datas=testDAO.getDBList();
-//req.setAttribute("datas", datas);
-//
-//forward.setRedirect(false);
-//forward.setPath("list.jsp");		
-//
-//return forward;
+	

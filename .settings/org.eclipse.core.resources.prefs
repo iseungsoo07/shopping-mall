@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/home.jsp=UTF-8
+encoding//src/action/MyPageAction.java=UTF-8
 encoding//src/action/NewNotiAction.java=UTF-8
+encoding//src/dao/MemberDAO.java=UTF-8
 encoding//src/db/DBmanager.java=UTF-8

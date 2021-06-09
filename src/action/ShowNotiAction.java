@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.NoticeDAO;
 import dto.Notice;
+
+
 public class ShowNotiAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -17,7 +19,7 @@ public class ShowNotiAction implements Action{
 		Notice notice = new Notice();
 		
 
-		noticeDAO.delNotice(Integer.parseInt(req.getParameter("nid")));
+		noticeDAO.showN(Integer.parseInt(req.getParameter("nid")));
 		
 		
 		

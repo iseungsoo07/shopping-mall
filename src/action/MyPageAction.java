@@ -2,6 +2,7 @@ package action;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +23,7 @@ public class MyPageAction implements Action{
 		String id = (String) session.getAttribute("id");
 		
 		if(id == null) {
-			System.out.println("로그인하지 않은상태. 로그인 먼저 시도.");
+			System.out.println("濡쒓렇�씤�븯吏� �븡���긽�깭. 濡쒓렇�씤 癒쇱� �떆�룄.");
 			forward.setRedirect(true);
 			forward.setPath("login.jsp");
 		} else {
