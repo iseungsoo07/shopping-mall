@@ -95,6 +95,36 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else if (command.equals("공지사항 작성")) { 
+			try {
+				//forward=new UpdateAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("QnA작성")) {
+			try {
+				//forward=new UpdateAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("공지사항삭제")) {
+			try {
+				//forward=new UpdateAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("QnA삭제")) {
+			try {
+				//forward=new UpdateAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("조회수")) { //페이지에 들어오면 +1 되게
+			try {
+				//forward=new UpdateAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		
