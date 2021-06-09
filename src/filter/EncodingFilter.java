@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Servlet Filter implementation class EncodingFilter
  */
-@WebFilter("*.jsp")
+@WebFilter({"*.jsp", "*.do"})
 public class EncodingFilter implements Filter {
 
 	private String encoding;

@@ -1,29 +1,31 @@
+<%@page import="dto.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TheWayShop | 회원가입</title>
+<title>TheWayShop | 마이페이지</title>
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
 	rel="stylesheet"
->
+/>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
->
-<link rel="stylesheet" href="css/custom.css">
+/>
+<link rel="stylesheet" href="css/custom.css" />
 <!-- Site Icons -->
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css" />
 <!-- Site CSS -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css" />
 <!-- Responsive CSS -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/responsive.css" />
 <!-- Custom CSS -->
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/custom.css" />
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	function sample6_execDaumPostcode() {
@@ -92,7 +94,7 @@
 		const agree = document.getElementById("agree");
 
 		// 전화번호 정규식
-		const expTel = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/
+		const expTel = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/;
 
 		if (pw.value.length > 20) {
 			alert("비밀번호는 20자 이하로 입력하세요.");
@@ -107,7 +109,7 @@
 		}
 
 		if (!expTel.test(phone.value)) {
-			alert('전화번호 형식을 확인하세요. - 없이 입력해주세요');
+			alert("전화번호 형식을 확인하세요. - 없이 입력해주세요");
 			phone.focus();
 			return false;
 		}
@@ -116,7 +118,7 @@
 			alert("개인정보활용동의에 체크해주세요.");
 			return false;
 		}
-
+		
 	}
 </script>
 </head>
@@ -166,20 +168,34 @@
 					</div> -->
 					<div class="right-phone-box">
 						<p>
-							Call US : <a href="#  ">010-1111-1111</a>
+							Call US : <a href="#">010-1111-1111</a>
 						</p>
 					</div>
 					<div class="our-link">
 						<ul>
-							<li>
-								<a href="./login.jsp">로그인</a>
-							</li>
-							<li>
-								<a href="#">회원가입</a>
-							</li>
-							<li>
-								<a href="./mypage.jsp">마이페이지</a>
-							</li>
+							<c:if test="${ member != null }">
+								<li class="member-name">${ member.name }님 환영합니다!</li>
+								<li>
+									<a href="./logout.do">로그아웃</a>
+								</li>
+								<li>
+									<a href="./regist.jsp">회원가입</a>
+								</li>
+								<li>
+									<a href="#">마이페이지</a>
+								</li>
+							</c:if>
+							<c:if test="${ member == null }">
+								<li>
+									<a href="./login.jsp">로그인</a>
+								</li>
+								<li>
+									<a href="./regist.jsp">회원가입</a>
+								</li>
+								<li>
+									<a href="#">마이페이지</a>
+								</li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -200,7 +216,7 @@
 					>
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="home.jsp"><img src="images/logo.png" class="logo" alt=""></a>
+					<a class="navbar-brand" href="home.jsp"><img src="images/logo.png" class="logo" alt="" /></a>
 				</div>
 				<!-- End Header Navigation -->
 
@@ -396,24 +412,24 @@
 	<div id="container">
 		<!-- 본문 시작 -->
 		<div class="bodytext_area box_inner">
-			<form action="regist.do" method="POST" class="appForm" name="form" onsubmit="return checkForm()">
+			<form action="update.do" method="POST" class="appForm" name="form" onsubmit="return checkForm()">
 				<fieldset>
-					<p class="info_pilsoo pilsoo_item">필수입력</p>
 					<ul class="app_list">
 						<li class="clear">
-							<label for="id" class="tit_lbl pilsoo_item"> 아이디 </label>
+							<label for="id" class="tit_lbl"> 아이디 </label>
 							<div class="app_content">
-								<input type="text" class="w100p" id="id" name="id" placeholder="아이디를 입력하세요" required />
+								<!-- 로그인한 회원의 아이디 받아오기 -->
+								<div style="line-height: 38px">${ member.id }</div>
 							</div>
 						</li>
 						<li class="clear">
-							<label for="pw" class="tit_lbl pilsoo_item"> 비밀번호 </label>
+							<label for="pw" class="tit_lbl"> 비밀번호 </label>
 							<div class="app_content">
 								<input type="password" class="w100p" id="pw" name="pw" placeholder="비밀번호를 입력하세요" required />
 							</div>
 						</li>
 						<li class="clear">
-							<label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
+							<label for="checkPw" class="tit_lbl"> 비밀번호 확인 </label>
 							<div class="app_content">
 								<input type="password" class="w100p" id="checkPw" name="checkPw"
 									placeholder="비밀번호 확인을 입력하세요" required
@@ -421,25 +437,32 @@
 							</div>
 						</li>
 						<li class="clear">
-							<label for="name" class="tit_lbl pilsoo_item"> 이름 </label>
+							<label for="name" class="tit_lbl"> 이름 </label>
 							<div class="app_content">
-								<input type="text" class="w100p" id="name" name="name" placeholder="이름을 입력하세요" required />
+								<input type="text" class="w100p" id="name" name="name" value="${ member.name }" required />
 							</div>
 						</li>
 						<li class="clear">
-							<label for="phone" class="tit_lbl pilsoo_item"> 연락처 </label>
+							<label for="phone" class="tit_lbl"> 연락처 </label>
 							<div class="app_content">
-								<input type="tel" class="w100p" id="phone" name="phone"
-									placeholder="휴대폰 번호는 '-' 없이 숫자만 입력해주세요." required
-								/>
+								<input type="tel" class="w100p" id="phone" name="phone" value="${ member.phone }" required />
 							</div>
 						</li>
 						<li class="clear">
 							<label for="email1" class="tit_lbl"> 이메일 </label>
 							<div class="app_content email_area">
-								<input type="text" class="w160" id="email1" name="email1" title="이메일 주소" />
+								<%
+									Member m = (Member) session.getAttribute("member");
+									String email = m.getEmail();
+									String[] emailArr = email.split("@");
+								%>
+								<input type="text" class="w160" id="email1" name="email1" title="이메일 주소"
+									value="<%=emailArr[0]%>"
+								/>
 								<span class="ico_space">@</span>
-								<input type="text" class="w160" name="email2" title="이메일 제공 업체 입력" />
+								<input type="text" class="w160" name="email2" value="<%=emailArr[1]%>" title="이메일 제공 업체 입력"
+									value=""
+								/>
 								<div class="select_common">
 									<select title="이메일 제공업체 목록" name="selectEmail" onchange="checkEmailAddr()">
 										<option value="">직접입력</option>
@@ -452,25 +475,31 @@
 							</div>
 						</li>
 						<li class="clear">
-							<label for="addr" class="tit_lbl pilsoo_item"> 주소 </label>
+							<label for="addr" class="tit_lbl"> 주소 </label>
+							<%
+								String addr = m.getAddr();
+								String[] addrArr = addr.split("/");
+								int zipcode = m.getZipcode();
+							%>
 							<div class="app_content">
-								<input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" required
-									style="display: inline-block; width: 50%; margin: 5px 0;"
+								<input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode"
+									value="<%=zipcode%>" required style="display: inline-block; width: 50%; margin: 5px 0"
 								/>
 								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"
 									class="btn_basecolor"
-									style="display: inline-block; border: none; width: 160px; height: 45px; margin: 5px 0; cursor: pointer"
+									style="display: inline-block; border: none; width: 160px; height: 45px; margin: 5px 0; cursor: pointer;"
 								/>
 								<br />
-								<input type="text" id="sample6_address" name="addr" placeholder="주소" required
-									style="margin: 5px 0; width: 100%"
+								<input type="text" id="sample6_address" name="addr" placeholder="주소" value="<%=addrArr[0]%>"
+									required style="margin: 5px 0; width: 100%"
 								/>
 								<br />
-								<input type="text" id="sample6_detailAddress" name="detailAddr" placeholder="상세주소" required
-									style="margin: 5px 0; width: 49.7%; box-sizing: border-box;"
+								<input type="text" id="sample6_detailAddress" name="detailAddr" placeholder="상세주소"
+									value="<%=addrArr[1]%>" required
+									style="margin: 5px 0; width: 49.7%; box-sizing: border-box"
 								/>
-								<input type="text" id="sample6_extraAddress" name="referAddr" placeholder="참고항목"
-									style="margin: 5px 0; width: 49.7%; box-sizing: border-box;"
+								<input type="text" id="sample6_extraAddress" name="referAddr" value="<%=addrArr[2]%>"
+									placeholder="참고항목" style="margin: 5px 0; width: 49.7%; box-sizing: border-box"
 								/>
 							</div>
 						</li>
@@ -480,17 +509,23 @@
 								<input type="radio" class="css-radio" id="mmm_lbl" name="gender" /> <label for="mmm_lbl" value="남">남</label> <input type="radio" class="css-radio" id="www_lbl" name="gender" /> <label for="www_lbl" value="여">여</label>
 							</div>
                         </li> -->
-
 						<li class="clear">
-							<span class="tit_lbl"> 개인정보 활용동의 </span>
-							<div class="app_content checkbox_area">
-								<input type="checkbox" class="css-checkbox" id="agree" name="agree" />
-								<label for="agree">동의함</label>
+							<label for="id" class="tit_lbl"> 회원등급 </label>
+							<div class="app_content">
+								<!-- 로그인한 회원의 회원등급 받아오기 -->
+								<div style="line-height: 38px">${ member.rank }등급</div>
+							</div>
+						</li>
+						<li class="clear">
+							<label for="id" class="tit_lbl"> 포인트 </label>
+							<div class="app_content">
+								<!-- 로그인한 회원의 누적포인트 받아오기 -->
+								<div style="line-height: 38px">${ member.point }점</div>
 							</div>
 						</li>
 					</ul>
 					<p class="btn_line">
-						<input type="submit" value="등록" class="btn_basecolor" style="border: none; cursor: pointer;" />
+						<input type="submit" value="등록" class="btn_basecolor" style="border: none; cursor: pointer" />
 					</p>
 				</fieldset>
 			</form>
@@ -565,8 +600,8 @@
 							<ul>
 								<li>
 									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street
-										Wichita,<br> KS 67213
+										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br />Preston Street
+										Wichita,<br /> KS 67213
 									</p>
 								</li>
 								<li>
@@ -598,7 +633,7 @@
 	</div>
 	<!-- End copyright  -->
 
-	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+	<a href="#" id="back-to-top" title="Back to top" style="display: none">&uarr;</a>
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -617,6 +652,4 @@
 	<script src="js/contact-form-script.js"></script>
 	<script src="js/custom.js"></script>
 </body>
-
-
 </html>

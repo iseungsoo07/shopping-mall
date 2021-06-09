@@ -4,14 +4,69 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+:root { -
+	-blue: #007bff; -
+	-indigo: #6610f2; -
+	-purple: #6f42c1; -
+	-pink: #e83e8c; -
+	-red: #dc3545; -
+	-orange: #fd7e14; -
+	-yellow: #ffc107; -
+	-green: #28a745; -
+	-teal: #20c997; -
+	-cyan: #17a2b8; -
+	-white: #fff; -
+	-gray: #6c757d; -
+	-gray-dark: #343a40; -
+	-primary: #007bff; -
+	-secondary: #6c757d; -
+	-success: #28a745; -
+	-info: #17a2b8; -
+	-warning: #ffc107; -
+	-danger: #dc3545; -
+	-light: #f8f9fa; -
+	-dark: #343a40; -
+	-breakpoint-xs: 0; -
+	-breakpoint-sm: 576px; -
+	-breakpoint-md: 768px; -
+	-breakpoint-lg: 992px; -
+	-breakpoint-xl: 1200px; -
+	-font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji"; -
+	-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+}
+
 *, *::before, *::after {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
+html {
+	font-family: sans-serif;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav,
 	section {
 	display: block;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
+	background-color: #fff;
 }
 
 [tabindex="-1"]:focus {
@@ -23,6 +78,11 @@ hr {
 	box-sizing: content-box;
 	height: 0;
 	overflow: visible;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
 }
 
 p {
@@ -63,6 +123,10 @@ dd {
 	margin-left: 0;
 }
 
+blockquote {
+	margin: 0 0 1rem;
+}
+
 b, strong {
 	font-weight: bolder;
 }
@@ -84,6 +148,32 @@ sub {
 
 sup {
 	top: -.5em;
+}
+
+a {
+	color: #007bff;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+a:hover {
+	color: #0056b3;
+	text-decoration: underline;
+}
+
+a:not ([href] ):not ([tabindex] ) {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:not ([href] ):not ([tabindex] ):hover, a:not ([href] ):not ([tabindex]
+	):focus {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:not ([href] ):not ([tabindex] ):focus {
+	outline: 0;
 }
 
 pre, code, kbd, samp {
@@ -249,6 +339,41 @@ template {
 
 [hidden] {
 	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+h1, .h1 {
+	font-size: 2.5rem;
+}
+
+h2, .h2 {
+	font-size: 2rem;
+}
+
+h3, .h3 {
+	font-size: 1.75rem;
+}
+
+h4, .h4 {
+	font-size: 1.5rem;
+}
+
+h5, .h5 {
+	font-size: 1.25rem;
+}
+
+h6, .h6 {
+	font-size: 1rem;
+}
+
+.lead {
+	font-size: 1.25rem;
+	font-weight: 300;
 }
 
 .display-1 {
@@ -429,6 +554,14 @@ pre code {
 	.container {
 		max-width: 1140px;
 	}
+}
+
+.container-fluid {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .row {
@@ -3394,6 +3527,13 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 	display: -ms-inline-flexbox;
 	display: inline-flex;
 	vertical-align: middle;
+}
+
+.btn-group>.btn, .btn-group-vertical>.btn {
+	position: relative;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
 }
 
 .btn-group>.btn:hover, .btn-group-vertical>.btn:hover {
@@ -10223,7 +10363,7 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
 	border-radius: 5px;
 	-webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
 	-moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
-	box-shadow: 0px 10px 34px 5px rgba(0, 0, 0, 0.24);
+	box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
 }
 
 .text-wrap, .login-wrap {

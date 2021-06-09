@@ -1,2 +1,430 @@
+/* regist.jsp, mypage.jsp에 적용될 css 시작 */
+@import
+	url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i')
+	;
 
-/** ADD YOUR AWESOME CODES HERE **/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-size: inherit;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:focus {
+	color: #444;
+}
+
+body {
+	height: 100%;
+	font-family: 'Quattrocento Sans', sans-serif;
+	font-size: 16px;
+	color: #444;
+	white-space: normal;
+	word-wrap: break-word;
+}
+
+.hdd, legend {
+	font-size: 0;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	text-indent: -9999px;
+	overflow: hidden;
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+img, fieldset, a {
+	border: none;
+}
+
+input, select, textarea, button, form, img, label {
+	vertical-align: middle;
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="tel"],
+	input[type="email"] {
+	box-sizing: border-box;
+	display: inline-block;
+	height: 45px;
+	padding: 0 10px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	line-height: normal;
+	font-size: 15px;
+}
+
+textarea {
+	box-sizing: border-box;
+	padding: 10px;
+	border: 1px solid #ccc;
+	font-size: 15px;
+}
+
+.css-checkbox {
+	overflow: hidden;
+	position: absolute;
+	left: -1000px;
+	width: 1px;
+	height: 1px;
+}
+
+.css-checkbox+label {
+	display: inline-block;
+	height: 20px;
+	padding-left: 30px !important;
+	line-height: 20px;
+	background: url(../images/bg_checkbox.png) no-repeat 0 0;
+	background-size: 20px;
+	cursor: pointer;
+	vertical-align: middle;
+	font-size: 15px;
+}
+
+.css-checkbox:checked+label {
+	background-position: 0 -20px;
+}
+
+.css-radio {
+	overflow: hidden;
+	position: absolute;
+	left: -1000px;
+	width: 1px;
+	height: 1px;
+}
+
+.css-radio+label {
+	display: inline-block;
+	padding-left: 20px !important;
+	margin-right: 20px;
+	background: url(../images/bg_radio.png) no-repeat 0 0;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.css-radio:checked+label {
+	background-position: 0 -50px;
+}
+
+select {
+	-webkit-appearance: none;
+	height: 30px;
+	padding: 0 5px;
+	border: 1px solid #ccc;
+}
+
+.select_common {
+	display: inline-block;
+	box-sizing: border-box;
+	position: relative;
+	width: 158px;
+	height: 35px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background: url(../images/ico_selectArr.png) no-repeat 100% 50%;
+}
+
+.select_common select {
+	display: inline-block;
+	width: 158px;
+	height: 29px;
+	padding: 0 10px;
+	border: none;
+	background: none;
+	font-size: 15px;
+}
+
+.btn_line {
+	text-align: center;
+	font-size: 0;
+}
+
+.btn_line a {
+	margin-left: 10px;
+}
+
+.btn_line a:first-child {
+	margin-left: 0;
+}
+
+.btn_srch, .btn_bbs {
+	display: inline-block;
+	width: 70px;
+	text-align: center;
+	height: 35px;
+	font-size: 14px;
+	line-height: 35px;
+	vertical-align: middle;
+	background: #384d75;
+	color: #fff !important;
+}
+
+.btn_basecolor {
+	display: inline-block;
+	width: 125px;
+	text-align: center;
+	background: #d33b33;
+	height: 50px;
+	font-size: 20px;
+	line-height: 50px;
+	vertical-align: middle;
+	color: #fff !important;
+}
+
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.box_inner {
+	width: 1050px;
+	margin: 0 auto;
+}
+
+#container {
+	padding-bottom: 70px;
+}
+
+.w100p {
+	width: 100% !important;
+}
+
+.w160 {
+	width: 160px;
+}
+
+.appForm {
+	margin: 40px auto 0;
+}
+
+.appForm .info_pilsoo {
+	position: relative;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	border-bottom: 2px solid #000;
+	font-size: 15px;
+	color: #f00;
+}
+
+.appForm .pilsoo_item::before {
+	content: "*";
+	display: inline-block;
+	position: absolute;
+	left: 5px;
+	top: 3px;
+	width: 15px;
+	font-weight: bold;
+	font-size: 17px;
+	color: #f00;
+}
+
+.appForm .app_list {
+	padding: 10px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.appForm .app_list li {
+	padding: 8px 0;
+}
+
+.appForm .app_list li .tit_lbl {
+	position: relative;
+	float: left;
+	width: 150px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	line-height: 42px;
+	font-weight: bold;
+	font-size: 17px;
+	letter-spacing: -2px;
+}
+
+.appForm .app_list li .app_content {
+	float: right;
+	width: 770px;
+}
+
+.appForm .app_list li .app_content * {
+	vertical-align: top;
+}
+
+.appForm .app_list li .app_content.email_area .ico_space {
+	display: inline-block;
+	padding-top: 10px;
+}
+
+.appForm .app_list li .app_content label {
+	vertical-align: middle;
+}
+
+.appForm .app_list li .select_common {
+	width: 160px;
+	height: 45px;
+	background-position: 100% 50%;
+	border: 1px solid #ccc;
+}
+
+.appForm .app_list li .select_common select {
+	width: 200px;
+	height: 43px;
+}
+
+.appForm .app_list li .app_content.radio_area {
+	height: 45px;
+	box-sizing: border-box;
+	padding-top: 12px;
+	line-height: 19px;
+}
+
+.appForm .app_list li .app_content.checkbox_area {
+	height: 45px;
+	box-sizing: border-box;
+	padding-top: 12px;
+}
+
+.btn_line {
+	padding: 20px 0;
+}
+
+.btn_line a.btn_app {
+	height: 37px;
+	line-height: 37px;
+	margin-left: 100px;
+	font-size: 14px;
+}
+
+/* regist.jsp, mypage.jsp에 적용될 css 끝 */
+
+/* 게시판에 적용될 css 시작 */
+
+.bbsListTbl {
+	width: 100%;
+	border-top: 2px solid #d33b33;
+}
+
+.bbsListTbl th, .bbsListTbl td {
+	padding: 10px;
+	box-sizing: border-box;
+	height: 55px;
+}
+
+.bbsListTbl th {
+	border-bottom: 1px solid #ccc;
+	background-color: #ffd4d1;
+	text-align: center;
+}
+
+.bbsListTbl td {
+	text-align: center;
+	line-height: 1.3;
+	border-bottom: 1px solid #ccc;
+}
+
+.bbsListTbl td.tit_notice {
+	text-align: center;
+}
+
+.bbsListTbl td:first-child {
+	width: 10%;
+}
+
+.bbsListTbl td:nth-child(2) {
+	width: 55%;
+}
+
+.bbsListTbl td:nth-child(3) {
+	width: 15%;
+}
+
+.bbsListTbl td:last-child {
+	width: 20%;
+}
+
+.pagination {
+	padding: 40px 0 0;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+.pagination a {
+	display: inline-block;
+}
+
+.pagination .pbtn {
+	display: inline-block;
+	padding: 7px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0;
+}
+
+.pagination a .pagenum {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.pagination a .currentPage {
+	border-radius: 3px;
+	background: #d33b33;
+	color: #fff;
+}
+
+.pagination a:hover .pagenum {
+	border-radius: 3px;
+	background-color: #ddd;
+}
+
+.location_area .tit_page {
+    padding: 40px 0 0 0;
+    margin: 0 50px;
+    border-bottom: 1px solid #ccc;
+    font: 30px 'Quattrocento Sans', sans-serif;
+    color: #000;
+    letter-spacing: 3px;
+    
+}
+
+.location_area .tit_page .in {
+    font-variant: small-caps;
+}
+
+.location_area .location {
+    padding: 20px 0 0 50px;
+    color: #000;
+}
+
+.location_area .location .path {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.location_area .page_menu {
+    display: none;
+}
+
+.bodytext_area {
+    box-sizing: border-box;
+    padding: 55px 50px 0;
+}
+
+
+/* 게시판에 적용될 css 끝 */
