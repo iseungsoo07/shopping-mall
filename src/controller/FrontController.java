@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
+import action.DelNotiAction;
 import action.HomeAction;
 import action.LoginAction;
 import action.LogoutAction;
 import action.MyPageAction;
+import action.NewNotiAction;
 import action.RegistAction;
 import action.UpdateAction;
 
@@ -95,33 +97,33 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("공지사항 작성")) { 
+		} else if (command.equals("/newnoti.do")) { 
 			try {
-				//forward=new UpdateAction().execute(req, res);
+				forward=new NewNotiAction().execute(req, res);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		} else if (command.equals("QnA작성")) {
 			try {
-				//forward=new UpdateAction().execute(req, res);
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("공지사항삭제")) {
+		} else if (command.equals("/delnoti.do")) {
 			try {
-				//forward=new UpdateAction().execute(req, res);
+				forward=new DelNotiAction().execute(req, res);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		} else if (command.equals("QnA삭제")) {
 			try {
-				//forward=new UpdateAction().execute(req, res);
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		} else if (command.equals("조회수")) { //페이지에 들어오면 +1 되게
 			try {
-				//forward=new UpdateAction().execute(req, res);
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}

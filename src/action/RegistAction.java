@@ -27,9 +27,9 @@ public class RegistAction implements Action {
 		member.setAddr(req.getParameter("addr") + " / " + req.getParameter("detailAddr") + " / " + req.getParameter("referAddr"));
 
 		if(memberDAO.regist(member)) {
-			System.out.println("íšŒì›ê°€ì… ì„±ê³µ");
+			System.out.println("È¸¿ø°¡ÀÔ ¼º°ø");
 		} else {
-			System.out.println("íšŒì›ê°€ì… ì‹¤íŒ¨");
+			System.out.println("È¸¿ø°¡ÀÔ ½ÇÆĞ");
 		}
 		
 		forward.setRedirect(true);

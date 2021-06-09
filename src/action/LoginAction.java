@@ -24,7 +24,7 @@ public class LoginAction implements Action {
 		HttpSession session = req.getSession();
 
 		if (memberDAO.login(id, pw)) {
-			System.out.println("ë¡œê·¸ì¸ ì„±ê³µ");
+			System.out.println("·Î±×ÀÎ ¼º°ø");
 			member = memberDAO.getMember(id);
 			session.setAttribute("member", member);
 			session.setAttribute("id", id);
@@ -32,7 +32,7 @@ public class LoginAction implements Action {
 			forward.setPath("home.jsp");
 			System.out.println(session.getAttribute("id"));
 		} else {
-			System.out.println("ë¡œê·¸ì¸ ì‹¤íŒ¨");
+			System.out.println("·Î±×ÀÎ ½ÇÆĞ");
 			forward.setRedirect(true);
 			forward.setPath("login.jsp");
 		}

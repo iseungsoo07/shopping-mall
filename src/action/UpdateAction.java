@@ -18,10 +18,11 @@ public class UpdateAction implements Action {
 		HttpSession session = req.getSession();
 		Member member = new Member();
 	
-		// ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ì— ëŒ€í•œ ì•ˆë‚´ê°€ ë¶€ì¡±
-		// ê¸°ì¡´ì˜ ë¹„ë°€ë²ˆí˜¸ë¥¼ ê·¸ëŒ€ë¡œ ì…ë ¥í–ˆì„ ë•Œë„ ì •ë³´ê°€ ìˆ˜ì •ë˜ê³ 
-		// ìƒˆë¡œìš´ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í–ˆì„ ë•Œë„ ì •ë³´ê°€ ìˆ˜ì •ëœë‹¤.
-		// ì´ ê³¼ì •ì— ëŒ€í•œ ë³´ì™„ì´ í•„ìš”í•  ë“¯
+
+		// ºñ¹Ğ¹øÈ£ º¯°æ¿¡ ´ëÇÑ ¾È³»°¡ ºÎÁ·
+		// ±âÁ¸ÀÇ ºñ¹Ğ¹øÈ£¸¦ ±×´ë·Î ÀÔ·ÂÇßÀ» ¶§µµ Á¤º¸°¡ ¼öÁ¤µÇ°í
+		// »õ·Î¿î ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇßÀ» ¶§µµ Á¤º¸°¡ ¼öÁ¤µÈ´Ù.
+		// ÀÌ °úÁ¤¿¡ ´ëÇÑ º¸¿ÏÀÌ ÇÊ¿äÇÒ µí
 		
 		member.setPw(req.getParameter("pw"));
 		member.setName(req.getParameter("name"));
@@ -35,8 +36,8 @@ public class UpdateAction implements Action {
 		
 		session.setAttribute("member", member);
 		 
-		// ë§ˆì´í˜ì´ì§€ì—ì„œ ì •ë³´ ìˆ˜ì • í›„ ì•„ì´ë””, ë“±ê¸‰, í¬ì¸íŠ¸ ê°’ì´ ë„˜ì–´ì˜¤ì§ˆ ì•ŠìŒ
-		// ìˆ˜ì • í•„ìš”
+		// ¸¶ÀÌÆäÀÌÁö¿¡¼­ Á¤º¸ ¼öÁ¤ ÈÄ ¾ÆÀÌµğ, µî±Ş, Æ÷ÀÎÆ® °ªÀÌ ³Ñ¾î¿ÀÁú ¾ÊÀ½
+		// ¼öÁ¤ ÇÊ¿ä
 		
 		forward.setRedirect(false);
 		forward.setPath("mypage.jsp");
