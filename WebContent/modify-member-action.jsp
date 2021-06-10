@@ -6,7 +6,7 @@
 
 <jsp:useBean id="membermanager" class="dao.MemberDAO"/>
 
-<jsp:useBean id="bean" class="dto.Member"/>
+<jsp:useBean id="bean" class="model.Member"/>
 
 <jsp:setProperty property="*" name="bean"/>
 
