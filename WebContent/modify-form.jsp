@@ -1,4 +1,4 @@
-<%@page import="dto.Member"%>
+<%@page import="model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <jsp:useBean id="membermanager" class="dao.MemberDAO" />
@@ -168,4 +168,3 @@ window.onload = function(){
 
 </html>
 
-https://sourcestudy.tistory.com/344
