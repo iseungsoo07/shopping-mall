@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.MemberDAO;
-import dto.Member;
+import model.Member;
 
 public class MyPageAction implements Action{
 
