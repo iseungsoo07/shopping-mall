@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
+import action.ChangeInfoAction;
 import action.DelNotiAction;
 import action.HomeAction;
 import action.LoginAction;
@@ -88,6 +89,12 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/mypage.do")) {
 			try {
 				forward = new MyPageAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if (command.equals("/changeinfo.do")) {
+			try {
+				forward = new ChangeInfoAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -71,13 +71,13 @@ public class MemberDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			disconnect();
 		}
-
-		disconnect();
 		return false;
 	}
 
-	// 회원 정보 가져오기
+	// 회원정보 가져오기
 	public Member getMember(String id) {
 		conn = DBConnection.connect();
 
@@ -106,13 +106,15 @@ public class MemberDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			disconnect();
 		}
 
 		return member;
 
 	}
 
-	// 회원 정보 수정
+	// 회원정보 수정
 	public boolean update(Member member) {
 		conn = DBConnection.connect();
 
@@ -132,12 +134,14 @@ public class MemberDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
+		} finally {
+			disconnect();
 		}
 
 		return true;
 	}
 
-	// 회원 탈퇴
+	// 회원탈퇴
 	public boolean delete(String id) {
 		conn = DBConnection.connect();
 
@@ -151,6 +155,8 @@ public class MemberDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
+		} finally {
+			disconnect();
 		}
 
 		return true;
