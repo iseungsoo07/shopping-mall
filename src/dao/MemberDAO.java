@@ -161,4 +161,50 @@ public class MemberDAO {
 
 		return true;
 	}
+	
+	//회원탈퇴-비밀번호 확인
+	public boolean deleteConfirm(String id, String pw){
+
+		boolean b = false;
+		ResultSet rs = null;
+		try {
+			String sql = "select * from member where id = ? and pw = ?";
+			conn = DBConnection.connect();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs = pstmt.executeQuery();
+
+			if(rs.next()) b = true;
+
+			
+
+		} catch (Exception e) {
+
+			System.out.println("deleteConfirm err : " + e);
+
+		} finally {
+
+			try {
+
+				if(rs!=null)rs.close();
+
+				if(pstmt!=null)pstmt.close();
+
+				if(conn!=null)conn.close();
+
+			} catch (Exception e2) {
+
+				// TODO: handle exception
+
+			}
+
+		}
+
+		return b;
+
+	}
+
+
+
 }

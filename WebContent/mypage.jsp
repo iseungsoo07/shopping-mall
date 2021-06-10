@@ -410,7 +410,7 @@
 	<!-- container 시작 -->
 	<div id="container">
 		<!-- 본문 시작 -->
-		<div class="location_area customer">
+		<div class="location_area mypage">
 			<div class="box_inner">
 				<h2 class="tit_page">
 					 TheWayShop 
@@ -595,7 +595,7 @@
 	<script src="js/jquery.superslides.min.js"></script>
 	<script src="js/bootstrap-select.js"></script>
 	<script src="js/inewsticker.js"></script>
-	<script src="js/bootsnav.js."></script>
+	<script src="js/bootsnav.js"></script>
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>

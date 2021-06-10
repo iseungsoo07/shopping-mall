@@ -8,6 +8,7 @@
          padding-left: 10px;
          padding-right: 30px;
     }
+    
 }
  @media (min-width: 768px) and (max-width: 991px) {
      nav.navbar.bootsnav .navbar-header{
@@ -72,6 +73,10 @@
      .right-phone-box{
          display: none;
     }
+     .box_inner {
+    	width : 100%;
+    }
+    
 }
 /* mobile or only mobile */
  @media (max-width: 767px) {
@@ -191,6 +196,12 @@
      .right-phone-box{
          display: none;
     }
+    
+    .box_inner {
+    	width : 100%;
+    }
+    
+    
 }
  @media only screen and (min-width: 280px) and (max-width: 599px) {
      .navbar-light .navbar-toggler{
@@ -300,5 +311,10 @@
      .right-phone-box{
          display: none;
     }
+    
+     .box_inner {
+    	width : 100%;
+    }
+    
 }
  
