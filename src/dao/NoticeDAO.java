@@ -6,49 +6,44 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import dto.Notice;
 import db.DBmanager;
-
-
+import model.Notice;
 
 public class NoticeDAO {
 
 	Connection conn;
 	PreparedStatement pstmt;
 
-	//È­¸é¿¡ ÀüÃ¼ °øÁöº¸¿©ÁÖ´Â ¸Þ¼Òµå
-	public ArrayList<Notice> showN(int cnt){//cnt: ¾ó¸¶¸¸Å­ º¸¿©ÁÙÁö¿¡ °üÇÑ º¯¼ö
+	// È­ï¿½é¿¡ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Þ¼Òµï¿½
+	public ArrayList<Notice> showN(int cnt) {// cnt: ï¿½ó¸¶¸ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-		ArrayList<Notice> datas=new ArrayList();
+		ArrayList<Notice> datas = new ArrayList<>();
 		try {
-			conn=DBmanager.connect();
-			//°øÁö¿¡¼­ º¸¿©ÁÙ ¸¸Å­¹Þ¾Æ¿À´Â sql
-			String sql="select * from notice limit 0,?";
-			pstmt=conn.prepareStatement(sql);
+			conn = DBmanager.connect();
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å­ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½ sql
+			String sql = "select * from notice limit 0,?";
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, cnt);
 
+			ResultSet rs = pstmt.executeQuery();
 
-			ResultSet rs=pstmt.executeQuery();
-
-			while(rs.next()) {
-				Notice notice=new Notice();
+			while (rs.next()) {
+				Notice notice = new Notice();
 
 				notice.setNid(rs.getInt("nid"));
 				notice.setNtitle(rs.getString("ntitle"));
 				notice.setNcon(rs.getString("ncon"));
 				notice.setVisitor(rs.getInt("visitor"));
 				notice.setDay(rs.getString("day"));
-				//day´Â ³ªÁß¿¡ Ã³¸®¿¹Á¤ oracle¿¡¼­ Ã³¸® or ¾Ë°í¸®Áò¿¡¼­ Ã³¸®
+				// dayï¿½ï¿½ ï¿½ï¿½ï¿½ß¿ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ oracleï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ or ï¿½Ë°ï¿½ï¿½ò¿¡¼ï¿½ Ã³ï¿½ï¿½
 
 				datas.add(notice);
-
 
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
 				pstmt.close();
 				conn.close();
@@ -61,23 +56,21 @@ public class NoticeDAO {
 		return datas;
 	}
 
-	//°øÁö µî·Ï ¸Þ¼Òµå
-	public boolean newNotice(Notice n){//°øÁö °´Ã¼¸¦ ¸Å°³º¯¼ö·Î ¹ÞÀ½
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
+	public boolean newNotice(Notice n) {// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		try {
-			conn=DBmanager.connect();
-			String sql="insert into notice (nid,ntitle,ncon,visitor,day) values(?,?,?,?,now())";
-			pstmt=conn.prepareStatement(sql);
+			conn = DBmanager.connect();
+			String sql = "insert into notice (nid,ntitle,ncon,visitor,day) values(?,?,?,?,now())";
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, n.getNid());
 			pstmt.setString(2, n.getNtitle());
 			pstmt.setString(3, n.getNcon());
-			pstmt.setInt(4, n.getVisitor());//Á¶È¸¼ö Ã³¸® ¾Ë°í¸®ÁòÇÊ¿ä
+			pstmt.setInt(4, n.getVisitor());// ï¿½ï¿½È¸ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Ë°ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½
 			pstmt.executeUpdate();
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
-		}
-		finally {
+		} finally {
 			try {
 				pstmt.close();
 				conn.close();
@@ -89,21 +82,18 @@ public class NoticeDAO {
 		return true;
 	}
 
-
-	// °øÁö»èÁ¦(°èÁ¤ÀÌ °ü¸®ÀÚ¶ó¸é)
-	public boolean delNotice(int nid){
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½)
+	public boolean delNotice(int nid) {
 		try {
-			conn=DBmanager.connect();
-			String sql="delete from notice where mid=?";
-			pstmt=conn.prepareStatement(sql);
+			conn = DBmanager.connect();
+			String sql = "delete from notice where mid=?";
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, nid);
 			pstmt.executeUpdate();
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
-		}
-		finally {
+		} finally {
 			try {
 				pstmt.close();
 				conn.close();
@@ -114,17 +104,17 @@ public class NoticeDAO {
 		}
 		return true;
 	}
-	public ArrayList<Notice> getDBList(){
 
+	public ArrayList<Notice> getDBList() {
 
-		ArrayList<Notice> datas=new ArrayList();
+		ArrayList<Notice> datas = new ArrayList();
 		try {
-			conn=DBmanager.connect();
-			String sql="select * from test order by id asc";
-			pstmt=conn.prepareStatement(sql);
+			conn = DBmanager.connect();
+			String sql = "select * from test order by id asc";
+			pstmt = conn.prepareStatement(sql);
 
-			ResultSet rs=pstmt.executeQuery();
-			while(rs.next()) {
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
 				Notice noti = new Notice();
 
 				noti.setNid(rs.getInt("nid"));
@@ -138,8 +128,7 @@ public class NoticeDAO {
 			rs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
 				pstmt.close();
 				conn.close();

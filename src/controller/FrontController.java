@@ -53,15 +53,15 @@ public class FrontController extends HttpServlet {
 
 	private void actionDo(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String uri = req.getRequestURI();
-		
+
 		String conPath = req.getContextPath();
-		
+
 		String command = uri.substring(conPath.length());
 		System.out.println(command);
-		
+
 		ActionForward forward = null;
-		
-		if(command.equals("/home.do")) {
+
+		if (command.equals("/home.do")) {
 			try {
 				forward = new HomeAction().execute(req, res);
 			} catch (Exception e) {
@@ -97,41 +97,40 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/newnoti.do")) { 
+		} else if (command.equals("/newnoti.do")) {
 			try {
-				forward=new NewNotiAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new NewNotiAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("QnAÀÛ¼º")) {
+		} else if (command.equals("QnAï¿½Û¼ï¿½")) {
 			try {
-				
-			}catch(Exception e) {
+
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} else if (command.equals("/delnoti.do")) {
 			try {
-				forward=new DelNotiAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new DelNotiAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("QnA»èÁ¦")) {
+		} else if (command.equals("QnAï¿½ï¿½ï¿½ï¿½")) {
 			try {
-				
-			}catch(Exception e) {
+
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("Á¶È¸¼ö")) { //ÆäÀÌÁö¿¡ µé¾î¿À¸é +1 µÇ°Ô
+		} else if (command.equals("ï¿½ï¿½È¸ï¿½ï¿½")) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ +1 ï¿½Ç°ï¿½
 			try {
-				
-			}catch(Exception e) {
+
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		
-		
-		if(forward != null) {
-			if(forward.getRedirect()) {
+
+		if (forward != null) {
+			if (forward.getRedirect()) {
 				res.sendRedirect(forward.getPath());
 			} else {
 				RequestDispatcher dispatcher = req.getRequestDispatcher(forward.getPath());

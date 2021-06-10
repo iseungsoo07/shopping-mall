@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.MemberDAO;
-import dto.Member;
+import model.Member;
 
 public class UpdateAction implements Action {
 	@Override
@@ -19,10 +19,10 @@ public class UpdateAction implements Action {
 		Member member = new Member();
 	
 
-		// ºñ¹Ð¹øÈ£ º¯°æ¿¡ ´ëÇÑ ¾È³»°¡ ºÎÁ·
-		// ±âÁ¸ÀÇ ºñ¹Ð¹øÈ£¸¦ ±×´ë·Î ÀÔ·ÂÇßÀ» ¶§µµ Á¤º¸°¡ ¼öÁ¤µÇ°í
-		// »õ·Î¿î ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇßÀ» ¶§µµ Á¤º¸°¡ ¼öÁ¤µÈ´Ù.
-		// ÀÌ °úÁ¤¿¡ ´ëÇÑ º¸¿ÏÀÌ ÇÊ¿äÇÒ µí
+		// ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½æ¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½
+		// ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½.
+		// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½
 		
 		member.setPw(req.getParameter("pw"));
 		member.setName(req.getParameter("name"));
@@ -36,8 +36,8 @@ public class UpdateAction implements Action {
 		
 		session.setAttribute("member", member);
 		 
-		// ¸¶ÀÌÆäÀÌÁö¿¡¼­ Á¤º¸ ¼öÁ¤ ÈÄ ¾ÆÀÌµð, µî±Þ, Æ÷ÀÎÆ® °ªÀÌ ³Ñ¾î¿ÀÁú ¾ÊÀ½
-		// ¼öÁ¤ ÇÊ¿ä
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½, ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½
 		
 		forward.setRedirect(false);
 		forward.setPath("mypage.jsp");

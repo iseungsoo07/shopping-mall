@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MemberDAO;
-import dto.Member;
+import model.Member;
 
 public class RegistAction implements Action {
 
@@ -27,9 +27,9 @@ public class RegistAction implements Action {
 		member.setAddr(req.getParameter("addr") + " / " + req.getParameter("detailAddr") + " / " + req.getParameter("referAddr"));
 
 		if(memberDAO.regist(member)) {
-			System.out.println("È¸¿ø°¡ÀÔ ¼º°ø");
+			System.out.println("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		} else {
-			System.out.println("È¸¿ø°¡ÀÔ ½ÇÆÐ");
+			System.out.println("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		}
 		
 		forward.setRedirect(true);

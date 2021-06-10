@@ -1,13 +1,12 @@
 package dao;
 
 import java.sql.Connection;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import db.DBConnection;
-import dto.Member;
+import model.Member;
 
 public class MemberDAO {
 	Connection conn = null;

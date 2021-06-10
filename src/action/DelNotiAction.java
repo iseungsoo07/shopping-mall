@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.NoticeDAO;
-import dto.Notice;
+import model.Notice;
 
 public class DelNotiAction implements Action{
 
@@ -26,7 +26,7 @@ public class DelNotiAction implements Action{
 		req.setAttribute("datas", datas);
 		
 		forward.setRedirect(true);
-		forward.setPath("°øÁö»çÇ× ºä"); //Ã³¸®ÇØ¾ßÇÔ
+		forward.setPath("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½"); //Ã³ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½
 		
 		return forward;
 	}
