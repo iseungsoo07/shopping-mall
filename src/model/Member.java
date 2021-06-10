@@ -1,4 +1,4 @@
-package dto;
+package model;
 
 public class Member {
 	private String id;
@@ -10,7 +10,7 @@ public class Member {
 	private String addr;
 	private int rank;
 	private int point;
-	private int purchase; // êµ¬ë§¤ê¸ˆì•¡
+	private int purchase; // ±¸¸Å±Ý¾×
 
 	public String getId() {
 		return id;

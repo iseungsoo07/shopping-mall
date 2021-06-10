@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,30 +129,14 @@
 					<div class="text-slid-box">
 						<div id="offer-box" class="carouselTicker">
 							<ul class="offer-box">
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
+								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
+								<li><i class="fab fa-opencart"></i> 50% - 80% off on Fashion</li>
+								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20</li>
+								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
+								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
+								<li><i class="fab fa-opencart"></i> 50% - 80% off on Fashion</li>
+								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20</li>
+								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
 							</ul>
 						</div>
 					</div>
@@ -171,15 +156,17 @@
 					</div>
 					<div class="our-link">
 						<ul>
-							<li>
-								<a href="./login.jsp">로그인</a>
-							</li>
-							<li>
-								<a href="#">회원가입</a>
-							</li>
-							<li>
-								<a href="./mypage.jsp">마이페이지</a>
-							</li>
+							<c:if test="${ member != null }">
+								<li class="member-name">${ member.name }님 환영합니다!</li>
+								<li><a href="./logout.do">로그아웃</a></li>
+								<li><a href="./regist.jsp">회원가입</a></li>
+								<li><a href="./mypage.do">마이페이지</a></li>
+							</c:if>
+							<c:if test="${ member == null }">
+								<li><a href="./login.jsp">로그인</a></li>
+								<li><a href="./regist.jsp">회원가입</a></li>
+								<li><a href="./mypage.do">마이페이지</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -207,14 +194,11 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-						<li class="nav-item active">
-							<a class="nav-link" href="home.jsp">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="about.jsp">About Us</a>
-						</li>
-						<li class="dropdown megamenu-fw">
-							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+						<li class="nav-item active"><a class="nav-link" href="home.jsp">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.jsp">About Us</a></li>
+						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow"
+							data-toggle="dropdown"
+						>Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
 								<li>
 									<div class="row">
@@ -222,18 +206,10 @@
 											<h6 class="title">Top</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li>
-														<a href="shop.jsp">Jackets</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Shirts</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Sweaters & Cardigans</a>
-													</li>
-													<li>
-														<a href="shop.jsp">T-shirts</a>
-													</li>
+													<li><a href="shop.jsp">Jackets</a></li>
+													<li><a href="shop.jsp">Shirts</a></li>
+													<li><a href="shop.jsp">Sweaters & Cardigans</a></li>
+													<li><a href="shop.jsp">T-shirts</a></li>
 												</ul>
 											</div>
 										</div>
@@ -242,18 +218,10 @@
 											<h6 class="title">Bottom</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li>
-														<a href="shop.jsp">Swimwear</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Skirts</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Jeans</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Trousers</a>
-													</li>
+													<li><a href="shop.jsp">Swimwear</a></li>
+													<li><a href="shop.jsp">Skirts</a></li>
+													<li><a href="shop.jsp">Jeans</a></li>
+													<li><a href="shop.jsp">Trousers</a></li>
 												</ul>
 											</div>
 										</div>
@@ -262,18 +230,10 @@
 											<h6 class="title">Clothing</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li>
-														<a href="shop.jsp">Top Wear</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Party wear</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Bottom Wear</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Indian Wear</a>
-													</li>
+													<li><a href="shop.jsp">Top Wear</a></li>
+													<li><a href="shop.jsp">Party wear</a></li>
+													<li><a href="shop.jsp">Bottom Wear</a></li>
+													<li><a href="shop.jsp">Indian Wear</a></li>
 												</ul>
 											</div>
 										</div>
@@ -281,53 +241,29 @@
 											<h6 class="title">Accessories</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li>
-														<a href="shop.jsp">Bags</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Sunglasses</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Fragrances</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Wallets</a>
-													</li>
+													<li><a href="shop.jsp">Bags</a></li>
+													<li><a href="shop.jsp">Sunglasses</a></li>
+													<li><a href="shop.jsp">Fragrances</a></li>
+													<li><a href="shop.jsp">Wallets</a></li>
 												</ul>
 											</div>
 										</div>
 										<!-- end col-3 -->
-									</div>
-									<!-- end row -->
+									</div> <!-- end row -->
 								</li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+							</ul></li>
+						<li class="dropdown"><a href="#" class="nav-link dropdown-toggle arrow"
+							data-toggle="dropdown"
+						>SHOP</a>
 							<ul class="dropdown-menu">
-								<li>
-									<a href="cart.jsp">Cart</a>
-								</li>
-								<li>
-									<a href="checkout.jsp">Checkout</a>
-								</li>
-								<li>
-									<a href="my-account.html">My Account</a>
-								</li>
-								<li>
-									<a href="wishlist.html">Wishlist</a>
-								</li>
-								<li>
-									<a href="shop-detail.html">Shop Detail</a>
-								</li>
-							</ul>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="service.html">Our Service</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact-us.html">Contact Us</a>
-						</li>
+								<li><a href="cart.jsp">Cart</a></li>
+								<li><a href="checkout.jsp">Checkout</a></li>
+								<li><a href="my-account.html">My Account</a></li>
+								<li><a href="wishlist.html">Wishlist</a></li>
+								<li><a href="shop-detail.html">Shop Detail</a></li>
+							</ul></li>
+						<li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -335,13 +271,11 @@
 				<!-- Start Atribute Navigation -->
 				<div class="attr-nav">
 					<ul>
-						<li class="search">
-							<a href="#"><i class="fa fa-search"></i></a>
-						</li>
-						<li class="side-menu">
-							<a href="#"> <i class="fa fa-shopping-bag"></i> <span class="badge">3</span>
-							</a>
-						</li>
+						<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+						<li class="side-menu"><a href="#"> <i class="fa fa-shopping-bag"></i> <span
+								class="badge"
+							>3</span>
+						</a></li>
 					</ul>
 				</div>
 				<!-- End Atribute Navigation -->
@@ -351,38 +285,36 @@
 				<a href="#" class="close-side"><i class="fa fa-times"></i></a>
 				<li class="cart-box">
 					<ul class="cart-list">
-						<li>
-							<a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+						<li><a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb"
+								alt=""
+							/></a>
 							<h6>
 								<a href="#">Delica omtantur </a>
 							</h6>
 							<p>
 								1x - <span class="price">$80.00</span>
-							</p>
-						</li>
-						<li>
-							<a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+							</p></li>
+						<li><a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb"
+								alt=""
+							/></a>
 							<h6>
 								<a href="#">Omnes ocurreret</a>
 							</h6>
 							<p>
 								1x - <span class="price">$60.00</span>
-							</p>
-						</li>
-						<li>
-							<a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+							</p></li>
+						<li><a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb"
+								alt=""
+							/></a>
 							<h6>
 								<a href="#">Agam facilisis</a>
 							</h6>
 							<p>
 								1x - <span class="price">$40.00</span>
-							</p>
-						</li>
-						<li class="total">
-							<a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span
-								class="float-right"
-							><strong>Total</strong>: $180.00</span>
-						</li>
+							</p></li>
+						<li class="total"><a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span
+							class="float-right"
+						><strong>Total</strong>: $180.00</span></li>
 					</ul>
 				</li>
 			</div>
@@ -394,48 +326,43 @@
 
 	<!-- container 시작 -->
 	<div id="container">
+		<div class="location_area customer">
+			<div class="box_inner">
+				<h2 class="tit_page">TheWayShop</h2>
+				<p class="location">회원가입</p>
+			</div>
+		</div>
 		<!-- 본문 시작 -->
 		<div class="bodytext_area box_inner">
 			<form action="regist.do" method="POST" class="appForm" name="form" onsubmit="return checkForm()">
 				<fieldset>
 					<p class="info_pilsoo pilsoo_item">필수입력</p>
 					<ul class="app_list">
-						<li class="clear">
-							<label for="id" class="tit_lbl pilsoo_item"> 아이디 </label>
+						<li class="clear"><label for="id" class="tit_lbl pilsoo_item"> 아이디 </label>
 							<div class="app_content">
 								<input type="text" class="w100p" id="id" name="id" placeholder="아이디를 입력하세요" required />
-							</div>
-						</li>
-						<li class="clear">
-							<label for="pw" class="tit_lbl pilsoo_item"> 비밀번호 </label>
+							</div></li>
+						<li class="clear"><label for="pw" class="tit_lbl pilsoo_item"> 비밀번호 </label>
 							<div class="app_content">
 								<input type="password" class="w100p" id="pw" name="pw" placeholder="비밀번호를 입력하세요" required />
-							</div>
-						</li>
-						<li class="clear">
-							<label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
+							</div></li>
+						<li class="clear"><label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
 							<div class="app_content">
 								<input type="password" class="w100p" id="checkPw" name="checkPw"
 									placeholder="비밀번호 확인을 입력하세요" required
 								/>
-							</div>
-						</li>
-						<li class="clear">
-							<label for="name" class="tit_lbl pilsoo_item"> 이름 </label>
+							</div></li>
+						<li class="clear"><label for="name" class="tit_lbl pilsoo_item"> 이름 </label>
 							<div class="app_content">
 								<input type="text" class="w100p" id="name" name="name" placeholder="이름을 입력하세요" required />
-							</div>
-						</li>
-						<li class="clear">
-							<label for="phone" class="tit_lbl pilsoo_item"> 연락처 </label>
+							</div></li>
+						<li class="clear"><label for="phone" class="tit_lbl pilsoo_item"> 연락처 </label>
 							<div class="app_content">
 								<input type="tel" class="w100p" id="phone" name="phone"
 									placeholder="휴대폰 번호는 '-' 없이 숫자만 입력해주세요." required
 								/>
-							</div>
-						</li>
-						<li class="clear">
-							<label for="email1" class="tit_lbl"> 이메일 </label>
+							</div></li>
+						<li class="clear"><label for="email1" class="tit_lbl"> 이메일 </label>
 							<div class="app_content email_area">
 								<input type="text" class="w160" id="email1" name="email1" title="이메일 주소" />
 								<span class="ico_space">@</span>
@@ -449,10 +376,8 @@
 										<option value="nate.com">nate.com</option>
 									</select>
 								</div>
-							</div>
-						</li>
-						<li class="clear">
-							<label for="addr" class="tit_lbl pilsoo_item"> 주소 </label>
+							</div></li>
+						<li class="clear"><label for="addr" class="tit_lbl pilsoo_item"> 주소 </label>
 							<div class="app_content">
 								<input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" required
 									style="display: inline-block; width: 50%; margin: 5px 0;"
@@ -472,8 +397,7 @@
 								<input type="text" id="sample6_extraAddress" name="referAddr" placeholder="참고항목"
 									style="margin: 5px 0; width: 49.7%; box-sizing: border-box;"
 								/>
-							</div>
-						</li>
+							</div></li>
 						<!-- <li class="clear">
                             <span class="tit_lbl">성별</span>
 							<div class="app_content radio_area">
@@ -481,13 +405,11 @@
 							</div>
                         </li> -->
 
-						<li class="clear">
-							<span class="tit_lbl"> 개인정보 활용동의 </span>
+						<li class="clear"><span class="tit_lbl"> 개인정보 활용동의 </span>
 							<div class="app_content checkbox_area">
 								<input type="checkbox" class="css-checkbox" id="agree" name="agree" />
 								<label for="agree">동의함</label>
-							</div>
-						</li>
+							</div></li>
 					</ul>
 					<p class="btn_line">
 						<input type="submit" value="등록" class="btn_basecolor" style="border: none; cursor: pointer;" />
@@ -510,27 +432,13 @@
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 							<ul>
-								<li>
-									<a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-								</li>
+								<li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -538,24 +446,12 @@
 						<div class="footer-link">
 							<h4>Information</h4>
 							<ul>
-								<li>
-									<a href="#">About Us</a>
-								</li>
-								<li>
-									<a href="#">Customer Service</a>
-								</li>
-								<li>
-									<a href="#">Our Sitemap</a>
-								</li>
-								<li>
-									<a href="#">Terms &amp; Conditions</a>
-								</li>
-								<li>
-									<a href="#">Privacy Policy</a>
-								</li>
-								<li>
-									<a href="#">Delivery Information</a>
-								</li>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Customer Service</a></li>
+								<li><a href="#">Our Sitemap</a></li>
+								<li><a href="#">Terms &amp; Conditions</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Delivery Information</a></li>
 							</ul>
 						</div>
 					</div>

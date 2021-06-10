@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.MemberDAO;
-import dto.Member;
+import model.Member;
 
 public class UpdateAction implements Action {
 	@Override
@@ -18,10 +18,11 @@ public class UpdateAction implements Action {
 		HttpSession session = req.getSession();
 		Member member = new Member();
 	
-		// 비밀번호 변경에 대한 안내가 부족
-		// 기존의 비밀번호를 그대로 입력했을 때도 정보가 수정되고
-		// 새로운 비밀번호를 입력했을 때도 정보가 수정된다.
-		// 이 과정에 대한 보완이 필요할 듯
+
+		// ��й�ȣ ���濡 ���� �ȳ��� ����
+		// ������ ��й�ȣ�� �״�� �Է����� ���� ������ �����ǰ�
+		// ���ο� ��й�ȣ�� �Է����� ���� ������ �����ȴ�.
+		// �� ������ ���� ������ �ʿ��� ��
 		
 		member.setPw(req.getParameter("pw"));
 		member.setName(req.getParameter("name"));
@@ -35,8 +36,8 @@ public class UpdateAction implements Action {
 		
 		session.setAttribute("member", member);
 		 
-		// 마이페이지에서 정보 수정 후 아이디, 등급, 포인트 값이 넘어오질 않음
-		// 수정 필요
+		// �������������� ���� ���� �� ���̵�, ���, ����Ʈ ���� �Ѿ���� ����
+		// ���� �ʿ�
 		
 		forward.setRedirect(false);
 		forward.setPath("mypage.jsp");

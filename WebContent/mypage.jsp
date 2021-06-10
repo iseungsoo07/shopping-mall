@@ -1,4 +1,3 @@
-<%@page import="dto.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -411,96 +410,49 @@
 	<!-- container 시작 -->
 	<div id="container">
 		<!-- 본문 시작 -->
+		<div class="location_area customer">
+			<div class="box_inner">
+				<h2 class="tit_page">
+					 TheWayShop 
+				</h2>
+				<p class="location">
+					마이페이지
+				</p>
+			</div>
+		</div>
 		<div class="bodytext_area box_inner">
 			<form action="update.do" method="POST" class="appForm" name="form" onsubmit="return checkForm()">
 				<fieldset>
 					<ul class="app_list">
 						<li class="clear">
-							<label for="id" class="tit_lbl"> 아이디 </label>
+							<label for="id" class="tit_lbl_no_padding"> 아이디 </label>
 							<div class="app_content">
 								<!-- 로그인한 회원의 아이디 받아오기 -->
 								<div style="line-height: 38px">${ member.id }</div>
 							</div>
 						</li>
 						<li class="clear">
-							<label for="pw" class="tit_lbl"> 비밀번호 </label>
+							<label for="name" class="tit_lbl_no_padding"> 이름 </label>
 							<div class="app_content">
-								<input type="password" class="w100p" id="pw" name="pw" placeholder="비밀번호를 입력하세요" required />
+								<div style="line-height: 38px">${ member.name }</div>
 							</div>
 						</li>
 						<li class="clear">
-							<label for="checkPw" class="tit_lbl"> 비밀번호 확인 </label>
+							<label for="phone" class="tit_lbl_no_padding"> 연락처 </label>
 							<div class="app_content">
-								<input type="password" class="w100p" id="checkPw" name="checkPw"
-									placeholder="비밀번호 확인을 입력하세요" required
-								/>
+								<div style="line-height: 38px">${ member.phone }</div>
 							</div>
 						</li>
 						<li class="clear">
-							<label for="name" class="tit_lbl"> 이름 </label>
-							<div class="app_content">
-								<input type="text" class="w100p" id="name" name="name" value="${ member.name }" required />
-							</div>
-						</li>
-						<li class="clear">
-							<label for="phone" class="tit_lbl"> 연락처 </label>
-							<div class="app_content">
-								<input type="tel" class="w100p" id="phone" name="phone" value="${ member.phone }" required />
-							</div>
-						</li>
-						<li class="clear">
-							<label for="email1" class="tit_lbl"> 이메일 </label>
+							<label for="email1" class="tit_lbl_no_padding"> 이메일 </label>
 							<div class="app_content email_area">
-								<%
-									Member m = (Member) session.getAttribute("member");
-									String email = m.getEmail();
-									String[] emailArr = email.split("@");
-								%>
-								<input type="text" class="w160" id="email1" name="email1" title="이메일 주소"
-									value="<%=emailArr[0]%>"
-								/>
-								<span class="ico_space">@</span>
-								<input type="text" class="w160" name="email2" value="<%=emailArr[1]%>" title="이메일 제공 업체 입력"
-									value=""
-								/>
-								<div class="select_common">
-									<select title="이메일 제공업체 목록" name="selectEmail" onchange="checkEmailAddr()">
-										<option value="">직접입력</option>
-										<option value="naver.com">naver.com</option>
-										<option value="hanmail.net">hanmail.net</option>
-										<option value="gmail.com">gmail.com</option>
-										<option value="nate.com">nate.com</option>
-									</select>
-								</div>
+								<div style="line-height: 38px">${ member.email }</div>
 							</div>
 						</li>
 						<li class="clear">
-							<label for="addr" class="tit_lbl"> 주소 </label>
-							<%
-								String addr = m.getAddr();
-								String[] addrArr = addr.split("/");
-								int zipcode = m.getZipcode();
-							%>
+							<label for="addr" class="tit_lbl_no_padding"> 주소 </label>
 							<div class="app_content">
-								<input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode"
-									value="<%=zipcode%>" required style="display: inline-block; width: 50%; margin: 5px 0"
-								/>
-								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"
-									class="btn_basecolor"
-									style="display: inline-block; border: none; width: 160px; height: 45px; margin: 5px 0; cursor: pointer;"
-								/>
-								<br />
-								<input type="text" id="sample6_address" name="addr" placeholder="주소" value="<%=addrArr[0]%>"
-									required style="margin: 5px 0; width: 100%"
-								/>
-								<br />
-								<input type="text" id="sample6_detailAddress" name="detailAddr" placeholder="상세주소"
-									value="<%=addrArr[1]%>" required
-									style="margin: 5px 0; width: 49.7%; box-sizing: border-box"
-								/>
-								<input type="text" id="sample6_extraAddress" name="referAddr" value="<%=addrArr[2]%>"
-									placeholder="참고항목" style="margin: 5px 0; width: 49.7%; box-sizing: border-box"
-								/>
+								<div style="line-height: 38px">${ member.addr }</div>
 							</div>
 						</li>
 						<!-- <li class="clear">
@@ -510,14 +462,14 @@
 							</div>
                         </li> -->
 						<li class="clear">
-							<label for="id" class="tit_lbl"> 회원등급 </label>
+							<label for="id" class="tit_lbl_no_padding"> 회원등급 </label>
 							<div class="app_content">
 								<!-- 로그인한 회원의 회원등급 받아오기 -->
 								<div style="line-height: 38px">${ member.rank }등급</div>
 							</div>
 						</li>
 						<li class="clear">
-							<label for="id" class="tit_lbl"> 포인트 </label>
+							<label for="id" class="tit_lbl_no_padding"> 포인트 </label>
 							<div class="app_content">
 								<!-- 로그인한 회원의 누적포인트 받아오기 -->
 								<div style="line-height: 38px">${ member.point }점</div>
@@ -525,7 +477,7 @@
 						</li>
 					</ul>
 					<p class="btn_line">
-						<input type="submit" value="등록" class="btn_basecolor" style="border: none; cursor: pointer" />
+						<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer" />
 					</p>
 				</fieldset>
 			</form>

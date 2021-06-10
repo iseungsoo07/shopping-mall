@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
+import action.DelNotiAction;
 import action.HomeAction;
 import action.LoginAction;
 import action.LogoutAction;
 import action.MyPageAction;
+import action.NewNotiAction;
 import action.RegistAction;
 import action.UpdateAction;
 
@@ -51,15 +53,15 @@ public class FrontController extends HttpServlet {
 
 	private void actionDo(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String uri = req.getRequestURI();
-		
+
 		String conPath = req.getContextPath();
-		
+
 		String command = uri.substring(conPath.length());
 		System.out.println(command);
-		
+
 		ActionForward forward = null;
-		
-		if(command.equals("/home.do")) {
+
+		if (command.equals("/home.do")) {
 			try {
 				forward = new HomeAction().execute(req, res);
 			} catch (Exception e) {
@@ -95,11 +97,40 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else if (command.equals("/newnoti.do")) {
+			try {
+				forward = new NewNotiAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("QnA�ۼ�")) {
+			try {
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delnoti.do")) {
+			try {
+				forward = new DelNotiAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("QnA����")) {
+			try {
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("��ȸ��")) { // �������� ������ +1 �ǰ�
+			try {
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		
-		
-		if(forward != null) {
-			if(forward.getRedirect()) {
+
+		if (forward != null) {
+			if (forward.getRedirect()) {
 				res.sendRedirect(forward.getPath());
 			} else {
 				RequestDispatcher dispatcher = req.getRequestDispatcher(forward.getPath());

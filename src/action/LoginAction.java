@@ -1,6 +1,7 @@
 package action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.MemberDAO;
-import dto.Member;
+import model.Member;
 
 public class LoginAction implements Action {
 
@@ -24,7 +25,9 @@ public class LoginAction implements Action {
 		HttpSession session = req.getSession();
 
 		if (memberDAO.login(id, pw)) {
+			System.out.println("�α��� ����");
 			System.out.println("로그인 성공");
+
 			member = memberDAO.getMember(id);
 			session.setAttribute("member", member);
 			session.setAttribute("id", id);
@@ -32,7 +35,7 @@ public class LoginAction implements Action {
 			forward.setPath("home.jsp");
 			System.out.println(session.getAttribute("id"));
 		} else {
-			System.out.println("로그인 실패");
+			System.out.println("�α��� ����");
 			forward.setRedirect(true);
 			forward.setPath("login.jsp");
 		}

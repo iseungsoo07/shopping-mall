@@ -52,7 +52,7 @@ public class EncodingFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		this.encoding = fConfig.getServletContext().getInitParameter("encoding");
 		logger = LoggerFactory.getLogger(this.getClass());
-		logger.info("í•„í„° ì‹œìž‘");
+		logger.info("ÇÊÅÍ ½ÃÀÛ");
 	}
 
 }
