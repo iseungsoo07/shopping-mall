@@ -236,10 +236,6 @@
 				<p class="location">
 					공지사항 <span class="path">/</span> 고객센터
 				</p>
-				<ul class="page_menu clear">
-					<li><a href="#" class="on">공지사항</a></li>
-					<li><a href="#">문의하기</a></li>
-				</ul>
 			</div>
 		</div>
 		<div class="bodytext_area box_inner">
