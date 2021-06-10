@@ -92,7 +92,7 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if (command.equals("/changeinfo.do")) {
+		} else if (command.equals("/changeinfo.do")) {
 			try {
 				forward = new ChangeInfoAction().execute(req, res);
 			} catch (Exception e) {

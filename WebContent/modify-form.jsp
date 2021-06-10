@@ -1,4 +1,4 @@
-<%@page import="dto.Member"%>
+<%@page import="model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <jsp:useBean id="membermanager" class="dao.MemberDAO" />
@@ -18,6 +18,7 @@
 <script src="../js/script.js?ver=2"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.js" ></script>
 <script src="http://code.jquery.com/ui/1.10.3/.js"></script>
+<script>
 window.onload = function(){
 
 	var name = document.getElementsByName("name")[0];
@@ -41,8 +42,7 @@ window.onload = function(){
 
 	document.getElementById("btnDelete").onclick = function(){
 
-		memberDelete("<%=dto.getId()%>
-	");
+		memberDelete("<%=dto.getId()%>");
 
 		}
 

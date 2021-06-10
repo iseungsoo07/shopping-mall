@@ -455,12 +455,6 @@
 								<div style="line-height: 38px">${ member.addr }</div>
 							</div>
 						</li>
-						<!-- <li class="clear">
-                            <span class="tit_lbl">성별</span>
-							<div class="app_content radio_area">
-								<input type="radio" class="css-radio" id="mmm_lbl" name="gender" /> <label for="mmm_lbl" value="남">남</label> <input type="radio" class="css-radio" id="www_lbl" name="gender" /> <label for="www_lbl" value="여">여</label>
-							</div>
-                        </li> -->
 						<li class="clear">
 							<label for="id" class="tit_lbl_no_padding"> 회원등급 </label>
 							<div class="app_content">

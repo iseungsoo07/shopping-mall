@@ -1,4 +1,4 @@
-/* regist.jsp, mypage.jsp�뿉 �쟻�슜�맆 css �떆�옉 */
+/* regist.jsp, mypage.jsp 시작 */
 @import
 	url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i')
 	;
@@ -295,11 +295,36 @@ select {
 	height: 43px;
 }
 
-.appForm .app_list li .app_content.radio_area {
+.appForm .app_list li .zipcode {
+	display: inline-block;
+	width: 50%;
+	margin: 5px 0;
+}
+
+.appForm .app_list li .find_zipcode {
+	display: inline-block;
+	border: none;
+	width: 160px;
 	height: 45px;
+	margin: 5px 0;
+	cursor: pointer
+}
+
+.appForm .app_list li .addr {
+	margin: 5px 0;
+	width: 100%
+}
+
+.appForm .app_list li .detailAddr {
+	margin: 5px 0;
+	width: 49.7%;
 	box-sizing: border-box;
-	padding-top: 12px;
-	line-height: 19px;
+}
+
+.appForm .app_list li .referAddr {
+	margin: 5px 0;
+	width: 49.7%;
+	box-sizing: border-box;
 }
 
 .appForm .app_list li .app_content.checkbox_area {
@@ -319,10 +344,137 @@ select {
 	font-size: 14px;
 }
 
-/* regist.jsp, mypage.jsp�뿉 �쟻�슜�맆 css �걹 */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.box_inner {
+		width: 720px;
+	}
+	.appForm .app_list li .app_content {
+		float: right;
+		width: 620px;
+	}
+	.appForm .app_list li .email_label, .appForm .app_list li .agree_label {
+		float: none;
+		padding-left: 0;
+	}
+	.appForm .app_list li .addr_label {
+		float: none;
+	}
+	.w160 {
+		width: 218px;
+	}
+	.appForm .app_list li .zipcode {
+		width: 50%;
+	}
+	.appForm .app_list li .find_zipcode {
+		width: 49.3%;
+	}
+	.appForm .app_list li .detailAddr {
+		width: 49.6%;
+	}
+	.appForm .app_list li .referAddr {
+		width: 49.7%;
+	}
+}
 
-/* 寃뚯떆�뙋�뿉 �쟻�슜�맆 css �떆�옉 */
+@media ( min-width : 768px) and (max-width: 991px) {
+	.box_inner {
+		width: 720px;
+	}
+	.appForm .app_list li .app_content {
+		float: right;
+		width: 620px;
+	}
+	.appForm .app_list li .email_label, .appForm .app_list li .agree_label {
+		float: none;
+		padding-left: 0;
+	}
+	.appForm .app_list li .addr_label {
+		float: none;
+	}
+	.w160 {
+		width: 218px;
+	}
+	.appForm .app_list li .zipcode {
+		width: 50%;
+	}
+	.appForm .app_list li .find_zipcode {
+		width: 49.3%;
+	}
+	.appForm .app_list li .detailAddr {
+		width: 49.6%;
+	}
+	.appForm .app_list li .referAddr {
+		width: 49.7%;
+	}
+}
 
+@media ( max-width : 767px) {
+	.box_inner {
+		width: 90%;
+	}
+	.appForm .app_list li .app_content {
+		float: right;
+		width: 100%;
+	}
+	.appForm .app_list li .email_label, .appForm .app_list li .agree_label {
+		float: none;
+		padding-left: 0;
+	}
+	.appForm .app_list li .addr_label {
+		float: none;
+	}
+	.w160 {
+		width: 29%;
+	}
+	.appForm .app_list li .zipcode {
+		width: 49.8%;
+	}
+	.appForm .app_list li .find_zipcode {
+		width: 49.3%;
+	}
+	.appForm .app_list li .detailAddr {
+		width: 49.4%;
+	}
+	.appForm .app_list li .referAddr {
+		width: 49.7%;
+	}
+}
+
+@media only screen and (min-width: 280px) and (max-width: 599px) {
+	.box_inner {
+		width: 90%;
+	}
+	.appForm .app_list li .app_content {
+		float: right;
+		width: 100%;
+	}
+	.appForm .app_list li .email_label, .appForm .app_list li .agree_label {
+		float: none;
+		padding-left: 0;
+	}
+	.appForm .app_list li .addr_label {
+		float: none;
+	}
+	.w160 {
+		width: 46.5%;
+	}
+	.appForm .app_list li .zipcode {
+		width: 49.8%;
+	}
+	.appForm .app_list li .find_zipcode {
+		width: 48.8%;
+	}
+	.appForm .app_list li .detailAddr {
+		width: 49.4%;
+	}
+	.appForm .app_list li .referAddr {
+		width: 49.7%;
+	}
+}
+
+/* regist.jsp, mypage.jsp 끝 */
+
+/* board.jsp 시작 */
 .bbsListTbl {
 	width: 100%;
 	border-top: 2px solid #d33b33;
@@ -405,37 +557,53 @@ select {
 }
 
 .location_area .tit_page {
-    padding: 40px 0 0 0;
-    margin: 0 50px;
-    border-bottom: 1px solid #ccc;
-    font: 30px 'Quattrocento Sans', sans-serif;
-    color: #000;
-    letter-spacing: 3px;
-    
+	padding: 40px 0 0 0;
+	margin: 0 50px;
+	border-bottom: 1px solid #ccc;
+	font: 30px 'Quattrocento Sans', sans-serif;
+	color: #000;
+	letter-spacing: 3px;
 }
 
 .location_area .tit_page .in {
-    font-variant: small-caps;
+	font-variant: small-caps;
 }
 
 .location_area .location {
-    padding: 20px 0 0 50px;
-    color: #000;
+	padding: 20px 0 0 50px;
+	color: #000;
 }
 
 .location_area .location .path {
-    display: inline-block;
-    padding: 0 10px;
+	display: inline-block;
+	padding: 0 10px;
 }
 
 .location_area .page_menu {
-    display: none;
+	display: none;
 }
 
 .bodytext_area {
-    box-sizing: border-box;
-    padding: 20px 50px 0;
+	box-sizing: border-box;
+	padding: 20px 50px 0;
 }
 
+@media ( max-width : 767px) {
+	.bbsListTbl td:first-child {
+	width: 15%;
+}
 
-/* 寃뚯떆�뙋�뿉 �쟻�슜�맆 css �걹 */
+.bbsListTbl td:nth-child(2) {
+	width: 45%;
+}
+
+.bbsListTbl td:nth-child(3) {
+	width: 20%;
+}
+
+.bbsListTbl td:last-child {
+	width: 20%;
+}
+}
+
+/* board.jsp 끝 */
