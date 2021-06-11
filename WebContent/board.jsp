@@ -228,14 +228,19 @@
 
 	<!-- continaer 시작 -->
 	<div id="container">
-		<div class="location_area customer">
-			<div class="box_inner">
-				<h2 class="tit_page">
-					 TheWayShop 
-				</h2>
-				<p class="location">
-					공지사항 <span class="path">/</span> 고객센터
-				</p>
+		<div class="all-title-box">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>고객센터</h2>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="#">Home</a>
+							</li>
+							<li class="breadcrumb-item active">공지사항</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="bodytext_area box_inner">
