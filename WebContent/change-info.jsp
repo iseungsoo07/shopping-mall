@@ -87,26 +87,26 @@
 
 	function checkForm() {
 		//const id = document.getElementById("id");
-		//const pw = document.getElementById("pw");
-		//const checkPw = document.getElementById("checkPw");
+		const pw = document.getElementById("pw");
+		const checkPw = document.getElementById("checkPw");
 		const phone = document.getElementById("phone");
 		//const agree = document.getElementById("agree");
 
 		// 전화번호 정규식
 		const expTel = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/
 
-		/* if (pw.value.length > 20) {
+		if (pw.value.length > 20) {
 			alert("비밀번호는 20자 이하로 입력하세요.");
 			pw.focus();
 			return false;
 		}
-
+		
 		if (pw.value != checkPw.value) {
 			alert("비밀번호와 비밀번호 확인의 값이 다릅니다.");
 			pw.focus();
 			return false;
 		}
- */
+ 
 		if (!expTel.test(phone.value)) {
 			alert('전화번호 형식을 확인하세요. - 없이 입력해주세요');
 			phone.focus();
@@ -337,14 +337,20 @@
 			<form action="update.do" method="POST" class="appForm" name="form" onsubmit="return checkForm()">
 				<fieldset>
 					<p class="info_pilsoo pilsoo_item">수정 사항 입력</p>
+					<input type="hidden" name="id" value="${member.id}" >		<!-- id 값도 전달(하단 input으로 전달이 안되서 추가함) -->
+					<input type="hidden" name="pw" value="${member.pw}" >		<!-- pw 값도 전달(위와 마찬가지) -->
+					<input type="hidden" name="name" value="${member.name}" >	<!-- name 값도 전달 -->
+					<input type="hidden" name="rank" value="${member.rank}" >	<!-- rank 값도 전달 -->
+					<input type="hidden" name="point" value="${member.point}" >	<!-- point 값도 전달 -->
+					<input type="hidden" name="purchase" value="${member.purchase}" >	<!-- purchase 값도 전달(유지하기위함) -->
 					<ul class="app_list">
 						<li class="clear"><label for="id" class="tit_lbl pilsoo_item"> 아이디 </label>
 							<div class="app_content">
-								<input type="text" class="w100p" id="id" name="id" placeholder="${member.id}" disabled="disabled" />
+								<input type="text" class="w100p" id="id" name="id" placeholder="${member.id}" value="${member.id}" disabled />
 							</div></li>
 						<li class="clear"><label for="pw" class="tit_lbl pilsoo_item"> 비밀번호 </label>
 							<div class="app_content">
-								<input type="password" class="w100p" id="pw" name="pw" placeholder="****" disabled/>
+								<input type="password" class="w100p" id="pw" name="pw" placeholder="${member.pw}" value="${member.pw}" disabled/>
 							</div></li>
 						<li class="clear"><label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인  </label>
 							<div class="app_content">
@@ -393,7 +399,7 @@
 								<input type="text" id="sample6_detailAddress" name="detailAddr" placeholder="상세주소" required
 									style="margin: 5px 0; width: 49.7%; box-sizing: border-box;" value="${member.addr.split('/')[1]}"
 								/>
-								<input type="text" id="sample6_extraAddress" name="referAddr" placeholder="참고항목"
+								<input type="text" id="sample6_extraAddress" name="referAddr" placeholder="참고항목" value="${member.addr.split('/')[2]}"
 									style="margin: 5px 0; width: 49.7%; box-sizing: border-box;"
 								/>
 							</div></li>
