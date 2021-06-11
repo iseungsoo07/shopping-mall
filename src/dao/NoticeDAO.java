@@ -16,13 +16,13 @@ public class NoticeDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 
-	//È­¸é¿¡ ÀüÃ¼ °øÁöº¸¿©ÁÖ´Â ¸Þ¼Òµå
-	public ArrayList<Notice> showN(int cnt){//cnt: ¾ó¸¶¸¸Å­ º¸¿©ÁÙÁö¿¡ °üÇÑ º¯¼ö
+	//È­ï¿½é¿¡ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Þ¼Òµï¿½
+	public ArrayList<Notice> showN(int cnt){//cnt: ï¿½ó¸¶¸ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 		ArrayList<Notice> datas=new ArrayList();
 		try {
 			conn=DBmanager.connect();
-			//°øÁö¿¡¼­ º¸¿©ÁÙ ¸¸Å­¹Þ¾Æ¿À´Â sql
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å­ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½ sql
 			String sql="select * from notice limit 0,?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, cnt);
@@ -38,7 +38,7 @@ public class NoticeDAO {
 				notice.setNcon(rs.getString("ncon"));
 				notice.setVisitor(rs.getInt("visitor"));
 				notice.setDay(rs.getString("day"));
-				//day´Â ³ªÁß¿¡ Ã³¸®¿¹Á¤ oracle¿¡¼­ Ã³¸® or ¾Ë°í¸®Áò¿¡¼­ Ã³¸®
+				//dayï¿½ï¿½ ï¿½ï¿½ï¿½ß¿ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ oracleï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ or ï¿½Ë°ï¿½ï¿½ò¿¡¼ï¿½ Ã³ï¿½ï¿½
 
 				datas.add(notice);
 
@@ -61,8 +61,8 @@ public class NoticeDAO {
 		return datas;
 	}
 
-	//°øÁö µî·Ï ¸Þ¼Òµå
-	public boolean newNotice(Notice n){//°øÁö °´Ã¼¸¦ ¸Å°³º¯¼ö·Î ¹ÞÀ½
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
+	public boolean newNotice(Notice n){//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		try {
 			conn=DBmanager.connect();
 			String sql="insert into notice (nid,ntitle,ncon,visitor,day) values(?,?,?,?,now())";
@@ -70,7 +70,7 @@ public class NoticeDAO {
 			pstmt.setInt(1, n.getNid());
 			pstmt.setString(2, n.getNtitle());
 			pstmt.setString(3, n.getNcon());
-			pstmt.setInt(4, n.getVisitor());//Á¶È¸¼ö Ã³¸® ¾Ë°í¸®ÁòÇÊ¿ä
+			pstmt.setInt(4, n.getVisitor());//ï¿½ï¿½È¸ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Ë°ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½
 			pstmt.executeUpdate();
 		}
 		catch(Exception e) {
@@ -90,7 +90,7 @@ public class NoticeDAO {
 	}
 
 
-	// °øÁö»èÁ¦(°èÁ¤ÀÌ °ü¸®ÀÚ¶ó¸é)
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½)
 	public boolean delNotice(int nid){
 		try {
 			conn=DBmanager.connect();
@@ -120,13 +120,13 @@ public class NoticeDAO {
 		ArrayList<Notice> datas=new ArrayList();
 		try {
 			conn=DBmanager.connect();
-			String sql="select * from test order by id asc";
+			String sql="select * from notice order by id asc";
 			pstmt=conn.prepareStatement(sql);
 
 			ResultSet rs=pstmt.executeQuery();
 			while(rs.next()) {
 				Notice noti = new Notice();
-
+ 
 				noti.setNid(rs.getInt("nid"));
 				noti.setNtitle(rs.getString("ntitle"));
 				noti.setNcon(rs.getString("ncon"));
@@ -150,5 +150,8 @@ public class NoticeDAO {
 		}
 
 		return datas;
+	}
+	public void show() {
+		
 	}
 }

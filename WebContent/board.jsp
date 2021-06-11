@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +19,10 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js" ></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- Site CSS -->
@@ -254,13 +259,16 @@
 					</tr>
 				</thead>
 				<tbody>
+				
 					<tr>
+						<c:forEach var ="v" items="${datas}">
 						<td>10</td>
 						<td class="tit_notice">
-							<a href="#"> 이번 휴가 제주 갈까? 미션 투어(여행경비 50만원 지원) </a>
+							<a href="#"> ${v.notice.ntitle } </a>
 						</td>
 						<td>123</td>
 						<td>2020-11-21</td>
+						</c:forEach>
 					</tr>
 					<tr>
 						<td>9</td>
@@ -334,6 +342,7 @@
 						<td>123</td>
 						<td>2020-11-21</td>
 					</tr>
+					
 				</tbody>
 			</table>
 			<div class="pagination">

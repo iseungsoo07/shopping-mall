@@ -11,8 +11,36 @@ CREATE TABLE member (
 	purchase int default 0 -- 구매 금액
 );
 
+create table notice( -- 공지사항
+	nid int  primary key, 	
+	ntitle varchar (20), 			
+	ncon varchar(100) not null, 		
+	visitor int not null, 			
+	day varchar(30)  not null, 	
+	sort varchar(20) 			
+);
+
+create table QnA ( 				
+	qid int primary key,	
+	id varchar(20) not null, 		
+	qcon varchar(100) not null, 		
+	qstate varchar(10) not null, 
+	day varchar(30) not null, 		
+	foreign key(id) references member(id), 	
+	sort varchar(20) 			
+);
+
+create table reply( 
+	rid int primary key, 	
+	qid int not null, 		
+	date varchar(30) not null, 		
+	rcon varchar(50) not null, 		
+	constraint foreign key (qid) references QnA(qid) on delete cascade						
+);
+
+INSERT into notice (nid,ntitle,ncon,visitor,day,sort) values (3,'asd','asdd',155,'1234','qnsfb')
 DROP TABLE member;
 SELECT * FROM member;
 DELETE FROM member WHERE id = 'admin';
-
+select * from notice
 

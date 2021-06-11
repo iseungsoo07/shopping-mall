@@ -7,24 +7,25 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.NoticeDAO;
-import dto.Notice;
+import dao.QnADAO;
+import dto.QnA;
+import dto.QnASet;
 
-public class DelNotiAction implements Action{
+public class DelQnAAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
 		
-		NoticeDAO noticeDAO = new NoticeDAO();
-		Notice notice = new Notice();
+		QnADAO qnaDAO = new QnADAO();
+		QnA qna = new QnA();
 		
 
-		if(!noticeDAO.delNotice(Integer.parseInt(req.getParameter("nid")))) {
-			System.out.println("공지사항 삭제 실패");
+		if(!qnaDAO.delQnA(Integer.parseInt(req.getParameter("qid")))) {
+			System.out.println("질문글 삭제 실패");
 		}
 		
-		ArrayList<Notice> datas = noticeDAO.getDBList();
+		ArrayList<QnASet> datas = qnaDAO.showQ();
 		req.setAttribute("datas", datas);
 		
 		forward.setRedirect(true);

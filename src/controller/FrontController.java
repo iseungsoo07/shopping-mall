@@ -103,7 +103,7 @@ public class FrontController extends HttpServlet {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("QnAÀÛ¼º")) {
+		} else if (command.equals("QnAìž‘ì„±")) {
 			try {
 				
 			}catch(Exception e) {
@@ -115,13 +115,13 @@ public class FrontController extends HttpServlet {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("QnA»èÁ¦")) {
+		} else if (command.equals("QnAì§€ìš°ê¸°")) {
 			try {
 				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("Á¶È¸¼ö")) { //ÆäÀÌÁö¿¡ µé¾î¿À¸é +1 µÇ°Ô
+		} else if (command.equals("ì¡°íšŒìˆ˜")) { //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ +1 ï¿½Ç°ï¿½
 			try {
 				
 			}catch(Exception e) {

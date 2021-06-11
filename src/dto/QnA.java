@@ -6,6 +6,8 @@ public class QnA {
 	private String qcon;
 	private String qstate;
 	private String day;
+	private String sort;
+	
 	public int getQid() {
 		return qid;
 	}
@@ -36,5 +38,13 @@ public class QnA {
 	public void setDay(String day) {
 		this.day = day;
 	}
+
+	public String getSort() {
+		return sort;
+	}
+	public void setSort(String sort) {
+		this.sort = sort;
+	}
+	
 
 }

@@ -2,6 +2,8 @@ package action;
 
 import java.io.IOException;
 
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,15 +18,17 @@ public class ShowNotiAction implements Action{
 		ActionForward forward = new ActionForward();
 		
 		NoticeDAO noticeDAO = new NoticeDAO();
-		Notice notice = new Notice();
+		Notice notice = new Notice();  			//NoticeDAOì™€ Notice í´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ê¸° ìœ„í•´ ê°ì²´ ìƒì„±
 		
 
-		noticeDAO.showN(Integer.parseInt(req.getParameter("nid")));
+		noticeDAO.showN(3); // nidì— ë§ëŠ” 
 		
 		
+		ArrayList<Notice> datas = noticeDAO.getDBList();
+		req.setAttribute("datas", datas);
 		
 		forward.setRedirect(true);
-		forward.setPath("°øÁö»çÇ× ºä"); //Ã³¸®ÇØ¾ßÇÔ
+		forward.setPath("board.jsp"); //QnAë·°ì— ë„£ì–´ì¤Œ
 		
 		return forward;
 	}
