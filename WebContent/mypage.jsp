@@ -169,7 +169,7 @@
 					<div class="our-link">
 						<ul>
 							<c:if test="${ member != null }">
-								<li class="member-name">${ member.name }님환영합니다!</li>
+								<li class="member-name">${ member.name }님 환영합니다!</li>
 								<li>
 									<a href="./logout.do">로그아웃</a>
 								</li>
@@ -458,7 +458,7 @@
 								</li>
 							</ul>
 							<p class="btn_line">
-								<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer" />
+								<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer;" />
 							</p>
 						</fieldset>
 					</form>

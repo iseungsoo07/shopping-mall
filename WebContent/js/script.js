@@ -9,7 +9,6 @@ function memberModify(){
 		regForm.id.focus();
 
 		return;
-
 	} 
 
 	

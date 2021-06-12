@@ -16,7 +16,7 @@ public class LoginAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-		ActionForward forward = new ActionForward();
+		ActionForward forward = null;
 		MemberDAO memberDAO = new MemberDAO();
 		Member member = null;
 
@@ -25,19 +25,19 @@ public class LoginAction implements Action {
 		HttpSession session = req.getSession();
 
 		if (memberDAO.login(id, pw)) {
-			System.out.println("�α��� ����");
-			System.out.println("로그인 성공");
-
 			member = memberDAO.getMember(id);
 			session.setAttribute("member", member);
 			session.setAttribute("id", id);
+			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("home.jsp");
 			System.out.println(session.getAttribute("id"));
 		} else {
-			System.out.println("�α��� ����");
-			forward.setRedirect(true);
-			forward.setPath("login.jsp");
+			req.setCharacterEncoding("UTF-8");
+			res.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = res.getWriter();
+			
+			out.println("<script>alert('회원 정보가 없습니다. 다시 시도하세요.'); location.href='login.jsp'; </script>");
 		}
 
 		return forward;

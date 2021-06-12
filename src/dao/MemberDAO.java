@@ -142,15 +142,31 @@ public class MemberDAO {
 	}
 
 	// 회원탈퇴
-	public boolean delete(String id) {
+	public boolean delete(String id, String pw) {
 		conn = DBConnection.connect();
 
-		String sql = "DELETE FROM member WHERE id = ?";
+		String sel_sql = "SELECT pw FROM member WHERE id = ?";
+		String del_sql = "DELETE FROM member WHERE id = ?";
+		String db_pw = null;
 
 		try {
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sel_sql);
 			pstmt.setString(1, id);
-			pstmt.executeUpdate();
+
+			ResultSet rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				db_pw = rs.getString("pw");
+				
+				if(db_pw.equals(pw)) {
+					pstmt = conn.prepareStatement(del_sql);
+					pstmt.setString(1, id);
+					pstmt.executeUpdate();
+				} else {
+					System.out.println("비밀번호 오류");
+					return false;
+				}
+			} 
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -161,9 +177,9 @@ public class MemberDAO {
 
 		return true;
 	}
-	
-	//회원탈퇴-비밀번호 확인
-	public boolean deleteConfirm(String id, String pw){
+
+	// 회원탈퇴-비밀번호 확인
+	public boolean deleteConfirm(String id, String pw) {
 
 		boolean b = false;
 		ResultSet rs = null;
@@ -175,9 +191,8 @@ public class MemberDAO {
 			pstmt.setString(2, pw);
 			rs = pstmt.executeQuery();
 
-			if(rs.next()) b = true;
-
-			
+			if (rs.next())
+				b = true;
 
 		} catch (Exception e) {
 
@@ -187,11 +202,14 @@ public class MemberDAO {
 
 			try {
 
-				if(rs!=null)rs.close();
+				if (rs != null)
+					rs.close();
 
-				if(pstmt!=null)pstmt.close();
+				if (pstmt != null)
+					pstmt.close();
 
-				if(conn!=null)conn.close();
+				if (conn != null)
+					conn.close();
 
 			} catch (Exception e2) {
 
@@ -204,7 +222,5 @@ public class MemberDAO {
 		return b;
 
 	}
-
-
 
 }

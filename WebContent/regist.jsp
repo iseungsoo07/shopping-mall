@@ -169,7 +169,7 @@
 					<div class="our-link">
 						<ul>
 							<c:if test="${ member != null }">
-								<li class="member-name">${ member.name }님환영합니다!</li>
+								<li class="member-name">${ member.name }님 환영합니다!</li>
 								<li>
 									<a href="./logout.do">로그아웃</a>
 								</li>

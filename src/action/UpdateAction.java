@@ -17,13 +17,8 @@ public class UpdateAction implements Action {
 		MemberDAO memberDAO = new MemberDAO();
 		HttpSession session = req.getSession();
 		Member member = new Member();
-	
 
-		// ��й�ȣ ���濡 ���� �ȳ��� ����
-		// ������ ��й�ȣ�� �״�� �Է����� ���� ������ �����ǰ�
-		// ���ο� ��й�ȣ�� �Է����� ���� ������ �����ȴ�.
-		// �� ������ ���� ������ �ʿ��� ��
-		
+		member.setId(req.getParameter("id"));
 		member.setPw(req.getParameter("pw"));
 		member.setName(req.getParameter("name"));
 		member.setPhone(req.getParameter("phone"));
@@ -32,13 +27,13 @@ public class UpdateAction implements Action {
 		member.setAddr(req.getParameter("addr") + " / " + req.getParameter("detailAddr") + " / "
 				+ req.getParameter("referAddr"));
 
+		member.setRank(Integer.parseInt(req.getParameter("rank")));
+		member.setPoint(Integer.parseInt(req.getParameter("point")));
+
 		memberDAO.update(member);
-		
+
 		session.setAttribute("member", member);
-		 
-		// �������������� ���� ���� �� ���̵�, ���, ����Ʈ ���� �Ѿ���� ����
-		// ���� �ʿ�
-		
+
 		forward.setRedirect(false);
 		forward.setPath("mypage.jsp");
 

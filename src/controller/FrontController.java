@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import action.ActionForward;
 import action.ChangeInfoAction;
 import action.DelNotiAction;
+import action.DeleteAction;
 import action.HomeAction;
 import action.LoginAction;
 import action.LogoutAction;
@@ -101,6 +102,12 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/update.do")) {
 			try {
 				forward = new UpdateAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delete.do")) {
+			try {
+				forward = new DeleteAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
