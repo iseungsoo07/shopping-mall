@@ -420,51 +420,52 @@
 				</div>
 			</div>
 		</div>
-		<div class="bodytext_area box_inner">
-			<dl class="myinfo">
-				<dt>내 정보</dt>
-				<dd>
-					<form action="changeinfo.do" method="POST" class="regForm" name="form" onsubmit="return checkForm()">
-						<fieldset>
-							<legend>내 정보 입력 양식</legend>
-							<ul class="reg_list">
-								<li class="clear">
-									<span class="tit_lbl">아이디</span>
-									<div class="reg_content">${ member.id }</div>
-								</li>
-								<li class="clear">
-									<span class="tit_lbl">이름</span>
-									<div class="reg_content">${ member.name }</div>
-								</li>
-								<li class="clear">
-									<span class="tit_lbl">연락처</span>
-									<div class="reg_content">${ member.phone }</div>
-								</li>
-								<li class="clear">
-									<span class="tit_lbl">이메일</span>
-									<div class="reg_content">${ member.email }</div>
-								</li>
-								<li class="clear">
-									<span class="tit_lbl">주소</span>
-									<div class="reg_content">${ member.addr }</div>
-								</li>
-								<li class="clear">
-									<span class="tit_lbl">회원등급</span>
-									<div class="reg_content">${ member.rank }</div>
-								</li>
-								<li class="clear">
-									<span class="tit_lbl">보유 포인트</span>
-									<div class="reg_content">${ member.point }</div>
-								</li>
-							</ul>
-							<p class="btn_line">
-								<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer;" />
-							</p>
-						</fieldset>
-					</form>
-				</dd>
-			</dl>
-		</div>
+		
+			<div class="bodytext_area box_inner">
+				<dl class="myinfo">
+					<dt>내 정보</dt>
+					<dd>
+						<form action="changeinfo.do" method="POST" class="regForm" name="form" onsubmit="return checkForm()">
+							<fieldset>
+								<legend>내 정보 입력 양식</legend>
+								<ul class="reg_list">
+									<li class="clear">
+										<span class="tit_lbl">아이디</span>
+										<div class="reg_content">${ member.id }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">이름</span>
+										<div class="reg_content">${ member.name }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">연락처</span>
+										<div class="reg_content">${ member.phone }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">이메일</span>
+										<div class="reg_content">${ member.email }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">주소</span>
+										<div class="reg_content">${ member.addr }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">회원등급</span>
+										<div class="reg_content">${ member.rank }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">보유 포인트</span>
+										<div class="reg_content">${ member.point }</div>
+									</li>
+								</ul>
+								<p class="btn_line">
+									<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer;" />
+								</p>
+							</fieldset>
+						</form>
+					</dd>
+				</dl>
+			</div>
 		<!-- 본문 끝 -->
 	</div>
 	<!-- container 끝 -->

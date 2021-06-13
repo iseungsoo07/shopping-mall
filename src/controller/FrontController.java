@@ -11,13 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
 import action.ChangeInfoAction;
+import action.ChangePwAction;
 import action.DelNotiAction;
 import action.DeleteAction;
+import action.FindIdAction;
 import action.HomeAction;
 import action.LoginAction;
 import action.LogoutAction;
 import action.MyPageAction;
 import action.NewNotiAction;
+import action.NewPwAction;
 import action.RegistAction;
 import action.UpdateAction;
 
@@ -108,6 +111,24 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/delete.do")) {
 			try {
 				forward = new DeleteAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/changepw.do")) {
+			try {
+				forward = new ChangePwAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/findid.do")) {
+			try {
+				forward = new FindIdAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/newpw.do")) {
+			try {
+				forward = new NewPwAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

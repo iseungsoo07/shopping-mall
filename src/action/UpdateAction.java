@@ -1,6 +1,7 @@
 package action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,7 @@ import model.Member;
 public class UpdateAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		ActionForward forward = new ActionForward();
+		ActionForward forward = null;
 		MemberDAO memberDAO = new MemberDAO();
 		HttpSession session = req.getSession();
 		Member member = new Member();
@@ -30,12 +31,24 @@ public class UpdateAction implements Action {
 		member.setRank(Integer.parseInt(req.getParameter("rank")));
 		member.setPoint(Integer.parseInt(req.getParameter("point")));
 
-		memberDAO.update(member);
+		String checkPw = req.getParameter("checkPw");
 
-		session.setAttribute("member", member);
+		if (member.getPw().equals(checkPw)) {
 
-		forward.setRedirect(false);
-		forward.setPath("mypage.jsp");
+			memberDAO.update(member);
+
+			session.setAttribute("member", member);
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("mypage.jsp");
+
+		} else {
+			req.setCharacterEncoding("UTF-8");
+			res.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = res.getWriter();
+
+			out.println("<script>alert('비밀번호와 비밀번호 확인의 값이 다릅니다.'); location.href='change-info.jsp'; </script>");
+		}
 
 		return forward;
 	}

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -232,7 +233,7 @@
 								</div>
 
 							</div>
-							<form action="login.do" class="signin-form" method="post">
+							<!-- <form action="login.do" class="signin-form" method="post">
 								<div class="form-group mb-3">
 									<label class="label" for="name">ID</label> <input type="text" class="form-control" name="id" placeholder="ID" required>
 								</div>
@@ -245,14 +246,15 @@
 								
 								<div class="form-group d-md-flex">
 									<div class="w-50 text-left">
-										<label class="checkbox-wrap checkbox-primary mb-0">Remember Me <input type="checkbox" checked> <span class="checkmark"></span>
+										<label class="checkbox-wrap checkbox-primary mb-0">Remember Me <input type="checkbox" name="saveId" > <span class="checkmark"></span>
 										</label> 
 									</div>
 									<div class="w-50 text-md-right">
-										<a href="#">Forgot Password</a>
+										<a href="find-account.jsp">아이디 / 비밀번호 찾기</a>
 									</div>
 								</div>
-							</form>
+							</form> -->
+							<custom:id-remeber />
 						</div>
 					</div>
 				</div>

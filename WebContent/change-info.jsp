@@ -116,13 +116,7 @@
 
 	}
 	
-	function del () {
-		let ans = confirm("회원탈퇴를 진행하시겠습니까?");
-		if(ans) {
-			document.form.action.value = "delete.do";
-			document.form.submit();
-		}
-	}
+	
 </script>
 </head>
 <body>
@@ -513,7 +507,8 @@
 					</ul>
 					<p class="btn_line txt_right">
 						<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer; margin-right: 10px;" />
-						<a href="delete-member.jsp" class="btn_basecolor" style="border: none; cursor:pointer">회원 탈퇴</a>
+						<a href="delete-member.jsp" class="btn_basecolor" style="border: none; cursor:pointer margin-right: 10px;">회원 탈퇴</a>
+						<a href="change-passwd.jsp" class="btn_basecolor" style="border: none; cursor:pointer">비밀번호 변경</a>
 					</p>
 				</fieldset>
 			</form>
