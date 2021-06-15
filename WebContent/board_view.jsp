@@ -268,16 +268,18 @@
 					<li class="bbs_hit">
 						<div class="small text-muted">
 							작성일: <span class="mx-2"> ${v.day}</span> 조회수: <span class="mx-2">${v.visitor}</span>
-							카테고리
+							
 						</div>
-
+					<hr />
 
 
 					</li>
 					<div class="editor_content">
 						<div>${v.ncon}</div>
+						<br>
+						
 					</div>
-
+					<hr /><br>
 					</li>
 				</ul>
 				<p class="btn_line txt_right">

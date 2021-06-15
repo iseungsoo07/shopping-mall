@@ -13,7 +13,7 @@ import dto.Paging;
 
 
 
-public class NotiPagingAction implements Action {
+/*public class NotiPagingAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
@@ -46,3 +46,4 @@ public class NotiPagingAction implements Action {
 
 	}
 }
+*/

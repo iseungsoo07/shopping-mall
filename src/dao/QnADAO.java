@@ -120,7 +120,7 @@ public class QnADAO {
 				qna.setDay(rs.getString("day"));
 				qna.setQtitle(rs.getString("qtitle"));
 				qna.setQstate(rs.getString("qstate"));
-
+				qna.setQstatenum(Integer.parseInt(rs.getString("qstatenum")));
 				qna.setQcon(rs.getString("qcon"));
 				qna.setSort(rs.getString("sort"));
 				qna.setId(rs.getString("id"));
@@ -460,7 +460,7 @@ public class QnADAO {
 				qna.setQcon(rs.getString("qcon"));
 				qna.setDay(rs.getString("day"));
 				qna.setSort(rs.getString("sort"));
-				
+				qna.setQstate(rs.getString("qstate"));
 				datas.add(qna);
 				
 			}
@@ -496,7 +496,7 @@ public class QnADAO {
 				qna.setQcon(rs.getString("qcon"));
 				qna.setDay(rs.getString("day"));
 				qna.setSort(rs.getString("sort"));
-				
+				qna.setQstate(rs.getString("qstate"));
 
 				datas.add(qna);
 				

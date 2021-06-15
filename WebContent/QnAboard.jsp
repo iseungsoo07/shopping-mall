@@ -271,9 +271,10 @@
 
 				<thead>
 					<tr>
-						<th scope="col">번호</th>
-						<th scope="col">제목</th>
+				
 						<th scope="col">분류</th>
+						<th scope="col">제목</th>
+						
 						<th scope="col">날자</th>
 						<th scope="col">상태</th>
 					</tr>
@@ -281,10 +282,11 @@
 				<tbody>
 					<c:forEach var="v" items="${datas }">
 						<tr>
-							<td>${v.qid}</td>
+							<td>${v.sort }</td>
+						
 							<td><a
 								href="./showQnAcon.do?qid=${v.qid}"> ${v.qtitle} </a></td>
-							<td>${v.sort }</td>
+							
 							<td class="tit_notice">${v.day }</td>
 							<td>${v.qstate}</td>
 						</tr>
@@ -318,7 +320,7 @@
 				<select name="value" id="value">
 					<option value="title">제목</option>
 					<option value="content">내용</option>
-				</select> <input type="text" name="s"> <input type="submit"
+				</select> <input type="text" name="s" height=3> <input type="submit"
 					value="검색">
 
 

@@ -321,16 +321,14 @@
          <form method="post" action="./searchN.do">
             <table>
             <tr><td><select name="value" id="value">
-               <option placeholder=""> category</option>
-               <option value="title">제목</option>
-               <option value="content">내용</option>
+               <option placeholder=""> 선택 </option>
+               <option value="title"> 제목 </option>
+               <option value="content"> 내용 </option>
             </select></td>
-            <td> <input type="text" name="s" line-height=25px></td> <td><input type="submit"
+            <td> <input type="text" name="s" height=10px></td> <td><input type="submit"
                value="검색" ></td></tr>
             </table>
-
-
-         
+			
 
          </form>
          </p></p>

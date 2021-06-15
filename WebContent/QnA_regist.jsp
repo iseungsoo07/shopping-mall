@@ -285,10 +285,10 @@
 												<p>어떤 부분이 불편하셨는지 선택해주세요.</p>
 												<select name="value" id="value" value="${datas.sort }" class="selaction" >
 													<options disabled selected>골라주세요</options>
-													<option value="event">이벤트</option>
-													<option value="product">상품문의</option>
+													<option value="이벤트">이벤트</option>
+													<option value="상품문의">상품문의</option>
 
-													<option value="pay">결제문의</option>
+													<option value="결제문의">결제문의</option>
 
 												</select>
 												</div>

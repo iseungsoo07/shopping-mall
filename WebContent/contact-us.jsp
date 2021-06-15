@@ -36,7 +36,10 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+
+	
 </head>
 
 <body>
@@ -319,6 +322,8 @@
                                     <div class="submit-button text-center">
                                         <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <button type="button" class="btn btn-dark">Dark</button>
+                                        
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -410,7 +415,7 @@
                 <div class="ins-inner-box">
                     <img src="images/instagram-img-05.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a> 
                     </div>
                 </div>
             </div>
@@ -437,6 +442,7 @@
                                 <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -450,6 +456,7 @@
                                 <li><a href="#">Terms &amp; Conditions</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Delivery Information</a></li>
+                                
                             </ul>
                         </div>
                     </div>

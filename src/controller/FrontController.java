@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,7 @@ import action.MyPageAction;
 import action.NewNotiAction;
 import action.NewQnAAction;
 import action.NewReplyAction;
-import action.NotiPagingAction;
+//import action.NotiPagingAction;
 import action.RegistAction;
 import action.SearchNAction;
 import action.SearchQAction;
@@ -199,13 +200,13 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else if (command.equals("/notiList.do")) { 
+		/*else if (command.equals("/notiList.do")) { 
 			try {
 				forward=new NotiPagingAction().execute(req, res);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		}
+		}*/
 		if(forward != null) {
 			if(forward.getRedirect()) {
 				res.sendRedirect(forward.getPath());

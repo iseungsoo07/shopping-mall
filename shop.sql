@@ -13,8 +13,8 @@ CREATE TABLE member (
 
 create table notice( -- 공지사항
 	nid int  primary key, 	
-	ntitle varchar (20), 			
-	ncon varchar(100) not null, 		
+	ntitle varchar (50), 			
+	ncon varchar(1000) not null, 		
 	visitor int default 0, 			
 	day varchar(30)  not null, 	
 	sort varchar(20) 			
@@ -23,8 +23,8 @@ create table notice( -- 공지사항
 create table QnA ( 				
 	qid int primary key,	
 	id varchar(20),
-	qtitle varchar(20) not null,
-	qcon varchar(100) not null, 		
+	qtitle varchar(50) not null,
+	qcon varchar(1000) not null, 		
 	qstate varchar(20),
 	qstatenum int default 0,
 	day varchar(30), 		
@@ -36,7 +36,7 @@ create table reply(
 	rid int primary key, 	
 	qid int not null, 		
 	date varchar(30), 		
-	rcon varchar(50) not null, 		
+	rcon varchar(500) not null, 		
 	CONSTRAINT fk FOREIGN KEY(qid)
 	REFERENCES QnA(qid) ON DELETE CASCADE						
 );
@@ -45,7 +45,7 @@ create table reply(
    qid int not null,      --qna id
    day varchar(30),            --답변 게시일자
    id varchar(20),         --관리자 id
-   rcon varchar(50) not null,   --답변 내용
+   rcon varchar(500) not null,   --답변 내용
    foreign key(id) references member(id),
    constraint fk foreign key (qid) references QnA(qid) on delete cascade
 );
@@ -87,3 +87,5 @@ CREATE SEQUENCE cnt2 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 CREATE SEQUENCE cnt3 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
 select * from (select nid,ntitle,ncon,visitor,day,sort,rownum as rn from Notice order by nid asc) where rn between 1 and 10
+
+drop sequence cnt3

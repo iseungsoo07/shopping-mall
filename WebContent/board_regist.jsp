@@ -248,9 +248,10 @@
 	<!-- continaer 시작 -->
 	<div id="container">
 		<div class="location_area customer">
+		<form method="post" action="./newnoti.do">
 			<div class="box_inner">
 				<h2 class="tit_page" align="center">공지사항</h2>
-				<form method="post" action="./newnoti.do">
+				
 				<div class="contact-form-right" padding = "20px">
 				<center>
 								
