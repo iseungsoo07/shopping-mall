@@ -11,23 +11,22 @@ import dao.NoticeDAO;
 import model.Notice;
 
 
-public class ShowNotiAction implements Action{
+public class ShowNconAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
 		
 		NoticeDAO noticeDAO = new NoticeDAO();
-		Notice notice = new Notice();  			//NoticeDAO와 Notice 클래스를 이용하기 위해 객체 생성
+		Notice noti = new Notice();  			//NoticeDAO와 Notice 클래스를 이용하기 위해 객체 생성
 		
-
-	
+		int nid=Integer.parseInt(req.getParameter("nid"));
+	 // nid에 맞는 
 		
-		
-		ArrayList<Notice> datas = noticeDAO.showN();	// 전체 공지사항 출력 후 저장
-		req.setAttribute("datas", datas);
+		ArrayList<Notice> datas = noticeDAO.show(nid);
+		req.setAttribute("datas", datas);		//상세내용을 보여줄 공지사항의 nid를 받아와 실행 후 저장
 		
 		forward.setRedirect(false);
-		forward.setPath("board.jsp"); 
+		forward.setPath("board_view.jsp"); 
 		
 		
 		

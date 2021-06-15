@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib tagdir="/WEB-INF/tags" prefix="board"%>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-<link rel="stylesheet"
-	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,6 +33,7 @@
 
 </head>
 <body>
+	<!-- Start Main Top -->
 	<div class="main-top">
 		<div class="container-fluid">
 			<div class="row">
@@ -64,20 +59,30 @@
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<!-- <div class="custom-select-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>¥ JPY</option>
-							<option>$ USD</option>
-							<option>€ EUR</option>
-						</select>
-					</div> -->
+                  <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                     <option>¥ JPY</option>
+                     <option>$ USD</option>
+                     <option>€ EUR</option>
+                  </select>
+               </div> -->
 					<div class="right-phone-box">
 						<p>
-							Call US : <a href="#">010-1111-1111</a>
+							Call US : <a href="#  ">010-1111-1111</a>
 						</p>
 					</div>
 					<div class="our-link">
 						<ul>
-
+							<c:if test="${ member != null }">
+								<li class="member-name">${ member.name }님환영합니다!</li>
+								<li><a href="./logout.do">로그아웃</a></li>
+								<li><a href="./regist.jsp">회원가입</a></li>
+								<li><a href="#">마이페이지</a></li>
+							</c:if>
+							<c:if test="${ member == null }">
+								<li><a href="./login.jsp">로그인</a></li>
+								<li><a href="./regist.jsp">회원가입</a></li>
+								<li><a href="#">마이페이지</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -100,7 +105,7 @@
 						<i class="fa fa-bars"></i>
 					</button>
 					<a class="navbar-brand" href="home.jsp"><img
-						src="images/logo.png" class="logo" alt="" /></a>
+						src="images/logo.png" class="logo" alt=""></a>
 				</div>
 				<!-- End Header Navigation -->
 
@@ -192,8 +197,7 @@
 				<!-- Start Atribute Navigation -->
 				<div class="attr-nav">
 					<ul>
-						<li class="search"><a href="#"><i class="fa fa-search"></i></a>
-						</li>
+						<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
 						<li class="side-menu"><a href="#"> <i
 								class="fa fa-shopping-bag"></i> <span class="badge">3</span>
 						</a></li>
@@ -240,63 +244,103 @@
 		</nav>
 		<!-- End Navigation -->
 	</header>
+	<!-- End Main Top -->
 
-
+	<!-- continaer 시작 -->
 	<div id="container">
-		<div class="all-title-box">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<h2>고객센터</h2>
-						<ul class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active">공지사항</li>
-						</ul>
-					</div>
-				</div>
+		<div class="location_area customer">
+			<div class="box_inner">
+				<h2 class="tit_page">TheWayShop</h2>
+
+				<form method="post" action="./newQnA.do">
+					<input type="hidden" name="id" value="${id}">
+
+						
+							<div class="contact-form-right" padding = "20px">
+							<center>
+								<h2>Q&A</h2>
+								<p>불편한 사항이 있으시간요? Q&A 답변에는 시간이 걸릴수 있습니다.</p>
+								<form id="contactForm">
+								
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+											 
+												<input type="text" class="form-control"
+													value="${datas.qtitle }" id="name" name="qtitle"
+													placeholder="제목을 입력해주세요." required
+													data-error="Please enter your name">
+
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+											<div class="selaction">
+												<p>어떤 부분이 불편하셨는지 선택해주세요.</p>
+												<select name="value" id="value" value="${datas.sort }" class="selaction" >
+													<options disabled selected>골라주세요</options>
+													<option value="이벤트">이벤트</option>
+													<option value="상품문의">상품문의</option>
+
+													<option value="결제문의">결제문의</option>
+
+												</select>
+												</div>
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<textarea class="form-control" id="message" name="qcon"
+													value="${datas.qcon}" placeholder="Q&A 작성" rows="4"
+													data-error="Write your message" required></textarea>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="submit-button text-center">
+												<button class="btn hvr-hover" id="submit" type="submit">Q&A
+													작성</button>
+												<div id="msgSubmit" class="h3 text-center hidden"></div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							</form>
+							</center>
+						</div>
+						
+						
+						</div>
+						</div>
+
+					
+				</form>
+
+
+				</form>
+				</td>
+				</tr>
+				</table>
+
+
+
+				</tr>
+				</tbody>
+				</table>
+
 			</div>
 		</div>
 
-		<!-- 본문 시작 -->
 
-		<div class="bodytext_area box_inner">
-			<c:forEach var="v" items="${datas}">
-				<ul class="bbsview_list">
-					<center>
-						<h2 class="noo-sh-title"=>${v.ntitle}</h2>
-					</center>
-					<li class="bbs_hit">
-						<div class="small text-muted">
-							작성일: <span class="mx-2"> ${v.day}</span> 조회수: <span class="mx-2">${v.visitor}</span>
-							
-						</div>
-					<hr />
+		<!-- continaer 끝 -->
 
-
-					</li>
-					<div class="editor_content">
-						<div>${v.ncon}</div>
-						<br>
-						
-					</div>
-					<hr /><br>
-					</li>
-				</ul>
-				<p class="btn_line txt_right">
-					<a href="./showN.do" class="btn_bbs">목록</a>
-					<c:if test="${member.id eq 'admin'}">
-						<a href="./delnoti.do?nid=${v.nid }" class="btn_bbs">삭제</a>
-					</c:if>
-				</p>
-
-			</c:forEach>
-		</div>
-
-
-		<!-- 본문 끝 -->
-
-
-		<!-- container 끝 -->
 		<!-- Start Footer  -->
 		<footer>
 			<div class="footer-main">
@@ -347,7 +391,7 @@
 									<li>
 										<p>
 											<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days
-											3756 <br />Preston Street Wichita,<br /> KS 67213
+											3756 <br>Preston Street Wichita,<br> KS 67213
 										</p>
 									</li>
 									<li>
@@ -380,7 +424,8 @@
 		</div>
 		<!-- End copyright  -->
 
-		<a href="#" id="back-to-top" title="Back to top" style="display: none">&uarr;</a>
+		<a href="#" id="back-to-top" title="Back to top"
+			style="display: none;">&uarr;</a>
 
 		<!-- ALL JS FILES -->
 		<script src="js/jquery-3.2.1.min.js"></script>
@@ -390,7 +435,7 @@
 		<script src="js/jquery.superslides.min.js"></script>
 		<script src="js/bootstrap-select.js"></script>
 		<script src="js/inewsticker.js"></script>
-		<script src="js/bootsnav.js"></script>
+		<script src="js/bootsnav.js."></script>
 		<script src="js/images-loded.min.js"></script>
 		<script src="js/isotope.min.js"></script>
 		<script src="js/owl.carousel.min.js"></script>

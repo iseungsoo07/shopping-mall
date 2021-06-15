@@ -21,21 +21,23 @@ public class NewNotiAction implements Action{
 		NoticeDAO noticeDAO = new NoticeDAO();
 		Notice notice = new Notice();
 		
-		notice.setNid(Integer.parseInt(req.getParameter("nid")));
-		notice.setNtitle(req.getParameter("ntitle"));
-		notice.setNcon(req.getParameter("ncon"));
-		notice.setVisitor(Integer.parseInt(req.getParameter("ntitle")));
-		notice.setDay(req.getParameter("day"));
 		
-		ArrayList<Notice> datas = noticeDAO.getDBList();
-		req.setAttribute("datas", datas);
+		notice.setNtitle(req.getParameter("ntitle"));
+		notice.setNcon(req.getParameter("ncon"));			
+		
+	 							
+		if(!noticeDAO.newNotice(notice)) { 						//noticaDAO클래스에 있는 newNotice 메소드 실행후 실행에 실패했을경우
+			System.out.println("공지사항 작성 실패");
+		}
+		
+		ArrayList<Notice> datas = noticeDAO.showN();					
+		req.setAttribute("datas", datas);						//datas에 noticeDB에 있는 정보들을 배열로 저장하고 넘겨줌
 		
 	
-		forward.setRedirect(true);
-		forward.setPath("공지사항 뷰"); //처리해야함
+		forward.setRedirect(false);
+		forward.setPath("board.jsp"); 						
 		
 		return forward;
 	}
 
 }
-//getAll은 뷰에서 구현하는것이 낫다고 생각

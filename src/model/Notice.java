@@ -6,6 +6,23 @@ public class Notice {
 	private String ncon;
 	private int visitor;
 	private String day;
+	private String sort;
+	private String id;
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getSort() {
+		return sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+	}
 
 	public int getNid() {
 		return nid;
