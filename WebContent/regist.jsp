@@ -325,9 +325,12 @@
 						<li class="nav-item">
 							<a class="nav-link" href="service.html">Our Service</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact-us.html">Contact Us</a>
-						</li>
+						<li class="dropdown"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
+							<ul class="dropdown-menu">
+								<li><a href="./showN.do">공지사항</a></li>
+								<li><a href="./showQ.do">QnA</a></li>
+								
+							</ul></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

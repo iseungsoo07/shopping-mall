@@ -30,7 +30,7 @@ public class MyPageAction implements Action{
 			member = memberDAO.getMember(id);
 			session.setAttribute("member", member);
 			forward.setRedirect(false);
-			forward.setPath("mypage.jsp");
+			forward.setPath("mypage.jsp");     
 		}
 		
 		return forward;

@@ -6,6 +6,7 @@ public class Reply {
 	private String day;
 	private String rcon;
 	private String id;//입력받을 관리자 id
+	
 	public String getId() {
 		return id;
 	}

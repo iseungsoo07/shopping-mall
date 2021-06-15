@@ -11,18 +11,30 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
 import action.DelNotiAction;
+import action.DelQnAAction;
+import action.DelReplyAction;
 import action.HomeAction;
 import action.LoginAction;
 import action.LogoutAction;
 import action.MyPageAction;
 import action.NewNotiAction;
+import action.NewQnAAction;
+import action.NewReplyAction;
+import action.NotiPagingAction;
 import action.RegistAction;
+import action.SearchNAction;
+import action.SearchQAction;
+import action.ShowNconAction;
+import action.ShowNotiAction;
+import action.ShowQAction;
+import action.ShowQnAconAction;
 import action.UpdateAction;
 
 /**
  * Servlet implementation class FrontController
  */
 @WebServlet("/FrontController")
+
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -53,14 +65,14 @@ public class FrontController extends HttpServlet {
 
 	private void actionDo(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String uri = req.getRequestURI();
-		
+
 		String conPath = req.getContextPath();
-		
+
 		String command = uri.substring(conPath.length());
 		System.out.println(command);
-		
+
 		ActionForward forward = null;
-		
+
 		if(command.equals("/home.do")) {
 			try {
 				forward = new HomeAction().execute(req, res);
@@ -103,33 +115,97 @@ public class FrontController extends HttpServlet {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("QnA작성")) {
+		} else if (command.equals("/showN.do")) {
 			try {
-				
+				forward=new ShowNotiAction().execute(req, res);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/delnoti.do")) {
+		} 
+		else if (command.equals("/newQnA.do")) { 
+			try {
+				forward=new NewQnAAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.equals("/update.do")) {
+			try {
+				forward = new UpdateAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.equals("/delnoti.do")) {
 			try {
 				forward=new DelNotiAction().execute(req, res);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("QnA지우기")) {
+		} 
+		else if (command.equals("/showNcon.do")) {
 			try {
-				
+				forward=new ShowNconAction().execute(req,res);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("조회수")) { //�������� ������ +1 �ǰ�
+		} 
+		else if (command.equals("/showQ.do")) { //�������� ������ +1 �ǰ�
 			try {
-				
+				forward=new ShowQAction().execute(req,res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			} 
+		}  
+		else if (command.equals("/showQnAcon.do")) { //�������� ������ +1 �ǰ�
+			try {
+				forward=new ShowQnAconAction().execute(req,res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			} 
+		}
+		else if (command.equals("/newReply.do")) { 
+			try {
+				forward=new NewReplyAction().execute(req, res);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
-		
-		
+		else if (command.equals("/delReply.do")) { 
+			try {
+				forward=new DelReplyAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.equals("/delQnA.do")) { 
+			try {
+				forward=new DelQnAAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.equals("/searchN.do")) { 
+			try {
+				forward=new SearchNAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.equals("/searchQ.do")) { 
+			try {
+				forward=new SearchQAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.equals("/notiList.do")) { 
+			try {
+				forward=new NotiPagingAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
 		if(forward != null) {
 			if(forward.getRedirect()) {
 				res.sendRedirect(forward.getPath());

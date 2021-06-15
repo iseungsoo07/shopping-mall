@@ -1,30 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="board"%>
 <!DOCTYPE html>
-<html lang="en">
-<!-- Basic -->
-
+<html>
 <head>
+<meta charset="UTF-8">
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Mobile Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Site Metas -->
-<title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
-
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/custom.css">
 <!-- Site Icons -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-<!-- fontawesome -->
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- Site CSS -->
@@ -34,15 +33,10 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="css/custom.css">
 
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<title>TheWayShop | 게시판</title>
 
 </head>
-
 <body>
-
 	<!-- Start Main Top -->
 	<div class="main-top">
 		<div class="container-fluid">
@@ -68,24 +62,31 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
-						<select id="basic" class="selectpicker show-tick form-control"
-							data-placeholder="$ USD">
-							<option>Â¥ JPY</option>
-							<option>$ USD</option>
-							<option>â¬ EUR</option>
-						</select>
-					</div>
+					<!-- <div class="custom-select-box">
+                  <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                     <option>¥ JPY</option>
+                     <option>$ USD</option>
+                     <option>€ EUR</option>
+                  </select>
+               </div> -->
 					<div class="right-phone-box">
 						<p>
-							Call US :- <a href="#"> +11 900 800 100</a>
+							Call US : <a href="#  ">010-1111-1111</a>
 						</p>
 					</div>
 					<div class="our-link">
 						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Our location</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<c:if test="${ member != null }">
+								<li class="member-name">${ member.name }님환영합니다!</li>
+								<li><a href="./logout.do">로그아웃</a></li>
+								<li><a href="./regist.jsp">회원가입</a></li>
+								<li><a href="#">마이페이지</a></li>
+							</c:if>
+							<c:if test="${ member == null }">
+								<li><a href="./login.jsp">로그인</a></li>
+								<li><a href="./regist.jsp">회원가입</a></li>
+								<li><a href="#">마이페이지</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -116,7 +117,8 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown"
 						data-out="fadeOutUp">
-						<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
+						<li class="nav-item active"><a class="nav-link"
+							href="home.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.jsp">About
 								Us</a></li>
 						<li class="dropdown megamenu-fw"><a href="#"
@@ -174,7 +176,7 @@
 									</div> <!-- end row -->
 								</li>
 							</ul></li>
-						<li class="dropdown active"><a href="#"
+						<li class="dropdown"><a href="#"
 							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
 							<ul class="dropdown-menu">
 								<li><a href="cart.jsp">Cart</a></li>
@@ -238,7 +240,8 @@
 							</p></li>
 						<li class="total"><a href="#"
 							class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span
-							class="float-right"><strong>Total</strong>: $180.00</span></li>
+							class="float-right"><strong>Total</strong>:
+								$180.00</span></li>
 					</ul>
 				</li>
 			</div>
@@ -248,197 +251,87 @@
 	</header>
 	<!-- End Main Top -->
 
-	<!-- Start Top Search -->
-	<div class="top-search">
-		<div class="container">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-search"></i></span>
-				<input type="text" class="form-control" placeholder="Search">
-				<span class="input-group-addon close-search"><i
-					class="fa fa-times"></i></span>
+	<!-- continaer 시작 -->
+	<div id="container">
+		<div class="location_area customer">
+			<div class="box_inner">
+				<h2 class="tit_page">TheWayShop</h2>
+				<p class="location">
+					Q&A<span class="path">/</span> 고객센터
+				</p>
+				<ul class="page_menu clear">
+					<li><a href="#" class="on">Q&A</a></li>
+					<li><a href="#">문의하기</a></li>
+				</ul>
 			</div>
 		</div>
-	</div>
-	<!-- End Top Search -->
+		<div class="bodytext_area box_inner">
+			<table class="bbsListTbl" summary="번호, 제목, 조회수, 작성일 등을 제공하는 표">
+				<caption class="hdd">Q&A</caption>
 
-	<!-- Start All Title Box -->
-	<div class="all-title-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2>Wishlist</h2>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Shop</a></li>
-						<li class="breadcrumb-item active">Wishlist</li>
-					</ul>
-				</div>
+				<thead>
+					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">제목</th>
+						<th scope="col">분류</th>
+						<th scope="col">날자</th>
+						<th scope="col">상태</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="v" items="${datas }">
+						<tr>
+							<td>${v.qid}</td>
+							<td><a
+								href="./showQnAcon.do?qid=${v.qid}"> ${v.qtitle} </a></td>
+							<td>${v.sort }</td>
+							<td class="tit_notice">${v.day }</td>
+							<td>${v.qstate}</td>
+						</tr>
+						<tr>
+					</c:forEach>
+					
+
+				</tbody>
+			</table>
+			<div class="pagination">
+				<a href="#" class="firstpage pbtn"> <img
+					src="./images/btn_firstpage.png" alt="첫 페이지로 이동" />
+				</a> <a href="#" class="prevpage pbtn"> <img
+					src="./images/btn_prevpage.png" alt="이전 페이지로 이동" />
+				</a> <a href="#"><span class="pagenum currentPage">1</span></a> <a
+					href="#"><span class="pagenum">2</span></a> <a
+					href="#"><span class="pagenum">3</span></a> <a href="#"><span
+					class="pagenum">4</span></a> <a href="#"><span class="pagenum">5</span></a>
+				<a href="#" class="nextpage pbtn"> <img
+					src="./images/btn_nextpage.png" alt="다음 페이지로 이동" />
+				</a> <a href="#" class="lastpage pbtn"> <img
+					src="./images/btn_lastpage.png" alt="마지막 페이지로 이동" />
+				</a>
 			</div>
+			<p class="btn_line txt_right">
+				<board:writeQ />
+				<!-- 로그인 한다면 qna작성 -->
+			</p>
+			<p>
+			<form method="post" action="./searchQ.do">
+				<select name="value" id="value">
+					<option value="title">제목</option>
+					<option value="content">내용</option>
+				</select> <input type="text" name="s"> <input type="submit"
+					value="검색">
+
+
+
+
+			
+
+			</form>
+			</p>
 		</div>
 	</div>
-	<!-- End All Title Box -->
 
-	<!-- Start Wishlist  -->
-	<div class="wishlist-box-main">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="table-main table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Images</th>
-									<th>Product Name</th>
-									<th>Unit Price</th>
-									<th>Stock</th>
-									<th>Add Item</th>
-									<th>Remove</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 80.0</p>
-									</td>
-									<td class="quantity-box">In Stock</td>
-									<td class="add-pr"><a class="btn hvr-hover" href="#">Add
-											to Cart</a></td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i>
-									</a></td>
-								</tr>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 60.0</p>
-									</td>
-									<td class="quantity-box">In Stock</td>
-									<td class="add-pr"><a class="btn hvr-hover" href="#">Add
-											to Cart</a></td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i>
-									</a></td>
-								</tr>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 30.0</p>
-									</td>
-									<td class="quantity-box">In Stock</td>
-									<td class="add-pr"><a class="btn hvr-hover" href="#">Add
-											to Cart</a></td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i>
-									</a></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Wishlist -->
-
-	<!-- Start Instagram Feed  -->
-	<div class="instagram-box">
-		<div class="main-instagram owl-carousel owl-theme">
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-01.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-02.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-03.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-04.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-05.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-06.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-07.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-08.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-09.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-05.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Instagram Feed  -->
-
+	<!-- continaer 끝 -->
 
 	<!-- Start Footer  -->
 	<footer>
@@ -541,5 +434,4 @@
 	<script src="js/contact-form-script.js"></script>
 	<script src="js/custom.js"></script>
 </body>
-
 </html>

@@ -311,7 +311,6 @@ select {
 /* regist.jsp, mypage.jsp에 적용될 css 끝 */
 
 /* 게시판에 적용될 css 시작 */
-
 .bbsListTbl {
 	width: 100%;
 	border-top: 2px solid #d33b33;
@@ -394,37 +393,61 @@ select {
 }
 
 .location_area .tit_page {
-    padding: 40px 0 0 0;
-    margin: 0 50px;
-    border-bottom: 1px solid #ccc;
-    font: 30px 'Quattrocento Sans', sans-serif;
-    color: #000;
-    letter-spacing: 3px;
-    
+	padding: 40px 0 0 0;
+	margin: 0 50px;
+	border-bottom: 1px solid #ccc;
+	font: 30px 'Quattrocento Sans', sans-serif;
+	color: #000;
+	letter-spacing: 3px;
 }
 
 .location_area .tit_page .in {
-    font-variant: small-caps;
+	font-variant: small-caps;
 }
 
 .location_area .location {
-    padding: 20px 0 0 50px;
-    color: #000;
+	padding: 20px 0 0 50px;
+	color: #000;
 }
 
 .location_area .location .path {
-    display: inline-block;
-    padding: 0 10px;
+	display: inline-block;
+	padding: 0 10px;
 }
 
 .location_area .page_menu {
-    display: none;
+	display: none;
 }
 
 .bodytext_area {
-    box-sizing: border-box;
-    padding: 55px 50px 0;
+	box-sizing: border-box;
+	padding: 55px 50px 0;
 }
 
+select.selaction {
+	border: 0;
+	box-shadow: none;
+	
+	width:100%;
+	
+	border-color: #D2D2D2;
+	background-color : #F2F2F2;
+}
 
+textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border-radius: 4px;
+	border: none;
+	border: solid 1px;
+	color: inherit;
+	display: block;
+	outline: 0;
+	padding: 0 0.825rem;
+	text-decoration: none;
+	width: 100%;
+}
 /* 게시판에 적용될 css 끝 */

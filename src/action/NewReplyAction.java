@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.MemberDAO;
 import dao.QnADAO;
+import dto.QnA;
 import dto.QnASet;
 import dto.Reply;
 
@@ -23,30 +23,29 @@ public class NewReplyAction implements Action{
 		
 			ActionForward forward = new ActionForward();
 
-			String curmsg=req.getParameter("curmsg");
-			req.setAttribute("curmsg", curmsg);
-			
-			QnADAO msgDAO=new QnADAO();
+					
+			QnADAO qnaDAO=new QnADAO();
 			Reply reply=new Reply();
-			reply.setRid(Integer.parseInt(req.getParameter("rid")));
-			reply.setQid(Integer.parseInt(req.getParameter("qid")));
-			reply.setDay(req.getParameter("day"));
-			reply.setRcon(req.getParameter("rcon"));
-			reply.setId(req.getParameter("id"));
 			
 			
-			if(!msgDAO.newReply(reply)) {
-				System.out.println("댓글 달기 실패");
+			int qid =Integer.parseInt(req.getParameter("qid"));
+			reply.setQid(qid);
+			reply.setRcon(req.getParameter("rcon"));				
+			
+			System.out.println(req.getParameter("rcon"));
+			
+			if(!qnaDAO.newReply(reply)) {
+				System.out.println("댓글 달기 실패");			//qid, rcon을 받아와 newReply를 실행해 댓글을 만들어줌
 			}
 
 			
 
-			ArrayList<QnASet> datas=msgDAO.showQ();
-			req.setAttribute("datas", datas); // 게시글목록
+			ArrayList<QnASet> datas=qnaDAO.getAll(qid);
+			req.setAttribute("datas", datas); 				// QnA게시글목록과 댓글 목록을 한번에 보여줌
 
 			
 			forward.setRedirect(false);
-			forward.setPath("main.jsp");
+			forward.setPath("QnAboard_view.jsp");
 			return forward;
 	}
 

@@ -1,29 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="board"%>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <!DOCTYPE html>
-<html lang="en">
-<!-- Basic -->
-
+<html>
 <head>
+<meta charset="UTF-8">
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Mobile Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Site Metas -->
-<title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
-
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/custom.css">
 <!-- Site Icons -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-<!-- fontawesome -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -34,16 +35,10 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="css/custom.css">
 
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<title>TheWayShop | 게시판</title>
 
 </head>
-
 <body>
-
-	<!-- Start Main Top -->
 	<div class="main-top">
 		<div class="container-fluid">
 			<div class="row">
@@ -68,24 +63,31 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
-						<select id="basic" class="selectpicker show-tick form-control"
-							data-placeholder="$ USD">
-							<option>Â¥ JPY</option>
+					<!-- <div class="custom-select-box">
+						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+							<option>¥ JPY</option>
 							<option>$ USD</option>
-							<option>â¬ EUR</option>
+							<option>€ EUR</option>
 						</select>
-					</div>
+					</div> -->
 					<div class="right-phone-box">
 						<p>
-							Call US :- <a href="#"> +11 900 800 100</a>
+							Call US : <a href="#">010-1111-1111</a>
 						</p>
 					</div>
 					<div class="our-link">
 						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Our location</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<c:if test="${ member != null }">
+								<li class="member-name">${ member.name }님환영합니다!</li>
+								<li><a href="./logout.do">로그아웃</a></li>
+								<li><a href="./regist.jsp">회원가입</a></li>
+								<li><a href="#">마이페이지</a></li>
+							</c:if>
+							<c:if test="${ member == null }">
+								<li><a href="./login.jsp">로그인</a></li>
+								<li><a href="./regist.jsp">회원가입</a></li>
+								<li><a href="#">마이페이지</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -108,7 +110,7 @@
 						<i class="fa fa-bars"></i>
 					</button>
 					<a class="navbar-brand" href="home.jsp"><img
-						src="images/logo.png" class="logo" alt=""></a>
+						src="images/logo.png" class="logo" alt="" /></a>
 				</div>
 				<!-- End Header Navigation -->
 
@@ -116,7 +118,8 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown"
 						data-out="fadeOutUp">
-						<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
+						<li class="nav-item active"><a class="nav-link"
+							href="home.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.jsp">About
 								Us</a></li>
 						<li class="dropdown megamenu-fw"><a href="#"
@@ -174,7 +177,7 @@
 									</div> <!-- end row -->
 								</li>
 							</ul></li>
-						<li class="dropdown active"><a href="#"
+						<li class="dropdown"><a href="#"
 							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
 							<ul class="dropdown-menu">
 								<li><a href="cart.jsp">Cart</a></li>
@@ -199,7 +202,8 @@
 				<!-- Start Atribute Navigation -->
 				<div class="attr-nav">
 					<ul>
-						<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+						<li class="search"><a href="#"><i class="fa fa-search"></i></a>
+						</li>
 						<li class="side-menu"><a href="#"> <i
 								class="fa fa-shopping-bag"></i> <span class="badge">3</span>
 						</a></li>
@@ -246,200 +250,116 @@
 		</nav>
 		<!-- End Navigation -->
 	</header>
-	<!-- End Main Top -->
 
-	<!-- Start Top Search -->
-	<div class="top-search">
-		<div class="container">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-search"></i></span>
-				<input type="text" class="form-control" placeholder="Search">
-				<span class="input-group-addon close-search"><i
-					class="fa fa-times"></i></span>
-			</div>
-		</div>
-	</div>
-	<!-- End Top Search -->
 
-	<!-- Start All Title Box -->
-	<div class="all-title-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2>Wishlist</h2>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Shop</a></li>
-						<li class="breadcrumb-item active">Wishlist</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End All Title Box -->
-
-	<!-- Start Wishlist  -->
-	<div class="wishlist-box-main">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="table-main table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Images</th>
-									<th>Product Name</th>
-									<th>Unit Price</th>
-									<th>Stock</th>
-									<th>Add Item</th>
-									<th>Remove</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 80.0</p>
-									</td>
-									<td class="quantity-box">In Stock</td>
-									<td class="add-pr"><a class="btn hvr-hover" href="#">Add
-											to Cart</a></td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i>
-									</a></td>
-								</tr>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 60.0</p>
-									</td>
-									<td class="quantity-box">In Stock</td>
-									<td class="add-pr"><a class="btn hvr-hover" href="#">Add
-											to Cart</a></td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i>
-									</a></td>
-								</tr>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 30.0</p>
-									</td>
-									<td class="quantity-box">In Stock</td>
-									<td class="add-pr"><a class="btn hvr-hover" href="#">Add
-											to Cart</a></td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i>
-									</a></td>
-								</tr>
-							</tbody>
-						</table>
+	<div id="container">
+		<div class="all-title-box">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>고객센터</h2>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">공지사항</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- End Wishlist -->
 
-	<!-- Start Instagram Feed  -->
-	<div class="instagram-box">
-		<div class="main-instagram owl-carousel owl-theme">
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-01.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
+		<!-- 본문 시작 -->
+
+		<div class="bodytext_area box_inner">
+			<c:forEach var="v" items="${datas}">
+				<ul class="bbsview_list">
+					<center>
+						<h2 class="noo-sh-title"=>${v.qna.qtitle}</h2>
+					</center>
+					<div class="small text-muted">
+						작성일: <span class="mx-2">${v.qna.day}</span>
 					</div>
+
+
+					<div class="editor_content">${v.qna.qcon}</div>
+
+				</ul>
+
+				<p class="btn_line txt_right">
+					<a href="./showQ.do" class="btn_bbs">목록</a>
+			
+			
+
+
+					<c:if test="${member.id eq v.qna.id}">
+						<!-- 만약 작성자라면, -->
+						<a href="./delQnA.do?qid=${v.qna.qid}" class="btn_bbs">QnA삭제</a>
+						<!--입력받은 공지 id를 따라 삭제-->
+					</c:if>
+					<c:if test="${member.id eq 'admin'}">
+						<!-- 만약 관리자라면, -->
+						<a href="./delQnA.do?qid=${v.qna.qid}" class="btn_bbs">QnA삭제</a>
+						<!--입력받은 공지 id를 따라 삭제-->
+					</c:if>
+				</p>
+
+				<div class="bodytext_area box_inner">
+					<c:forEach var="r" items="${v.rlist }">
+						<ul class="bbsview_list">
+
+							<li class="bbs_hit">작성일 : <span>${r.day}</span>
+							</li>
+							<li class="bbs_hit">내용 : <span>${r.rcon}</span> <br />
+								<c:if test="${member.id eq 'admin'}">
+								<!-- 만약 작성자라면, -->
+								<p class="btn_line txt_right">
+									<a href="./delReply.do?rid=${r.rid}&&qid=${v.qna.qid}"
+										class="btn_bbs">reply삭제</a>
+								</p>
+
+								<!--입력받은 댓글 id를 따라 삭제-->
+							</c:if>
+							</li>
+							
+						</ul>
+
+					</c:forEach>
+
 				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-02.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-03.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-04.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-05.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-06.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-07.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-08.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-09.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-05.jpg" alt="" />
-					<div class="hov-in">
-						<a href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
+
+
+
+
+
+				<table style="padding-top: 35px" align=center width=700 border=0
+					cellpadding=2>
+					<tr>
+						<td height=20 align=center bgcolor=#ccc><font color=white>
+								Q&A</font></td>
+					</tr>
+					<tr>
+						<td bgcolor=white><c:if test="${member.id eq 'admin'}">
+
+								<form method="post" action="newReply.do">
+									<input type="hidden" name="qid" value="${v.qna.qid}">
+									<table class="table2">
+										<tr>
+											<td>내용</td>
+											<td><textarea name="rcon" value="${v.reply.rcon }"
+													name="rcon" cols=85 rows=15></textarea></td>
+										</tr>
+									</table>
+
+									<center>
+										<input type="submit" value="작성">
+									</center>
+							</c:if>
+							</form>
+				</table>
+			</c:forEach>
 		</div>
+		<!-- 본문 끝 -->
 	</div>
-	<!-- End Instagram Feed  -->
-
-
+	<!-- container 끝 -->
 	<!-- Start Footer  -->
 	<footer>
 		<div class="footer-main">
@@ -461,7 +381,8 @@
 										aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fab fa-google-plus"
 										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+								</li>
 								<li><a href="#"><i class="fab fa-pinterest-p"
 										aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fab fa-whatsapp"
@@ -489,7 +410,7 @@
 								<li>
 									<p>
 										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days
-										3756 <br>Preston Street Wichita,<br> KS 67213
+										3756 <br />Preston Street Wichita,<br /> KS 67213
 									</p>
 								</li>
 								<li>
@@ -522,7 +443,7 @@
 	</div>
 	<!-- End copyright  -->
 
-	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+	<a href="#" id="back-to-top" title="Back to top" style="display: none">&uarr;</a>
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -532,7 +453,7 @@
 	<script src="js/jquery.superslides.min.js"></script>
 	<script src="js/bootstrap-select.js"></script>
 	<script src="js/inewsticker.js"></script>
-	<script src="js/bootsnav.js."></script>
+	<script src="js/bootsnav.js"></script>
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
@@ -541,5 +462,4 @@
 	<script src="js/contact-form-script.js"></script>
 	<script src="js/custom.js"></script>
 </body>
-
 </html>

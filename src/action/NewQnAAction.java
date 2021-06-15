@@ -18,26 +18,24 @@ public class NewQnAAction implements Action {
 		ActionForward forward = new ActionForward();
 
 		QnADAO qnaDAO = new QnADAO();
-		QnA qna = new QnA();
+		QnA qna = new QnA();				//QnADAO와 QnA의 정보를 이용하기위해 객체 생성
 
 		
-		qna.setQid(Integer.parseInt(req.getParameter("qid")));
-		qna.setId(req.getParameter("id"));
-		qna.setQcon(req.getParameter("qcon"));
-		qna.setQstate(req.getParameter("qstate"));
-		qna.setDay(req.getParameter("day"));
-		qna.setSort(req.getParameter("sort"));
+		qna.setQtitle(req.getParameter("qtitle"));
+		qna.setQcon(req.getParameter("qcon"));				
+		qna.setSort(req.getParameter("value"));
+		qna.setId(req.getParameter("id")); 		// 뷰로부터 제목,내용,분류, id를 받아옴
 		
 		if(!qnaDAO.newQnA(qna)) {
-			System.out.println("문의글 작성 실패");
-		}
+			System.out.println("문의글 작성 실패"); 	//QnADAO의 newQnA메소드 실행 실패시 실패 메세지작성
+		}									
 
-		ArrayList<QnASet> datas = qnaDAO.showQ();
-		req.setAttribute("datas", datas);
+		ArrayList<QnA> datas = qnaDAO.showQ();
+		req.setAttribute("datas", datas); 	// showQ실행결과 정보들을 받아 datas에 저장하고 보낼준비
 
 
-		forward.setRedirect(true);
-		forward.setPath("공지사항 뷰"); //처리해야함
+		forward.setRedirect(false);
+		forward.setPath("QnAboard.jsp"); // 처리한 정보들을 전달
 
 		return forward;
 	}

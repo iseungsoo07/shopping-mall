@@ -14,7 +14,7 @@
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/custom.css">
 <!-- Site Icons -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -29,9 +29,9 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="css/custom.css">
 
-<title>TheWayShop | 로그인</title>
-</head>
+<title>TheWayShop | 게시판</title>
 
+</head>
 <body>
 	<!-- Start Main Top -->
 	<div class="main-top">
@@ -59,12 +59,12 @@
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<!-- <div class="custom-select-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>¥ JPY</option>
-							<option>$ USD</option>
-							<option>€ EUR</option>
-						</select>
-					</div> -->
+                  <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                     <option>¥ JPY</option>
+                     <option>$ USD</option>
+                     <option>€ EUR</option>
+                  </select>
+               </div> -->
 					<div class="right-phone-box">
 						<p>
 							Call US : <a href="#  ">010-1111-1111</a>
@@ -246,164 +246,202 @@
 	</header>
 	<!-- End Main Top -->
 
+	<!-- continaer 시작 -->
+	<div id="container">
+		<div class="location_area customer">
+			<div class="box_inner">
+				<h2 class="tit_page">TheWayShop</h2>
 
+				<form method="post" action="./newQnA.do">
+					<input type="hidden" name="id" value="${id}">
 
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">TheWayShop 로그인</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-12 col-lg-10">
-					<div class="wrap d-md-flex">
-						<div
-							class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
-							<div class="text w-100">
-								<h2>TheWayShop에 오신걸 환영합니다!</h2>
-								<p>아이디가 없으신가요?</p>
-								<a href="./regist.jsp" class="btn btn-white btn-outline-white">회원가입</a>
-							</div>
-						</div>
-						<div class="login-wrap p-4 p-lg-5">
-							<div class="d-flex">
-								<div class="w-100">
-									<h3 class="mb-4">로그인</h3>
-								</div>
+						
+							<div class="contact-form-right" padding = "20px">
+							<center>
+								<h2>Q&A</h2>
+								<p>불편한 사항이 있으시간요? Q&A 답변에는 시간이 걸릴수 있습니다.</p>
+								<form id="contactForm">
+								
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+											 
+												<input type="text" class="form-control"
+													value="${datas.qtitle }" id="name" name="qtitle"
+													placeholder="제목을 입력해주세요." required
+													data-error="Please enter your name">
 
-							</div>
-							<form action="login.do" class="signin-form" method="post">
-								<div class="form-group mb-3">
-									<label class="label" for="name">ID</label> <input type="text"
-										class="form-control" name="id" placeholder="ID" required>
-								</div>
-								<div class="form-group mb-3">
-									<label class="label" for="password">Password</label> <input
-										type="password" class="form-control" name="pw"
-										placeholder="Password" required>
-								</div>
-								<div class="form-group">
-									<button type="submit"
-										class="form-control btn btn-primary submit px-3">로그인</button>
-								</div>
-								<div class="form-group d-md-flex">
-									<div class="w-50 text-left">
-										<label class="checkbox-wrap checkbox-primary mb-0">Remember
-											Me <input type="checkbox" checked> <span
-											class="checkmark"></span>
-										</label>
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+											<div class="selaction">
+												<p>어떤 부분이 불편하셨는지 선택해주세요.</p>
+												<select name="value" id="value" value="${datas.sort }" class="selaction" >
+													<options disabled selected>골라주세요</options>
+													<option value="event">이벤트</option>
+													<option value="product">상품문의</option>
+
+													<option value="pay">결제문의</option>
+
+												</select>
+												</div>
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<textarea class="form-control" id="message" name="qcon"
+													value="${datas.qcon}" placeholder="Q&A 작성" rows="4"
+													data-error="Write your message" required></textarea>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="submit-button text-center">
+												<button class="btn hvr-hover" id="submit" type="submit">Q&A
+													작성</button>
+												<div id="msgSubmit" class="h3 text-center hidden"></div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
 									</div>
-									<div class="w-50 text-md-right">
-										<a href="#">Forgot Password</a>
-									</div>
-								</div>
+								</form>
+							</div>
 							</form>
+							</center>
+						</div>
+						
+						
+						</div>
+						</div>
+
+					
+				</form>
+
+
+				</form>
+				</td>
+				</tr>
+				</table>
+
+
+
+				</tr>
+				</tbody>
+				</table>
+
+			</div>
+		</div>
+
+
+		<!-- continaer 끝 -->
+
+		<!-- Start Footer  -->
+		<footer>
+			<div class="footer-main">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-12 col-sm-12">
+							<div class="footer-widget">
+								<h4>About ThewayShop</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+									sed do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook"
+											aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"
+											aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin"
+											aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus"
+											aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-rss"
+											aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fab fa-pinterest-p"
+											aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fab fa-whatsapp"
+											aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-12 col-sm-12">
+							<div class="footer-link">
+								<h4>Information</h4>
+								<ul>
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Customer Service</a></li>
+									<li><a href="#">Our Sitemap</a></li>
+									<li><a href="#">Terms &amp; Conditions</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+									<li><a href="#">Delivery Information</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-12 col-sm-12">
+							<div class="footer-link-contact">
+								<h4>Contact Us</h4>
+								<ul>
+									<li>
+										<p>
+											<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days
+											3756 <br>Preston Street Wichita,<br> KS 67213
+										</p>
+									</li>
+									<li>
+										<p>
+											<i class="fas fa-phone-square"></i>Phone: <a
+												href="tel:+1-888705770">+1-888 705 770</a>
+										</p>
+									</li>
+									<li>
+										<p>
+											<i class="fas fa-envelope"></i>Email: <a
+												href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
+										</p>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</footer>
+		<!-- End Footer  -->
+
+		<!-- Start copyright  -->
+		<div class="footer-copyright">
+			<p class="footer-company">
+				All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design
+				By : <a href="https://html.design/">html design</a>
+			</p>
 		</div>
-	</section>
-	<!-- Start Footer  -->
-	<footer>
-		<div class="footer-main">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-widget">
-							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							<ul>
-								<li><a href="#"><i class="fab fa-facebook"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-google-plus"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-pinterest-p"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-whatsapp"
-										aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-link">
-							<h4>Information</h4>
-							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Customer Service</a></li>
-								<li><a href="#">Our Sitemap</a></li>
-								<li><a href="#">Terms &amp; Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Delivery Information</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-link-contact">
-							<h4>Contact Us</h4>
-							<ul>
-								<li>
-									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days
-										3756 <br>Preston Street Wichita,<br> KS 67213
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fas fa-phone-square"></i>Phone: <a
-											href="tel:+1-888705770">+1-888 705 770</a>
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fas fa-envelope"></i>Email: <a
-											href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End Footer  -->
+		<!-- End copyright  -->
 
-	<!-- Start copyright  -->
-	<div class="footer-copyright">
-		<p class="footer-company">
-			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By
-			: <a href="https://html.design/">html design</a>
-		</p>
-	</div>
-	<!-- End copyright  -->
+		<a href="#" id="back-to-top" title="Back to top"
+			style="display: none;">&uarr;</a>
 
-	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
-	<!-- ALL JS FILES -->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!-- ALL PLUGINS -->
-	<script src="js/jquery.superslides.min.js"></script>
-	<script src="js/bootstrap-select.js"></script>
-	<script src="js/inewsticker.js"></script>
-	<script src="js/bootsnav.js."></script>
-	<script src="js/images-loded.min.js"></script>
-	<script src="js/isotope.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/baguetteBox.min.js"></script>
-	<script src="js/form-validator.min.js"></script>
-	<script src="js/contact-form-script.js"></script>
-	<script src="js/custom.js"></script>
+		<!-- ALL JS FILES -->
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- ALL PLUGINS -->
+		<script src="js/jquery.superslides.min.js"></script>
+		<script src="js/bootstrap-select.js"></script>
+		<script src="js/inewsticker.js"></script>
+		<script src="js/bootsnav.js."></script>
+		<script src="js/images-loded.min.js"></script>
+		<script src="js/isotope.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/baguetteBox.min.js"></script>
+		<script src="js/form-validator.min.js"></script>
+		<script src="js/contact-form-script.js"></script>
+		<script src="js/custom.js"></script>
 </body>
 </html>

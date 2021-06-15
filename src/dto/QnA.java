@@ -3,11 +3,24 @@ package dto;
 public class QnA {
 	private int qid;
 	private String id;
+	private String qtitle;
+	public String getQtitle() {
+		return qtitle;
+	}
+	public void setQtitle(String qtitle) {
+		this.qtitle = qtitle;
+	}
 	private String qcon;
 	private String qstate;
 	private String day;
 	private String sort;
-	
+	private int qstatenum;
+	public int getQstatenum() {
+		return qstatenum;
+	}
+	public void setQstatenum(int qstatenum) {
+		this.qstatenum = qstatenum;
+	}
 	public int getQid() {
 		return qid;
 	}
