@@ -7,27 +7,27 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.NoticeDAO;
-import model.Notice;
+import dao.QnADAO;
+import model.QnA;
 
 
-public class ShowNotiAction implements Action{
+public class ShowQAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
 		
-		NoticeDAO noticeDAO = new NoticeDAO();
-		Notice notice = new Notice();  			//NoticeDAO와 Notice 클래스를 이용하기 위해 객체 생성
+		QnADAO qnaDAO = new QnADAO();
+		QnA qna = new QnA();  			//NoticeDAO와 Notice 클래스를 이용하기 위해 객체 생성
 		
 
-	
+	 // nid에 맞는 
 		
 		
-		ArrayList<Notice> datas = noticeDAO.showN();	// 전체 공지사항 출력 후 저장
-		req.setAttribute("datas", datas);
+		ArrayList<QnA> datas = qnaDAO.showQ();
+		req.setAttribute("datas", datas);	//전체 QnA 내용을 받아와 저장
 		
 		forward.setRedirect(false);
-		forward.setPath("board.jsp"); 
+		forward.setPath("QnAboard.jsp"); 
 		
 		
 		

@@ -7,30 +7,31 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.NoticeDAO;
-import model.Notice;
+import dao.QnADAO;
+import model.QnA;
 
+public class DelQnAAction implements Action{
 
-public class ShowNotiAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
 		
-		NoticeDAO noticeDAO = new NoticeDAO();
-		Notice notice = new Notice();  			//NoticeDAO와 Notice 클래스를 이용하기 위해 객체 생성
-		
+		QnADAO qnaDAO = new QnADAO();	
+		QnA qna = new QnA();
+			
 
-	
+		if(!qnaDAO.delQnA(Integer.parseInt(req.getParameter("qid")))) {		// 뷰로부터 qid를 인트형으로 변환해 받아와서 질문글 삭제메소드 실행
+			System.out.println("질문글 삭제 실패");
+		}
 		
-		
-		ArrayList<Notice> datas = noticeDAO.showN();	// 전체 공지사항 출력 후 저장
+		ArrayList<QnA> datas = qnaDAO.showQ();
 		req.setAttribute("datas", datas);
 		
 		forward.setRedirect(false);
-		forward.setPath("board.jsp"); 
-		
-		
+		forward.setPath("QnAboard.jsp"); 
 		
 		return forward;
 	}
+
 }
+	

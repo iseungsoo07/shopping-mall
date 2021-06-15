@@ -13,6 +13,5 @@ CREATE TABLE member (
 
 DROP TABLE member;
 SELECT * FROM member;
-DELETE FROM member WHERE id = 'admin';
 
 

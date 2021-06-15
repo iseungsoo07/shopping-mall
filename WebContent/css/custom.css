@@ -1,4 +1,4 @@
-/* regist.jsp, mypage.jsp�뿉 �쟻�슜�맆 css �떆�옉 */
+/* regist.jsp, mypage.jsp 시작 */
 @import
 	url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i')
 	;
@@ -168,7 +168,7 @@ select {
 	font-size: 14px;
 	line-height: 35px;
 	vertical-align: middle;
-	background: #384d75;
+	background: #d33b33;
 	color: #fff !important;
 }
 
@@ -263,6 +263,7 @@ select {
 	font-weight: bold;
 	font-size: 17px;
 	letter-spacing: -2px;
+	padding-left: 0;
 }
 
 .appForm .app_list li .app_content {
@@ -295,11 +296,36 @@ select {
 	height: 43px;
 }
 
-.appForm .app_list li .app_content.radio_area {
+.appForm .app_list li .zipcode {
+	display: inline-block;
+	width: 50%;
+	margin: 5px 0;
+}
+
+.appForm .app_list li .find_zipcode {
+	display: inline-block;
+	border: none;
+	width: 160px;
 	height: 45px;
+	margin: 5px 0;
+	cursor: pointer
+}
+
+.appForm .app_list li .addr {
+	margin: 5px 0;
+	width: 100%
+}
+
+.appForm .app_list li .detailAddr {
+	margin: 5px 0;
+	width: 49.7%;
 	box-sizing: border-box;
-	padding-top: 12px;
-	line-height: 19px;
+}
+
+.appForm .app_list li .referAddr {
+	margin: 5px 0;
+	width: 49.7%;
+	box-sizing: border-box;
 }
 
 .appForm .app_list li .app_content.checkbox_area {
@@ -319,10 +345,200 @@ select {
 	font-size: 14px;
 }
 
-/* regist.jsp, mypage.jsp�뿉 �쟻�슜�맆 css �걹 */
+/* @media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.box_inner {
+		width: 720px;
+	}
+	.appForm .app_list li .app_content {
+		float: right;
+		width: 620px;
+	}
+	.appForm .app_list li .email_label, .appForm .app_list li .agree_label {
+		float: none;
+		padding-left: 0;
+	}
+	.appForm .app_list li .addr_label {
+		float: none;
+	}
+	.w160 {
+		width: 218px;
+	}
+	.appForm .app_list li .zipcode {
+		width: 50%;
+	}
+	.appForm .app_list li .find_zipcode {
+		width: 49.3%;
+	}
+	.appForm .app_list li .detailAddr {
+		width: 49.6%;
+	}
+	.appForm .app_list li .referAddr {
+		width: 49.7%;
+	}
+} */
+@media ( min-width : 768px) and (max-width: 991px) {
+	.box_inner {
+		width: 720px;
+	}
+	.appForm .app_list li .app_content {
+		float: right;
+		width: 620px;
+	}
+	.appForm .app_list li .email_label, .appForm .app_list li .agree_label {
+		float: none;
+		padding-left: 0;
+	}
+	.appForm .app_list li .addr_label {
+		float: none;
+	}
+	.w160 {
+		width: 218px;
+	}
+	.appForm .app_list li .zipcode {
+		width: 50%;
+	}
+	.appForm .app_list li .find_zipcode {
+		width: 49.3%;
+	}
+	.appForm .app_list li .detailAddr {
+		width: 49.6%;
+	}
+	.appForm .app_list li .referAddr {
+		width: 49.7%;
+	}
+}
 
-/* 寃뚯떆�뙋�뿉 �쟻�슜�맆 css �떆�옉 */
+@media ( max-width : 767px) {
+	.box_inner {
+		width: 90%;
+	}
+	.appForm .app_list li .app_content {
+		float: right;
+		width: 100%;
+	}
+	.appForm .app_list li .email_label, .appForm .app_list li .agree_label {
+		float: none;
+		padding-left: 0;
+	}
+	.appForm .app_list li .addr_label {
+		float: none;
+	}
+	.w160 {
+		width: 29%;
+	}
+	.appForm .app_list li .zipcode {
+		width: 49.8%;
+	}
+	.appForm .app_list li .find_zipcode {
+		width: 49.3%;
+	}
+	.appForm .app_list li .detailAddr {
+		width: 49.4%;
+	}
+	.appForm .app_list li .referAddr {
+		width: 49.7%;
+	}
+}
 
+@media only screen and (min-width: 280px) and (max-width: 599px) {
+	.box_inner {
+		width: 90%;
+	}
+	.appForm .app_list li .app_content {
+		float: right;
+		width: 100%;
+	}
+	.appForm .app_list li .email_label, .appForm .app_list li .agree_label {
+		float: none;
+		padding-left: 0;
+	}
+	.appForm .app_list li .addr_label {
+		float: none;
+	}
+	.w160 {
+		width: 46.5%;
+	}
+	.appForm .app_list li .zipcode {
+		width: 49.8%;
+	}
+	.appForm .app_list li .find_zipcode {
+		width: 48.8%;
+	}
+	.appForm .app_list li .detailAddr {
+		width: 49.4%;
+	}
+	.appForm .app_list li .referAddr {
+		width: 49.7%;
+	}
+}
+
+/* 개인 정보 수정 */
+.myinfo dt {
+	width: 170px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	background: #d33b33;
+	font-size: 18px;
+	color: #fff;
+}
+
+.myinfo dd {
+	border-top: 2px solid #d33b33;
+}
+
+.regForm .reg_list {
+	padding: 10px 0 0;
+	/* 동일한 패턴을 배경처럼 사용할 때 자주 사용하는 방식 */
+	/* 모바일에서 특히 많이 사용 됨 */
+	background: url(../images/bg_reglist.png) repeat-y;
+}
+
+.regForm .reg_list li {
+	min-height: 60px;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.regForm .reg_list li .tit_lbl {
+	position: relative;
+	float: left;
+	width: 150px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	line-height: 60px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.regForm .reg_list li .reg_content {
+	float: right;
+	width: 770px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	padding-top: 16px;
+}
+
+.reg_list li .reg_content * {
+	vertical-align: middle;
+}
+
+.reg_list li .reg_content.radio_area {
+	padding-top: 20px;
+}
+
+.reg_list li .reg_content label {
+	vertical-align: middle;
+}
+
+.reg_list li .reg_content .info_line {
+	padding: 10px 10px 17px 0;
+	font-size: 15px;
+}
+
+/* regist.jsp, mypage.jsp 끝 */
+
+/* board.jsp 시작 */
 .bbsListTbl {
 	width: 100%;
 	border-top: 2px solid #d33b33;
@@ -405,37 +621,902 @@ select {
 }
 
 .location_area .tit_page {
-    padding: 40px 0 0 0;
-    margin: 0 50px;
-    border-bottom: 1px solid #ccc;
-    font: 30px 'Quattrocento Sans', sans-serif;
-    color: #000;
-    letter-spacing: 3px;
-    
+	padding: 40px 0 0 0;
+	margin: 0 50px;
+	border-bottom: 1px solid #ccc;
+	font: 30px 'Quattrocento Sans', sans-serif;
+	color: #000;
+	letter-spacing: 3px;
 }
 
 .location_area .tit_page .in {
-    font-variant: small-caps;
+	font-variant: small-caps;
 }
 
 .location_area .location {
-    padding: 20px 0 0 50px;
-    color: #000;
+	padding: 20px 0 0 50px;
+	color: #000;
 }
 
 .location_area .location .path {
-    display: inline-block;
-    padding: 0 10px;
+	display: inline-block;
+	padding: 0 10px;
 }
 
 .location_area .page_menu {
-    display: none;
+	display: none;
 }
 
 .bodytext_area {
-    box-sizing: border-box;
-    padding: 20px 50px 0;
+	box-sizing: border-box;
+	padding: 20px 50px 0;
 }
 
+@media ( max-width : 767px) {
+	.bbsListTbl td:first-child {
+		width: 15%;
+	}
+	.bbsListTbl td:nth-child(2) {
+		width: 45%;
+	}
+	.bbsListTbl td:nth-child(3) {
+		width: 20%;
+	}
+	.bbsListTbl td:last-child {
+		width: 20%;
+	}
+}
 
-/* 寃뚯떆�뙋�뿉 �쟻�슜�맆 css �걹 */
+/* board.jsp 끝 */
+
+/* 공지사항 상세보기 */
+.bbsview_list {
+	padding-bottom: 30px;
+	border-top: 2px solid #384d75;
+}
+
+.bbsview_list li {
+	box-sizing: border-box;
+	padding: 0 15px;
+	border-bottom: 1px solid #ccc;
+	font-size: 14px;
+	color: #666;
+}
+
+.bbsview_list li.bbs_title {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.bbsview_list li.bbs_date {
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	width: 50%;
+}
+
+.bbsview_list li.bbs_hit {
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	width: 50%;
+}
+
+.bbsview_list li.bbs_content {
+	clear: both;
+	min-height: 200px;
+	padding: 20px 15px;
+}
+
+.bbsview_list li.bbs_content .editor_content {
+	line-height: 1.4;
+}
+
+.near_list {
+	border-top: 1px solid #ccc;
+}
+
+.near_list li {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+	display: flex;
+	align-items: center;
+}
+
+.near_list li:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.txt_right {
+	text-align: right;
+}
+
+.near_list li h4 {
+	float: left;
+	width: 150px;
+	padding: 0 0 0 50px;
+	background: url(../images/ico_nearNext.png) no-repeat 12px 50%;
+	font-size: 15px;
+}
+
+.near_list li h4.next {
+	background: url(../images/ico_nearPrev.png) no-repeat 12px 50%;
+}
+
+/* 아이패드, 갤럭시 탭 사이즈 */
+@media all and (max-width: 1065px) and (min-width: 801px) {
+	.box_inner {
+		width: 100%;
+	}
+	header .header_area h1 {
+		padding-left: 20px;
+	}
+	.header_cont {
+		float: right;
+		width: 60%;
+		padding-right: 20px;
+	}
+	.header_cont .gnb li a {
+		padding: 26px 25px;
+	}
+	.gnb_depth .submenu_list {
+		width: 100%;
+		padding-left: 52%;
+	}
+	.gnb_depth .submenu_list li a {
+		padding: 20px;
+	}
+	#contianer {
+		padding-bottom: 20px;
+	}
+	.about_area .place_list {
+		box-sizing: border-box;
+		padding: 0 20px;
+	}
+	.appbbs_area .appbbs_box {
+		box-sizing: border-box;
+		padding: 0 20px;
+	}
+	.appbbs_box>.app_line>a {
+		font-size: 21px;
+	}
+	footer .foot_area {
+		box-sizing: border-box;
+		padding-left: 20px;
+	}
+	footer .foot_area .snslink li {
+		margin-left: 15px;
+	}
+	.quick_area .quick_list {
+		display: none;
+	}
+	.to_top {
+		position: fixed;
+		right: 20px;
+		bottom: 112px;
+		text-align: center;
+		background: none;
+		z-index: 100;
+	}
+	.to_top a {
+		display: block;
+		width: 45px;
+		height: 45px;
+		border-left: none;
+		border-bottom: none;
+		background: url(../images/ico_totop_mo.png) no-repeat center;
+		background-size: 45px;
+	}
+
+	/* 회원가입 */
+	.appForm .app_list li .tit_lbl {
+		width: 21%;
+	}
+	.appForm .app_list li .app_content {
+		width: 79%;
+	}
+	.appForm .app_list li .app_content.email_area .ico_space {
+		vertical-align: middle;
+		line-height: 45px;
+	}
+
+	/* 마이페이지 */
+	.regForm .reg_list li .tit_lbl {
+		width: 21%;
+	}
+	.regForm .reg_list li .reg_content {
+		width: 79%;
+	}
+}
+
+/* 모바일 */
+@media all and (max-width: 800px) {
+	.box_inner {
+		width: 100%;
+	}
+	header {
+		height: 90px;
+		text-align: center;
+		z-index: 200;
+		background: rgba(0, 0, 0, 0.5);
+	}
+	header .header_area h1 {
+		float: none;
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		padding: 35px 0 0;
+	}
+	header .header_area h1 a {
+		display: inline-block;
+		width: 180px;
+		height: 23px;
+		background-size: 180px 23px;
+	}
+	header .header_area .openMOgnb {
+		display: block;
+		position: absolute;
+		left: 15px;
+		top: 35px;
+		width: 23px;
+		height: 16px;
+	}
+	header .header_area .openMOgnb span {
+		box-sizing: border-box;
+		display: block;
+		width: 25px;
+		height: 3px;
+		margin-bottom: 4px;
+		border-radius: 10px;
+		background-color: #fff;
+	}
+	header .header_area .openMOgnb span+span {
+		width: 17px;
+	}
+	header .header_area .openMOgnb span:last-child {
+		width: 25px;
+		margin-bottom: 0;
+	}
+	.header_cont {
+		float: none;
+		width: 100%;
+		background-color: #31353d;
+		/* display: none; */
+	}
+	.header_cont .util {
+		padding: 20px;
+	}
+	.header_cont .util li {
+		float: left;
+	}
+	.header_cont .util li:after {
+		content: "|";
+		display: inline-block;
+		padding: 0 10px;
+		font-size: 10px;
+		color: #a2a3a3;
+		position: relative;
+		top: -2px;
+	}
+	.header_cont .util li:last-child::after {
+		content: "";
+		display: none;
+	}
+	.header_cont .util li a {
+		font-size: 16px;
+		color: #fff;
+	}
+	.header_cont .closePop {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 15px;
+	}
+	.header_cont .closePop a {
+		display: block;
+		width: 60px;
+		height: 60px;
+		text-indent: -9999px;
+		overflow: hidden;
+		background: url(../images/btn_closeMenu.png) no-repeat;
+		background-size: 60px;
+	}
+	.header_cont .gnb {
+		float: none;
+		box-sizing: border-box;
+		padding-top: 0;
+		height: auto;
+		border-top: 1px solid #83868b;
+	}
+	.header_cont .gnb li {
+		float: left;
+		width: 50%;
+		text-align: left;
+		box-sizing: border-box;
+		border-bottom: 1px solid #83868b;
+	}
+	.header_cont .gnb li:nth-child(odd) {
+		border-right: 1px solid #83868b;
+	}
+	.header_cont .gnb li a {
+		display: block;
+		padding: 0 0 0 65px;
+		height: 60px;
+		line-height: 60px;
+		background: url(../images/ico_gnb01.png) no-repeat 10px center;
+		background-size: 49px 56px;
+		font-size: 16px;
+		color: #fff;
+	}
+	.header_cont .gnb li+li a {
+		background-image: url(../images/ico_gnb02.png);
+	}
+	.header_cont .gnb li+li+li a {
+		background-image: url(../images/ico_gnb03.png);
+	}
+	.header_cont .gnb li+li+li+li a {
+		background-image: url(../images/ico_gnb04.png);
+	}
+	.gnb_depth {
+		display: none;
+	}
+	.main_rolling_pc {
+		display: none;
+	}
+	.main_rolling_mobile {
+		display: block;
+	}
+	.main_rolling_mobile .swiper-container .swiper-wrapper .swiper-slide img
+		{
+		width: 100%;
+	}
+	.main_rolling_mobile .swiper-pagination {
+		width: auto;
+		right: 20px;
+		left: auto;
+		top: auto;
+		bottom: 20px;
+		font-size: 0;
+	}
+	.main_rolling_mobile .swiper-pagination-bullet {
+		width: 5px;
+		height: 5px;
+		margin: 0 3px !important;
+		background: #fff;
+		opacity: 0.2;
+	}
+	.main_rolling_mobile .swiper-pagination-bullet-active {
+		opacity: 1;
+	}
+	#container {
+		position: relative;
+		width: 100%;
+		padding-bottom: 30px;
+	}
+	.about_area h2 {
+		padding: 27px 0 25px;
+		font-size: 20px;
+	}
+	.about_area h2 b {
+		display: block;
+		padding-top: 10px;
+	}
+	.about_area .about_box {
+		background: #fff;
+	}
+	.about_area .place_list li {
+		float: none;
+		width: 100%;
+		margin: 0;
+		box-sizing: border-box;
+		padding: 0 20px;
+		top: 0;
+	}
+	.about_area .place_list li p.txt {
+		padding: 10px 50px 30px;
+		line-height: 1.4;
+	}
+	.about_area .place_list li .view {
+		padding-bottom: 10px;
+		margin: 0 0 30px;
+	}
+	.appbbs_area {
+		padding: 0 20px;
+	}
+	.appbbs_box .app_line {
+		display: none;
+	}
+	.appbbs_box .bbs_line {
+		float: none;
+		width: 100%;
+		padding: 20px 0;
+		border-top: 1px solid #d6d7d8;
+	}
+	.appbbs_box .bbs_line h3 {
+		font-weight: bold;
+		font-size: 19px;
+	}
+	.quick_area .quick_list {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+	.quick_area .quick_list li {
+		float: left;
+		width: 31%;
+		text-align: left;
+		background: #3a3e46;
+		font-size: 15px;
+	}
+	.quick_area .quick_list li+li {
+		width: 37%;
+	}
+	.quick_area .quick_list li+li+li {
+		width: 32%;
+	}
+	.quick_area .quick_list li:first-child::after {
+		content: "";
+		display: inline-block;
+		width: 1px;
+		height: 16px;
+		position: absolute;
+		right: 31%;
+		top: 50%;
+		margin-top: -8px;
+		background: #76787e;
+	}
+	.quick_area .quick_list li:last-child::before {
+		content: "";
+		display: inline-block;
+		width: 1px;
+		height: 16px;
+		position: absolute;
+		left: 32%;
+		top: 50%;
+		margin-top: -8px;
+		background: #76787e;
+	}
+	.quick_area .quick_list li a {
+		display: block;
+		padding: 10px 0;
+		border-top: none;
+		color: #fff;
+	}
+	.quick_area .quick_list li a h3 {
+		height: 37px;
+		line-height: 37px;
+		padding-bottom: 0;
+		padding-left: 45px;
+		background: url(../images/ico_phone_mobtm.png) no-repeat 20px center;
+		background-size: 20px;
+		color: #fff;
+		letter-spacing: -1px;
+	}
+	.quick_area .quick_list li+li a h3 {
+		background-image: url(../images/ico_katalk_mobtm.png);
+	}
+	.quick_area .quick_list li+li+li a h3 {
+		background-image: url(../images/ico_contact_mobtm.png);
+	}
+	.quick_area .quick_list a h3 em {
+		display: inline;
+	}
+	.quick_area .quick_list a p {
+		display: none;
+	}
+	.to_top {
+		position: fixed;
+		right: 20px;
+		bottom: 100px;
+		text-align: center;
+		background: none;
+		z-index: 100;
+	}
+	.to_top a {
+		display: block;
+		width: 45px;
+		height: 45px;
+		border-left: none;
+		border-bottom: none;
+		background: url(../images/ico_totop_mo.png) no-repeat center;
+		background-size: 45px;
+	}
+	.to_top.hide {
+		display: none;
+	}
+	footer .foot_area {
+		box-sizing: border-box;
+		padding: 0 20px 90px;
+	}
+	footer .foot_area h2 {
+		padding-top: 15px;
+		font-size: 14px;
+	}
+	footer .foot_area .addr {
+		line-height: 1.3;
+		font-size: 14px;
+		color: #767676;
+	}
+	footer .foot_area .copy {
+		color: #767676;
+		padding: 3px 0 20px;
+		font-size: 14px;
+	}
+	footer .gubun {
+		color: #fff;
+	}
+	footer .br_line {
+		display: block;
+	}
+	footer .foot_area .snslink {
+		position: static;
+		width: 210px;
+		margin: 10px auto 40px;
+	}
+	footer .foot_area .snslink li {
+		margin-left: 30px;
+	}
+	footer .foot_area .snslink li:first-child {
+		margin-left: 0;
+	}
+
+	/* sub page 공통 */
+	.btn_bbs {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		height: 35px;
+		font-size: 14px;
+		line-height: 35px;
+		vertical-align: middle;
+		background: #d33b33;
+		color: #fff !important;
+	}
+	.btn_basecolor {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		height: 50px;
+		font-size: 20px;
+		line-height: 50px;
+		vertical-align: middle;
+		background: #d33b33;
+		color: #fff !important;
+		font-weight: bold;
+	}
+	.location_area {
+		height: 260px;
+		background: url(../images/img_top2.jpg) no-repeat center bottom cover;
+	}
+	.location_area h2.tit_page {
+		padding: 140px 0 0 0;
+		margin: 0 45px;
+	}
+	.location_area p.location {
+		display: none;
+	}
+	.location_area ul.page_menu {
+		display: block;
+		padding: 10px 0 0 45px;
+	}
+	.location_area ul.page_menu li a {
+		display: block;
+		margin-right: 20px;
+		font-size: 15px;
+		color: #ddd;
+	}
+	.location_area ul.page_menu li a.on {
+		border-bottom: 1px solid #fff;
+		color: #fff;
+	}
+	.bodytext_area {
+		box-sizing: border-box;
+		padding: 33px 20px 0;
+	}
+
+	/* 로그인 */
+	.login_wrap {
+		width: 100%;
+		margin: 0 auto;
+	}
+	h1.loginTit a {
+		display: block;
+	}
+	.login_list {
+		margin: 50px auto 20px;
+	}
+	.login_list li {
+		height: 50px;
+	}
+	.login_list li a {
+		height: 50px;
+		line-height: 50px;
+	}
+
+	/* 회원가입 */
+	.appForm {
+		margin: 20px auto;
+	}
+	.appForm .pilsoo_item::before {
+		top: 1px;
+	}
+	.appForm .app_list li {
+		position: relative;
+		padding: 10px 0;
+		border-bottom: 1px solid #ccc;
+	}
+	.appForm .app_list li:last-child {
+		border-bottom: none;
+		padding-bottom: 10px;
+	}
+	.appForm .app_list li .tit_lbl {
+		float: none;
+		width: auto;
+		line-height: 30px;
+	}
+	.appForm .app_list li .app_content {
+		float: none;
+		width: auto;
+	}
+	.appForm .app_list li .app_content * {
+		vertical-align: middle;
+	}
+	.appForm .app_list li .app_content input[type="text"], .appForm .app_list li .app_content input[type="password"],
+		.appForm .app_list li .app_content input[type="tel"] {
+		border: none;
+		width: 100% !important;
+	}
+	.appForm .app_list li .app_content.email_area {
+		padding: 5px 0 0;
+		font-size: 0;
+	}
+	.appForm .app_list li .app_content.email_area input[type="text"] {
+		border: 1px solid #ccc;
+		width: 45% !important;
+		font-size: 14px;
+	}
+	.appForm .app_list li .app_content.email_area .ico_space {
+		display: inline-block;
+		width: 10% !important;
+		text-align: center;
+		font-size: 14px;
+	}
+	.appForm .app_list li .select_common {
+		width: 100%;
+		height: 45px;
+		margin-top: 10px;
+	}
+	.appForm .app_list li .select_common select {
+		width: 100%;
+		height: 39px;
+	}
+	.appForm .app_list li .app_content.radio_area {
+		padding-left: 20px;
+		height: 40px;
+		padding-top: 10px;
+	}
+	.appForm .app_list li .app_content.checkbox_area {
+		padding-left: 20px;
+		height: 40px;
+		padding-top: 10px;
+	}
+	.appForm .app_list li textarea {
+		height: 130px;
+	}
+	.appForm .btn_line {
+		padding: 20px 0;
+	}
+	.appForm .btn_line a.btn_app {
+		margin-left: 0;
+	}
+
+	/* 내 정보 수정 */
+	.regForm {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.regForm .reg_list {
+		padding: 10px 0 0;
+		background: none;
+	}
+	.regForm .reg_list li {
+		position: relative;
+		min-height: 50px;
+		padding: 0;
+		border-bottom: 1px solid #ccc;
+	}
+	.regForm .reg_list li .tit_lbl {
+		position: relative;
+		float: none;
+		width: auto;
+		box-sizing: border-box;
+		padding-left: 10px;
+		line-height: 50px;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	.regForm .reg_list li .reg_content {
+		float: none;
+		width: auto;
+		box-sizing: border-box;
+		padding-left: 10px;
+		padding-top: 0;
+		padding-bottom: 20px;
+	}
+	.regForm .reg_list li .reg_content * {
+		vertical-align: middle;
+	}
+	.regForm .reg_list li .reg_content.radio_area {
+		padding-top: 5px;
+	}
+	.regForm .reg_list li .reg_content label {
+		vertical-align: middle;
+	}
+	.regForm .reg_list li .reg_content .info_line {
+		padding: 10px 10px 15px 0;
+		line-height: 1.4;
+		font-size: 15px;
+	}
+
+	/* 공지사항 목록 */
+	.bbsListTbl {
+		width: 100%;
+		border-top: 2px solid #384d75;
+	}
+	.bbsListTbl th, .bbsListTbl td {
+		padding: 10px;
+		box-sizing: border-box;
+		height: 45px;
+	}
+	.bbsListTbl th {
+		padding: 0;
+		border-bottom: 1px solid #ccc;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	.bbsListTbl th:nth-child(1) {
+		display: none;
+	}
+	.bbsListTbl th:nth-child(2) {
+		width: 70%;
+	}
+	.bbsListTbl th:nth-child(3) {
+		display: none;
+	}
+	.bbsListTbl th :nth-child(4) {
+		width: 30%;
+	}
+	.bbsListTbl td:nth-child(1) {
+		display: none;
+	}
+	.bbsListTbl td:nth-child(2) {
+		width: 70%;
+	}
+	.bbsListTbl td:nth-child(3) {
+		display: none;
+	}
+	.bbsListTbl td :nth-child(4) {
+		width: 30%;
+	}
+	.bbsListTbl td.tit_notice a {
+		display: block;
+	}
+	.bbsListTbl td {
+		text-align: center;
+		line-height: 1.3;
+		border-bottom: 1px solid #ccc;
+	}
+
+	/* 공지사항 상세보기 */
+	.near_list {
+		display: none;
+	}
+
+	/* 프로그램 소개 */
+	.bodytext_area.place_area {
+		padding: 33px 0 0;
+	}
+	.program_list {
+		padding: 0 20px;
+	}
+	.program_list li {
+		float: left;
+		width: 100%;
+		margin: 0%;
+		box-sizing: border-box;
+		border-top: 1px solid #ccc;
+		padding: 30px 0;
+	}
+	.program_list li:first-child {
+		border-top: none;
+		padding-top: 0;
+	}
+	.program_list li h3 {
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	.program_list li .subttl {
+		padding: 15px 0 0;
+		text-align: center;
+		font-size: 18px;
+	}
+	.program_list li .program_content p .subtxt {
+		display: inline;
+	}
+	.program_list li .btn_more {
+		display: none;
+	}
+}
+
+@media all and (max-width: 320px) {
+	.quick_area .quick_list li a h3 {
+		letter-spacing: -2px;
+	}
+}
+
+.form_box {
+	width: 100%;
+}
+
+.two_form {
+	display: flex;	
+}
+
+.form_box .two_form .appForm {
+	width: 40%;
+	padding: 10px;
+}
+
+.form_box .two_form .appForm .app_list .app_content {
+	float: none;
+	width: 100%;
+}
+
+.find_title {
+	position: relative;
+	box-sizing: border-box;
+	line-height: 42px;
+	font-weight: bold;
+	font-size: 17px;
+	letter-spacing: -2px;
+	padding-left: 0;
+	border-bottom: 1px solid #d33b33;
+	color: #000;
+}
+
+.form_box .two_form .appForm .btn_line .btn_basecolor {
+	font-size: 17px;
+}
+
+.show_txt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.flex { 
+	display: flex;	
+}
+
+.flex .w70p {
+	width: 70%;
+	margin-right: 10px;
+}
+
+.flex .checkDup {
+	height: 45px;
+	border: none;
+}
+

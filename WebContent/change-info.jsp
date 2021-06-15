@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
 <title>TheWayShop | 정보 수정</title>
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
 	rel="stylesheet"
@@ -12,6 +13,11 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 >
+=======
+<title>TheWayShop | 회원 정보 수정</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+>>>>>>> 48c0fe68fb9cdfffbe4235cfb50e67285e43d45d
 <link rel="stylesheet" href="css/custom.css">
 <!-- Site Icons -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -119,6 +125,8 @@
 		} */
 
 	}
+	
+	
 </script>
 </head>
 <body>
@@ -326,10 +334,19 @@
 
 	<!-- container 시작 -->
 	<div id="container">
-		<div class="location_area customer">
-			<div class="box_inner">
-				<h2 class="tit_page">TheWayShop</h2>
-				<p class="location">회원 정보 수정</p>
+		<div class="all-title-box">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>My Page</h2>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="#">Home</a>
+							</li>
+							<li class="breadcrumb-item active">회원 정보 수정</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- 본문 시작 -->
@@ -346,6 +363,7 @@
 					<ul class="app_list">
 						<li class="clear"><label for="id" class="tit_lbl pilsoo_item"> 아이디 </label>
 							<div class="app_content">
+<<<<<<< HEAD
 								<input type="text" class="w100p" id="id" name="id" placeholder="${member.id}" value="${member.id}" disabled />
 							</div></li>
 						<li class="clear"><label for="pw" class="tit_lbl pilsoo_item"> 비밀번호 </label>
@@ -353,6 +371,19 @@
 								<input type="password" class="w100p" id="pw" name="pw" placeholder="${member.pw}" value="${member.pw}" disabled/>
 							</div></li>
 						<li class="clear"><label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인  </label>
+=======
+								<input type="text" class="w100p" id="id" name="id" placeholder="${member.id}" disabled />
+							</div>
+						</li>
+						<li class="clear">
+							<label for="pw" class="tit_lbl pilsoo_item"> 비밀번호 </label>
+							<div class="app_content">
+								<input type="password" class="w100p" id="pw" name="pw" value="${ member.pw }" placeholder="${ member.pw }" disabled />
+							</div>
+						</li>
+						<li class="clear">
+							<label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
+>>>>>>> 48c0fe68fb9cdfffbe4235cfb50e67285e43d45d
 							<div class="app_content">
 								<input type="password" class="w100p" id="checkPw" name="checkPw"
 									placeholder="비밀번호 확인을 입력하세요" required/>
@@ -366,8 +397,15 @@
 								<input type="tel" class="w100p" id="phone" name="phone" value="${member.phone }"
 									placeholder="휴대폰 번호는 '-' 없이 숫자만 입력해주세요." required
 								/>
+<<<<<<< HEAD
 							</div></li>
 						<li class="clear"><label for="email1" class="tit_lbl"> 이메일 </label>
+=======
+							</div>
+						</li>
+						<li class="clear">
+							<label for="email1" class="tit_lbl pilsoo_item"> 이메일 </label>
+>>>>>>> 48c0fe68fb9cdfffbe4235cfb50e67285e43d45d
 							<div class="app_content email_area">
 								<input type="text" class="w160" id="email1" name="email1" title="이메일 주소" value="${member.email.split('@')[0] }" />
 								<span class="ico_space">@</span>
@@ -402,6 +440,7 @@
 								<input type="text" id="sample6_extraAddress" name="referAddr" placeholder="참고항목" value="${member.addr.split('/')[2]}"
 									style="margin: 5px 0; width: 49.7%; box-sizing: border-box;"
 								/>
+<<<<<<< HEAD
 							</div></li>
 						<!-- <li class="clear">
                             <span class="tit_lbl">성별</span>
@@ -415,9 +454,15 @@
 								<input type="checkbox" class="css-checkbox" id="agree" name="agree"  checked="checked"/>
 								<label for="agree">동의함</label>
 							</div></li> -->
+=======
+							</div>
+						</li>
+>>>>>>> 48c0fe68fb9cdfffbe4235cfb50e67285e43d45d
 					</ul>
-					<p class="btn_line">
-						<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer;" />
+					<p class="btn_line txt_right">
+						<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer; margin-right: 10px;" />
+						<a href="delete-member.jsp" class="btn_basecolor" style="border: none; cursor:pointer margin-right: 10px;">회원 탈퇴</a>
+						<a href="change-passwd.jsp" class="btn_basecolor" style="border: none; cursor:pointer">비밀번호 변경</a>
 					</p>
 				</fieldset>
 			</form>

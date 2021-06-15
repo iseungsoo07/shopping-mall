@@ -6,12 +6,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TheWayShop | 마이페이지</title>
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
-	rel="stylesheet"
-/>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="css/custom.css" />
 <!-- Site Icons -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -117,7 +113,7 @@
 			alert("개인정보활용동의에 체크해주세요.");
 			return false;
 		}
-		
+
 	}
 </script>
 </head>
@@ -394,9 +390,8 @@
 							</p>
 						</li>
 						<li class="total">
-							<a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span
-								class="float-right"
-							><strong>Total</strong>: $180.00</span>
+							<a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span class="float-right"><strong>Total</strong>:
+								$180.00</span>
 						</li>
 					</ul>
 				</li>
@@ -410,78 +405,67 @@
 	<!-- container 시작 -->
 	<div id="container">
 		<!-- 본문 시작 -->
-		<div class="location_area mypage">
-			<div class="box_inner">
-				<h2 class="tit_page">
-					 TheWayShop 
-				</h2>
-				<p class="location">
-					마이페이지
-				</p>
+		<div class="all-title-box">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>My Page</h2>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="#">Home</a>
+							</li>
+							<li class="breadcrumb-item active">My Page</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="bodytext_area box_inner">
-			<form action="changeinfo.do" method="POST" class="appForm" name="form" onsubmit="return checkForm()">
-				<fieldset>
-					<ul class="app_list">
-						<li class="clear">
-							<label for="id" class="tit_lbl_no_padding"> 아이디 </label>
-							<div class="app_content">
-								<!-- 로그인한 회원의 아이디 받아오기 -->
-								<div style="line-height: 38px">${ member.id }</div>
-							</div>
-						</li>
-						<li class="clear">
-							<label for="name" class="tit_lbl_no_padding"> 이름 </label>
-							<div class="app_content">
-								<div style="line-height: 38px">${ member.name }</div>
-							</div>
-						</li>
-						<li class="clear">
-							<label for="phone" class="tit_lbl_no_padding"> 연락처 </label>
-							<div class="app_content">
-								<div style="line-height: 38px">${ member.phone }</div>
-							</div>
-						</li>
-						<li class="clear">
-							<label for="email1" class="tit_lbl_no_padding"> 이메일 </label>
-							<div class="app_content email_area">
-								<div style="line-height: 38px">${ member.email }</div>
-							</div>
-						</li>
-						<li class="clear">
-							<label for="addr" class="tit_lbl_no_padding"> 주소 </label>
-							<div class="app_content">
-								<div style="line-height: 38px">${ member.addr }</div>
-							</div>
-						</li>
-						<!-- <li class="clear">
-                            <span class="tit_lbl">성별</span>
-							<div class="app_content radio_area">
-								<input type="radio" class="css-radio" id="mmm_lbl" name="gender" /> <label for="mmm_lbl" value="남">남</label> <input type="radio" class="css-radio" id="www_lbl" name="gender" /> <label for="www_lbl" value="여">여</label>
-							</div>
-                        </li> -->
-						<li class="clear">
-							<label for="id" class="tit_lbl_no_padding"> 회원등급 </label>
-							<div class="app_content">
-								<!-- 로그인한 회원의 회원등급 받아오기 -->
-								<div style="line-height: 38px">${ member.rank }등급</div>
-							</div>
-						</li>
-						<li class="clear">
-							<label for="id" class="tit_lbl_no_padding"> 포인트 </label>
-							<div class="app_content">
-								<!-- 로그인한 회원의 누적포인트 받아오기 -->
-								<div style="line-height: 38px">${ member.point }점</div>
-							</div>
-						</li>
-					</ul>
-					<p class="btn_line">
-						<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer" />
-					</p>
-				</fieldset>
-			</form>
-		</div>
+		
+			<div class="bodytext_area box_inner">
+				<dl class="myinfo">
+					<dt>내 정보</dt>
+					<dd>
+						<form action="changeinfo.do" method="POST" class="regForm" name="form" onsubmit="return checkForm()">
+							<fieldset>
+								<legend>내 정보 입력 양식</legend>
+								<ul class="reg_list">
+									<li class="clear">
+										<span class="tit_lbl">아이디</span>
+										<div class="reg_content">${ member.id }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">이름</span>
+										<div class="reg_content">${ member.name }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">연락처</span>
+										<div class="reg_content">${ member.phone }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">이메일</span>
+										<div class="reg_content">${ member.email }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">주소</span>
+										<div class="reg_content">${ member.addr }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">회원등급</span>
+										<div class="reg_content">${ member.rank }</div>
+									</li>
+									<li class="clear">
+										<span class="tit_lbl">보유 포인트</span>
+										<div class="reg_content">${ member.point }</div>
+									</li>
+								</ul>
+								<p class="btn_line">
+									<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer;" />
+								</p>
+							</fieldset>
+						</form>
+					</dd>
+				</dl>
+			</div>
 		<!-- 본문 끝 -->
 	</div>
 	<!-- container 끝 -->
@@ -493,9 +477,9 @@
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-widget">
 							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+								commodo consequat.</p>
 							<ul>
 								<li>
 									<a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
@@ -552,8 +536,8 @@
 							<ul>
 								<li>
 									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br />Preston Street
-										Wichita,<br /> KS 67213
+										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br />Preston Street Wichita,<br /> KS
+										67213
 									</p>
 								</li>
 								<li>
@@ -578,9 +562,8 @@
 	<!-- Start copyright  -->
 	<div class="footer-copyright">
 		<p class="footer-company">
-			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a
-				href="https://html.design/"
-			>html design</a>
+			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html
+				design</a>
 		</p>
 	</div>
 	<!-- End copyright  -->
