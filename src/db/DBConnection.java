@@ -14,7 +14,9 @@ public class DBConnection {
 	public static Connection connect() {
 		try {
 			Context ctx = new InitialContext();
-			DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/orcl");
+			String path = "java:/comp/env/";
+			String dePath = "jdbc/orcl";
+			DataSource ds = (DataSource) ctx.lookup(path + dePath);
 
 			conn = ds.getConnection();
 		} catch (NamingException e) {
@@ -23,7 +25,7 @@ public class DBConnection {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return conn;
 	}
 }
