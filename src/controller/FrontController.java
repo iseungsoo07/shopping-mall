@@ -217,6 +217,9 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		
+		// 왜이래
+		
 		/*
 		 * else if (command.equals("/notiList.do")) { try { forward=new
 		 * NotiPagingAction().execute(req, res); }catch(Exception e) {
