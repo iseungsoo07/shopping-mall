@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
+import action.ChangeInfoAction;
 import action.DelNotiAction;
 import action.DelQnAAction;
 import action.DelReplyAction;
@@ -74,7 +74,7 @@ public class FrontController extends HttpServlet {
 
 		ActionForward forward = null;
 
-		if(command.equals("/home.do")) {
+		if (command.equals("/home.do")) {
 			try {
 				forward = new HomeAction().execute(req, res);
 			} catch (Exception e) {
@@ -110,105 +110,166 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/newnoti.do")) { 
+		} else if (command.equals("/newnoti.do")) {
 			try {
-				forward=new NewNotiAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new NewNotiAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/changeinfo.do")) {
+			try {
+				forward = new ChangeInfoAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} else if (command.equals("/showN.do")) {
 			try {
-				forward=new ShowNotiAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new ShowNotiAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
-		else if (command.equals("/newQnA.do")) { 
+		} else if (command.equals("/newQnA.do")) {
 			try {
-				forward=new NewQnAAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new NewQnAAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		else if (command.equals("/update.do")) {
+		} else if (command.equals("/update.do")) {
 			try {
 				forward = new UpdateAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		else if (command.equals("/delnoti.do")) {
+		} else if (command.equals("/delnoti.do")) {
 			try {
-				forward=new DelNotiAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new DelNotiAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
+		} else if (command.equals("/showNcon.do")) {
+			try {
+				forward = new ShowNconAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/showQ.do")) { // �������� ������ +1 �ǰ�
+			try {
+				forward = new ShowQAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/showQnAcon.do")) { // �������� ������ +1 �ǰ�
+			try {
+				forward = new ShowQnAconAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/newReply.do")) {
+			try {
+				forward = new NewReplyAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/showN.do")) {
+			try {
+				forward = new ShowNotiAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/newQnA.do")) {
+			try {
+				forward = new NewQnAAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delReply.do")) {
+			try {
+				forward = new DelReplyAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delQnA.do")) {
+			try {
+				forward = new DelQnAAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/searchN.do")) {
+			try {
+				forward = new SearchNAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/searchQ.do")) {
+			try {
+				forward = new SearchQAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		/*
+		 * else if (command.equals("/notiList.do")) { try { forward=new
+		 * NotiPagingAction().execute(req, res); }catch(Exception e) {
+		 * e.printStackTrace(); } }
+		 */
+
 		else if (command.equals("/showNcon.do")) {
 			try {
-				forward=new ShowNconAction().execute(req,res);
-			}catch(Exception e) {
+				forward = new ShowNconAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
-		else if (command.equals("/showQ.do")) { //�������� ������ +1 �ǰ�
+		} else if (command.equals("/showQ.do")) { // �������� ������ +1 �ǰ�
 			try {
-				forward=new ShowQAction().execute(req,res);
-			}catch(Exception e) {
-				e.printStackTrace();
-			} 
-		}  
-		else if (command.equals("/showQnAcon.do")) { //�������� ������ +1 �ǰ�
-			try {
-				forward=new ShowQnAconAction().execute(req,res);
-			}catch(Exception e) {
-				e.printStackTrace();
-			} 
-		}
-		else if (command.equals("/newReply.do")) { 
-			try {
-				forward=new NewReplyAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new ShowQAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		else if (command.equals("/delReply.do")) { 
+		} else if (command.equals("/showQnAcon.do")) { // �������� ������ +1 �ǰ�
 			try {
-				forward=new DelReplyAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new ShowQnAconAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		else if (command.equals("/delQnA.do")) { 
+		} else if (command.equals("/newReply.do")) {
 			try {
-				forward=new DelQnAAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new NewReplyAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		else if (command.equals("/searchN.do")) { 
+		} else if (command.equals("/delReply.do")) {
 			try {
-				forward=new SearchNAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new DelReplyAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		else if (command.equals("/searchQ.do")) { 
+		} else if (command.equals("/delQnA.do")) {
 			try {
-				forward=new SearchQAction().execute(req, res);
-			}catch(Exception e) {
+				forward = new DelQnAAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/searchN.do")) {
+			try {
+				forward = new SearchNAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/searchQ.do")) {
+			try {
+				forward = new SearchQAction().execute(req, res);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		/*else if (command.equals("/notiList.do")) { 
-			try {
-				forward=new NotiPagingAction().execute(req, res);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}*/
-		if(forward != null) {
-			if(forward.getRedirect()) {
+		/*
+		 * else if (command.equals("/notiList.do")) { try { forward=new
+		 * NotiPagingAction().execute(req, res); }catch(Exception e) {
+		 * e.printStackTrace(); } }
+		 */
+		if (forward != null) {
+			if (forward.getRedirect()) {
 				res.sendRedirect(forward.getPath());
 			} else {
 				RequestDispatcher dispatcher = req.getRequestDispatcher(forward.getPath());
