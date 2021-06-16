@@ -13,6 +13,8 @@ import action.ActionForward;
 import action.ChangeInfoAction;
 import action.ChangePwAction;
 import action.DelNotiAction;
+import action.DelQnAAction;
+import action.DelReplyAction;
 import action.DeleteAction;
 import action.FindIdAction;
 import action.HomeAction;
@@ -21,13 +23,23 @@ import action.LogoutAction;
 import action.MyPageAction;
 import action.NewNotiAction;
 import action.NewPwAction;
+import action.NewQnAAction;
+import action.NewReplyAction;
+//import action.NotiPagingAction;
 import action.RegistAction;
+import action.SearchNAction;
+import action.SearchQAction;
+import action.ShowNconAction;
+import action.ShowNotiAction;
+import action.ShowQAction;
+import action.ShowQnAconAction;
 import action.UpdateAction;
 
 /**
  * Servlet implementation class FrontController
  */
 @WebServlet("/FrontController")
+
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -96,15 +108,15 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/changeinfo.do")) {
-			try {
-				forward = new ChangeInfoAction().execute(req, res);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		} else if (command.equals("/update.do")) {
 			try {
 				forward = new UpdateAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/changeinfo.do")) {
+			try {
+				forward = new ChangeInfoAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -138,9 +150,15 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("QnA�ۼ�")) {
+		} else if (command.equals("/showN.do")) {
 			try {
-
+				forward = new ShowNotiAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/newQnA.do")) {
+			try {
+				forward = new NewQnAAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -150,20 +168,60 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("QnA����")) {
+		} else if (command.equals("/showNcon.do")) {
 			try {
-
+				forward = new ShowNconAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("��ȸ��")) { // �������� ������ +1 �ǰ�
+		} else if (command.equals("/showQ.do")) { // �������� ������ +1 �ǰ�
 			try {
-
+				forward = new ShowQAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/showQnAcon.do")) { // �������� ������ +1 �ǰ�
+			try {
+				forward = new ShowQnAconAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/newReply.do")) {
+			try {
+				forward = new NewReplyAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delReply.do")) {
+			try {
+				forward = new DelReplyAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delQnA.do")) {
+			try {
+				forward = new DelQnAAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/searchN.do")) {
+			try {
+				forward = new SearchNAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/searchQ.do")) {
+			try {
+				forward = new SearchQAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-
+		/*
+		 * else if (command.equals("/notiList.do")) { try { forward=new
+		 * NotiPagingAction().execute(req, res); }catch(Exception e) {
+		 * e.printStackTrace(); } }
+		 */
 		if (forward != null) {
 			if (forward.getRedirect()) {
 				res.sendRedirect(forward.getPath());

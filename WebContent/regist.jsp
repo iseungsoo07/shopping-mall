@@ -126,6 +126,18 @@
 		}
 
 	}
+	
+	function passwordCheckFunc() {
+		const id = $("#id").val();
+		const checkPw = $("#checkPw").val();
+		
+		if(id != checkPw) {
+			$("#checkPwMsg").html("비밀번호와 비밀번호 확인의 값이 다릅니다.");
+		} else {
+			$("#checkPwMsg").html("");
+		}
+	}
+
 
 </script>
 </head>
@@ -456,7 +468,8 @@
 						<li class="clear">
 							<label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
 							<div class="app_content">
-								<input type="password" class="w100p" id="checkPw" name="checkPw" placeholder="비밀번호 확인을 입력하세요" required />
+								<input type="password" class="w100p" id="checkPw" name="checkPw" placeholder="비밀번호 확인을 입력하세요" onkeyup="passwordCheckFunc()" required />
+								<div id="checkPwMsg" style="color: #d33b33"></div>
 							</div>
 						</li>
 						<li class="clear">
@@ -472,7 +485,7 @@
 							</div>
 						</li>
 						<li class="clear">
-							<label for="email1" class="tit_lbl email_label"> 이메일 </label>
+							<label for="email1" class="tit_lbl email_label pilsoo_item"> 이메일 </label>
 							<div class="app_content email_area">
 								<input type="text" class="w160" id="email1" name="email1" title="이메일 주소" />
 								<span class="ico_space">@</span>
@@ -501,7 +514,7 @@
 							</div>
 						</li>
 						<li class="clear">
-							<span class="tit_lbl agree_label"> 개인정보 활용동의 </span>
+							<span class="tit_lbl agree_label pilsoo_item"> 개인정보 활용동의 </span>
 							<div class="app_content checkbox_area">
 								<input type="checkbox" class="css-checkbox" id="agree" name="agree" />
 								<label for="agree">동의함</label>
