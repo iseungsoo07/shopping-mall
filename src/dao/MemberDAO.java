@@ -212,91 +212,91 @@ public class MemberDAO {
 		disconnect();
 		return true;
 	}
-	
+
 	// 아이디 찾기
 	public ArrayList<String> findID(String name, String email) {
 		conn = DBConnection.connect();
-		
+
 		String sql = "SELECT id FROM member WHERE name = ? and email = ?";
 		ArrayList<String> id_list = null;
-		
+
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, name);
 			pstmt.setString(2, email);
-			
+
 			ResultSet rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				id_list = new ArrayList<String>();
 				id_list.add(rs.getString("id"));
-			} 
-			
+			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
-		
+
 		disconnect();
 		return id_list;
 	}
-	
+
 	// 비밀번호 재발급
 	public String reissuancePW(String id, String email) {
 		conn = DBConnection.connect();
-		
+
 		char[] tmp = new char[16];
-		for(int i=0; i<tmp.length; i++) {
-			int div = (int) Math.floor( Math.random() * 2 );
-			
-			if(div == 0) { // 0이면 숫자로
-				tmp[i] = (char) (Math.random() * 10 + '0') ;
-			}else { //1이면 알파벳
-				tmp[i] = (char) (Math.random() * 26 + 'A') ;
+		for (int i = 0; i < tmp.length; i++) {
+			int div = (int) Math.floor(Math.random() * 2);
+
+			if (div == 0) { // 0이면 숫자로
+				tmp[i] = (char) (Math.random() * 10 + '0');
+			} else { // 1이면 알파벳
+				tmp[i] = (char) (Math.random() * 26 + 'A');
 			}
 		}
-		
+
 		String new_pw = new String(tmp);
-		
+
 		String sql = "UPDATE member SET pw = ? WHERE id = ? and email = ?";
-		
+
 		try {
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setString(1, new_pw);
 			pstmt.setString(2, id);
 			pstmt.setString(3, email);
-			
+
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
-		
+
 		disconnect();
 		return new_pw;
 	}
-	
+
 	// 아이디 중복 검사
 	public boolean isIdDup(String id) {
 		conn = DBConnection.connect();
-		
+
 		String sql = "SELECT count(*) FROM member WHERE id = ?";
-		
+
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			
+
 			ResultSet rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				return true;
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		disconnect();
 		return false;
 	}
