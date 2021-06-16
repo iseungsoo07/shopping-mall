@@ -168,7 +168,7 @@ public class NoticeDAO {
 
 	public ArrayList<Notice> searchNtitle(String s) {
 
-		ArrayList<Notice> datas = new ArrayList();
+		ArrayList<Notice> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
 			// select * from Notice where ntitle like %s% 는 ntitle의 데이터중에 s(뷰에서 받아온 특정문자열)이
@@ -207,7 +207,7 @@ public class NoticeDAO {
 
 	public ArrayList<Notice> searchNcon(String s) {
 
-		ArrayList<Notice> datas = new ArrayList();
+		ArrayList<Notice> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
 			// select * from Notice where ncon like %s% 는 ncon의 데이터중에 s(뷰에서 받아온 특정문자열)이 있는지

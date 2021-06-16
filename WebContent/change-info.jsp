@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="custom" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -335,11 +336,20 @@
 								</li>
 							</ul>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="service.html">Our Service</a>
+						<li class="dropdown">
+							<custom:isLogined />
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact-us.html">Contact Us</a>
+						<li class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">고객센터</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="./showN.do">공지사항</a>
+								</li>
+								<li>
+									<a href="./showQ.do">QnA</a>
+								</li>
+
+							</ul>
 						</li>
 					</ul>
 				</div>
@@ -506,9 +516,7 @@
 						</li>
 					</ul>
 					<p class="btn_line txt_right">
-						<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer; margin-right: 10px;" />
-						<a href="delete-member.jsp" class="btn_basecolor" style="border: none; cursor:pointer margin-right: 10px;">회원 탈퇴</a>
-						<a href="change-passwd.jsp" class="btn_basecolor" style="border: none; cursor:pointer">비밀번호 변경</a>
+						<input type="submit" value="수정" class="btn_basecolor" style="border: none; cursor: pointer;" />
 					</p>
 				</fieldset>
 			</form>

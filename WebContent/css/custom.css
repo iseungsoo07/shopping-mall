@@ -412,6 +412,23 @@ select {
 /* regist.jsp, mypage.jsp 끝 */
 
 /* board.jsp 시작 */
+.minisrch_form {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.minisrch_form .tbox {
+    padding: 0 5px 0 30px;
+    width: 200px;
+    height: 35px;
+    line-height: 30px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: url(../images/ico_search.png) no-repeat 10px 50%;
+    background-size: 15px;
+}
+
 .bbsListTbl {
 	width: 100%;
 	border-top: 2px solid #d33b33;
@@ -545,7 +562,7 @@ select {
 /* 공지사항 상세보기 */
 .bbsview_list {
 	padding-bottom: 30px;
-	border-top: 2px solid #384d75;
+	border-top: 2px solid #d33b33;
 }
 
 .bbsview_list li {
@@ -579,6 +596,13 @@ select {
 	line-height: 40px;
 	float: left;
 	width: 50%;
+}
+
+.bbsview_list li.bbs_half {
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	width: 25%;
 }
 
 .bbsview_list li.bbs_content {
@@ -1392,4 +1416,27 @@ select {
 	height: 45px;
 	border: none;
 }
+
+.reply_area {
+	border-top: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+.reply_area__first {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top : 20px;
+}
+
+.reply_area .reply_author {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.reply_area .reply_content {
+	font-size: 18px;
+}
+
+
 
