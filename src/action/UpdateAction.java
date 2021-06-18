@@ -19,13 +19,14 @@ public class UpdateAction implements Action {
 		HttpSession session = req.getSession();
 		Member member = new Member();
 
-<<<<<<< HEAD
-		// 占쏙옙橘占싫� 占쏙옙占썸에 占쏙옙占쏙옙 占싫놂옙占쏙옙 占쏙옙占쏙옙
-		// 占쏙옙占쏙옙占쏙옙 占쏙옙橘占싫ｏ옙占� 占쌓댐옙占� 占쌉뤄옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占실곤옙
-		// 占쏙옙占싸울옙 占쏙옙橘占싫ｏ옙占� 占쌉뤄옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싫댐옙.
-		// 占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占십울옙占쏙옙 占쏙옙
+/*<<<<<<< HEAD
+		// �뜝�룞�삕艅섇뜝�떕占� �뜝�룞�삕�뜝�뜽�뿉 �뜝�룞�삕�뜝�룞�삕 �뜝�떕�냲�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕
+		// �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕艅섇뜝�떕節륁삕�뜝占� �뜝�뙎�뙋�삕�뜝占� �뜝�뙃琉꾩삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�떎怨ㅼ삕
+		// �뜝�룞�삕�뜝�떥�슱�삕 �뜝�룞�삕艅섇뜝�떕節륁삕�뜝占� �뜝�뙃琉꾩삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�떕�뙋�삕.
+		// �뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�떗�슱�삕�뜝�룞�삕 �뜝�룞�삕
 =======
->>>>>>> 48c0fe68fb9cdfffbe4235cfb50e67285e43d45d
+>>>>>>> 48c0fe68fb9cdfffbe4235cfb50e67285e43d45d*/
+		
 		member.setId(req.getParameter("id"));
 		member.setPw(req.getParameter("pw"));
 		member.setName(req.getParameter("name"));
@@ -34,23 +35,23 @@ public class UpdateAction implements Action {
 		member.setZipcode(Integer.parseInt(req.getParameter("zipcode")));
 		member.setAddr(req.getParameter("addr") + " / " + req.getParameter("detailAddr") + " / "
 				+ req.getParameter("referAddr"));
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
 		member.setRank(Integer.parseInt(req.getParameter("rank")));
 		member.setPoint(Integer.parseInt(req.getParameter("point")));
-		if (req.getParameter("parchase") != null) { // 구현이 아직 안되어서 null로 나오는거 같아서 일단 if문 걸어둠
+		if (req.getParameter("parchase") != null) { //  구현이 아직 안되어서 null로 나오는거 같아서 일단 if문 걸어둠
 			member.setPurchase(Integer.parseInt(req.getParameter("parchase")));
 		}
 		memberDAO.update(member);
 
 		session.setAttribute("member", member);
 
-		// 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙 占쏙옙占싱듸옙, 占쏙옙占�, 占쏙옙占쏙옙트 占쏙옙占쏙옙
-		// 占싼억옙占쏙옙占� 占쏙옙占쏙옙
-		// 占쏙옙占쏙옙 占십울옙
+		// �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕 �뜝�룞�삕�뜝�떛�벝�삕, �뜝�룞�삕�뜝占�, �뜝�룞�삕�뜝�룞�삕�듃 �뜝�룞�삕�뜝�룞�삕
+		// �뜝�떬�뼲�삕�뜝�룞�삕�뜝占� �뜝�룞�삕�뜝�룞�삕
+		// �뜝�룞�삕�뜝�룞�삕 �뜝�떗�슱�삕
 
 		forward.setRedirect(false);
 		forward.setPath("mypage.jsp");
-=======
+//=======
 
 		member.setRank(Integer.parseInt(req.getParameter("rank")));
 		member.setPoint(Integer.parseInt(req.getParameter("point")));
@@ -73,7 +74,7 @@ public class UpdateAction implements Action {
 
 			out.println("<script>alert('비밀번호와 비밀번호 확인의 값이 다릅니다.'); location.href='change-info.jsp'; </script>");
 		}
->>>>>>> 48c0fe68fb9cdfffbe4235cfb50e67285e43d45d
+//>>>>>>> 48c0fe68fb9cdfffbe4235cfb50e67285e43d45d
 
 		return forward;
 	}
