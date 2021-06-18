@@ -2,7 +2,6 @@ package action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,22 +21,17 @@ public class IdCheckAction implements Action {
 		res.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = res.getWriter();
 
-		if (id == null) {
-			out.println("<script>alert('Please enter your ID'); history.go(-1); </script>");
+		if (id == "") {
+			out.println("<script>alert('아이디를 입력해주세요'); history.go(-1); </script>");
 		} else {
 			if (memberDAO.isIdDup(id)) { // True if the same id exists after comparing ids -> Overlaped
-				out.println("<script>alert('The same ID exists.'); history.go(-1); </script>");
+				out.println("<script>alert('사용할 수 없는 아이디입니다.'); history.go(-1); </script>");
 			} else { // not Overlap
-				req.setAttribute("id", id);
-				forward = new ActionForward();
-				forward.setPath("show-id.jsp");
-				forward.setRedirect(false);
+				out.println("<script>alert('사용 가능한 아이디입니다.'); history.go(-1); </script>");
 			}
 		}
-		forward = new ActionForward();
-		forward.setPath("login.jsp");
-		forward.setRedirect(false);
-		return forward;
 
+		return forward;
 	}
+
 }

@@ -93,8 +93,8 @@
 		const checkPw = document.getElementById("checkPw");
 		const phone = document.getElementById("phone");
 		const agree = document.getElementById("agree");
-		const isChecked = document.getElementById("isChecked");
-
+		const idCheck = document.getElementById("idCheck");
+		
 		// 전화번호 정규식
 		const expTel = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/
 
@@ -120,9 +120,9 @@
 			alert("개인정보활용동의에 체크해주세요.");
 			return false;
 		}
-
-		if (isChecked.value == "unchecked") {
-			alert("아이디 중복체크를 시도하세요.");
+		
+		if (idCheck.value == "unchecked") {
+			alert("아이디 중복체크를 진행하세요.");
 			return false;
 		}
 
@@ -138,7 +138,22 @@
 			$("#checkPwMsg").html("비밀번호와 비밀번호 확인의 값이 다릅니다.");
 		}
 	}
+	
+	function openIdDupCheck() {
+		const idCheck = document.getElementById("idCheck");
+		const id = $("#id").val();
+		
+		idCheck.value = "checked";
+		location.href = "idcheck.do?id=" + id;
+		
+	}
 
+	function inputIdCheck() {
+		const idCheck = document.getElementById("idCheck");
+		idCheck.value = "unchecked";		
+	}
+	
+	
 
 </script>
 </head>
@@ -462,12 +477,12 @@
 						<li class="clear">
 							<label for="id" class="tit_lbl pilsoo_item"> 아이디 </label>
 							<div class="app_content flex">
-								<input type="text" class="w70p" id="id" name="id" placeholder="아이디를 입력하세요" required />
-								<input type="button" value="중복체크" class="btn_basecolor checkDup" onclick="idDupCheck()"
+								<input type="hidden" id="idCheck" name="idCheck" value="unchecked" />
+								<input type="text" class="w70p" id="id" name="id" placeholder="아이디를 입력하세요" onkeydown="inputIdCheck()" required />
+								<input type="button" value="중복체크" class="btn_basecolor checkDup" onclick="openIdDupCheck()"
 									style="cursor: pointer"
 								/>
 							</div>
-							<div id="idcheck"></div>
 						</li>
 						<li class="clear">
 							<label for="pw" class="tit_lbl pilsoo_item"> 비밀번호 </label>

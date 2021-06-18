@@ -18,6 +18,7 @@ import action.DelReplyAction;
 import action.DeleteAction;
 import action.FindIdAction;
 import action.HomeAction;
+import action.IdCheckAction;
 import action.LoginAction;
 import action.LogoutAction;
 import action.MyPageAction;
@@ -141,6 +142,12 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/findid.do")) {
 			try {
 				forward = new FindIdAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/idcheck.do")) {
+			try {
+				forward = new IdCheckAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
