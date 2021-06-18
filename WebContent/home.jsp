@@ -113,7 +113,7 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
 						<li class="nav-item active"><a class="nav-link" href="home.jsp">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.jsp">About Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="./showP.do">About Us</a></li>
 						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
 								<li>

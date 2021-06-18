@@ -49,6 +49,13 @@ create table reply(
    foreign key(id) references member(id),
    constraint fk foreign key (qid) references QnA(qid) on delete cascade
 );
+create table product(
+	pid int primary key,
+	name varchar(30),
+	price int,
+	stock int,
+	files varchar(30)
+);
 
 
 INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VALUES ('a','pw','name','phone','email',123,'addr',1,100,1000)
@@ -73,10 +80,12 @@ DELETE FROM QnA WHERE qid = 1;
 select * from notice
 select * from QnA
 select * from reply
+select * from product;
+
 drop table notice;
 drop table reply;
 drop table QnA;
-
+drop table product;
 select * from Notice where ncon like '%as%'
 
 select * from reply where qid = 4;

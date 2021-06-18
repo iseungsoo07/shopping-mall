@@ -2,9 +2,9 @@ package controller;
 
 import java.io.IOException;
 
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +19,7 @@ import action.LoginAction;
 import action.LogoutAction;
 import action.MyPageAction;
 import action.NewNotiAction;
+import action.NewProAction;
 import action.NewQnAAction;
 import action.NewReplyAction;
 //import action.NotiPagingAction;
@@ -27,6 +28,7 @@ import action.SearchNAction;
 import action.SearchQAction;
 import action.ShowNconAction;
 import action.ShowNotiAction;
+import action.ShowProAction;
 import action.ShowQAction;
 import action.ShowQnAconAction;
 import action.UpdateAction;
@@ -35,7 +37,11 @@ import action.UpdateAction;
  * Servlet implementation class FrontController
  */
 @WebServlet("/FrontController")
-
+@MultipartConfig(
+		fileSizeThreshold=1024*1024,
+		maxFileSize=1024*1024*50,
+		maxRequestSize=1024*1024*50*5
+)
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -167,7 +173,9 @@ public class FrontController extends HttpServlet {
 		}
 		else if (command.equals("/newReply.do")) { 
 			try {
+				
 				forward=new NewReplyAction().execute(req, res);
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -196,6 +204,20 @@ public class FrontController extends HttpServlet {
 		else if (command.equals("/searchQ.do")) { 
 			try {
 				forward=new SearchQAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.equals("/newPro.do")) { 
+			try {
+				forward=new NewProAction().execute(req, res);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.equals("/showP.do")) { 
+			try {
+				forward=new ShowProAction().execute(req, res);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}

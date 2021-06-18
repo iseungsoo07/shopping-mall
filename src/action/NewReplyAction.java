@@ -46,6 +46,7 @@ public class NewReplyAction implements Action{
 			
 			forward.setRedirect(false);
 			forward.setPath("QnAboard_view.jsp");
+			
 			return forward;
 	}
 
