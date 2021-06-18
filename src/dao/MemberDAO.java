@@ -26,7 +26,7 @@ public class MemberDAO {
 		}
 	}
 
-	// 회원가입
+	//  회원가입
 	public boolean regist(Member member) {
 		conn = DBConnection.connect();
 
@@ -54,7 +54,7 @@ public class MemberDAO {
 		return true;
 	}
 
-	// 로그인
+	//  로그인
 	public boolean login(String id, String pw) {
 		conn = DBConnection.connect();
 
@@ -213,7 +213,7 @@ public class MemberDAO {
 		return true;
 	}
 
-	// 아이디 찾기
+	//  아이디 찾기
 	public ArrayList<String> findID(String name, String email) {
 		conn = DBConnection.connect();
 
@@ -281,23 +281,24 @@ public class MemberDAO {
 	public boolean isIdDup(String id) {
 		conn = DBConnection.connect();
 
-		String sql = "SELECT count(*) FROM member WHERE id = ?";
+		String sql = "SELECT id FROM member";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
 
 			ResultSet rs = pstmt.executeQuery();
 
-			if (rs.next()) {
-				return true;
+			while (rs.next()) {
+				if (rs.getString(1).equals(id)) {
+					return true;
+				}
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			disconnect();
 		}
-
-		disconnect();
 		return false;
 	}
 }
