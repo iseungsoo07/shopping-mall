@@ -38,7 +38,7 @@ public class NoticeDAO {
 		try {
 			conn = DBConnection.connect();
 
-			String sql = "select * from notice order by nid asc";
+			String sql = "select * from notice order by nid desc";
 			pstmt = conn.prepareStatement(sql);
 
 			ResultSet rs = pstmt.executeQuery();
