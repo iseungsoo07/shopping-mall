@@ -8,6 +8,7 @@ public class Notice {
 	private String day;
 	private String sort;
 	private String id;
+
 	public String getId() {
 		return id;
 	}

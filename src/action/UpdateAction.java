@@ -27,9 +27,11 @@ public class UpdateAction implements Action {
 		member.setZipcode(Integer.parseInt(req.getParameter("zipcode")));
 		member.setAddr(req.getParameter("addr") + " / " + req.getParameter("detailAddr") + " / "
 				+ req.getParameter("referAddr"));
-
 		member.setRank(Integer.parseInt(req.getParameter("rank")));
 		member.setPoint(Integer.parseInt(req.getParameter("point")));
+		if (req.getParameter("parchase") != null) { // 구현이 아직 안되어서 null로 나오는거 같아서 일단 if문 걸어둠
+			member.setPurchase(Integer.parseInt(req.getParameter("parchase")));
+		}
 
 		String checkPw = req.getParameter("checkPw");
 

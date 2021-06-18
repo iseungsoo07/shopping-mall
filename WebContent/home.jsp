@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="custom" %>
 <!DOCTYPE html>
 <html>
 <!-- Basic -->
@@ -48,14 +49,30 @@
 					<div class="text-slid-box">
 						<div id="offer-box" class="carouselTicker">
 							<ul class="offer-box">
-								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
-								<li><i class="fab fa-opencart"></i> 50% - 80% off on Fashion</li>
-								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20</li>
-								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
-								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
-								<li><i class="fab fa-opencart"></i> 50% - 80% off on Fashion</li>
-								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20</li>
-								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
+								<li>
+									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> Off 50%! Shop Now
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> Off 50%! Shop Now
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -76,17 +93,29 @@
 					<div class="our-link">
 						<ul>
 							<c:if test="${ member != null }">
-								<li class="member-name">${ member.name }님 환영합니다!</li>
-								<li><a href="./logout.do">로그아웃</a></li>
-								<li><a href="./regist.jsp">회원가입</a></li>
-								<li><a href="./mypage.do">마이페이지</a></li>
+								<li class="member-name">${ member.name }님환영합니다!</li>
+								<li>
+									<a href="./logout.do">로그아웃</a>
+								</li>
+								<li>
+									<a href="./regist.jsp">회원가입</a>
+								</li>
+								<li>
+									<a href="./mypage.do">마이페이지</a>
+								</li>
 							</c:if>
 							<c:if test="${ member == null }">
-								<li><a href="./login.jsp">로그인</a></li>
-								<li><a href="./regist.jsp">회원가입</a></li>
-								<li><a href="./mypage.do">마이페이지</a></li>
+								<li>
+									<a href="./login.jsp">로그인</a>
+								</li>
+								<li>
+									<a href="./regist.jsp">회원가입</a>
+								</li>
+								<li>
+									<a href="./mypage.do">마이페이지</a>
+								</li>
 							</c:if>
-							
+
 						</ul>
 					</div>
 				</div>
@@ -102,7 +131,9 @@
 			<div class="container">
 				<!-- Start Header Navigation -->
 				<div class="navbar-header">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+						aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation"
+					>
 						<i class="fa fa-bars"></i>
 					</button>
 					<a class="navbar-brand" href="home.jsp"><img src="images/logo.png" class="logo" alt=""></a>
@@ -112,9 +143,14 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-						<li class="nav-item active"><a class="nav-link" href="home.jsp">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.jsp">About Us</a></li>
-						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+						<li class="nav-item active">
+							<a class="nav-link" href="home.jsp">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.jsp">About Us</a>
+						</li>
+						<li class="dropdown megamenu-fw">
+							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
 								<li>
 									<div class="row">
@@ -122,10 +158,18 @@
 											<h6 class="title">Top</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.jsp">Jackets</a></li>
-													<li><a href="shop.jsp">Shirts</a></li>
-													<li><a href="shop.jsp">Sweaters & Cardigans</a></li>
-													<li><a href="shop.jsp">T-shirts</a></li>
+													<li>
+														<a href="shop.jsp">Jackets</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Shirts</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Sweaters & Cardigans</a>
+													</li>
+													<li>
+														<a href="shop.jsp">T-shirts</a>
+													</li>
 												</ul>
 											</div>
 										</div>
@@ -134,10 +178,18 @@
 											<h6 class="title">Bottom</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.jsp">Swimwear</a></li>
-													<li><a href="shop.jsp">Skirts</a></li>
-													<li><a href="shop.jsp">Jeans</a></li>
-													<li><a href="shop.jsp">Trousers</a></li>
+													<li>
+														<a href="shop.jsp">Swimwear</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Skirts</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Jeans</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Trousers</a>
+													</li>
 												</ul>
 											</div>
 										</div>
@@ -146,10 +198,18 @@
 											<h6 class="title">Clothing</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.jsp">Top Wear</a></li>
-													<li><a href="shop.jsp">Party wear</a></li>
-													<li><a href="shop.jsp">Bottom Wear</a></li>
-													<li><a href="shop.jsp">Indian Wear</a></li>
+													<li>
+														<a href="shop.jsp">Top Wear</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Party wear</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Bottom Wear</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Indian Wear</a>
+													</li>
 												</ul>
 											</div>
 										</div>
@@ -157,33 +217,62 @@
 											<h6 class="title">Accessories</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.jsp">Bags</a></li>
-													<li><a href="shop.jsp">Sunglasses</a></li>
-													<li><a href="shop.jsp">Fragrances</a></li>
-													<li><a href="shop.jsp">Wallets</a></li>
+													<li>
+														<a href="shop.jsp">Bags</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Sunglasses</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Fragrances</a>
+													</li>
+													<li>
+														<a href="shop.jsp">Wallets</a>
+													</li>
 												</ul>
 											</div>
 										</div>
 										<!-- end col-3 -->
-									</div> <!-- end row -->
+									</div>
+									<!-- end row -->
 								</li>
-							</ul></li>
-						<li class="dropdown"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
 							<ul class="dropdown-menu">
-								<li><a href="cart.jsp">Cart</a></li>
-								<li><a href="checkout.jsp">Checkout</a></li>
-								<li><a href="my-account.html">My Account</a></li>
-								<li><a href="wishlist.html">Wishlist</a></li>
-								<li><a href="shop-detail.html">Shop Detail</a></li>
-							</ul></li>
-						<li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
-						<li class="dropdown"><a href="#"
-                     class="nav-link dropdown-toggle arrow" data-toggle="dropdown">게시판</a>
-                     <ul class="dropdown-menu">
-                        <li><a href="./showN.do">공지사항</a></li>
-                        <li><a href="./showQ.do">QnA</a></li>
+								<li>
+									<a href="cart.jsp">Cart</a>
+								</li>
+								<li>
+									<a href="checkout.jsp">Checkout</a>
+								</li>
+								<li>
+									<a href="my-account.html">My Account</a>
+								</li>
+								<li>
+									<a href="wishlist.html">Wishlist</a>
+								</li>
+								<li>
+									<a href="shop-detail.html">Shop Detail</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<custom:isLogined />
+						</li>
+						<li class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">고객센터</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="./showN.do">공지사항</a>
+								</li>
+								<li>
+									<a href="./showQ.do">QnA</a>
+								</li>
 
-                     </ul></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -191,9 +280,13 @@
 				<!-- Start Atribute Navigation -->
 				<div class="attr-nav">
 					<ul>
-						<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-						<li class="side-menu"><a href="#"> <i class="fa fa-shopping-bag"></i> <span class="badge">3</span>
-						</a></li>
+						<li class="search">
+							<a href="#"><i class="fa fa-search"></i></a>
+						</li>
+						<li class="side-menu">
+							<a href="#"> <i class="fa fa-shopping-bag"></i> <span class="badge">3</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 				<!-- End Atribute Navigation -->
@@ -203,28 +296,37 @@
 				<a href="#" class="close-side"><i class="fa fa-times"></i></a>
 				<li class="cart-box">
 					<ul class="cart-list">
-						<li><a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+						<li>
+							<a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
 							<h6>
 								<a href="#">Delica omtantur </a>
 							</h6>
 							<p>
 								1x - <span class="price">$80.00</span>
-							</p></li>
-						<li><a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
 							<h6>
 								<a href="#">Omnes ocurreret</a>
 							</h6>
 							<p>
 								1x - <span class="price">$60.00</span>
-							</p></li>
-						<li><a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
 							<h6>
 								<a href="#">Agam facilisis</a>
 							</h6>
 							<p>
 								1x - <span class="price">$40.00</span>
-							</p></li>
-						<li class="total"><a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span class="float-right"><strong>Total</strong>: $180.00</span></li>
+							</p>
+						</li>
+						<li class="total">
+							<a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span class="float-right"><strong>Total</strong>:
+								$180.00</span>
+						</li>
 					</ul>
 				</li>
 			</div>
@@ -238,7 +340,9 @@
 	<div class="top-search">
 		<div class="container">
 			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-search"></i></span> <input type="text" class="form-control" placeholder="Search"> <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+				<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				<input type="text" class="form-control" placeholder="Search">
+				<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
 			</div>
 		</div>
 	</div>
@@ -247,7 +351,8 @@
 	<!-- Start Slider -->
 	<div id="slides-shop" class="cover-slides">
 		<ul class="slides-container">
-			<li class="text-left"><img src="images/banner-01.jpg" alt="">
+			<li class="text-left">
+				<img src="images/banner-01.jpg" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -256,15 +361,18 @@
 								</strong>
 							</h1>
 							<p class="m-b-40">
-								See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.
+								See how your users experience your website in realtime or view <br> trends to see any changes in
+								performance over time.
 							</p>
 							<p>
 								<a class="btn hvr-hover" href="#">Shop New</a>
 							</p>
 						</div>
 					</div>
-				</div></li>
-			<li class="text-center"><img src="images/banner-02.jpg" alt="">
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="images/banner-02.jpg" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -273,15 +381,18 @@
 								</strong>
 							</h1>
 							<p class="m-b-40">
-								See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.
+								See how your users experience your website in realtime or view <br> trends to see any changes in
+								performance over time.
 							</p>
 							<p>
 								<a class="btn hvr-hover" href="#">Shop New</a>
 							</p>
 						</div>
 					</div>
-				</div></li>
-			<li class="text-right"><img src="images/banner-03.jpg" alt="">
+				</div>
+			</li>
+			<li class="text-right">
+				<img src="images/banner-03.jpg" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -290,17 +401,21 @@
 								</strong>
 							</h1>
 							<p class="m-b-40">
-								See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.
+								See how your users experience your website in realtime or view <br> trends to see any changes in
+								performance over time.
 							</p>
 							<p>
 								<a class="btn hvr-hover" href="#">Shop New</a>
 							</p>
 						</div>
 					</div>
-				</div></li>
+				</div>
+			</li>
 		</ul>
 		<div class="slides-navigation">
-			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <a href="#" class="prev"><i
+				class="fa fa-angle-left" aria-hidden="true"
+			></i></a>
 		</div>
 	</div>
 	<!-- End Slider -->
@@ -330,7 +445,8 @@
 						<img class="img-fluid" src="images/shoes-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Shoes</a>
 					</div>
 					<div class="shop-cat-box">
-						<img class="img-fluid" src="images/women-shoes-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Women Shoes</a>
+						<img class="img-fluid" src="images/women-shoes-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Women
+							Shoes</a>
 					</div>
 				</div>
 			</div>
@@ -371,9 +487,15 @@
 							<img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
 							<div class="mask-icon">
 								<ul>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+									</li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
+									</li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+									</li>
 								</ul>
 								<a class="cart" href="#">Add to Cart</a>
 							</div>
@@ -394,9 +516,15 @@
 							<img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
 							<div class="mask-icon">
 								<ul>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+									</li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
+									</li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+									</li>
 								</ul>
 								<a class="cart" href="#">Add to Cart</a>
 							</div>
@@ -417,9 +545,15 @@
 							<img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
 							<div class="mask-icon">
 								<ul>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+									</li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
+									</li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+									</li>
 								</ul>
 								<a class="cart" href="#">Add to Cart</a>
 							</div>
@@ -440,9 +574,15 @@
 							<img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
 							<div class="mask-icon">
 								<ul>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-									<li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+									</li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
+									</li>
+									<li>
+										<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+									</li>
 								</ul>
 								<a class="cart" href="#">Add to Cart</a>
 							</div>
@@ -478,12 +618,19 @@
 						<div class="blog-content">
 							<div class="title-blog">
 								<h3>Fusce in augue non nisi fringilla</h3>
-								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat.
+									Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
 							</div>
 							<ul class="option-blog">
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a>
+								</li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a>
+								</li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -496,12 +643,19 @@
 						<div class="blog-content">
 							<div class="title-blog">
 								<h3>Fusce in augue non nisi fringilla</h3>
-								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat.
+									Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
 							</div>
 							<ul class="option-blog">
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a>
+								</li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a>
+								</li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -514,12 +668,19 @@
 						<div class="blog-content">
 							<div class="title-blog">
 								<h3>Fusce in augue non nisi fringilla</h3>
-								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat.
+									Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
 							</div>
 							<ul class="option-blog">
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a></li>
-								<li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a></li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a>
+								</li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a>
+								</li>
+								<li>
+									<a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -626,15 +787,31 @@
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-widget">
 							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+								commodo consequat.</p>
 							<ul>
-								<li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+								<li>
+									<a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -642,12 +819,24 @@
 						<div class="footer-link">
 							<h4>Information</h4>
 							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Customer Service</a></li>
-								<li><a href="#">Our Sitemap</a></li>
-								<li><a href="#">Terms &amp; Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Delivery Information</a></li>
+								<li>
+									<a href="#">About Us</a>
+								</li>
+								<li>
+									<a href="#">Customer Service</a>
+								</li>
+								<li>
+									<a href="#">Our Sitemap</a>
+								</li>
+								<li>
+									<a href="#">Terms &amp; Conditions</a>
+								</li>
+								<li>
+									<a href="#">Privacy Policy</a>
+								</li>
+								<li>
+									<a href="#">Delivery Information</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -657,7 +846,8 @@
 							<ul>
 								<li>
 									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213
+										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br>
+										KS 67213
 									</p>
 								</li>
 								<li>
@@ -682,7 +872,8 @@
 	<!-- Start copyright  -->
 	<div class="footer-copyright">
 		<p class="footer-company">
-			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html design</a>
+			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html
+				design</a>
 		</p>
 	</div>
 	<!-- End copyright  -->
