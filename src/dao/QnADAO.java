@@ -37,7 +37,7 @@ public class QnADAO {
 		ArrayList<QnA> datas=new ArrayList();
 		try {
 			conn=DBmanager.connect();
-			String sql="select * from QnA order by qid asc";
+			String sql="select * from QnA order by qid desc";
 			pstmt=conn.prepareStatement(sql);
 
 			
@@ -124,7 +124,7 @@ public class QnADAO {
 
 				ArrayList<Reply> rlist=new ArrayList();
 
-				String sql2="select * from reply where qid=? order by rid asc";
+				String sql2="select * from reply where qid=? order by rid desc";
 				pstmt=conn.prepareStatement(sql2);
 				pstmt.setInt(1, qid);
 				ResultSet rs2=pstmt.executeQuery();
@@ -261,7 +261,7 @@ public class QnADAO {
 			pstmt=conn.prepareStatement(sql2);
 			pstmt.setInt(1, reply.getQid());
 			pstmt.executeUpdate();
-			String sql3="select * from QnA order by qid asc";
+			String sql3="select * from QnA order by qid desc";
 			pstmt=conn.prepareStatement(sql3);
 
 			
@@ -338,7 +338,7 @@ public class QnADAO {
 			pstmt.executeUpdate();
 			
 			
-			String sql3="select * from QnA order by qid asc";
+			String sql3="select * from QnA order by qid desc";
 			pstmt=conn.prepareStatement(sql3);
 
 			
