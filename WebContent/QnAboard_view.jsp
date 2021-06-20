@@ -44,14 +44,7 @@
 <link rel="stylesheet" href="css/custom.css">
 
 <title>TheWayShop | 게시판</title>
-<script type='text/javascript'>
-window.onkeydown = function() {
-	var kcode = event.keyCode;
-	if(kcode == 116) {
-	history.replaceState({}, null, location.pathname);
-	}
-	}
-</script>
+
 </head>
 <body>
 	<div class="main-top">
