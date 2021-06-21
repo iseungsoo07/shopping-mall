@@ -3,4 +3,6 @@ encoding//WebContent/home.jsp=UTF-8
 encoding//src/action/NewQnAAction.java=UTF-8
 encoding//src/action/UpdateAction.java=UTF-8
 encoding//src/dao/MemberDAO.java=UTF-8
+encoding//src/dao/ProductDAO.java=UTF-8
+encoding//src/dao/ProductReviewDAO.java=UTF-8
 encoding//src/dao/QnADAO.java=UTF-8

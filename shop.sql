@@ -1,17 +1,17 @@
 CREATE TABLE member (
-	id varchar(20) primary key, -- ì•„ì´ë””
-	pw varchar(20) not null, -- ë¹„ë°€ë²ˆí˜¸
-	name varchar(10) not null, -- ì´ë¦„
-	phone varchar(15) not null, -- ì „í™”ë²ˆí˜¸
-	email varchar(30), -- ì´ë©”ì¼
-	zipcode int not null, -- ìš°í¸ë²ˆí˜¸ (ì£¼ì†Œë”°ì˜¤ëŠ” apiì—ì„œ ìš°í¸ë²ˆí˜¸ê°€ ë‚˜ì˜¤ëŠ”ë° ë§ˆì´í˜ì´ì§€ì—ì„œ ìš°í¸ë²ˆí˜¸ë¥¼ ë¶ˆëŸ¬ì˜¤ê¸° ìœ„í•¨)
-	addr varchar(200) not null, -- ì£¼ì†Œ
-	rank int default 10, -- íšŒì› ë“±ê¸‰ (íšŒì›ì´ê¸°ë§Œ í•˜ë©´ 10ë“±ê¸‰ ì‹œì‘. 10ë¶€í„° 1ê¹Œì§€)
-	point int default 0, -- í¬ì¸íŠ¸
-	purchase int default 0 -- êµ¬ë§¤ ê¸ˆì•¡
+	id varchar(20) primary key, -- ¾ÆÀÌµğ
+	pw varchar(20) not null, -- ºñ¹Ğ¹øÈ£
+	name varchar(10) not null, -- ÀÌ¸§
+	phone varchar(15) not null, -- ÀüÈ­¹øÈ£
+	email varchar(30), -- ÀÌ¸ŞÀÏ
+	zipcode int not null, -- ¿ìÆí¹øÈ£ (ÁÖ¼Òµû¿À´Â api¿¡¼­ ¿ìÆí¹øÈ£°¡ ³ª¿À´Âµ¥ ¸¶ÀÌÆäÀÌÁö¿¡¼­ ¿ìÆí¹øÈ£¸¦ ºÒ·¯¿À±â À§ÇÔ)
+	addr varchar(200) not null, -- ÁÖ¼Ò
+	rank int default 10, -- È¸¿ø µî±Ş (È¸¿øÀÌ±â¸¸ ÇÏ¸é 10µî±Ş ½ÃÀÛ. 10ºÎÅÍ 1±îÁö)
+	point int default 0, -- Æ÷ÀÎÆ®
+	purchase int default 0 -- ±¸¸Å ±İ¾×	
 );
 
-create table notice( -- ê³µì§€ì‚¬í•­
+create table notice( -- °øÁö»çÇ×
    nid int primary key,    
    ntitle varchar (20),          
    ncon varchar(100) not null,       
@@ -33,13 +33,38 @@ create table QnA (
 );
 
 create table reply(
-   rid int primary key,   --ë‹µë³€ id
+   rid int primary key,   --´äº¯ id
    qid int not null,      --qna id
-   day varchar(30),            --ë‹µë³€ ê²Œì‹œì¼ì
-   id varchar(20),         --ê´€ë¦¬ì id
-   rcon varchar(50) not null,   --ë‹µë³€ ë‚´ìš©
+   day varchar(30),            --´äº¯ °Ô½ÃÀÏÀÚ
+   id varchar(20),         --°ü¸®ÀÚ id
+   rcon varchar(50) not null,   --´äº¯ ³»¿ë
    foreign key(id) references member(id),
    constraint fk foreign key (qid) references QnA(qid) on delete cascade
+);
+
+create table product(
+   pid int primary key, --»óÇ° id
+   name varchar(30),   --»óÇ°ÀÌ¸§
+   price int not null, -- »óÇ°°¡°İ
+   visit int not null,   --Á¶È¸¼ö
+   stock int not null,   --Àç°í
+   cate varchar(10) not null, --ºĞ·ù category
+   psize varchar(10), --»óÇ°»çÀÌÁî(size·Î ¼Ó¼ºÀ» ÁÖ¸é ¿¡·¯³ª¼­ ¹Ù²Ş)
+   pcon varchar(1000), --»óÇ° µğÅ×ÀÏ ³»¿ë
+   gender varchar(10), -- ¼ºº°
+   files varchar(50), --»çÁøÆÄÀÏ 
+   day varchar(30) --¾÷·Îµå ³¯Â¥
+);
+
+create table productreview(
+	reviewid int primary key, -- review id
+	productid int, -- ¸®ºäÇÑ product id
+	userid varchar(20), --¸®ºä¸¦ ¾´ »ç¿ëÀÚ id
+	productsize varchar(10),
+	rating int,	-- ÆòÁ¡ 1~5
+	reveiwcon varchar(1000),
+	day varchar(30),
+	constraint fk2 foreign key (productid) references product(pid) on delete cascade
 );
 
 
@@ -77,6 +102,9 @@ CREATE SEQUENCE cnt START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 CREATE SEQUENCE cnt2 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
 CREATE SEQUENCE cnt3 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
+
+CREATE SEQUENCE cnt4 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
+-- Ãß°¡·Î À§¿¡ ±¸¹®µµ ½ÇÇà ºÎÅ¹µå·Á¿ä
 
 select * from (select nid,ntitle,ncon,visitor,day,sort,rownum as rn from Notice order by nid asc) where rn between 1 and 10
 
