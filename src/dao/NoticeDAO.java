@@ -32,14 +32,18 @@ public class NoticeDAO {
 		}
 	}
 
-	public ArrayList<Notice> showN() { // DB에서 Notice 테이블의 정보를 받아와 datas에 저장
+	public ArrayList<Notice> showN(int limitFrom, int itemsInAPage) { // DB에서 Notice 테이블의 정보를 받아와 datas에 저장
 
 		ArrayList<Notice> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
 
-			String sql = "select * from notice order by nid desc";
+			String sql = "SELECT * FROM (SELECT A.*, ROWNUM AS RNUM FROM (SELECT * FROM notice ORDER BY nid DESC) A WHERE ROWNUM <= ?) WHERE RNUM > ? ORDER BY nid DESC";
+			// oracle11 버전은 limit를 지원하지 않아서 ROWNUM 개념을 사용해야 한다.
+
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, itemsInAPage);
+			pstmt.setInt(2, limitFrom);
 
 			ResultSet rs = pstmt.executeQuery();
 
@@ -70,7 +74,7 @@ public class NoticeDAO {
 	public boolean newNotice(Notice n) { // 뷰로부터 받아온 데이터들을 DB에 삽입하는 메소드
 		try {
 			conn = DBConnection.connect();
-			String sql = "insert into notice (nid,ntitle,ncon,day) values(cnt.NEXTVAL,?,?,?)"; // cnt.NEXTVAL은 저장될때마다
+			String sql = "insert into notice (nid,ntitle,ncon,day) values((select nvl(max(nid), 0) + 1 from notice),?,?,?)"; // cnt.NEXTVAL은 저장될때마다
 																								// 숫자가 1씩 증가
 																								// auto_increment와 비슷함
 			pstmt = conn.prepareStatement(sql);
@@ -125,7 +129,7 @@ public class NoticeDAO {
 
 	public ArrayList<Notice> show(int nid1) { // 뷰로부터 상세내용을 볼 nid를 받아와 뷰에 출력해줌
 
-		ArrayList<Notice> datas = new ArrayList();
+		ArrayList<Notice> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
 			String sql = "select * from Notice where nid=?";
@@ -317,4 +321,23 @@ public class NoticeDAO {
 	 * 
 	 */
 
+	public int getTotalNotiCount() {
+		conn = DBConnection.connect();
+
+		String sql = "SELECT count(*) FROM notice";
+		int noticeTotal = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			rs.next();
+
+			noticeTotal = rs.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		disconnect();
+		return noticeTotal;
+	}
 }

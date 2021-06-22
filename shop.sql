@@ -1,17 +1,17 @@
 CREATE TABLE member (
-	id varchar(20) primary key, -- ¾ÆÀÌµğ
-	pw varchar(20) not null, -- ºñ¹Ğ¹øÈ£
-	name varchar(10) not null, -- ÀÌ¸§
-	phone varchar(15) not null, -- ÀüÈ­¹øÈ£
-	email varchar(30), -- ÀÌ¸ŞÀÏ
-	zipcode int not null, -- ¿ìÆí¹øÈ£ (ÁÖ¼Òµû¿À´Â api¿¡¼­ ¿ìÆí¹øÈ£°¡ ³ª¿À´Âµ¥ ¸¶ÀÌÆäÀÌÁö¿¡¼­ ¿ìÆí¹øÈ£¸¦ ºÒ·¯¿À±â À§ÇÔ)
-	addr varchar(200) not null, -- ÁÖ¼Ò
-	rank int default 10, -- È¸¿ø µî±Ş (È¸¿øÀÌ±â¸¸ ÇÏ¸é 10µî±Ş ½ÃÀÛ. 10ºÎÅÍ 1±îÁö)
-	point int default 0, -- Æ÷ÀÎÆ®
-	purchase int default 0 -- ±¸¸Å ±İ¾×	
+	id varchar(20) primary key, -- ì•„ì´ë””
+	pw varchar(20) not null, -- ë¹„ë°€ë²ˆí˜¸
+	name varchar(10) not null, -- ì´ë¦„
+	phone varchar(15) not null, -- ì „í™”ë²ˆí˜¸
+	email varchar(30), -- ì´ë©”ì¼
+	zipcode int not null, -- ìš°í¸ë²ˆí˜¸ (ì£¼ì†Œë”°ì˜¤ëŠ” apiì—ì„œ ìš°í¸ë²ˆí˜¸ê°€ ë‚˜ì˜¤ëŠ”ë° ë§ˆì´í˜ì´ì§€ì—ì„œ ìš°í¸ë²ˆí˜¸ë¥¼ ë¶ˆëŸ¬ì˜¤ê¸° ìœ„í•¨)
+	addr varchar(200) not null, -- ì£¼ì†Œ
+	rank int default 10, -- íšŒì› ë“±ê¸‰ (íšŒì›ì´ê¸°ë§Œ í•˜ë©´ 10ë“±ê¸‰ ì‹œì‘. 10ë¶€í„° 1ê¹Œì§€)
+	point int default 0, -- í¬ì¸íŠ¸
+	purchase int default 0 -- êµ¬ë§¤ ê¸ˆì•¡
 );
 
-create table notice( -- °øÁö»çÇ×
+create table notice( -- ê³µì§€ì‚¬í•­
    nid int primary key,    
    ntitle varchar (20),          
    ncon varchar(100) not null,       
@@ -33,35 +33,35 @@ create table QnA (
 );
 
 create table reply(
-   rid int primary key,   --´äº¯ id
+   rid int primary key,   --ë‹µë³€ id
    qid int not null,      --qna id
-   day varchar(30),            --´äº¯ °Ô½ÃÀÏÀÚ
-   id varchar(20),         --°ü¸®ÀÚ id
-   rcon varchar(50) not null,   --´äº¯ ³»¿ë
+   day varchar(30),            --ë‹µë³€ ê²Œì‹œì¼ì
+   id varchar(20),         --ê´€ë¦¬ì id
+   rcon varchar(50) not null,   --ë‹µë³€ ë‚´ìš©
    foreign key(id) references member(id),
    constraint fk foreign key (qid) references QnA(qid) on delete cascade
 );
 
 create table product(
-   pid int primary key, --»óÇ° id
-   name varchar(30),   --»óÇ°ÀÌ¸§
-   price int not null, -- »óÇ°°¡°İ
-   visit int not null,   --Á¶È¸¼ö
-   stock int not null,   --Àç°í
-   cate varchar(10) not null, --ºĞ·ù category
-   psize varchar(10), --»óÇ°»çÀÌÁî(size·Î ¼Ó¼ºÀ» ÁÖ¸é ¿¡·¯³ª¼­ ¹Ù²Ş)
-   pcon varchar(1000), --»óÇ° µğÅ×ÀÏ ³»¿ë
-   gender varchar(10), -- ¼ºº°
-   files varchar(50), --»çÁøÆÄÀÏ 
-   day varchar(30) --¾÷·Îµå ³¯Â¥
+   pid int primary key, --ìƒí’ˆ id
+   name varchar(30),   --ìƒí’ˆì´ë¦„
+   price int not null, -- ìƒí’ˆê°€ê²©
+   visit int not null,   --ì¡°íšŒìˆ˜
+   stock int not null,   --ì¬ê³ 
+   cate varchar(10) not null, --ë¶„ë¥˜ category
+   psize varchar(10), --ìƒí’ˆì‚¬ì´ì¦ˆ(sizeë¡œ ì†ì„±ì„ ì£¼ë©´ ì—ëŸ¬ë‚˜ì„œ ë°”ê¿ˆ)
+   pcon varchar(1000), --ìƒí’ˆ ë””í…Œì¼ ë‚´ìš©
+   gender varchar(10), -- ì„±ë³„
+   files varchar(50), --ì‚¬ì§„íŒŒì¼ 
+   day varchar(30) --ì—…ë¡œë“œ ë‚ ì§œ
 );
 
 create table productreview(
 	reviewid int primary key, -- review id
-	productid int, -- ¸®ºäÇÑ product id
-	userid varchar(20), --¸®ºä¸¦ ¾´ »ç¿ëÀÚ id
+	productid int, -- ë¦¬ë·°í•œ product id
+	userid varchar(20), --ë¦¬ë·°ë¥¼ ì“´ ì‚¬ìš©ì id
 	productsize varchar(10),
-	rating int,	-- ÆòÁ¡ 1~5
+	rating int,	-- í‰ì  1~5
 	reveiwcon varchar(1000),
 	day varchar(30),
 	constraint fk2 foreign key (productid) references product(pid) on delete cascade
@@ -69,17 +69,56 @@ create table productreview(
 
 
 INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VALUES ('a','pw','name','phone','email',123,'addr',1,100,1000)
-INSERT into notice (nid,ntitle,ncon,visitor,day,sort) values (3,'asd','asdd',155,'1234','qnsfb')
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (100,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (101,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (102,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (103,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (104,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (105,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (106,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (107,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (108,'asddd','asdd',155,'1234','qnsfb');
-INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (109,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (1, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (2, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (3, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (4, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (5, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (6, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (7, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (8, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (9, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (10, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (11, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (12, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (13, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (14, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (15, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (16, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (17, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (18, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (19, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (20, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (21, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (22, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (23, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (24, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (25, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (26, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (27, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (28, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (29, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (30, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (31, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (32, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (33, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (34, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (35, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (36, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (37, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (38, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (39, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (40, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (41, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (42, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (43, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (44, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (45, 'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (46, 'asddd','asdd',155,'1234','qnsfb');
+
+
+
+
 INSERT INTO QnA (qid,id,qtitle,qcon,qstate,day,sort) values (100,'a','title','con','state','day','sort')
 
 
@@ -103,10 +142,6 @@ CREATE SEQUENCE cnt2 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
 CREATE SEQUENCE cnt3 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
-CREATE SEQUENCE cnt4 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
--- Ãß°¡·Î À§¿¡ ±¸¹®µµ ½ÇÇà ºÎÅ¹µå·Á¿ä
+select * from (select nid,ntitle,ncon,visitor,day,sort,rownum as rn from Notice order by nid asc) where rn between 1 and 10;
 
-select * from (select nid,ntitle,ncon,visitor,day,sort,rownum as rn from Notice order by nid asc) where rn between 1 and 10
-
-
-
+SELECT * FROM (SELECT A.*, ROWNUM AS RNUM FROM (SELECT * FROM notice ORDER BY nid DESC) A WHERE ROWNUM <= 5) WHERE RNUM > 0 ORDER BY nid DESC;
