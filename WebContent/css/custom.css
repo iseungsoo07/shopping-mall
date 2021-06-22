@@ -476,6 +476,7 @@ select {
 	padding: 40px 0 0;
 	justify-content: center;
 	margin-bottom: 40px;
+	align-items: center;
 }
 
 .pagination a {

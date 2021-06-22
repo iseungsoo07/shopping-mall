@@ -26,7 +26,6 @@ import action.NewNotiAction;
 import action.NewPwAction;
 import action.NewQnAAction;
 import action.NewReplyAction;
-//import action.NotiPagingAction;
 import action.RegistAction;
 import action.SearchNAction;
 import action.SearchQAction;
@@ -235,7 +234,8 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		} 
+			
 
 		/*
 		 * else if (command.equals("/notiList.do")) { try { forward=new

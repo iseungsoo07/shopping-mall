@@ -34,8 +34,6 @@ public class ProductReview {
 		this.userid = userid;
 	}
 
-
-
 	public String getProductsize() {
 		return productsize;
 	}
@@ -67,5 +65,5 @@ public class ProductReview {
 	public void setDay(String day) {
 		this.day = day;
 	}
-	
+
 }

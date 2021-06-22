@@ -92,6 +92,7 @@
 					</div>
 					<div class="our-link">
 						<ul>
+
 							<li class="dropdown"><custom:logined /></li>
 
 						</ul>
@@ -243,7 +244,7 @@
 							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">고객센터</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="./showN.do">공지사항</a>
+									<a href="./showN.do?page=1">공지사항</a>
 								</li>
 								<li>
 									<a href="./showQ.do">QnA</a>
