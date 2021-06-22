@@ -1,17 +1,17 @@
 CREATE TABLE member (
-	id varchar(20) primary key, -- ¾ÆÀÌµð
-	pw varchar(20) not null, -- ºñ¹Ð¹øÈ£
-	name varchar(10) not null, -- ÀÌ¸§
-	phone varchar(15) not null, -- ÀüÈ­¹øÈ£
-	email varchar(30), -- ÀÌ¸ÞÀÏ
-	zipcode int not null, -- ¿ìÆí¹øÈ£ (ÁÖ¼Òµû¿À´Â api¿¡¼­ ¿ìÆí¹øÈ£°¡ ³ª¿À´Âµ¥ ¸¶ÀÌÆäÀÌÁö¿¡¼­ ¿ìÆí¹øÈ£¸¦ ºÒ·¯¿À±â À§ÇÔ)
-	addr varchar(200) not null, -- ÁÖ¼Ò
-	rank int default 10, -- È¸¿ø µî±Þ (È¸¿øÀÌ±â¸¸ ÇÏ¸é 10µî±Þ ½ÃÀÛ. 10ºÎÅÍ 1±îÁö)
-	point int default 0, -- Æ÷ÀÎÆ®
-	purchase int default 0 -- ±¸¸Å ±Ý¾×	
+	id varchar(20) primary key, -- ï¿½ï¿½ï¿½Ìµï¿½
+	pw varchar(20) not null, -- ï¿½ï¿½Ð¹ï¿½È£
+	name varchar(10) not null, -- ï¿½Ì¸ï¿½
+	phone varchar(15) not null, -- ï¿½ï¿½È­ï¿½ï¿½È£
+	email varchar(30), -- ï¿½Ì¸ï¿½ï¿½ï¿½
+	zipcode int not null, -- ï¿½ï¿½ï¿½ï¿½ï¿½È£ (ï¿½Ö¼Òµï¿½ï¿½ï¿½ï¿½ï¿½ apiï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+	addr varchar(200) not null, -- ï¿½Ö¼ï¿½
+	rank int default 10, -- È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ (È¸ï¿½ï¿½ï¿½Ì±â¸¸ ï¿½Ï¸ï¿½ 10ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. 10ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½)
+	point int default 0, -- ï¿½ï¿½ï¿½ï¿½Æ®
+	purchase int default 0 -- ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½	
 );
 
-create table notice( -- °øÁö»çÇ×
+create table notice( -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    nid int primary key,    
    ntitle varchar (20),          
    ncon varchar(100) not null,       
@@ -33,42 +33,42 @@ create table QnA (
 );
 
 create table reply(
-   rid int primary key,   --´äº¯ id
+   rid int primary key,   --ï¿½äº¯ id
    qid int not null,      --qna id
-   day varchar(30),            --´äº¯ °Ô½ÃÀÏÀÚ
-   id varchar(20),         --°ü¸®ÀÚ id
-   rcon varchar(50) not null,   --´äº¯ ³»¿ë
+   day varchar(30),            --ï¿½äº¯ ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½
+   id varchar(20),         --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ id
+   rcon varchar(50) not null,   --ï¿½äº¯ ï¿½ï¿½ï¿½ï¿½
    foreign key(id) references member(id),
    constraint fk foreign key (qid) references QnA(qid) on delete cascade
 );
 
 create table product(
-   pid int primary key, --»óÇ° id
-   name varchar(30),   --»óÇ°ÀÌ¸§
-   price int not null, -- »óÇ°°¡°Ý
-   visit int not null,   --Á¶È¸¼ö
-   stock int not null,   --Àç°í
-   cate varchar(10) not null, --ºÐ·ù category
-   psize varchar(10), --»óÇ°»çÀÌÁî(size·Î ¼Ó¼ºÀ» ÁÖ¸é ¿¡·¯³ª¼­ ¹Ù²Þ)
-   pcon varchar(1000), --»óÇ° µðÅ×ÀÏ ³»¿ë
-   gender varchar(10), -- ¼ºº°
-   files varchar(50), --»çÁøÆÄÀÏ 
-   day varchar(30) --¾÷·Îµå ³¯Â¥
+   pid int primary key, --ï¿½ï¿½Ç° id
+   name varchar(30),   --ï¿½ï¿½Ç°ï¿½Ì¸ï¿½
+   price int not null, -- ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
+   visit int not null,   --ï¿½ï¿½È¸ï¿½ï¿½
+   stock int not null,   --ï¿½ï¿½ï¿½
+   cate varchar(10) not null, --ï¿½Ð·ï¿½ category
+   psize varchar(10), --ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(sizeï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½)
+   pcon varchar(1000), --ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+   gender varchar(10), -- ï¿½ï¿½ï¿½ï¿½
+   files varchar(50), --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+   day varchar(30) --ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½Â¥
 );
 
 create table productreview(
 	reviewid int primary key, -- review id
-	productid int, -- ¸®ºäÇÑ product id
-	userid varchar(20), --¸®ºä¸¦ ¾´ »ç¿ëÀÚ id
+	productid int, -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ product id
+	userid varchar(20), --ï¿½ï¿½ï¿½ä¸¦ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ id
 	productsize varchar(10),
-	rating int,	-- ÆòÁ¡ 1~5
+	rating int,	-- ï¿½ï¿½ï¿½ï¿½ 1~5
 	reveiwcon varchar(1000),
 	day varchar(30),
 	constraint fk2 foreign key (productid) references product(pid) on delete cascade
 );
 
 
-INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VALUES ('a','pw','name','phone','email',123,'addr',1,100,1000)
+INSERT INTO member (id,pw,name,phone,email,zipcode,addr) VALUES ('admin','pw','name','phone','email',123,'addr');
 INSERT into notice (nid,ntitle,ncon,visitor,day,sort) values (3,'asd','asdd',155,'1234','qnsfb')
 INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (100,'asddd','asdd',155,'1234','qnsfb');
 INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (101,'asddd','asdd',155,'1234','qnsfb');
@@ -92,7 +92,9 @@ select * from reply
 drop table notice;
 drop table reply;
 drop table QnA;
-
+drop table member;
+drop table product;
+drop table productreview;
 select * from QnA;
 select * from Notice where ncon like '%as%'
 
@@ -104,7 +106,7 @@ CREATE SEQUENCE cnt2 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 CREATE SEQUENCE cnt3 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
 CREATE SEQUENCE cnt4 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
--- Ãß°¡·Î À§¿¡ ±¸¹®µµ ½ÇÇà ºÎÅ¹µå·Á¿ä
+-- ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¹ï¿½ï¿½ï¿½ï¿½ï¿½
 
 select * from (select nid,ntitle,ncon,visitor,day,sort,rownum as rn from Notice order by nid asc) where rn between 1 and 10
 
