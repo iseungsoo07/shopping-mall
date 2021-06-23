@@ -33,7 +33,8 @@ public class ProductDAO {
 		}
 	}
 
-	public boolean newPro(Product pro) { // 酉곕줈遺��꽣 諛쏆븘�삩 �뜲�씠�꽣�뱾�쓣 DB�뿉 �궫�엯�븯�뒗 硫붿냼�뱶
+	public boolean newPro(Product pro) { // product 객체에 저장해 전달해서 db에 등록
+
 		try {
 			conn = DBConnection.connect();
 			String sql = "insert into product (pid,name,stock,price,files,visit,cate,psize,pcon,gender) values(cnt.NEXTVAL,?,?,?,?,?,?,?,?,?,?)"; // cnt.NEXTVAL��
@@ -78,7 +79,7 @@ public class ProductDAO {
 		return true;
 	}
 
-	public ArrayList<Product> showP() { // DB�뿉�꽌 product �뀒�씠釉붿쓽 �젙蹂대�� 諛쏆븘�� datas�뿉 ���옣
+	public ArrayList<Product> showP() { // product 목록 전체 조회
 
 		ArrayList<Product> datas = new ArrayList();
 		try {
@@ -118,7 +119,7 @@ public class ProductDAO {
 		return datas;
 	}
 
-	public boolean delPro(int pid) {
+	public boolean delPro(int pid) {//product id 값을 받아서 상품 삭제
 
 		try {
 			conn = DBConnection.connect();
@@ -137,7 +138,7 @@ public class ProductDAO {
 		return true;
 	}
 
-	public Product showP(int pid) { // 酉곕줈遺��꽣 �긽�꽭�궡�슜�쓣 蹂� pid瑜� 諛쏆븘�� 酉곗뿉 異쒕젰�빐以�
+	public Product showP(int pid) { // pid 에 해당하는 product return
 
 		Product pro = null;
 		try {
@@ -303,7 +304,7 @@ public class ProductDAO {
 			conn = DBConnection.connect();
 			// select * from product where name like %s% �뒗 �긽�뭹�쓽 �뜲�씠�꽣以묒뿉 s(酉곗뿉�꽌 諛쏆븘�삩
 			// �듅�젙臾몄옄�뿴)�씠 �엳�뒗吏�
-			// �솗�씤�븯�뒗 荑쇰━臾�
+			// 검색어를 이용해 해당 검색어가 들어있는 상품 전체 return
 			String sql = "select * from product where name like ?";
 			pstmt = conn.prepareStatement(sql);
 
@@ -340,7 +341,8 @@ public class ProductDAO {
 		return datas;
 	}
 
-	public ArrayList<Product> showPorderasc(String s) { // 而⑦듃濡ㅻ윭�뿉�꽌 臾몄옄�뿴�쓣 諛쏆븘 �젙�젹
+	public ArrayList<Product> showPorderasc(String s) { // product 내림차순 정렬 return
+
 
 		ArrayList<Product> datas = new ArrayList();
 		try {
@@ -382,7 +384,8 @@ public class ProductDAO {
 		return datas;
 	}
 
-	public ArrayList<Product> showPorderde(String s) { // 而⑦듃濡ㅻ윭�뿉�꽌 臾몄옄�뿴�쓣 諛쏆븘 �젙�젹
+	public ArrayList<Product> showPorderde(String s) { // product 오름차순 정렬 return
+
 
 		ArrayList<Product> datas = new ArrayList();
 		try {
