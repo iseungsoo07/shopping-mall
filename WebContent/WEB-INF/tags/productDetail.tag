@@ -98,11 +98,8 @@
 				</form>
 				<div class="add-to-btn">
 					<div class="add-comp">
-
 						<custom:delProduct />
 						<!-- 관리자 로그인만 보이게 -->
-						<a class="btn hvr-hover" href="#"><i class="fas fa-sync-alt"></i>상품
-							후기</a>
 					</div>
 					<div class="share-bar">
 						<a class="btn hvr-hover" href="#"><i class="fab fa-facebook"

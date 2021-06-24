@@ -458,7 +458,7 @@
 										<div class="products-single fix">
 											<div class="box-img-hover">
 											
-											<!-- custom:arrayProduct: 페이지 연결문제로 일단 보류 -->
+											<!-- custom:productArray: 페이지 연결문제로 밑에 코드는 남겨둠, 일단 보류 -->
 												<div class="type-lb">
 													<p class="sale">Sale</p>
 												</div>
