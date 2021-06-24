@@ -19,7 +19,7 @@ public class NewQnAAction implements Action {
 		QnADAO qnaDAO = new QnADAO();
 		QnA qna = new QnA();				//QnADAO와 QnA의 정보를 이용하기위해 객체 생성
 
-		
+		System.out.println(req.getParameter("qcon")+"action에서 호출됨");
 		qna.setQtitle(req.getParameter("qtitle"));
 		qna.setQcon(req.getParameter("qcon"));				
 		qna.setSort(req.getParameter("value"));

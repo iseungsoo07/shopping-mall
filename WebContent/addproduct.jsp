@@ -17,6 +17,28 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
+<title>Summernote with Bootstrap 4</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+	crossorigin="anonymous"></script>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 <!-- Site Icons -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -115,7 +137,8 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown"
 						data-out="fadeOutUp">
-						<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a>
+						</li>
 						<li class="nav-item"><a class="nav-link" href="about.jsp">About
 								Us</a></li>
 						<li class="dropdown megamenu-fw"><a href="#"
@@ -173,18 +196,18 @@
 									</div> <!-- end row -->
 								</li>
 							</ul></li>
-						<li class="dropdown active"><a href="#"
-							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">쇼핑</a>
+						<li class="dropdown"><a href="#"
+							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
 							<ul class="dropdown-menu">
-								<li><a href="cart.jsp">카트</a></li>
-								<li><a href="checkout.jsp">주문</a></li>
-								<li><a href="my-account.jsp">결제</a></li>
-								<li><a href="wishlist.jsp">위시리스트</a></li>
-								<li><a href="shop-detail.jsp">shop detail</a></li>
-							</ul></li><li class="dropdown">
-							<custom:isLogined />
-						</li>
-					
+								<li><a href="cart.jsp">Cart</a></li>
+								<li><a href="checkout.jsp">Checkout</a></li>
+								<li><a href="my-account.html">My Account</a></li>
+								<li><a href="wishlist.html">Wishlist</a></li>
+								<li><a href="shop-detail.html">Shop Detail</a></li>
+							</ul></li>
+						<li class="dropdown"><custom:isLogined /></li>
+
+
 						<li class="dropdown"><a href="#"
 							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">고객센터</a>
 							<ul class="dropdown-menu">
@@ -199,7 +222,8 @@
 				<!-- Start Atribute Navigation -->
 				<div class="attr-nav">
 					<ul>
-						<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+						<li class="search"><a href="#"><i class="fa fa-search"></i></a>
+						</li>
 						<li class="side-menu"><a href="#"> <i
 								class="fa fa-shopping-bag"></i> <span class="badge">3</span>
 						</a></li>
@@ -266,159 +290,217 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2>카트</h2>
+					<h2>Contact Us</h2>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">쇼핑</a></li>
-						<li class="breadcrumb-item active">카트</li>
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item active">Contact Us</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
+	<br>
+	<br>
 	<!-- End All Title Box -->
 
-	<!-- Start Cart  -->
-	<div class="cart-box-main">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="table-main table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>사진</th>
-									<th>상품</th>
-									<th>가격</th>
-									<th>개수</th>
-									<th>총 금액</th>
-									<th>삭제</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 80.0</p>
-									</td>
-									<td class="quantity-box"><input type="number" size="4"
-										value="1" min="0" step="1" class="c-input-text qty text"></td>
-									<td class="total-pr">
-										<p>$ 80.0</p> <!-- 총 금액 구현필요  -->
-									</td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i> <!-- 삭제 구현필요 -->
-									</a></td>
-								</tr>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 60.0</p>
-									</td>
-									<td class="quantity-box"><input type="number" size="4"
-										value="1" min="0" step="1" class="c-input-text qty text"></td>
-									<td class="total-pr">
-										<p>$ 80.0</p> <!--총 금액 구현필요  -->
-									</td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i> <!-- 삭제 구현필요 -->
-									</a></td>
-								</tr>
-								<tr>
-									<td class="thumbnail-img"><a href="#"> <img
-											class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
-											amet </a></td>
-									<td class="price-pr">
-										<p>$ 30.0</p>
-									</td>
-									<td class="quantity-box"><input type="number" size="4"
-										value="1" min="0" step="1" class="c-input-text qty text"></td>
-									<td class="total-pr">
-										<p>$ 80.0</p> <!-- 총 금액 구현필요  -->
-									</td>
-									<td class="remove-pr"><a href="#"> <i
-											class="fas fa-times"></i> <!-- 삭제 구현필요 -->
-									</a></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+	<!-- Start Contact Us  -->
 
-			<div class="row my-5">
-				<div class="col-lg-6 col-sm-6">
-					<div class="coupon-box">
-						<div class="input-group input-group-sm">
-							<input class="form-control" placeholder="쿠폰 번호를 입력하세요 !"
-								aria-label="Coupon code" type="text">
-							<div class="input-group-append">
-								<button class="btn btn-theme" type="button">쿠폰 적용하기</button>
+	<!-- continaer 시작 -->
+
+
+	<style type="text/css">
+form {
+	display: inline
+}
+</style>
+	<div id="container">
+		<div class="location_area customer">
+
+			<div class="board_div">
+
+				<div class="col-md-12">
+
+
+					<div>
+
+
+						<form class="form-horizontal" id="boardForm" name="boardForm"
+							method="post" enctype="multipart/form-data">
+							<div class="box_inner">
+
+								<div class="form-group">
+									<label for="inputEmail3" class="col-md-12 control-label">Title</label>
+									<div class="col-md-12">
+										<input type="text" class="form-control" id="name" name="name"
+											value="${datas.name}" placeholder="상품명을 입력해주세요!" required
+											data-error="Please enter product name">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputEmail3" class="col-md-12 control-label">code</label>
+									<div class="col-md-12">
+										<input type="text" class="form-control" id="pid" name="pid"
+											value="${datas.name}" placeholder="상품코드를 입력하세요!" required
+											data-error="Please enter product name">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="inputEmail3" class="col-md-12 control-label">Price</label>
+									<div class="col-md-12">
+										<input type="text" class="form-control" id="price"
+											name="price" value="${datas.price}"
+											placeholder="상품가격을 입력해주세요!" required
+											data-error="Please enter product price">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="inputEmail3" class="col-md-12 control-label">Stock: 
+										재고를 입력</label>
+
+									<div class="col-md-12">
+										<div id="row1" style="float: left;">
+
+											<input type="text" class="form-control" id="stockXXL"
+												name="stockXXL" value="${datas.stock}" placeholder="XXL"
+												required data-error="Please enter product stock">&nbsp
+										</div>
+									</div>
+
+									<div class="col-md-12">
+										<div id="row1" style="float: left;">
+
+											<input type="text" class="form-control" id="stockXL"
+												name="stockXL" value="${datas.stock}" placeholder="XL"
+												required data-error="Please enter product stock">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div id="row1" style="float: left;">
+
+											<input type="text" class="form-control" id="stockL"
+												name="stockL" value="${datas.stock}" placeholder="L" required
+												data-error="Please enter product stock">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div id="row1" style="float: left;">
+
+											<input type="text" class="form-control" id="stockM"
+												name="stockM" value="${datas.stock}" placeholder="M" required
+												data-error="Please enter product stock">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div id="row1" style="float: left;">
+
+											<input type="text" class="form-control" id="stockS"
+												name="stockS" value="${datas.stock}" placeholder="s" required
+												data-error="Please enter product stock">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputEmail3" class="col-md-12 control-label"><div
+											class="col-md-12">성별 선택</label> <br /> <input type="radio"
+										id="gender" name="gender" value="남자"> 남자 <input
+										type="radio" id="gender" name="gender" value="여자">여자<br />
+									<br />
+								</div>
+
+
+								<div class="form-group">
+									<label for="inputEmail3" class="col-md-12 control-label">Cate</label>
+									<div class="col-md-12">
+									<input name="cate" id="Outer" value="Outer" type="radio">
+									<label for="Radios1"> 아우터 </label>&nbsp;&nbsp;&nbsp; <input
+										name="cate" id="
+										Shirts" value="Shirts" type="radio"> <label
+										for="Radios2"> 셔츠 </label>&nbsp;&nbsp;&nbsp; <input
+										name="cate" id="ManToMan" value="ManToMan" type="radio">
+									<label for="Radios3">&nbsp; 맨투맨&니트 </label>&nbsp;&nbsp;&nbsp; <input
+										name="cate" id="ShortShirts" value="ShortShirts" type="radio">
+									<label for="Radios4"> 반팔 티 </label>
+								</div>
+								</div>
+
+								<div class="form-group">
+									<label for="inputPassword3" class="col-md-12 control-label">contents</label>
+									<div class="col-md-12">
+										<div id="summernote"></div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12">
+										첨부파일: <input type="file" name="file"> 첨부파일: <input
+											type="file" name="file">
+									</div>
+								</div>
 							</div>
-						</div>
+
+							<center>
+								<button class="btn hvr-hover" id="submit" type="submit">상품
+									추가</button>
+							</center>
 					</div>
+
+
+
+					<%--  <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">첨부파일</label>
+        <div class="col-sm-10">
+          <div id="fine-uploader"></div>
+          <!-- Fine Uploader -->
+          <jsp:include page="/resources/fileUpload/all.fine-uploader/lee/division_script.jsp" flush="true" />
+        </div>
+      </div> --%>
+
 				</div>
-				<div class="col-lg-6 col-sm-6">
-					<div class="update-box">
-						<input value="카트 저장하기" type="submit">
-						<!-- 용도를 알수없음 카트 수정후 저장하는 용도로 우선 생각해둠. -->
-					</div>
-				</div>
+				</form>
+
+
+
 			</div>
 
-			<!--결제금액 변동을 위한 처리 필요 -->
-			<div class="row my-5">
-				<div class="col-lg-8 col-sm-12"></div>
-				<div class="col-lg-4 col-sm-12">
-					<div class="order-box">
-						<h3>결제 금액 정보</h3>
-						<div class="d-flex">
-							<h4>주문 금액</h4>
-							<div class="ml-auto font-weight-bold">$ 130</div>
-						</div>
-						<div class="d-flex">
-							<h4>할인</h4>
-							<div class="ml-auto font-weight-bold">- $ 40</div>
-						</div>
-						<hr class="my-1">
-						<div class="d-flex">
-							<h4>쿠폰 할인</h4>
-							<div class="ml-auto font-weight-bold">- $ 10</div>
-						</div>
-						<div class="d-flex">
-							<h4>부가세</h4>
-							<div class="ml-auto font-weight-bold">$ 2</div>
-						</div>
-						<div class="d-flex">
-							<h4>배송비</h4>
-							<div class="ml-auto font-weight-bold">0</div>
-						</div>
-						<hr>
-						<div class="d-flex gr-total">
-							<h5>결제금액</h5>
-							<div class="ml-auto h5">$ 78</div>
-						</div>
-						<hr>
-					</div>
-				</div>
-				<div class="col-12 d-flex shopping-box">
-					<a href="checkout.jsp" class="ml-auto btn hvr-hover">주문하기</a>
-				</div>
-			</div>
+			<script>
+				$('#summernote')
+						.summernote(
+								{
+									placeholder : '상품설명을 입력해 주세요!',
+									tabsize : 2,
+									height : 120,
+									toolbar : [
+											[ 'style', [ 'style' ] ],
+											[
+													'font',
+													[ 'bold', 'underline',
+															'clear' ] ],
+											[ 'color', [ 'color' ] ],
+											[ 'para',
+													[ 'ul', 'ol', 'paragraph' ] ],
+											[ 'table', [ 'table' ] ],
+											[
+													'insert',
+													[ 'link', 'picture',
+															'video' ] ],
+											[
+													'view',
+													[ 'fullscreen', 'codeview',
+															'help' ] ] ]
+								});
+			</script>
 
 		</div>
 	</div>
+
+	<!-- continaer 끝 -->
 	<!-- End Cart -->
 
+
+
+
+	</div>
 	<!-- Start Instagram Feed  -->
 	<div class="instagram-box">
 		<div class="main-instagram owl-carousel owl-theme">

@@ -85,29 +85,7 @@
 					</div>
 					<div class="our-link">
 						<ul>
-							<c:if test="${ member != null }">
-								<li class="member-name">${ member.name }님 환영합니다!</li>
-								<li>
-									<a href="./logout.do">로그아웃</a>
-								</li>
-								<li>
-									<a href="./regist.jsp">회원가입</a>
-								</li>
-								<li>
-									<a href="#">마이페이지</a>
-								</li>
-							</c:if>
-							<c:if test="${ member == null }">
-								<li>
-									<a href="./login.jsp">로그인</a>
-								</li>
-								<li>
-									<a href="./regist.jsp">회원가입</a>
-								</li>
-								<li>
-									<a href="#">마이페이지</a>
-								</li>
-							</c:if>
+							<li class="dropdown"><custom:logined /></li>
 						</ul>
 					</div>
 				</div>
@@ -257,7 +235,7 @@
 							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">고객센터</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="./showN.do?page=1">공지사항</a>
+									<a href="./showN.do">공지사항</a>
 								</li>
 								<li>
 									<a href="./showQ.do">QnA</a>
@@ -350,7 +328,7 @@
 				<fieldset style="display: flex; justify-content: flex-end; align-items: center;">
 					<legend>검색</legend>
 					<div class="select_common">
-						<select name="value" id="value">
+						<select title="이메일 제공업체 목록" name="value" id="value">
 							<option>선택</option>
 							<option value="title">제목</option>
 							<option value="content">내용</option>
@@ -379,7 +357,7 @@
 							<td>${v.nid}</td>
 
 							<td class="tit_notice">
-								<a href="./showNcon.do?nid=${v.nid}">${v.ntitle}</a>
+								<a href="./showNcon.do?nid=${v.nid }">${v.ntitle}</a>
 							</td>
 							<td>${v.visitor}</td>
 							<td>${v.day}</td>
@@ -395,11 +373,14 @@
 				<board:writeN />
 			</p>
 			<div class="pagination">
-				<a href="showN.do?page=1" class="firstpage pbtn"> <img src="./images/btn_firstpage.png" alt="첫 페이지로 이동" /></a> 
-				<a href="showN.do?page=${ curPage - 1 }" class="prevpage pbtn"> <img src="./images/btn_prevpage.png" alt="이전 페이지로 이동" /></a>
-				<custom:paging />
-				<a href="showN.do?page=${ curPage + 1 }" class="nextpage pbtn"> <img src="./images/btn_nextpage.png" alt="다음 페이지로 이동" />
-				</a> <a href="showN.do?page=${ totalPage }" class="lastpage pbtn"> <img src="./images/btn_lastpage.png" alt="마지막 페이지로 이동" />
+				<a href="#" class="firstpage pbtn"> <img src="./images/btn_firstpage.png" alt="첫 페이지로 이동" />
+				</a> <a href="#" class="prevpage pbtn"> <img src="./images/btn_prevpage.png" alt="이전 페이지로 이동" />
+				</a> <a href="#"><span class="pagenum currentPage">1</span></a> <a href="#"><span class="pagenum">2</span></a> <a
+					href="#"
+				><span class="pagenum">3</span></a> <a href="#"><span class="pagenum">4</span></a> <a href="#"><span
+					class="pagenum"
+				>5</span></a> <a href="#" class="nextpage pbtn"> <img src="./images/btn_nextpage.png" alt="다음 페이지로 이동" />
+				</a> <a href="#" class="lastpage pbtn"> <img src="./images/btn_lastpage.png" alt="마지막 페이지로 이동" />
 				</a>
 			</div>
 			<p>
@@ -539,7 +520,7 @@
 	<script src="js/jquery.superslides.min.js"></script>
 	<script src="js/bootstrap-select.js"></script>
 	<script src="js/inewsticker.js"></script>
-	<script src="js/bootsnav.js"></script>
+	<script src="js/bootsnav.js."></script>
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>

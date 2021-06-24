@@ -118,10 +118,6 @@ INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (46, 'asddd','
 
 
 
-
-INSERT INTO QnA (qid,id,qtitle,qcon,qstate,day,sort) values (100,'a','title','con','state','day','sort')
-
-
 DELETE FROM member WHERE id = 'admin';
 DELETE FROM NOTICE WHERE nid = 1;
 DELETE FROM QnA WHERE qid = 1;

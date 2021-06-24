@@ -207,6 +207,7 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/newQnA.do")) {
 			try {
 				forward = new NewQnAAction().execute(req, res);
+				System.out.println(req.getParameter("qcon")+"컨트롤러에서 호출됨");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -234,7 +235,7 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
+		}
 			
 
 		/*
