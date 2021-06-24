@@ -10,11 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
+import action.AddProductAction;
+import action.CategoryAction;
 import action.ChangeInfoAction;
 import action.ChangePwAction;
 import action.DelNotiAction;
+import action.DelProductAction;
 import action.DelQnAAction;
 import action.DelReplyAction;
+import action.DelReviewAction;
 import action.DeleteAction;
 import action.FindIdAction;
 import action.HomeAction;
@@ -26,14 +30,21 @@ import action.NewNotiAction;
 import action.NewPwAction;
 import action.NewQnAAction;
 import action.NewReplyAction;
+import action.PriceFilterAction;
+import action.ProductSortingAction;
 import action.RegistAction;
 import action.SearchNAction;
 import action.SearchQAction;
+import action.ShowAllProductAction;
 import action.ShowNconAction;
 import action.ShowNotiAction;
+import action.ShowProductDetailAction;
 import action.ShowQAction;
 import action.ShowQnAconAction;
+import action.ShowReviewAction;
 import action.UpdateAction;
+import action.UpdateReviewAction;
+import action.WriteProductReviewAction;
 
 /**
  * Servlet implementation class FrontController
@@ -144,7 +155,7 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/idcheck.do")) {
+		} else if (command.equals("/idCheck.do")) {
 			try {
 				forward = new IdCheckAction().execute(req, res);
 			} catch (Exception e) {
@@ -235,8 +246,74 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+
+		} else if (command.equals("/addProduct.do")) {
+			try {
+				forward = new AddProductAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/category.do")) {
+			try {
+				forward = new CategoryAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delProduct.do")) {
+			try {
+				forward = new DelProductAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delReview.do")) {
+			try {
+				forward = new DelReviewAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/priceFilter.do")) {
+			try {
+				forward = new PriceFilterAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/productSort.do")) {
+			try {
+				forward = new ProductSortingAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/showAllProduct.do")) {
+			try {
+				forward = new ShowAllProductAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/showProductDetail.do")) {
+			try {
+				forward = new ShowProductDetailAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/showReview.do")) {
+			try {
+				forward = new ShowReviewAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/updateReview.do")) {
+			try {
+				forward = new UpdateReviewAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/writeReview.do")) {
+			try {
+				forward = new WriteProductReviewAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-			
 
 		/*
 		 * else if (command.equals("/notiList.do")) { try { forward=new

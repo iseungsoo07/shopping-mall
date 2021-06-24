@@ -106,6 +106,7 @@
 					</div>
 					<div class="our-link">
 						<ul>
+
 							<li class="dropdown"><custom:logined /></li>
 						</ul>
 					</div>
@@ -339,7 +340,12 @@ form {
 								<div class="form-group">
 									<label for="inputEmail3" class="col-md-12 control-label">code</label>
 									<div class="col-md-12">
-										<input type="text" class="form-control" id="pid" name="pid"
+										
+								
+
+										<input type="text" class="form-control" id="pid" name="pid">
+
+										<input type="text" class="form-control" id="name" name="name"
 											value="${datas.name}" placeholder="상품코드를 입력하세요!" required
 											data-error="Please enter product name">
 									</div>
@@ -350,12 +356,13 @@ form {
 									<div class="col-md-12">
 										<input type="text" class="form-control" id="price"
 											name="price" value="${datas.price}"
-											placeholder="상품가격을 입력해주세요!" required
-											data-error="Please enter product price">
+											placeholder="상품가격을 입력해주세요!" required>
+											
 									</div>
 								</div>
 
 								<div class="form-group">
+
 									<label for="inputEmail3" class="col-md-12 control-label">Stock: 
 										재고를 입력</label>
 
@@ -399,6 +406,7 @@ form {
 												name="stockS" value="${datas.stock}" placeholder="s" required
 												data-error="Please enter product stock">
 										</div>
+
 									</div>
 								</div>
 								<div class="form-group">
@@ -408,7 +416,6 @@ form {
 										type="radio" id="gender" name="gender" value="여자">여자<br />
 									<br />
 								</div>
-
 
 								<div class="form-group">
 									<label for="inputEmail3" class="col-md-12 control-label">Cate</label>
@@ -444,6 +451,7 @@ form {
 									추가</button>
 							</center>
 					</div>
+
 
 
 
