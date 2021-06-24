@@ -106,7 +106,9 @@
 					</div>
 					<div class="our-link">
 						<ul>
+
 							<li class="dropdown"><custom:logined /></li>
+
 						</ul>
 					</div>
 				</div>
@@ -339,7 +341,11 @@ form {
 								<div class="form-group">
 									<label for="inputEmail3" class="col-md-12 control-label">code</label>
 									<div class="col-md-12">
-										<input type="text" class="form-control" id="pid" name="pid"
+
+										<input type="text" class="form-control" id="pid" name="pid">
+
+										<input type="text" class="form-control" id="name" name="name"
+
 											value="${datas.name}" placeholder="상품코드를 입력하세요!" required
 											data-error="Please enter product name">
 									</div>
@@ -350,12 +356,17 @@ form {
 									<div class="col-md-12">
 										<input type="text" class="form-control" id="price"
 											name="price" value="${datas.price}"
+
 											placeholder="상품가격을 입력해주세요!" required
+
+											placeholder="상품명을 입력해주세요!" required
+
 											data-error="Please enter product price">
 									</div>
 								</div>
 
 								<div class="form-group">
+
 									<label for="inputEmail3" class="col-md-12 control-label">Stock: 
 										재고를 입력</label>
 
@@ -399,6 +410,14 @@ form {
 												name="stockS" value="${datas.stock}" placeholder="s" required
 												data-error="Please enter product stock">
 										</div>
+
+									<label for="inputEmail3" class="col-md-12 control-label">Stock</label>
+									<div class="col-md-12">
+										<input type="text" class="form-control" id="price"
+											name="price" value="${datas.stock}"
+											placeholder="재고를 입력해 주세요!" required
+											data-error="Please enter product stock">
+
 									</div>
 								</div>
 								<div class="form-group">
@@ -408,6 +427,7 @@ form {
 										type="radio" id="gender" name="gender" value="여자">여자<br />
 									<br />
 								</div>
+
 
 
 								<div class="form-group">
@@ -445,6 +465,44 @@ form {
 							</center>
 					</div>
 
+
+
+							</div>
+
+							<div class="form-group">
+								<label for="inputPassword3" class="col-md-12 control-label">contents</label>
+								<div class="col-md-12">
+									<div id="summernote"></div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-12">
+									첨부파일<input type="file" name="file"> 첨부파일<input
+										type="file" name="file">
+								</div>
+							</div>
+
+
+
+							<h2 class="tit_page" align="rigth">카테고리 선택</h2>
+
+							<div class="contact-form-right" padding="20px">
+
+
+								<input name="survey" id="Radios1" value="Yes" type="radio">
+								<label for="Radios1"> 아우터 </label> <input name="survey"
+									id="Radios2" value="No" type="radio"> <label
+									for="Radios2"> 셔츠 </label> <input name="survey" id="Radios3"
+									value="declater" type="radio"> <label for="Radios3">
+									맨투맨&니트 </label> <input name="survey" id="Radios4" value="declater"
+									type="radio"> <label for="Radios4"> 반팔 티 </label>
+							</div>
+					</div>
+
+					<center>
+						<button class="btn hvr-hover" id="submit" type="submit">상품
+							추가</button>
+					</center>
 
 
 					<%--  <div class="form-group">

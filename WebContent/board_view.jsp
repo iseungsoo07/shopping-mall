@@ -80,6 +80,9 @@
 					</div>
 					<div class="our-link">
 						<ul>
+<<<<<<< HEAD
+							<li class="dropdown"><custom:logined /></li>
+=======
 							<c:if test="${ member != null }">
 								<li class="member-name">${ member.name }님 환영합니다!</li>
 								<li>
@@ -103,6 +106,7 @@
 									<a href="#">마이페이지</a>
 								</li>
 							</c:if>
+>>>>>>> 2112986afc675dda522e750bc49af20e3f9777aa
 						</ul>
 					</div>
 				</div>

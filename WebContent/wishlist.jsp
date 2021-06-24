@@ -91,9 +91,7 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Our location</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                           <li class="dropdown"><custom:logined /></li>
                         </ul>
                     </div>
                 </div>

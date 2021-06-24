@@ -90,29 +90,7 @@
 					</div>
 					<div class="our-link">
 						<ul>
-							<c:if test="${ member != null }">
-								<li class="member-name">${ member.name }님환영합니다!</li>
-								<li>
-									<a href="./logout.do">로그아웃</a>
-								</li>
-								<li>
-									<a href="./regist.jsp">회원가입</a>
-								</li>
-								<li>
-									<a href="#">마이페이지</a>
-								</li>
-							</c:if>
-							<c:if test="${ member == null }">
-								<li>
-									<a href="./login.jsp">로그인</a>
-								</li>
-								<li>
-									<a href="./regist.jsp">회원가입</a>
-								</li>
-								<li>
-									<a href="#">마이페이지</a>
-								</li>
-							</c:if>
+							<li class="dropdown"><custom:logined /></li>
 						</ul>
 					</div>
 				</div>

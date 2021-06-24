@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib tagdir="/WEB-INF/tags" prefix="custom" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -22,7 +23,8 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- fontawesome -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -51,12 +53,16 @@
 						<div id="offer-box" class="carouselTicker">
 							<ul class="offer-box">
 								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
-								<li><i class="fab fa-opencart"></i> 50% - 80% off on Fashion</li>
-								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20</li>
+								<li><i class="fab fa-opencart"></i> 50% - 80% off on
+									Fashion</li>
+								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase
+									Promo code: offT20</li>
 								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
 								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
-								<li><i class="fab fa-opencart"></i> 50% - 80% off on Fashion</li>
-								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20</li>
+								<li><i class="fab fa-opencart"></i> 50% - 80% off on
+									Fashion</li>
+								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase
+									Promo code: offT20</li>
 								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
 							</ul>
 						</div>
@@ -64,7 +70,8 @@
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="custom-select-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+						<select id="basic" class="selectpicker show-tick form-control"
+							data-placeholder="$ USD">
 							<option>¥ JPY</option>
 							<option>$ USD</option>
 							<option>€ EUR</option>
@@ -77,9 +84,7 @@
 					</div>
 					<div class="our-link">
 						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Our location</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<li class="dropdown"><custom:logined /></li>
 						</ul>
 					</div>
 				</div>
@@ -91,23 +96,30 @@
 	<!-- Start Main Top -->
 	<header class="main-header">
 		<!-- Start Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+		<nav
+			class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
 			<div class="container">
 				<!-- Start Header Navigation -->
 				<div class="navbar-header">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbar-menu" aria-controls="navbars-rs-food"
+						aria-expanded="false" aria-label="Toggle navigation">
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="home.jsp"><img src="images/logo.png" class="logo" alt=""></a>
+					<a class="navbar-brand" href="home.jsp"><img
+						src="images/logo.png" class="logo" alt=""></a>
 				</div>
 				<!-- End Header Navigation -->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
-					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown"
+						data-out="fadeOutUp">
 						<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.jsp">About Us</a></li>
-						<li class="dropdown megamenu-fw"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+						<li class="nav-item"><a class="nav-link" href="about.jsp">About
+								Us</a></li>
+						<li class="dropdown megamenu-fw"><a href="#"
+							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
 								<li>
 									<div class="row">
@@ -161,29 +173,25 @@
 									</div> <!-- end row -->
 								</li>
 							</ul></li>
-						<li class="dropdown active"><a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+						<li class="dropdown active"><a href="#"
+							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">쇼핑</a>
 							<ul class="dropdown-menu">
-								<li><a href="cart.jsp">Cart</a></li>
-								<li><a href="checkout.jsp">Checkout</a></li>
-								<li><a href="my-account.html">My Account</a></li>
-								<li><a href="wishlist.html">Wishlist</a></li>
-								<li><a href="shop-detail.html">Shop Detail</a></li>
-							</ul></li>
-						<li class="dropdown">
+								<li><a href="cart.jsp">카트</a></li>
+								<li><a href="checkout.jsp">주문</a></li>
+								<li><a href="my-account.jsp">결제</a></li>
+								<li><a href="wishlist.jsp">위시리스트</a></li>
+								<li><a href="shop-detail.jsp">shop detail</a></li>
+							</ul></li><li class="dropdown">
 							<custom:isLogined />
 						</li>
-						<li class="dropdown">
-							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">고객센터</a>
+					
+						<li class="dropdown"><a href="#"
+							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">고객센터</a>
 							<ul class="dropdown-menu">
-								<li>
-									<a href="./showN.do">공지사항</a>
-								</li>
-								<li>
-									<a href="./showQ.do">QnA</a>
-								</li>
+								<li><a href="./showN.do">공지사항</a></li>
+								<li><a href="./showQ.do">QnA</a></li>
 
-							</ul>
-						</li>
+							</ul></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -192,7 +200,8 @@
 				<div class="attr-nav">
 					<ul>
 						<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-						<li class="side-menu"><a href="#"> <i class="fa fa-shopping-bag"></i> <span class="badge">3</span>
+						<li class="side-menu"><a href="#"> <i
+								class="fa fa-shopping-bag"></i> <span class="badge">3</span>
 						</a></li>
 					</ul>
 				</div>
@@ -203,28 +212,33 @@
 				<a href="#" class="close-side"><i class="fa fa-times"></i></a>
 				<li class="cart-box">
 					<ul class="cart-list">
-						<li><a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+						<li><a href="#" class="photo"><img
+								src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
 							<h6>
 								<a href="#">Delica omtantur </a>
 							</h6>
 							<p>
 								1x - <span class="price">$80.00</span>
 							</p></li>
-						<li><a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+						<li><a href="#" class="photo"><img
+								src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
 							<h6>
 								<a href="#">Omnes ocurreret</a>
 							</h6>
 							<p>
 								1x - <span class="price">$60.00</span>
 							</p></li>
-						<li><a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+						<li><a href="#" class="photo"><img
+								src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
 							<h6>
 								<a href="#">Agam facilisis</a>
 							</h6>
 							<p>
 								1x - <span class="price">$40.00</span>
 							</p></li>
-						<li class="total"><a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span class="float-right"><strong>Total</strong>: $180.00</span></li>
+						<li class="total"><a href="#"
+							class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span
+							class="float-right"><strong>Total</strong>: $180.00</span></li>
 					</ul>
 				</li>
 			</div>
@@ -238,7 +252,10 @@
 	<div class="top-search">
 		<div class="container">
 			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-search"></i></span> <input type="text" class="form-control" placeholder="Search"> <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+				<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				<input type="text" class="form-control" placeholder="Search">
+				<span class="input-group-addon close-search"><i
+					class="fa fa-times"></i></span>
 			</div>
 		</div>
 	</div>
@@ -249,10 +266,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2>Cart</h2>
+					<h2>카트</h2>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Shop</a></li>
-						<li class="breadcrumb-item active">Cart</li>
+						<li class="breadcrumb-item"><a href="#">쇼핑</a></li>
+						<li class="breadcrumb-item active">카트</li>
 					</ul>
 				</div>
 			</div>
@@ -269,55 +286,67 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>Images</th>
-									<th>Product Name</th>
-									<th>Price</th>
-									<th>Quantity</th>
-									<th>Total</th>
-									<th>Remove</th>
+									<th>사진</th>
+									<th>상품</th>
+									<th>가격</th>
+									<th>개수</th>
+									<th>총 금액</th>
+									<th>삭제</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="thumbnail-img"><a href="#"> <img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
+									<td class="thumbnail-img"><a href="#"> <img
+											class="img-fluid" src="images/img-pro-01.jpg" alt="" />
 									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit amet </a></td>
+									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
+											amet </a></td>
 									<td class="price-pr">
 										<p>$ 80.0</p>
 									</td>
-									<td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+									<td class="quantity-box"><input type="number" size="4"
+										value="1" min="0" step="1" class="c-input-text qty text"></td>
 									<td class="total-pr">
-										<p>$ 80.0</p>
+										<p>$ 80.0</p> <!-- 총 금액 구현필요  -->
 									</td>
-									<td class="remove-pr"><a href="#"> <i class="fas fa-times"></i>
+									<td class="remove-pr"><a href="#"> <i
+											class="fas fa-times"></i> <!-- 삭제 구현필요 -->
 									</a></td>
 								</tr>
 								<tr>
-									<td class="thumbnail-img"><a href="#"> <img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
+									<td class="thumbnail-img"><a href="#"> <img
+											class="img-fluid" src="images/img-pro-02.jpg" alt="" />
 									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit amet </a></td>
+									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
+											amet </a></td>
 									<td class="price-pr">
 										<p>$ 60.0</p>
 									</td>
-									<td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+									<td class="quantity-box"><input type="number" size="4"
+										value="1" min="0" step="1" class="c-input-text qty text"></td>
 									<td class="total-pr">
-										<p>$ 80.0</p>
+										<p>$ 80.0</p> <!--총 금액 구현필요  -->
 									</td>
-									<td class="remove-pr"><a href="#"> <i class="fas fa-times"></i>
+									<td class="remove-pr"><a href="#"> <i
+											class="fas fa-times"></i> <!-- 삭제 구현필요 -->
 									</a></td>
 								</tr>
 								<tr>
-									<td class="thumbnail-img"><a href="#"> <img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
+									<td class="thumbnail-img"><a href="#"> <img
+											class="img-fluid" src="images/img-pro-03.jpg" alt="" />
 									</a></td>
-									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit amet </a></td>
+									<td class="name-pr"><a href="#"> Lorem ipsum dolor sit
+											amet </a></td>
 									<td class="price-pr">
 										<p>$ 30.0</p>
 									</td>
-									<td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+									<td class="quantity-box"><input type="number" size="4"
+										value="1" min="0" step="1" class="c-input-text qty text"></td>
 									<td class="total-pr">
-										<p>$ 80.0</p>
+										<p>$ 80.0</p> <!-- 총 금액 구현필요  -->
 									</td>
-									<td class="remove-pr"><a href="#"> <i class="fas fa-times"></i>
+									<td class="remove-pr"><a href="#"> <i
+											class="fas fa-times"></i> <!-- 삭제 구현필요 -->
 									</a></td>
 								</tr>
 							</tbody>
@@ -330,56 +359,59 @@
 				<div class="col-lg-6 col-sm-6">
 					<div class="coupon-box">
 						<div class="input-group input-group-sm">
-							<input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
+							<input class="form-control" placeholder="쿠폰 번호를 입력하세요 !"
+								aria-label="Coupon code" type="text">
 							<div class="input-group-append">
-								<button class="btn btn-theme" type="button">Apply Coupon</button>
+								<button class="btn btn-theme" type="button">쿠폰 적용하기</button>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-sm-6">
 					<div class="update-box">
-						<input value="Update Cart" type="submit">
+						<input value="카트 저장하기" type="submit">
+						<!-- 용도를 알수없음 카트 수정후 저장하는 용도로 우선 생각해둠. -->
 					</div>
 				</div>
 			</div>
 
+			<!--결제금액 변동을 위한 처리 필요 -->
 			<div class="row my-5">
 				<div class="col-lg-8 col-sm-12"></div>
 				<div class="col-lg-4 col-sm-12">
 					<div class="order-box">
-						<h3>Order summary</h3>
+						<h3>결제 금액 정보</h3>
 						<div class="d-flex">
-							<h4>Sub Total</h4>
+							<h4>주문 금액</h4>
 							<div class="ml-auto font-weight-bold">$ 130</div>
 						</div>
 						<div class="d-flex">
-							<h4>Discount</h4>
-							<div class="ml-auto font-weight-bold">$ 40</div>
+							<h4>할인</h4>
+							<div class="ml-auto font-weight-bold">- $ 40</div>
 						</div>
 						<hr class="my-1">
 						<div class="d-flex">
-							<h4>Coupon Discount</h4>
-							<div class="ml-auto font-weight-bold">$ 10</div>
+							<h4>쿠폰 할인</h4>
+							<div class="ml-auto font-weight-bold">- $ 10</div>
 						</div>
 						<div class="d-flex">
-							<h4>Tax</h4>
+							<h4>부가세</h4>
 							<div class="ml-auto font-weight-bold">$ 2</div>
 						</div>
 						<div class="d-flex">
-							<h4>Shipping Cost</h4>
-							<div class="ml-auto font-weight-bold">Free</div>
+							<h4>배송비</h4>
+							<div class="ml-auto font-weight-bold">0</div>
 						</div>
 						<hr>
 						<div class="d-flex gr-total">
-							<h5>Grand Total</h5>
-							<div class="ml-auto h5">$ 388</div>
+							<h5>결제금액</h5>
+							<div class="ml-auto h5">$ 78</div>
 						</div>
 						<hr>
 					</div>
 				</div>
 				<div class="col-12 d-flex shopping-box">
-					<a href="checkout.jsp" class="ml-auto btn hvr-hover">Checkout</a>
+					<a href="checkout.jsp" class="ml-auto btn hvr-hover">주문하기</a>
 				</div>
 			</div>
 
@@ -483,15 +515,24 @@
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-widget">
 							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+								sed do eiusmod tempor incididunt ut labore et dolore magna
+								aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+								ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 							<ul>
-								<li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-facebook"
+										aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"
+										aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin"
+										aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-google-plus"
+										aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-pinterest-p"
+										aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-whatsapp"
+										aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -514,17 +555,20 @@
 							<ul>
 								<li>
 									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213
+										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days
+										3756 <br>Preston Street Wichita,<br> KS 67213
 									</p>
 								</li>
 								<li>
 									<p>
-										<i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a>
+										<i class="fas fa-phone-square"></i>Phone: <a
+											href="tel:+1-888705770">+1-888 705 770</a>
 									</p>
 								</li>
 								<li>
 									<p>
-										<i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
+										<i class="fas fa-envelope"></i>Email: <a
+											href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
 									</p>
 								</li>
 							</ul>
@@ -539,7 +583,8 @@
 	<!-- Start copyright  -->
 	<div class="footer-copyright">
 		<p class="footer-company">
-			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html design</a>
+			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By
+			: <a href="https://html.design/">html design</a>
 		</p>
 	</div>
 	<!-- End copyright  -->

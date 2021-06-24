@@ -1,4 +1,19 @@
 CREATE TABLE member (
+<<<<<<< HEAD
+	id varchar(20) primary key, -- ���̵�
+	pw varchar(20) not null, -- ��й�ȣ
+	name varchar(10) not null, -- �̸�
+	phone varchar(15) not null, -- ��ȭ��ȣ
+	email varchar(30), -- �̸���
+	zipcode int not null, -- �����ȣ (�ּҵ����� api���� �����ȣ�� �����µ� �������������� �����ȣ�� �ҷ����� ����)
+	addr varchar(200) not null, -- �ּ�
+	rank int default 10, -- ȸ�� ��� (ȸ���̱⸸ �ϸ� 10��� ����. 10���� 1����)
+	point int default 0, -- ����Ʈ
+	purchase int default 0 -- ���� �ݾ�	
+);
+
+create table notice( -- ��������
+=======
 	id varchar(20) primary key, -- 아이디
 	pw varchar(20) not null, -- 비밀번호
 	name varchar(10) not null, -- 이름
@@ -12,6 +27,7 @@ CREATE TABLE member (
 );
 
 create table notice( -- 공지사항
+>>>>>>> 2112986afc675dda522e750bc49af20e3f9777aa
    nid int primary key,    
    ntitle varchar (20),          
    ncon varchar(100) not null,       
@@ -33,11 +49,13 @@ create table QnA (
 );
 
 create table reply(
+
    rid int primary key,   --답변 id
    qid int not null,      --qna id
    day varchar(30),            --답변 게시일자
    id varchar(20),         --관리자 id
    rcon varchar(50) not null,   --답변 내용
+
    foreign key(id) references member(id),
    constraint fk foreign key (qid) references QnA(qid) on delete cascade
 );
@@ -68,6 +86,20 @@ create table productreview(
 );
 
 
+<<<<<<< HEAD
+INSERT INTO member (id,pw,name,phone,email,zipcode,addr) VALUES ('admin','pw','name','phone','email',123,'addr');
+INSERT into notice (nid,ntitle,ncon,visitor,day,sort) values (3,'asd','asdd',155,'1234','qnsfb')
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (100,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (101,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (102,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (103,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (104,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (105,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (106,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (107,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (108,'asddd','asdd',155,'1234','qnsfb');
+INSERT into notice (nid,ntitle,ncon, visitor,day,sort) values (109,'asddd','asdd',155,'1234','qnsfb');
+=======
 INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VALUES ('a','pw','name','phone','email',123,'addr',1,100,1000)
 INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (1, 'asddd','asdd',155,'1234','qnsfb');
 INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (2, 'asddd','asdd',155,'1234','qnsfb');
@@ -119,6 +151,7 @@ INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (46, 'asddd','
 
 
 
+>>>>>>> 2112986afc675dda522e750bc49af20e3f9777aa
 INSERT INTO QnA (qid,id,qtitle,qcon,qstate,day,sort) values (100,'a','title','con','state','day','sort')
 
 
@@ -131,7 +164,9 @@ select * from reply
 drop table notice;
 drop table reply;
 drop table QnA;
-
+drop table member;
+drop table product;
+drop table productreview;
 select * from QnA;
 select * from Notice where ncon like '%as%'
 
@@ -142,6 +177,15 @@ CREATE SEQUENCE cnt2 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
 CREATE SEQUENCE cnt3 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
+<<<<<<< HEAD
+CREATE SEQUENCE cnt4 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
+-- �߰��� ���� ������ ���� ��Ź�����
+
+select * from (select nid,ntitle,ncon,visitor,day,sort,rownum as rn from Notice order by nid asc) where rn between 1 and 10
+
+
+=======
 select * from (select nid,ntitle,ncon,visitor,day,sort,rownum as rn from Notice order by nid asc) where rn between 1 and 10;
+>>>>>>> 2112986afc675dda522e750bc49af20e3f9777aa
 
 SELECT * FROM (SELECT A.*, ROWNUM AS RNUM FROM (SELECT * FROM notice ORDER BY nid DESC) A WHERE ROWNUM <= 5) WHERE RNUM > 0 ORDER BY nid DESC;
