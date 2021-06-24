@@ -129,11 +129,11 @@
 										<div class="col-menu col-md-3">
 											<h6 class="title">상의</h6>
 											<div class="content">
-												<ul class="menu-col">
-													<li><a href="shop.jsp">아우터</a></li>
-													<li><a href="shirt.jsp">셔츠&블라우스</a></li>
-													<li><a href="mantoman.jsp">맨투맨&니트</a></li>
-													<li><a href="tshirt.jsp">반팔 티</a></li>
+												<ul class="menu-col"><!-- nav-상품분류 -->
+													<li><a href="category.do?sort='outer'">아우터</a></li>
+													<li><a href="category.do?sort='shirts'">셔츠&블라우스</a></li>
+													<li><a href="category.do?sort='mantoman'">맨투맨&니트</a></li>
+													<li><a href="category.do?sort='tshirts'">반팔 티</a></li>
 												</ul>
 											</div>
 										</div>
@@ -142,10 +142,10 @@
 											<h6 class="title">바지</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.jsp">청바지</a></li>
-													<li><a href="shop.jsp">슬렉스</a></li>
-													<li><a href="shop.jsp">숏 팬츠</a></li>
-													<li><a href="shop.jsp">기타 바지</a></li>
+													<li><a href="category.do?sort='jean'">청바지</a></li>
+													<li><a href="category.do?sort='slacks'">슬렉스</a></li>
+													<li><a href="category.do?sort='shortPansts'">숏 팬츠</a></li>
+													<li><a href="category.do?sort='panstsOther'">기타 바지</a></li>
 												</ul>
 											</div>
 										</div>
@@ -154,10 +154,10 @@
 											<h6 class="title">신발</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.jsp">컨버스</a></li>
-													<li><a href="shop.jsp">구두&로퍼</a></li>
-													<li><a href="shop.jsp">힐</a></li>
-													<li><a href="shop.jsp">슬리퍼&샌들</a></li>
+													<li><a href="category.do?sort='converse'">컨버스</a></li>
+													<li><a href="category.do?sort='dressShoes'">구두&로퍼</a></li>
+													<li><a href="category.do?sort='heels'">힐</a></li>
+													<li><a href="category.do?sort='slipper'">슬리퍼&샌들</a></li>
 
 												</ul>
 											</div>
@@ -166,9 +166,9 @@
 											<h6 class="title">악세서리</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="shop.jsp">가방</a></li>
-													<li><a href="shop.jsp">반지&목걸이</a></li>
-													<li><a href="shop.jsp">안경</a></li>
+													<li><a href="category.do?sort='bag'">가방</a></li>
+													<li><a href="category.do?sort='ring'">반지&목걸이</a></li>
+													<li><a href="category.do?sort='glasses'">안경</a></li>
 												</ul>
 											</div>
 										</div>
@@ -285,6 +285,7 @@
 				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
 					<div class="product-categori">
 						<div class="search-product">
+						<!-- 상품검색 삭제..? -->
 							<form action="#">
 								<input class="form-control" placeholder="Search here..."
 									type="text">
@@ -308,16 +309,17 @@
 									<div class="collapse show" id="sub-men1"
 										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="#"
+										<!-- side 상품분류 -->
+											<a href="category.do?sort='outer'"
 												class="list-group-item list-group-item-action active">아우터
-												<small class="text-muted">(2)</small>
-											</a> <a href="shirt.jsp"
+												<small class="text-muted">(2)</small><!-- 카테고리별 상품 개수...지우기? -->
+											</a> <a href="category.do?sort=shirts"
 												class="list-group-item list-group-item-action"> 셔츠&블라우스
 												<small class="text-muted">(1)</small>
-											</a> <a href="mantoman.jsp"
+											</a> <a href="category.do?sort='mantoman"
 												class="list-group-item list-group-item-action">맨투맨&니트 <small
 												class="text-muted">(1)</small>
-											</a> <a href="tshirt.jsp"
+											</a> <a href="category.do?sort='tshirts'"
 												class="list-group-item list-group-item-action">반팔 티 <small
 												class="text-muted">(2)</small>
 											</a>
@@ -333,13 +335,13 @@
 									<div class="collapse" id="sub-men2"
 										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="#" class="list-group-item list-group-item-action">청바지
+											<a href="category.do?sort='jean'" class="list-group-item list-group-item-action">청바지
 												<small class="text-muted">(2)</small>
-											</a> <a href="#" class="list-group-item list-group-item-action">슬렉스
+											</a> <a href="category.do?sort='slacks'" class="list-group-item list-group-item-action">슬렉스
 												<small class="text-muted">(1)</small>
-											</a> <a href="#" class="list-group-item list-group-item-action">숏
+											</a> <a href="category.do?sort='shortPants'" class="list-group-item list-group-item-action">숏
 												팬츠 <small class="text-muted">(1)</small>
-											</a> <a href="#" class="list-group-item list-group-item-action">기타
+											</a> <a href="category.do?sort='pantsOther'" class="list-group-item list-group-item-action">기타
 												바지 <small class="text-muted">(1)</small>
 											</a>
 										</div>
@@ -353,13 +355,13 @@
 									<div class="collapse" id="sub-men3"
 										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="#" class="list-group-item list-group-item-action">컨버스
+											<a href="category.do?sort='converse'" class="list-group-item list-group-item-action">컨버스
 												<small class="text-muted">(2)</small>
 											</a> <a href="#" class="list-group-item list-group-item-action">구두&로퍼
 												<small class="text-muted">(1)</small>
-											</a> <a href="#" class="list-group-item list-group-item-action">힐
+											</a> <a href="category.do?sort='heels'" class="list-group-item list-group-item-action">힐
 												<small class="text-muted">(1)</small>
-											</a> <a href="#" class="list-group-item list-group-item-action">슬리퍼&샌들
+											</a> <a href="category.do?sort='slipper'" class="list-group-item list-group-item-action">슬리퍼&샌들
 												<small class="text-muted">(1)</small>
 											</a>
 										</div>
@@ -373,11 +375,11 @@
 									<div class="collapse" id="sub-men4"
 										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="#" class="list-group-item list-group-item-action">가방
+											<a href="category.do?sort='bag'" class="list-group-item list-group-item-action">가방
 												<small class="text-muted">(2)</small>
-											</a> <a href="#" class="list-group-item list-group-item-action">반지&목걸이
+											</a> <a href="category.do?sort='ring'" class="list-group-item list-group-item-action">반지&목걸이
 												<small class="text-muted">(1)</small>
-											</a> <a href="#" class="list-group-item list-group-item-action">안경
+											</a> <a href="category.do?sort='glasses'" class="list-group-item list-group-item-action">안경
 												<small class="text-muted">(1)</small>
 											</a>
 
@@ -412,22 +414,24 @@
 			</div>
 
 
-
+				
 			<div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
 				<div class="right-product-box">
 					<div class="product-item-filter row">
+					<!-- 상품코드  -->
 						<div class="col-12 col-sm-8 text-center text-sm-left">
 							<div class="toolbar-sorter-right">
 								<span>Sort by </span> 
-								<form action="./sort.do"><!-- 설정에따른 배열 -->
+								<form action="./sortProduct.do"><!-- 설정에따른 배열 -->
 								<select id="basic"
-									class="selectpicker show-tick form-control" name="sort"
+									class="selectpicker show-tick form-control" name="sortBy"
 									data-placeholder="$ USD">
 									<option data-display="Select">Nothing</option>
 									<option value="popularity">Popularity</option>
-									<option value="high">High Price â High Price</option>
-									<option value="low">Low Price â High Price</option>
+									<option value="highPrice">High Price</option>
+									<option value="lowPrice">Low Price</option>
 									<option value="bestselling">Best Selling</option>
+									
 								</select>
 								</form>
 							</div>
@@ -453,6 +457,8 @@
 									<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
 										<div class="products-single fix">
 											<div class="box-img-hover">
+											
+											<!-- custom:arrayProduct: 페이지 연결문제로 일단 보류 -->
 												<div class="type-lb">
 													<p class="sale">Sale</p>
 												</div>
@@ -478,7 +484,7 @@
 											</div>
 										</div>
 									</div>
-									<!-- 상품코드  -->
+								
 									<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
 										<div class="products-single fix">
 											<div class="box-img-hover">
@@ -512,7 +518,7 @@
 
 
 
-									<!-- list view 시작 -->
+									<!-- list view 시작 --><!-- list view 수정필요 -->
 								</div>
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="list-view">
