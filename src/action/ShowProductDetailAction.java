@@ -1,35 +1,29 @@
 package action;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ProductReviewDAO;
+import dao.ProductDAO;
 import model.Product;
-import model.ProductReview;
 
-public class ShowReviewAction implements Action {
+public class ShowProductDetailAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
-		ProductReviewDAO productReviewDAO = new ProductReviewDAO();
+		ProductDAO productDAO = new ProductDAO();
 		Product product = new Product();
 		
-		ArrayList<ProductReview> reviews = new ArrayList<>();
-		
-		product.setPid(Integer.parseInt(req.getParameter("pid")));
-		
-		reviews = productReviewDAO.showR(product);
-		req.setAttribute("reviews", reviews);
+		product = productDAO.showP(Integer.parseInt(req.getParameter("pid")));
+		req.setAttribute("product", product);
 		
 		forward.setRedirect(false);
 		forward.setPath("shop-detail.jsp");
 		
-		return null;
+		return forward;
 	}
 
 }

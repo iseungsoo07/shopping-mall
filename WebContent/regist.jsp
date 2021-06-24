@@ -143,8 +143,11 @@
 		const idCheck = document.getElementById("idCheck");
 		const id = $("#id").val();
 		
-		idCheck.value = "checked";
-		location.href = "idcheck.do?id=" + id;
+		if(id == "") {
+			alert('아이디를 입력해주세요');
+		} else {
+			window.open("idCheck.jsp", "_blank", "titlebar=no,location=no,scrollbars=no,resizeable=no,menubar=no,toolbar=no,width=500,height=300")
+		}
 		
 	}
 

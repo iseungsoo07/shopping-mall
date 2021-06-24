@@ -2,13 +2,13 @@ package model;
 
 public class ProductReview {
 
-	private int reviewid;
-	private int productid;
-	private String userid;
-	private String productsize;
-	private int rating;
-	private String reviewcon;
-	private String day;
+	private int reviewid; // 리뷰  id
+	private int productid; // 리뷰한 상품 id
+	private String userid; // 리뷰를 쓴 사용자 id
+	private String productsize; // 상품 크기 
+	private int rating; // 평점 (1 ~ 5)
+	private String reviewcon; // 리뷰 내용
+	private String day; // 등록 날짜
 
 	public int getReviewid() {
 		return reviewid;

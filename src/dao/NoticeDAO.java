@@ -74,9 +74,7 @@ public class NoticeDAO {
 	public boolean newNotice(Notice n) { // 뷰로부터 받아온 데이터들을 DB에 삽입하는 메소드
 		try {
 			conn = DBConnection.connect();
-			String sql = "insert into notice (nid,ntitle,ncon,day) values((select nvl(max(nid), 0) + 1 from notice),?,?,?)"; // cnt.NEXTVAL은 저장될때마다
-																								// 숫자가 1씩 증가
-																								// auto_increment와 비슷함
+			String sql = "insert into notice (nid,ntitle,ncon,day) values((select nvl(max(nid), 0) + 1 from notice),?,?,?)"; 
 			pstmt = conn.prepareStatement(sql);
 			// insert가 실행된 시간 저장
 			SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm");

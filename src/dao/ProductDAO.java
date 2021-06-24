@@ -33,17 +33,13 @@ public class ProductDAO {
 		}
 	}
 
+	// 상품 추가
 	public boolean newPro(Product pro) { // product 객체에 저장해 전달해서 db에 등록
 
 		try {
 			conn = DBConnection.connect();
-			String sql = "insert into product (pid,name,stock,price,files,visit,cate,psize,pcon,gender) values(cnt.NEXTVAL,?,?,?,?,?,?,?,?,?,?)"; // cnt.NEXTVAL��
-																																					// ���옣�맆�븣留덈떎
-																																					// �닽�옄媛�
-																																					// 1�뵫
-																																					// 利앷�
-																																					// auto_increment��
-																																					// 鍮꾩듂�븿
+			String sql = "insert into product (pid,name,stock,price,files,visit,cate,psize,pcon,gender) values((select nvl(max(pid), 0) + 1 from product),?,?,?,?,?,?,?,?,?,?)"; // cnt.NEXTVAL��
+
 			pstmt = conn.prepareStatement(sql);
 			// insert媛� �떎�뻾�맂 �떆媛� ���옣
 			SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -79,9 +75,11 @@ public class ProductDAO {
 		return true;
 	}
 
+	// 상품 페이지에 전체 상품 보여주기
 	public ArrayList<Product> showP() { // product 목록 전체 조회
 
-		ArrayList<Product> datas = new ArrayList();
+		ArrayList<Product> datas = new ArrayList<>();
+
 		try {
 			conn = DBConnection.connect();
 
@@ -119,7 +117,8 @@ public class ProductDAO {
 		return datas;
 	}
 
-	public boolean delPro(int pid) {//product id 값을 받아서 상품 삭제
+	// 상품 삭제
+	public boolean delPro(int pid) { // product id 값을 받아서 상품 삭제
 
 		try {
 			conn = DBConnection.connect();
@@ -138,6 +137,7 @@ public class ProductDAO {
 		return true;
 	}
 
+	// 특정 상품을 가져오기 위한 메소드
 	public Product showP(int pid) { // pid 에 해당하는 product return
 
 		Product pro = null;
@@ -177,8 +177,9 @@ public class ProductDAO {
 	}
 
 	// 최소값(min) 최대값(max)을 받아서 범위사이 products return
+	// 가격 필터링
 	public ArrayList<Product> showPscope(int min, int max) {
-		ArrayList<Product> datas = new ArrayList();
+		ArrayList<Product> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
 
@@ -219,7 +220,7 @@ public class ProductDAO {
 
 	// 최소값(min)을 받아서 범위보다 큰 products return
 	public ArrayList<Product> showPscopeOver(int min) {
-		ArrayList<Product> datas = new ArrayList();
+		ArrayList<Product> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
 
@@ -299,12 +300,11 @@ public class ProductDAO {
 
 	public ArrayList<Product> searchP(String s) {
 
-		ArrayList<Product> datas = new ArrayList();
+		ArrayList<Product> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
-			// select * from product where name like %s% �뒗 �긽�뭹�쓽 �뜲�씠�꽣以묒뿉 s(酉곗뿉�꽌 諛쏆븘�삩
-			// �듅�젙臾몄옄�뿴)�씠 �엳�뒗吏�
 			// 검색어를 이용해 해당 검색어가 들어있는 상품 전체 return
+
 			String sql = "select * from product where name like ?";
 			pstmt = conn.prepareStatement(sql);
 
@@ -341,10 +341,10 @@ public class ProductDAO {
 		return datas;
 	}
 
-	public ArrayList<Product> showPorderasc(String s) { // product 내림차순 정렬 return
+	// 주어진 파라미터에 따라 값을 정렬
+	public ArrayList<Product> showPorderasc(String s) { // product 오름차순 정렬 return
 
-
-		ArrayList<Product> datas = new ArrayList();
+		ArrayList<Product> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
 
@@ -384,8 +384,7 @@ public class ProductDAO {
 		return datas;
 	}
 
-	public ArrayList<Product> showPorderde(String s) { // product 오름차순 정렬 return
-
+	public ArrayList<Product> showPorderde(String s) { // product 내림차순 정렬 return
 
 		ArrayList<Product> datas = new ArrayList();
 		try {
@@ -424,6 +423,44 @@ public class ProductDAO {
 			disconnect();
 		}
 
+		return datas;
+	}
+
+	public ArrayList<Product> showPByCategory(String category) {
+		conn = DBConnection.connect();
+
+		ArrayList<Product> datas = new ArrayList<>();
+		String sql = "SELECT * FROM product WHERE cate = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, category);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Product pro = new Product();
+
+				pro.setPid(rs.getInt("pid"));
+				pro.setName(rs.getString("name"));
+				pro.setPrice(rs.getInt("price"));
+				pro.setStock(rs.getInt("stock"));
+				pro.setFiles(rs.getString("files"));
+				pro.setVisit(rs.getInt("visit"));
+				pro.setCate(rs.getString("cate"));
+				pro.setGender(rs.getString("gender"));
+				pro.setPsize(rs.getString("psize"));
+				pro.setPcon(rs.getString("pcon"));
+				pro.setDay(rs.getString("day"));
+
+				datas.add(pro);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		disconnect();
 		return datas;
 	}
 
