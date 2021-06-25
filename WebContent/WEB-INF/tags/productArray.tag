@@ -17,11 +17,11 @@
 						<li><a href="shop-detail2.jsp" data-toggle="tooltip"
 							data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
 					</ul>
-					<a class="cart" href="./cart.do?pid=${v.qid }">Add to Cart</a><!--장바구니 담기, qid를 c에 전달해줌 -->
+					<a class="cart" href="./cart.do?pid=${v.pid }">Add to Cart</a><!--장바구니 담기, qid를 c에 전달해줌 -->
 				</div>
 			</div>
 			<div class="why-text">
-				<a href="./showdetail.do?pid=${v.qid }">${v.name }</a><!-- 해당상품의 detail을 보여줌 -->
+				<a href="./showdetail.do?pid=${v.pid }">${v.name }</a><!-- 해당상품의 detail을 보여줌 -->
 				<h5>${v.price }원</h5>
 			</div>
 		</div>
