@@ -20,13 +20,13 @@ public class NewProductReviewAction implements Action {
 		ActionForward forward = new ActionForward();
 
 		ProductDAO productDAO = new ProductDAO();
-		Product product = new Product();
+		Product product = (Product)req.getAttribute("product");
 		
 		ProductReviewDAO reviewDAO = new ProductReviewDAO();
 		ProductReview review = new ProductReview();
 
 		// 	Im thinking about removing the productsize. 
-		int pid = Integer.parseInt(req.getParameter("productid"));
+		int pid = product.getPid();
 		String uid = req.getParameter("uid");
 		String productsize = req.getParameter("productsize");
 		int rating = Integer.parseInt(req.getParameter("rating"));
