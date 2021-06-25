@@ -323,30 +323,18 @@ form {
 
 
 					<div>
+						<!-- 상품추가 -->
 
-
-						<form class="form-horizontal" id="boardForm" name="boardForm"
-							method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" id="boardForm"
+							action=./addProduct.do method="post"
+							enctype="multipart/form-data">
 							<div class="box_inner">
 
 								<div class="form-group">
 									<label for="inputEmail3" class="col-md-12 control-label">Title</label>
 									<div class="col-md-12">
-										<input type="text" class="form-control" id="name" name="name"
-											value="${datas.name}" placeholder="상품명을 입력해주세요!" required
-											data-error="Please enter product name">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputEmail3" class="col-md-12 control-label">code</label>
-									<div class="col-md-12">
-										
-								
-
-										<input type="text" class="form-control" id="pid" name="pid">
-
-										<input type="text" class="form-control" id="name" name="name"
-											value="${datas.name}" placeholder="상품코드를 입력하세요!" required
+										<input type="text" class="form-control" name="name"
+											 placeholder="상품명을 입력해주세요!" required
 											data-error="Please enter product name">
 									</div>
 								</div>
@@ -354,82 +342,86 @@ form {
 								<div class="form-group">
 									<label for="inputEmail3" class="col-md-12 control-label">Price</label>
 									<div class="col-md-12">
-										<input type="text" class="form-control" id="price"
-											name="price" value="${datas.price}"
-											placeholder="상품가격을 입력해주세요!" required>
-											
+										<input type="text" class="form-control" name="price"
+											 placeholder="상품가격을 입력해주세요!" required>
+
 									</div>
 								</div>
 
 								<div class="form-group">
 
-									<label for="inputEmail3" class="col-md-12 control-label">Stock: 
+									<label for="inputEmail3" class="col-md-12 control-label">Stock:
 										재고를 입력</label>
 
 									<div class="col-md-12">
 										<div id="row1" style="float: left;">
 
-											<input type="text" class="form-control" id="stockXXL"
-												name="stockXXL" value="${datas.stock}" placeholder="XXL"
-												required data-error="Please enter product stock">&nbsp
+											<input type="text" class="form-control" name="xxlsize"
+												 placeholder="XXL" required
+												data-error="Please enter product stock">&nbsp
 										</div>
 									</div>
 
 									<div class="col-md-12">
 										<div id="row1" style="float: left;">
 
-											<input type="text" class="form-control" id="stockXL"
-												name="stockXL" value="${datas.stock}" placeholder="XL"
-												required data-error="Please enter product stock">
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div id="row1" style="float: left;">
-
-											<input type="text" class="form-control" id="stockL"
-												name="stockL" value="${datas.stock}" placeholder="L" required
+											<input type="text" class="form-control" name="lsize"
+												 placeholder="L" required
 												data-error="Please enter product stock">
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div id="row1" style="float: left;">
 
-											<input type="text" class="form-control" id="stockM"
-												name="stockM" value="${datas.stock}" placeholder="M" required
+											<input type="text" class="form-control" name="msize"
+												 placeholder="M" required
 												data-error="Please enter product stock">
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div id="row1" style="float: left;">
 
-											<input type="text" class="form-control" id="stockS"
-												name="stockS" value="${datas.stock}" placeholder="s" required
+											<input type="text" class="form-control" name="ssize"
+											 placeholder="S" required
 												data-error="Please enter product stock">
 										</div>
 
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="inputEmail3" class="col-md-12 control-label"><div
-											class="col-md-12">성별 선택</label> <br /> <input type="radio"
-										id="gender" name="gender" value="남자"> 남자 <input
-										type="radio" id="gender" name="gender" value="여자">여자<br />
-									<br />
+									<label for="inputEmail3" class="col-md-12 control-label">성별
+										선택</label> <br />
+									<div class="col-md-12">
+										<input type="radio" id="gender" name="gender" value="남자">
+										남자 <input type="radio" id="gender" name="gender" value="여자">여자<br />
+										<br />
+									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="inputEmail3" class="col-md-12 control-label">Cate</label>
 									<div class="col-md-12">
-									<input name="cate" id="Outer" value="Outer" type="radio">
-									<label for="Radios1"> 아우터 </label>&nbsp;&nbsp;&nbsp; <input
-										name="cate" id="
-										Shirts" value="Shirts" type="radio"> <label
-										for="Radios2"> 셔츠 </label>&nbsp;&nbsp;&nbsp; <input
-										name="cate" id="ManToMan" value="ManToMan" type="radio">
-									<label for="Radios3">&nbsp; 맨투맨&니트 </label>&nbsp;&nbsp;&nbsp; <input
-										name="cate" id="ShortShirts" value="ShortShirts" type="radio">
-									<label for="Radios4"> 반팔 티 </label>
-								</div>
+										<input name="cate" id="outer" value="outer" type="radio">
+										<label for="Radios1"> 아우터 </label>&nbsp;&nbsp;&nbsp; 
+										
+										<input name="cate" id="shirts" value="shirts" type="radio">
+										<label for="Radios2"> 셔츠&블라우스 </label>&nbsp;&nbsp;&nbsp;
+										
+										<input name="cate" id="jean" value="jean" type="radio">
+										<label for="Radios3">&nbsp; 청바지 </label>&nbsp;&nbsp;&nbsp; 
+										
+										<input name="cate" id="slacks" value="slacks" type="radio">
+										<label for="Radios4"> 슬렉스 </label>&nbsp;&nbsp;&nbsp;
+										
+										<input name="cate" id="converse" value="converse" type="radio">
+										<label for="Radios1"> 컨버스 </label>&nbsp;&nbsp;&nbsp;
+										
+										<input name="cate" id="dressShoes" value="dressShoes" type="radio"> 
+										<label for="Radios1"> 구두&로퍼 </label>&nbsp;&nbsp;&nbsp;
+										
+										<input name="cate" id="bag" value="bag" type="radio"> 
+										<label for="Radios1"> 가방 </label>
+									</div>
 								</div>
 
 								<div class="form-group">
@@ -447,9 +439,10 @@ form {
 							</div>
 
 							<center>
-								<button class="btn hvr-hover" id="submit" type="submit">상품
-									추가</button>
+								<button class="btn hvr-hover" type="submit">상품 추가</button>
 							</center>
+
+						</form>
 					</div>
 
 
