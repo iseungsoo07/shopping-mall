@@ -65,15 +65,15 @@ public class ProductReviewDAO {
 	}
 
 	// 상세 페이지에서 해당 product에 대한 후기 return(전해주는 값으로 product 말고 pid가 편하면 수정해도됨)
-	public ArrayList<ProductReview> showR(Product pro) { // �뙎湲� 議고쉶湲곕뒫 �긽�뭹 蹂꾨줈(pid)濡� �굹�돣
+	public ArrayList<ProductReview> showR(int productId) { // �뙎湲� 議고쉶湲곕뒫 �긽�뭹 蹂꾨줈(pid)濡� �굹�돣
 		ArrayList<ProductReview> datas = new ArrayList<>();
 		try {
 			conn = DBConnection.connect();
 
 			String sql = "select * from productreview where pid=? order by reviewid desc";
 			pstmt = conn.prepareStatement(sql);
-//			pstmt.setInt(1, pid);
-			pstmt.setInt(1, pro.getPid());
+			pstmt.setInt(1, productId);
+//			pstmt.setInt(1, pro.getPid());
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
