@@ -38,7 +38,7 @@ public class ProductDAO {
 
 		try {
 			conn = DBConnection.connect();
-			String sql = "insert into product (pid,name,stock,price,files,visit,cate,psize,pcon,gender) values((select nvl(max(pid), 0) + 1 from product),?,?,?,?,?,?,?,?,?,?)"; // cnt.NEXTVAL��
+			String sql = "insert into product (pid,name,xxlsize,price,files,visit,cate,ssize,pcon,gender,day,msize,lsize,xlsize) values((select nvl(max(pid), 0) + 1 from product),?,?,?,?,?,?,?,?,?,?,?,?,?)"; // cnt.NEXTVAL��
 
 			pstmt = conn.prepareStatement(sql);
 			// insert媛� �떎�뻾�맂 �떆媛� ���옣
@@ -49,15 +49,21 @@ public class ProductDAO {
 			String time1 = format1.format(time);
 
 			pstmt.setString(1, pro.getName());
-			pstmt.setInt(2, pro.getStock());
+			pstmt.setInt(2, pro.getXxlsize());
 			pstmt.setInt(3, pro.getPrice());
 			pstmt.setString(4, pro.getFiles());
 			pstmt.setInt(5, pro.getVisit());
 			pstmt.setString(6, pro.getCate());
-			pstmt.setString(7, pro.getPsize());
+			pstmt.setInt(7, pro.getSsize());
+			
+			
 			pstmt.setString(8, pro.getPcon());
 			pstmt.setString(9, pro.getGender());
 			pstmt.setString(10, time1);
+			pstmt.setInt(11, pro.getMsize());
+			pstmt.setInt(12, pro.getLsize());
+			pstmt.setInt(13, pro.getXlsize());
+			
 			pstmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -94,12 +100,16 @@ public class ProductDAO {
 				pro.setPid(rs.getInt("pid"));
 				pro.setName(rs.getString("name"));
 				pro.setPrice(rs.getInt("price"));
-				pro.setStock(rs.getInt("stock"));
+			
 				pro.setFiles(rs.getString("files"));
 				pro.setVisit(rs.getInt("visit"));
 				pro.setCate(rs.getString("cate"));
 				pro.setGender(rs.getString("gender"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setDay(rs.getString("day"));
 
@@ -157,9 +167,13 @@ public class ProductDAO {
 				pro.setName(rs.getString("name"));
 				pro.setPrice(rs.getInt("price"));
 				pro.setVisit(rs.getInt("visit"));
-				pro.setStock(rs.getInt("stock"));
+			
 				pro.setCate(rs.getString("cate"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setGender(rs.getString("gender"));
 				pro.setDay(rs.getString("day"));
@@ -195,12 +209,16 @@ public class ProductDAO {
 				pro.setPid(rs.getInt("pid"));
 				pro.setName(rs.getString("name"));
 				pro.setPrice(rs.getInt("price"));
-				pro.setStock(rs.getInt("stock"));
+				
 				pro.setFiles(rs.getString("files"));
 				pro.setVisit(rs.getInt("visit"));
 				pro.setCate(rs.getString("cate"));
 				pro.setGender(rs.getString("gender"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setDay(rs.getString("day"));
 
@@ -235,12 +253,16 @@ public class ProductDAO {
 				pro.setPid(rs.getInt("pid"));
 				pro.setName(rs.getString("name"));
 				pro.setPrice(rs.getInt("price"));
-				pro.setStock(rs.getInt("stock"));
+				
 				pro.setFiles(rs.getString("files"));
 				pro.setVisit(rs.getInt("visit"));
 				pro.setCate(rs.getString("cate"));
 				pro.setGender(rs.getString("gender"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setDay(rs.getString("day"));
 
@@ -275,12 +297,16 @@ public class ProductDAO {
 				pro.setPid(rs.getInt("pid"));
 				pro.setName(rs.getString("name"));
 				pro.setPrice(rs.getInt("price"));
-				pro.setStock(rs.getInt("stock"));
+			
 				pro.setFiles(rs.getString("files"));
 				pro.setVisit(rs.getInt("visit"));
 				pro.setCate(rs.getString("cate"));
 				pro.setGender(rs.getString("gender"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setDay(rs.getString("day"));
 
@@ -317,13 +343,16 @@ public class ProductDAO {
 
 				pro.setPid(rs.getInt("pid"));
 				pro.setName(rs.getString("name"));
-				pro.setPrice(rs.getInt("price"));
-				pro.setStock(rs.getInt("stock"));
+				pro.setPrice(rs.getInt("price"));			
 				pro.setFiles(rs.getString("files"));
 				pro.setVisit(rs.getInt("visit"));
 				pro.setCate(rs.getString("cate"));
 				pro.setGender(rs.getString("gender"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setDay(rs.getString("day"));
 
@@ -361,12 +390,16 @@ public class ProductDAO {
 				pro.setPid(rs.getInt("pid"));
 				pro.setName(rs.getString("name"));
 				pro.setPrice(rs.getInt("price"));
-				pro.setStock(rs.getInt("stock"));
+				
 				pro.setFiles(rs.getString("files"));
 				pro.setVisit(rs.getInt("visit"));
 				pro.setCate(rs.getString("cate"));
 				pro.setGender(rs.getString("gender"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setDay(rs.getString("day"));
 
@@ -403,12 +436,16 @@ public class ProductDAO {
 				pro.setPid(rs.getInt("pid"));
 				pro.setName(rs.getString("name"));
 				pro.setPrice(rs.getInt("price"));
-				pro.setStock(rs.getInt("stock"));
+			
 				pro.setFiles(rs.getString("files"));
 				pro.setVisit(rs.getInt("visit"));
 				pro.setCate(rs.getString("cate"));
 				pro.setGender(rs.getString("gender"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setDay(rs.getString("day"));
 
@@ -444,12 +481,16 @@ public class ProductDAO {
 				pro.setPid(rs.getInt("pid"));
 				pro.setName(rs.getString("name"));
 				pro.setPrice(rs.getInt("price"));
-				pro.setStock(rs.getInt("stock"));
+				
 				pro.setFiles(rs.getString("files"));
 				pro.setVisit(rs.getInt("visit"));
 				pro.setCate(rs.getString("cate"));
 				pro.setGender(rs.getString("gender"));
-				pro.setPsize(rs.getString("psize"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
 				pro.setPcon(rs.getString("pcon"));
 				pro.setDay(rs.getString("day"));
 

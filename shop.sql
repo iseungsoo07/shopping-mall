@@ -49,9 +49,12 @@ create table product(
    name varchar(30),   --상품이름
    price int not null, -- 상품가격
    visit int not null,   --조회수
-   stock int not null,   --재고
    cate varchar(10) not null, --분류 category
-   psize varchar(10), --상품사이즈(size로 속성을 주면 에러나서 바꿈)
+   ssize int default 0, --상품사이즈(size로 속성을 주면 에러나서 바꿈)
+   msize int default 0,
+   lsize int default 0,
+   xlsize int default 0,
+   xxlsize int default 0,
    pcon varchar(1000), --상품 디테일 내용
    gender varchar(10), -- 성별
    files varchar(50), --사진파일 
@@ -69,7 +72,7 @@ create table productreview(
 	constraint fk2 foreign key (productid) references product(pid) on delete cascade
 );
 
-
+drop table product;
 
 INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VALUES ('a','pw','name','phone','email',123,'addr',1,100,1000)
 INSERT into notice (nid, ntitle, ncon, visitor, day, sort) values (1, 'asddd','asdd',155,'1234','qnsfb');
@@ -130,6 +133,7 @@ DELETE FROM QnA WHERE qid = 1;
 select * from notice
 select * from QnA
 select * from reply
+select * from product
 drop table notice;
 drop table reply;
 drop table QnA;

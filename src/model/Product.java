@@ -5,9 +5,54 @@ public class Product {
 	private String name; // 상품 명
 	private int price; // 상품 가격
 	private int visit; // 조회수
-	private int stock; // 재고
+	
 	private String cate; // 카테고리
-	private String psize; // 상품 사이즈
+	private int ssize; // 상품 사이즈
+	private int msize; // 상품 사이즈
+	private int lsize; // 상품 사이즈
+	private int xlsize; // 상품 사이즈
+	public int getSsize() {
+		return ssize;
+	}
+
+	public void setSsize(int ssize) {
+		this.ssize = ssize;
+	}
+
+	public int getMsize() {
+		return msize;
+	}
+
+	public void setMsize(int msize) {
+		this.msize = msize;
+	}
+
+	public int getLsize() {
+		return lsize;
+	}
+
+	public void setLsize(int lsize) {
+		this.lsize = lsize;
+	}
+
+	public int getXlsize() {
+		return xlsize;
+	}
+
+	public void setXlsize(int xlsize) {
+		this.xlsize = xlsize;
+	}
+
+	public int getXxlsize() {
+		return xxlsize;
+	}
+
+	public void setXxlsize(int xxlsize) {
+		this.xxlsize = xxlsize;
+	}
+
+	private int xxlsize; // 상품 사이즈
+	
 	private String pcon; // 상품 설명
 	private String gender; // 성별
 	private String files; // 이미지 경로
@@ -29,14 +74,7 @@ public class Product {
 		this.cate = cate;
 	}
 
-	public String getPsize() {
-		return psize;
-	}
-
-	public void setPsize(String psize) {
-		this.psize = psize;
-	}
-
+	
 	public String getPcon() {
 		return pcon;
 	}
@@ -93,12 +131,6 @@ public class Product {
 		this.price = price;
 	}
 
-	public int getStock() {
-		return stock;
-	}
 
-	public void setStock(int stock) {
-		this.stock = stock;
-	}
 
 }

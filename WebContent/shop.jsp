@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -448,21 +448,30 @@
 							</ul>
 						</div>
 					</div>
-
+					
 					<div class="row product-categorie-box">
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane fade show active"
 								id="grid-view">
+								
 								<div class="row">
+								
 									<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+									<c:forEach var="v" items="${datas}">
 										<div class="products-single fix">
+										
 											<div class="box-img-hover">
 											
 											<!-- custom:productArray: 페이지 연결문제로 밑에 코드는 남겨둠, 일단 보류 -->
+											
 												<div class="type-lb">
 													<p class="sale">Sale</p>
 												</div>
-												<img src="images/아우터1.jpg" class="img-fluid" alt="Image">
+												<c:forTokens var = "fileName" items="${v.files }" delims="," varStatus = "st">
+												 <a  href="./upload/${fileName}" style="${style}" >
+													<img src = "./upload/${fileName }" class="img-fluid" alt="Image">
+												</a>
+												</c:forTokens>
 												<div class="mask-icon">
 													<ul>
 														<li><a href="shop-detail2.jsp" data-toggle="tooltip"
@@ -478,20 +487,22 @@
 													<a class="cart" href="#">Add to Cart</a>
 												</div>
 											</div>
+											
 											<div class="why-text">
-												<a href="shop-detail2.jsp">베이직 블레이져</a>
-												<h5>70,900원</h5>
+												<a href="shop-detail2.jsp">${v.name }</a>
+												<h5>${v.price}</h5>
 											</div>
 										</div>
+										</c:forEach>
 									</div>
-								
+									
 									<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
 										<div class="products-single fix">
 											<div class="box-img-hover">
 												<div class="type-lb">
 													<p class="new">New</p>
 												</div>
-												<img src="images/아우터3.jpg" class="img-fluid" alt="Image">
+												
 												<div class="mask-icon">
 													<ul>
 														<li><a href="shop-detail.jsp" data-toggle="tooltip"
@@ -508,8 +519,8 @@
 												</div>
 											</div>
 											<div class="why-text">
-												<a href="shop-detail.jsp">우먼즈 플루이드 블레이저</a>
-												<h5>76,900원</h5>
+												<a href="shop-detail.jsp">${v.name}</a>
+												<h5>${v.price }</h5>
 											</div>
 										</div>
 									</div>
@@ -521,6 +532,7 @@
 									<!-- list view 시작 --><!-- list view 수정필요 -->
 								</div>
 							</div>
+							
 							<div role="tabpanel" class="tab-pane fade" id="list-view">
 								<div class="list-view-box">
 									<div class="row">
@@ -530,7 +542,9 @@
 													<div class="type-lb">
 														<p class="new">New</p>
 													</div>
-													<img src="images/아우터1.jpg" class="img-fluid" alt="Image">
+													<c:forTokens var = "fileName" items="${v.files }" delims="," varStatus = "st">
+													<img src = "./upload/${fileName }" class="img-fluid" alt="Image">
+													</c:forTokens>
 													<div class="mask-icon">
 														<ul>
 															<li><a href="#" data-toggle="tooltip"
@@ -548,19 +562,19 @@
 												</div>
 											</div>
 										</div>
+										
 										<div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
 											<div class="why-text full-width">
-												<h4>베이직 블레이저</h4>
+												<h4>${v.name}</h4>
 												<h5>
 													<del>86,000원</del>
-													70,900원
+													${v.price }
 												</h5>
-												<p>베이식한 디자인의 블레이저. 4%의 폴리우레탄이 포함된 양방향 스트레치 T/R원단을 사용하여
-													신축성이 뛰어나며 덕분에 자유로운 활동성을 보장한다. 2버튼 여밈에 노치트 라펠, 플랩 포켓 등 테일러드
-													재킷의 기본에 충실한 사양으로 구성하여 디자인했다.</p>
+												  
 												<a class="btn hvr-hover" href="cart.jsp">장바구니 담기</a>
 											</div>
 										</div>
+										
 									</div>
 								</div>
 								<div class="list-view-box">
@@ -571,8 +585,11 @@
 													<div class="type-lb">
 														<p class="sale">Sale</p>
 													</div>
-													<img src="images/아우터3.jpg" class="img-fluid" alt="Image">
+													
+												
+												
 													<div class="mask-icon">
+													
 														<ul>
 															<li><a href="#" data-toggle="tooltip"
 																data-placement="right" title="View"><i
@@ -606,9 +623,10 @@
 								</div>
 
 							</div>
+						
 						</div>
 					</div>
-
+				
 				</div>
 			</div>
 		</div>

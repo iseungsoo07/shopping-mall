@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -326,7 +327,7 @@ form {
 
 
 						<form class="form-horizontal" id="boardForm" name="boardForm"
-							method="post" enctype="multipart/form-data">
+							method="post" enctype="multipart/form-data" action ="./addProduct.do">
 							<div class="box_inner">
 
 								<div class="form-group">
@@ -337,19 +338,7 @@ form {
 											data-error="Please enter product name">
 									</div>
 								</div>
-								<div class="form-group">
-									<label for="inputEmail3" class="col-md-12 control-label">code</label>
-									<div class="col-md-12">
-										
 								
-
-										<input type="text" class="form-control" id="pid" name="pid">
-
-										<input type="text" class="form-control" id="name" name="name"
-											value="${datas.name}" placeholder="상품코드를 입력하세요!" required
-											data-error="Please enter product name">
-									</div>
-								</div>
 
 								<div class="form-group">
 									<label for="inputEmail3" class="col-md-12 control-label">Price</label>
@@ -370,7 +359,7 @@ form {
 										<div id="row1" style="float: left;">
 
 											<input type="text" class="form-control" id="stockXXL"
-												name="stockXXL" value="${datas.stock}" placeholder="XXL"
+												name="xxlsize" value="${datas.xxlsize}" placeholder="XXL"
 												required data-error="Please enter product stock">&nbsp
 										</div>
 									</div>
@@ -379,7 +368,7 @@ form {
 										<div id="row1" style="float: left;">
 
 											<input type="text" class="form-control" id="stockXL"
-												name="stockXL" value="${datas.stock}" placeholder="XL"
+												name="xlsize" value="${datas.xlsize}" placeholder="XL"
 												required data-error="Please enter product stock">
 										</div>
 									</div>
@@ -387,7 +376,7 @@ form {
 										<div id="row1" style="float: left;">
 
 											<input type="text" class="form-control" id="stockL"
-												name="stockL" value="${datas.stock}" placeholder="L" required
+												name="lsize" value="${datas.lsize}" placeholder="L" required
 												data-error="Please enter product stock">
 										</div>
 									</div>
@@ -395,7 +384,7 @@ form {
 										<div id="row1" style="float: left;">
 
 											<input type="text" class="form-control" id="stockM"
-												name="stockM" value="${datas.stock}" placeholder="M" required
+												name="msize" value="${datas.msize}" placeholder="M" required
 												data-error="Please enter product stock">
 										</div>
 									</div>
@@ -403,7 +392,7 @@ form {
 										<div id="row1" style="float: left;">
 
 											<input type="text" class="form-control" id="stockS"
-												name="stockS" value="${datas.stock}" placeholder="s" required
+												name="ssize" value="${datas.ssize}" placeholder="s" required
 												data-error="Please enter product stock">
 										</div>
 
@@ -435,7 +424,7 @@ form {
 								<div class="form-group">
 									<label for="inputPassword3" class="col-md-12 control-label">contents</label>
 									<div class="col-md-12">
-										<div id="summernote"></div>
+										<textarea id="summernote" name="pcon"> </textarea>
 									</div>
 								</div>
 								<div class="form-group">
@@ -450,6 +439,7 @@ form {
 								<button class="btn hvr-hover" id="submit" type="submit">상품
 									추가</button>
 							</center>
+							</form>
 					</div>
 
 
