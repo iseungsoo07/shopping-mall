@@ -1,7 +1,6 @@
 package action;
 
 import java.io.File;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,7 +45,9 @@ public class AddProductAction implements Action {
 		StringBuilder builder = new  StringBuilder();
 		for(Part p : parts) {
 			if(!p.getName().equals("file")) continue;
-
+			
+			if(p.getSize() ==0) continue;
+			
 			Part filePart=p; //file이라는 이름의 파일을 받아옴
 			String fileName = filePart.getSubmittedFileName();
 			
@@ -59,6 +60,14 @@ public class AddProductAction implements Action {
 			
 			//절대경로가 필요 실제 물리경로를 알수있음 루트로부터 경로
 			String realPath = req.getServletContext().getRealPath("/upload");
+			System.out.println(realPath);
+			
+			File path = new File(realPath);
+			if(!path.exists()) {
+				path.mkdirs();
+			}
+		
+				
 
 			String filePath = realPath + File.separator + fileName;
 			FileOutputStream fos = new FileOutputStream(filePath);
