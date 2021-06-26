@@ -43,7 +43,6 @@ import action.ShowNotiAction;
 import action.ShowProductDetailAction;
 import action.ShowQAction;
 import action.ShowQnAconAction;
-import action.ShowReviewAction;
 import action.UpdateAction;
 import action.UpdateReviewAction;
 import action.WriteProductReviewAction;
@@ -197,13 +196,13 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/showQ.do")) { // �������� ������ +1 �ǰ�
+		} else if (command.equals("/showQ.do")) { // 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 +1 占실곤옙
 			try {
 				forward = new ShowQAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/showQnAcon.do")) { // �������� ������ +1 �ǰ�
+		} else if (command.equals("/showQnAcon.do")) { // 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 +1 占실곤옙
 			try {
 				forward = new ShowQnAconAction().execute(req, res);
 			} catch (Exception e) {
@@ -224,7 +223,7 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/newQnA.do")) {
 			try {
 				forward = new NewQnAAction().execute(req, res);
-				System.out.println(req.getParameter("qcon")+"컨트롤러에서 호출됨");
+				System.out.println(req.getParameter("qcon")+"而⑦듃濡ㅻ윭�뿉�꽌 �샇異쒕맖");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -298,12 +297,6 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/showProductDetail.do")) {
 			try {
 				forward = new ShowProductDetailAction().execute(req, res);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("/showReview.do")) {
-			try {
-				forward = new ShowReviewAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

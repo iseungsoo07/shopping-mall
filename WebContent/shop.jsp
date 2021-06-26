@@ -126,14 +126,13 @@
 							<ul class="dropdown-menu megamenu-content" role="menu">
 								<li>
 									<div class="row">
-										<div class="col-menu col-md-3">
+													<div class="col-menu col-md-3">
 											<h6 class="title">상의</h6>
 											<div class="content">
-												<ul class="menu-col"><!-- nav-상품분류 -->
+												<ul class="menu-col">
 													<li><a href="category.do?sort='outer'">아우터</a></li>
 													<li><a href="category.do?sort='shirts'">셔츠&블라우스</a></li>
-													<li><a href="category.do?sort='mantoman'">맨투맨&니트</a></li>
-													<li><a href="category.do?sort='tshirts'">반팔 티</a></li>
+													
 												</ul>
 											</div>
 										</div>
@@ -142,10 +141,9 @@
 											<h6 class="title">바지</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li><a href="category.do?sort='jean'">청바지</a></li>
+													<li><a href="category.do?sort=jean">청바지</a></li>
 													<li><a href="category.do?sort='slacks'">슬렉스</a></li>
-													<li><a href="category.do?sort='shortPansts'">숏 팬츠</a></li>
-													<li><a href="category.do?sort='panstsOther'">기타 바지</a></li>
+													
 												</ul>
 											</div>
 										</div>
@@ -156,9 +154,7 @@
 												<ul class="menu-col">
 													<li><a href="category.do?sort='converse'">컨버스</a></li>
 													<li><a href="category.do?sort='dressShoes'">구두&로퍼</a></li>
-													<li><a href="category.do?sort='heels'">힐</a></li>
-													<li><a href="category.do?sort='slipper'">슬리퍼&샌들</a></li>
-
+													
 												</ul>
 											</div>
 										</div>
@@ -167,8 +163,7 @@
 											<div class="content">
 												<ul class="menu-col">
 													<li><a href="category.do?sort='bag'">가방</a></li>
-													<li><a href="category.do?sort='ring'">반지&목걸이</a></li>
-													<li><a href="category.do?sort='glasses'">안경</a></li>
+													
 												</ul>
 											</div>
 										</div>
@@ -285,7 +280,6 @@
 				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
 					<div class="product-categori">
 						<div class="search-product">
-						<!-- 상품검색 삭제..? -->
 							<form action="#">
 								<input class="form-control" placeholder="Search here..."
 									type="text">
@@ -298,10 +292,12 @@
 							<div class="title-left">
 								<h3>Categories</h3>
 							</div>
+							<!-- 카테고리 상품 -->
 							<div
 								class="list-group list-group-collapse list-group-sm list-group-tree"
 								id="list-group-men" data-children=".sub-men">
 								<div class="list-group-collapse sub-men">
+								<!-- 카테고리 상품 -->
 									<a class="list-group-item list-group-item-action"
 										href="#sub-men1" data-toggle="collapse" aria-expanded="true"
 										aria-controls="sub-men1">상의<small class="text-muted">(7)</small>
@@ -309,21 +305,14 @@
 									<div class="collapse show" id="sub-men1"
 										data-parent="#list-group-men">
 										<div class="list-group">
-										<!-- side 상품분류 -->
 											<a href="category.do?sort='outer'"
 												class="list-group-item list-group-item-action active">아우터
-												<small class="text-muted">(2)</small><!-- 카테고리별 상품 개수...지우기? -->
+												<small class="text-muted">(2)</small>
 											</a> <a href="category.do?sort=shirts"
 												class="list-group-item list-group-item-action"> 셔츠&블라우스
 												<small class="text-muted">(1)</small>
-											</a> <a href="category.do?sort='mantoman"
-												class="list-group-item list-group-item-action">맨투맨&니트 <small
-												class="text-muted">(1)</small>
-											</a> <a href="category.do?sort='tshirts'"
-												class="list-group-item list-group-item-action">반팔 티 <small
-												class="text-muted">(2)</small>
-											</a>
-
+											</a> 
+								<!-- 카테고리 상품끝 -->
 										</div>
 									</div>
 								</div>
@@ -339,11 +328,8 @@
 												<small class="text-muted">(2)</small>
 											</a> <a href="category.do?sort='slacks'" class="list-group-item list-group-item-action">슬렉스
 												<small class="text-muted">(1)</small>
-											</a> <a href="category.do?sort='shortPants'" class="list-group-item list-group-item-action">숏
-												팬츠 <small class="text-muted">(1)</small>
-											</a> <a href="category.do?sort='pantsOther'" class="list-group-item list-group-item-action">기타
-												바지 <small class="text-muted">(1)</small>
-											</a>
+											</a> 
+											
 										</div>
 									</div>
 								</div>
@@ -357,13 +343,9 @@
 										<div class="list-group">
 											<a href="category.do?sort='converse'" class="list-group-item list-group-item-action">컨버스
 												<small class="text-muted">(2)</small>
-											</a> <a href="#" class="list-group-item list-group-item-action">구두&로퍼
+											</a> <a href="category.do?sort='dressShoes'F" class="list-group-item list-group-item-action">구두&로퍼
 												<small class="text-muted">(1)</small>
-											</a> <a href="category.do?sort='heels'" class="list-group-item list-group-item-action">힐
-												<small class="text-muted">(1)</small>
-											</a> <a href="category.do?sort='slipper'" class="list-group-item list-group-item-action">슬리퍼&샌들
-												<small class="text-muted">(1)</small>
-											</a>
+											</a> 
 										</div>
 									</div>
 								</div>
@@ -377,12 +359,7 @@
 										<div class="list-group">
 											<a href="category.do?sort='bag'" class="list-group-item list-group-item-action">가방
 												<small class="text-muted">(2)</small>
-											</a> <a href="category.do?sort='ring'" class="list-group-item list-group-item-action">반지&목걸이
-												<small class="text-muted">(1)</small>
-											</a> <a href="category.do?sort='glasses'" class="list-group-item list-group-item-action">안경
-												<small class="text-muted">(1)</small>
-											</a>
-
+											</a> 
 										</div>
 									</div>
 								</div>

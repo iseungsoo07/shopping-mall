@@ -19,9 +19,17 @@ public class PriceFilterAction implements Action {
 		
 		ArrayList<Product> products = new ArrayList<>();
 		
-		int min = Integer.parseInt(req.getParameter("min"));
-		int max = Integer.parseInt(req.getParameter("max"));
+//		int min = Integer.parseInt(req.getParameter("min"));
+//		int max = Integer.parseInt(req.getParameter("max"));
+		String amount = req.getParameter("amount");
 		
+		System.out.println(amount);
+		
+		String[] str = amount.split(" - ");
+		String strMin=str[0].substring(2);
+		String strMax=str[1].substring(2);
+		int min=Integer.parseInt(strMin);
+		int max=Integer.parseInt(strMax);
 		products = productDAO.showPscope(min, max);
 		
 		req.setAttribute("products", products);

@@ -279,7 +279,7 @@
 	<!-- Start Shop Detail  -->
 	<div class="shop-detail-box-main">
 		<div class="container">
-		<!--  custom:productDetail  출력문제로 tag처리해둠-->
+			<!--  custom:productDetail  출력문제로 tag처리해둠-->
 			<div class="row">
 				<div class="col-xl-5 col-lg-5 col-md-6">
 					<div id="carousel-example-1"
@@ -317,7 +317,7 @@
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-7 col-md-6">
-					
+
 					<div class="single-product-details">
 						<h2>베이직 블레이저</h2>
 						<!-- 상품명 -->
@@ -388,8 +388,7 @@
 
 								<custom:delProduct />
 								<!-- 관리자 로그인만 보이게 -->
-								<a class="btn hvr-hover" href="#"><i class="fas fa-sync-alt"></i>상품
-									후기</a>
+
 							</div>
 							<div class="share-bar">
 								<a class="btn hvr-hover" href="#"><i class="fab fa-facebook"
@@ -408,31 +407,39 @@
 			<br> <br>
 			<hr>
 			<br>
+			
+			
+			<!-- 후기시작 -->
+			<c:if test="${member != null}">
+				<!-- 로그인했다면  -->
+				<form method="post" action="writeReview.do">
+					<custom:ratinginput/>
+					<input type="hidden" name="reviewedid" value="${reviewedid}">
+					<textarea name="reviewcon" value="${reviewcon}" cols="114" rows="2"
+						placeholder="후기를 입력해주세요" style="resize: none"></textarea>
 
 
+					<p class="btn_line txt_right">
+						<input type="submit" value="작성" class="btn_bbs"
+							style="border: none;">
+					</p>
+				</form>
+			</c:if>
 
-			<form method="post" action="writeReview.do">
-				<input type="hidden" name="reviewedid" value="${reviewedid}">
-				<textarea name="reviewcon" value="${reviewcon}" cols="114" rows="2"
-					placeholder="후기를 입력해주세요" style="resize: none"></textarea>
-				<p class="btn_line txt_right">
-					<input type="submit" value="작성" class="btn_bbs"
-						style="border: none;">
-				</p>
-			</form>
 
 			<c:forEach var="r" items="${ v.rlist }">
 				<div class="reply_area">
 					<div class="reply_area__first">
 						<h4 class="reply_author">${ r.userid }</h4>
+						<custom:ratingoutput/>
 						<div class="reply_time">${ r.day }</div>
 					</div>
 					<div class="reply_content">${ r.rcon }</div>
 					<c:if test="${member.id eq 'admin'}">
 						<!-- 만약 관리자라면, -->
 
-						<p class="bbs_line txt_right">
-							<a href="./delReply.do?rid=${r.rid}&&qid=${v.qna.qid}">
+						<p class="bbs_line txt_right"><!-- 댓글아이디와 상풍id전달 -->
+							<a href="./delReply.do?reviewid=${r.reviewid}&&pid=${pid}">
 								<button type="button" class="btn_bbs" style="border: none;">댓글삭제</button>
 							</a>
 						</p>
