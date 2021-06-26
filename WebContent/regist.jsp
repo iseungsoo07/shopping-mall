@@ -521,11 +521,14 @@
 						</li>
 						<li class="clear">
 							<span class="tit_lbl agree_label pilsoo_item"> 개인정보 활용동의 </span>
-							<div class="app_content checkbox_area">
+							<div class="app_content" style="padding-top: 10px">
 								<input type="checkbox" class="css-checkbox" id="agree" name="agree" />
 								<label for="agree">동의함</label>
+								
+								<custom:agree />
 							</div>
 						</li>
+						
 					</ul>
 					<p class="btn_line">
 						<input type="submit" value="등록" class="btn_basecolor" style="border: none; cursor: pointer;" />

@@ -5,13 +5,13 @@
 <c:if test="${ member != null }">
 	<c:choose>
 		<c:when test="${ member.id eq 'admin' }">
-			<li class="member-name">${ member.name }님환영합니다!</li>
+			<li class="member-name">${ member.name }님 환영합니다!</li>
 			<li><a href="./addproduct.jsp">상품등록</a></li>
 			<li><a href="./logout.do">로그아웃</a></li>
 			<li><a href="./regist.jsp">회원가입</a></li>
 		</c:when>
 		<c:otherwise>
-			<li class="member-name">${ member.name }님환영합니다!</li>
+			<li class="member-name">${ member.name }님 환영합니다!</li>
 			<li><a href="./logout.do">로그아웃</a></li>
 			<li><a href="./regist.jsp">회원가입</a></li>
 		</c:otherwise>

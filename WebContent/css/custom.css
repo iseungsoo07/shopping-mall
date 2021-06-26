@@ -255,15 +255,14 @@ select {
 }
 
 .appForm .app_list li .tit_lbl_no_padding {
-	position: relative;
-	float: left;
-	width: 150px;
-	box-sizing: border-box;
-	line-height: 42px;
-	font-weight: bold;
-	font-size: 17px;
-	letter-spacing: -2px;
-	padding-left: 0;
+    position: relative;
+    float: left;
+    width: 150px;
+    box-sizing: border-box;
+    line-height: 42px;
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: -2px;
 }
 
 .appForm .app_list li .app_content {
@@ -1161,6 +1160,14 @@ select {
 		width: auto;
 		line-height: 30px;
 	}
+	
+	 .appForm .no_padding li .tit_lbl {
+        float: none;
+        width: auto;
+        line-height: 30px;
+        padding-left: 0;
+    }
+	
 	.appForm .app_list li .app_content {
 		float: none;
 		width: auto;
@@ -1173,6 +1180,19 @@ select {
 		border: none;
 		width: 100% !important;
 	}
+	
+	.appForm .app_list li .size-form {
+		float: none;
+		width: 100% !important;
+		
+	}
+	
+	.appForm .app_list li .app-content .size-input {
+		border: none;
+		width: 100% !important;
+	}
+	
+	
 	.appForm .app_list li .app_content.email_area {
 		padding: 5px 0 0;
 		font-size: 0;
@@ -1438,6 +1458,7 @@ select {
 .reply_area .reply_content {
 	font-size: 18px;
 }
+
 
 
 
