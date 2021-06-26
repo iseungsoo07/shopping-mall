@@ -32,7 +32,7 @@
 
 </head>
 <body>
-	<!-- Start Main Top -->
+	 <!-- Start Main Top -->
 	<div class="main-top">
 		<div class="container-fluid">
 			<div class="row">
@@ -70,20 +70,21 @@
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<!-- <div class="custom-select-box">
-                  <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                     <option>¥ JPY</option>
-                     <option>$ USD</option>
-                     <option>€ EUR</option>
-                  </select>
-               </div> -->
+						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+							<option>¥ JPY</option>
+							<option>$ USD</option>
+							<option>€ EUR</option>
+						</select>
+					</div> -->
 					<div class="right-phone-box">
 						<p>
-							Call US : <a href="#  ">010-1111-1111</a>
+							Call US : <a href="#">010-1111-1111</a>
 						</p>
 					</div>
 					<div class="our-link">
 						<ul>
-					<li class="dropdown"><custom:logined /></li>
+							<li class="dropdown"><custom:logined /></li>
+
 						</ul>
 					</div>
 				</div>
@@ -117,95 +118,56 @@
 						<li class="nav-item">
 							<a class="nav-link" href="about.jsp">About Us</a>
 						</li>
-						<li class="dropdown megamenu-fw">
-							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+						<li class="dropdown megamenu-fw"><a href="#"
+							class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
 							<ul class="dropdown-menu megamenu-content" role="menu">
 								<li>
 									<div class="row">
-										<div class="col-menu col-md-3">
-											<h6 class="title">Top</h6>
+													<div class="col-menu col-md-3">
+											<h6 class="title">상의</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li>
-														<a href="shop.jsp">Jackets</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Shirts</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Sweaters & Cardigans</a>
-													</li>
-													<li>
-														<a href="shop.jsp">T-shirts</a>
-													</li>
+													<li><a href="category.do?sort='outer'">아우터</a></li>
+													<li><a href="category.do?sort='shirts'">셔츠&블라우스</a></li>
+													
 												</ul>
 											</div>
 										</div>
 										<!-- end col-3 -->
 										<div class="col-menu col-md-3">
-											<h6 class="title">Bottom</h6>
+											<h6 class="title">바지</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li>
-														<a href="shop.jsp">Swimwear</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Skirts</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Jeans</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Trousers</a>
-													</li>
+													<li><a href="category.do?sort=jean">청바지</a></li>
+													<li><a href="category.do?sort='slacks'">슬렉스</a></li>
+													
 												</ul>
 											</div>
 										</div>
 										<!-- end col-3 -->
 										<div class="col-menu col-md-3">
-											<h6 class="title">Clothing</h6>
+											<h6 class="title">신발</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li>
-														<a href="shop.jsp">Top Wear</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Party wear</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Bottom Wear</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Indian Wear</a>
-													</li>
+													<li><a href="category.do?sort='converse'">컨버스</a></li>
+													<li><a href="category.do?sort='dressShoes'">구두&로퍼</a></li>
+													
 												</ul>
 											</div>
 										</div>
 										<div class="col-menu col-md-3">
-											<h6 class="title">Accessories</h6>
+											<h6 class="title">악세서리</h6>
 											<div class="content">
 												<ul class="menu-col">
-													<li>
-														<a href="shop.jsp">Bags</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Sunglasses</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Fragrances</a>
-													</li>
-													<li>
-														<a href="shop.jsp">Wallets</a>
-													</li>
+													<li><a href="category.do?sort='bag'">가방</a></li>
+													
 												</ul>
 											</div>
 										</div>
 										<!-- end col-3 -->
-									</div>
-									<!-- end row -->
+									</div> <!-- end row -->
 								</li>
-							</ul>
-						</li>
+							</ul></li>
 						<li class="dropdown">
 							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
 							<ul class="dropdown-menu">
@@ -248,9 +210,8 @@
 				<!-- Start Atribute Navigation -->
 				<div class="attr-nav">
 					<ul>
-						<li class="search">
-							<a href="#"><i class="fa fa-search"></i></a>
-						</li>
+						<!--  <li class="search"><a href="#"><i class="fa fa-search"></i></a>
+                                </li> -->
 						<li class="side-menu">
 							<a href="#"> <i class="fa fa-shopping-bag"></i> <span class="badge">3</span>
 							</a>
