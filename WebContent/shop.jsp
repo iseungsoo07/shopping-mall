@@ -45,7 +45,7 @@
 
 <body>
 
-	 <!-- Start Main Top -->
+	<!-- Start Main Top -->
 	<div class="main-top">
 		<div class="container-fluid">
 			<div class="row">
@@ -53,30 +53,18 @@
 					<div class="text-slid-box">
 						<div id="offer-box" class="carouselTicker">
 							<ul class="offer-box">
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
+								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
+								<li><i class="fab fa-opencart"></i> 50% - 80% off on
+									Fashion</li>
+								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase
+									Promo code: offT20</li>
+								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
+								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
+								<li><i class="fab fa-opencart"></i> 50% - 80% off on
+									Fashion</li>
+								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase
+									Promo code: offT20</li>
+								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
 							</ul>
 						</div>
 					</div>
@@ -109,7 +97,7 @@
 	<!-- Start Main Top -->
 	<header class="main-header">
 		<!-- Start Navigation -->
-		<custom:navigationBar/>
+		<custom:navigationBar />
 		<!-- End Navigation -->
 	</header>
 	<!-- End Main Top -->
@@ -168,7 +156,7 @@
 								class="list-group list-group-collapse list-group-sm list-group-tree"
 								id="list-group-men" data-children=".sub-men">
 								<div class="list-group-collapse sub-men">
-								<!-- 카테고리 상품 -->
+									<!-- 카테고리 상품 -->
 									<a class="list-group-item list-group-item-action"
 										href="#sub-men1" data-toggle="collapse" aria-expanded="true"
 										aria-controls="sub-men1">상의<small class="text-muted">(7)</small>
@@ -176,14 +164,14 @@
 									<div class="collapse show" id="sub-men1"
 										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort='outer'"
+											<a href="category.do?sort=outer"
 												class="list-group-item list-group-item-action active">아우터
 												<small class="text-muted">(2)</small>
 											</a> <a href="category.do?sort=shirts"
 												class="list-group-item list-group-item-action"> 셔츠&블라우스
 												<small class="text-muted">(1)</small>
-											</a> 
-								<!-- 카테고리 상품끝 -->
+											</a>
+											<!-- 카테고리 상품끝 -->
 										</div>
 									</div>
 								</div>
@@ -195,12 +183,14 @@
 									<div class="collapse" id="sub-men2"
 										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort='jean'" class="list-group-item list-group-item-action">청바지
-												<small class="text-muted">(2)</small>
-											</a> <a href="category.do?sort='slacks'" class="list-group-item list-group-item-action">슬렉스
-												<small class="text-muted">(1)</small>
-											</a> 
-											
+											<a href="category.do?sort=jean"
+												class="list-group-item list-group-item-action">청바지 <small
+												class="text-muted">(2)</small>
+											</a> <a href="category.do?sort=slacks"
+												class="list-group-item list-group-item-action">슬렉스 <small
+												class="text-muted">(1)</small>
+											</a>
+
 										</div>
 									</div>
 								</div>
@@ -212,11 +202,13 @@
 									<div class="collapse" id="sub-men3"
 										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort='converse'" class="list-group-item list-group-item-action">컨버스
-												<small class="text-muted">(2)</small>
-											</a> <a href="category.do?sort='dressShoes'F" class="list-group-item list-group-item-action">구두&로퍼
-												<small class="text-muted">(1)</small>
-											</a> 
+											<a href="category.do?sort=converse"
+												class="list-group-item list-group-item-action">컨버스 <small
+												class="text-muted">(2)</small>
+											</a> <a href="category.do?sort=dressShoes"
+												class="list-group-item list-group-item-action">구두&로퍼 <small
+												class="text-muted">(1)</small>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -228,9 +220,10 @@
 									<div class="collapse" id="sub-men4"
 										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort='bag'" class="list-group-item list-group-item-action">가방
-												<small class="text-muted">(2)</small>
-											</a> 
+											<a href="category.do?sort=bag"
+												class="list-group-item list-group-item-action">가방 <small
+												class="text-muted">(2)</small>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -243,13 +236,15 @@
 						<div class="filter-price-left">
 							<div class="title-left">
 								<h3>Price</h3>
+								<h6>단위 : 원화</h6>
 							</div>
 							<form method="post" action="./priceFilter.do">
+								<input type="hidden" value="${products}">
 								<!-- 가격조정에 따른  상품 정렬-->
 								<div class="price-box-slider">
 									<div id="slider-range"></div>
 									<p>
-										<input type="text" name="amount" id="amount" 
+										<input type="text" name="amount" id="amount"
 											style="border: 0; color: #fbb714; font-weight: bold;">
 										<button class="btn hvr-hover" type="submit">Filter</button>
 									</p>
@@ -262,25 +257,26 @@
 			</div>
 
 
-				
+
 			<div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
 				<div class="right-product-box">
 					<div class="product-item-filter row">
-					<!-- 상품코드  -->
+						<!-- 상품코드  -->
 						<div class="col-12 col-sm-8 text-center text-sm-left">
 							<div class="toolbar-sorter-right">
-								<span>Sort by </span> 
-								<form action="./sortProduct.do"><!-- 설정에따른 배열 -->
-								<select id="basic"
-									class="selectpicker show-tick form-control" name="sortBy"
-									data-placeholder="$ USD">
-									<option data-display="Select">Nothing</option>
-									<option value="popularity">Popularity</option>
-									<option value="highPrice">High Price</option>
-									<option value="lowPrice">Low Price</option>
-									<option value="bestselling">Best Selling</option>
-									
-								</select>
+								<span>Sort by </span>
+								<form action="./sortProduct.do">
+									<!-- 설정에따른 배열 -->
+									<input type="hidden" value="${products}"> <select
+										id="basic" class="selectpicker show-tick form-control"
+										name="sortBy" data-placeholder="$ USD">
+										<option data-display="Select">Nothing</option>
+										<option value="popularity">Popularity</option>
+										<option value="highPrice">High Price</option>
+										<option value="lowPrice">Low Price</option>
+										<option value="bestselling">Best Selling</option>
+
+									</select>
 								</form>
 							</div>
 							<p>Showing all 4 results</p>
@@ -296,61 +292,62 @@
 							</ul>
 						</div>
 					</div>
-					
+
 					<div class="row product-categorie-box">
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane fade show active"
 								id="grid-view">
-								
+
 								<div class="row">
-								
+
 									<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-									<c:forEach var="v" items="${datas}">
-										<div class="products-single fix">
-										
-											<div class="box-img-hover">
-											
-											<!-- custom:productArray: 페이지 연결문제로 밑에 코드는 남겨둠, 일단 보류 -->
-											
-												<div class="type-lb">
-													<p class="sale">Sale</p>
+										<c:forEach var="v" items="${products}">
+											<div class="products-single fix">
+
+												<div class="box-img-hover">
+
+													<!-- custom:productArray: 페이지 연결문제로 밑에 코드는 남겨둠, 일단 보류 -->
+
+													<div class="type-lb">
+														<p class="sale">Sale</p>
+													</div>
+													<c:forTokens var="fileName" items="${v.files }" delims=","
+														varStatus="st">
+														<a href="./upload/${fileName}" style="${style}"> <img
+															src="./upload/${fileName }" class="img-fluid" alt="Image">
+														</a>
+													</c:forTokens>
+													<div class="mask-icon">
+														<ul>
+															<li><a href="shop-detail2.jsp" data-toggle="tooltip"
+																data-placement="right" title="View"><i
+																	class="fas fa-eye"></i></a></li>
+															<li><a href="#" data-toggle="tooltip"
+																data-placement="right" title="Compare"><i
+																	class="fas fa-sync-alt"></i></a></li>
+															<li><a href="#" data-toggle="tooltip"
+																data-placement="right" title="Add to Wishlist"><i
+																	class="far fa-heart"></i></a></li>
+														</ul>
+														<a class="cart" href="#">Add to Cart</a>
+													</div>
 												</div>
-												<c:forTokens var = "fileName" items="${v.files }" delims="," varStatus = "st">
-												 <a  href="./upload/${fileName}" style="${style}" >
-													<img src = "./upload/${fileName }" class="img-fluid" alt="Image">
-												</a>
-												</c:forTokens>
-												<div class="mask-icon">
-													<ul>
-														<li><a href="shop-detail2.jsp" data-toggle="tooltip"
-															data-placement="right" title="View"><i
-																class="fas fa-eye"></i></a></li>
-														<li><a href="#" data-toggle="tooltip"
-															data-placement="right" title="Compare"><i
-																class="fas fa-sync-alt"></i></a></li>
-														<li><a href="#" data-toggle="tooltip"
-															data-placement="right" title="Add to Wishlist"><i
-																class="far fa-heart"></i></a></li>
-													</ul>
-													<a class="cart" href="#">Add to Cart</a>
+
+												<div class="why-text">
+													<a href="shop-detail2.jsp">${v.name }</a>
+													<h5>${v.price}</h5>
 												</div>
 											</div>
-											
-											<div class="why-text">
-												<a href="shop-detail2.jsp">${v.name }</a>
-												<h5>${v.price}</h5>
-											</div>
-										</div>
 										</c:forEach>
 									</div>
-									
+
 									<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
 										<div class="products-single fix">
 											<div class="box-img-hover">
 												<div class="type-lb">
 													<p class="new">New</p>
 												</div>
-												
+
 												<div class="mask-icon">
 													<ul>
 														<li><a href="shop-detail.jsp" data-toggle="tooltip"
@@ -377,10 +374,11 @@
 
 
 
-									<!-- list view 시작 --><!-- list view 수정필요 -->
+									<!-- list view 시작 -->
+									<!-- list view 수정필요 -->
 								</div>
 							</div>
-							
+
 							<div role="tabpanel" class="tab-pane fade" id="list-view">
 								<div class="list-view-box">
 									<div class="row">
@@ -390,8 +388,10 @@
 													<div class="type-lb">
 														<p class="new">New</p>
 													</div>
-													<c:forTokens var = "fileName" items="${v.files }" delims="," varStatus = "st">
-													<img src = "./upload/${fileName }" class="img-fluid" alt="Image">
+													<c:forTokens var="fileName" items="${v.files }" delims=","
+														varStatus="st">
+														<img src="./upload/${fileName }" class="img-fluid"
+															alt="Image">
 													</c:forTokens>
 													<div class="mask-icon">
 														<ul>
@@ -410,7 +410,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
 											<div class="why-text full-width">
 												<h4>${v.name}</h4>
@@ -418,11 +418,11 @@
 													<del>86,000원</del>
 													${v.price }
 												</h5>
-												  
+
 												<a class="btn hvr-hover" href="cart.jsp">장바구니 담기</a>
 											</div>
 										</div>
-										
+
 									</div>
 								</div>
 								<div class="list-view-box">
@@ -433,11 +433,11 @@
 													<div class="type-lb">
 														<p class="sale">Sale</p>
 													</div>
-													
-												
-												
+
+
+
 													<div class="mask-icon">
-													
+
 														<ul>
 															<li><a href="#" data-toggle="tooltip"
 																data-placement="right" title="View"><i
@@ -471,10 +471,10 @@
 								</div>
 
 							</div>
-						
+
 						</div>
 					</div>
-				
+
 				</div>
 			</div>
 		</div>
@@ -633,43 +633,45 @@
 								</li>
 
 
-							
-							</ul></li>
-						
-									
+
+							</ul>
+							</li>
 
 
 
 
-	<!-- Start copyright  -->
-	<div class="footer-copyright">
-		<p class="footer-company">
-			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By
-			: <a href="https://html.design/">html design</a>
-		</p>
-	</div>
-	<!-- End copyright  -->
 
-	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-	<!-- ALL JS FILES -->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!-- ALL PLUGINS -->
-	<script src="js/jquery.superslides.min.js"></script>
-	<script src="js/bootstrap-select.js"></script>
-	<script src="js/inewsticker.js"></script>
-	<script src="js/bootsnav.js"></script>
-	<script src="js/images-loded.min.js"></script>
-	<script src="js/isotope.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/baguetteBox.min.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/jquery.nicescroll.min.js"></script>
-	<script src="js/form-validator.min.js"></script>
-	<script src="js/contact-form-script.js"></script>
-	<script src="js/custom.js"></script>
+							<!-- Start copyright  -->
+							<div class="footer-copyright">
+								<p class="footer-company">
+									All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a>
+									Design By : <a href="https://html.design/">html design</a>
+								</p>
+							</div>
+							<!-- End copyright  -->
+
+							<a href="#" id="back-to-top" title="Back to top"
+								style="display: none;">&uarr;</a>
+
+							<!-- ALL JS FILES -->
+							<script src="js/jquery-3.2.1.min.js"></script>
+							<script src="js/popper.min.js"></script>
+							<script src="js/bootstrap.min.js"></script>
+							<!-- ALL PLUGINS -->
+							<script src="js/jquery.superslides.min.js"></script>
+							<script src="js/bootstrap-select.js"></script>
+							<script src="js/inewsticker.js"></script>
+							<script src="js/bootsnav.js"></script>
+							<script src="js/images-loded.min.js"></script>
+							<script src="js/isotope.min.js"></script>
+							<script src="js/owl.carousel.min.js"></script>
+							<script src="js/baguetteBox.min.js"></script>
+							<script src="js/jquery-ui.js"></script>
+							<script src="js/jquery.nicescroll.min.js"></script>
+							<script src="js/form-validator.min.js"></script>
+							<script src="js/contact-form-script.js"></script>
+							<script src="js/custom.js"></script>
 </body>
 
 </html>

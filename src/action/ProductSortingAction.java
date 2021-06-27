@@ -19,10 +19,12 @@ public class ProductSortingAction implements Action {
 		
 		ProductDAO productDAO = new ProductDAO();
 		
-		String sortBy = req.getParameter("sortBy"); // 정렬 기준을 파라미터로 전달해 받아옴
+		String sortBy = req.getParameter("sortBy"); // �젙�젹 湲곗��쓣 �뙆�씪誘명꽣濡� �쟾�떖�빐 諛쏆븘�샂
 		
-		// view에서 select 박스를 이용해서 정렬 기준을 선택
-		// 해당 select 박스의 값을 자바스크립트로 .do로 전달
+		System.out.println("sortBy : "+sortBy);
+		
+		// view�뿉�꽌 select 諛뺤뒪瑜� �씠�슜�빐�꽌 �젙�젹 湲곗��쓣 �꽑�깮
+		// �빐�떦 select 諛뺤뒪�쓽 媛믪쓣 �옄諛붿뒪�겕由쏀듃濡� .do濡� �쟾�떖
 		// sortProduct.do?sortBy= + value
 		
 		if(sortBy.equals("lowPrice")) {

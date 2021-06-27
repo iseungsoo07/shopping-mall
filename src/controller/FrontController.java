@@ -53,8 +53,8 @@ import action.WriteProductReviewAction;
 @WebServlet("/FrontController")
 @MultipartConfig(
 		fileSizeThreshold=1024*1024,
-		maxFileSize=1024*1024*50, //파일한개당 크기제한 50메가
-		maxRequestSize=1024*1024*50*5 // 50메가 5개
+		maxFileSize=1024*1024*50, //�뙆�씪�븳媛쒕떦 �겕湲곗젣�븳 50硫붽�
+		maxRequestSize=1024*1024*50*5 // 50硫붽� 5媛�
 )
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -196,13 +196,13 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/showQ.do")) { // 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 +1 占실곤옙
+		} else if (command.equals("/showQ.do")) { // �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 +1 �뜝�떎怨ㅼ삕
 			try {
 				forward = new ShowQAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/showQnAcon.do")) { // 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 +1 占실곤옙
+		} else if (command.equals("/showQnAcon.do")) { // �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 +1 �뜝�떎怨ㅼ삕
 			try {
 				forward = new ShowQnAconAction().execute(req, res);
 			} catch (Exception e) {
@@ -223,7 +223,7 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/newQnA.do")) {
 			try {
 				forward = new NewQnAAction().execute(req, res);
-				System.out.println(req.getParameter("qcon")+"而⑦듃濡ㅻ윭�뿉�꽌 �샇異쒕맖");
+				System.out.println(req.getParameter("qcon")+"�뚢뫂�뱜嚥▲끇�쑎占쎈퓠占쎄퐣 占쎌깈�빊�뮆留�");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -282,7 +282,7 @@ public class FrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/productSort.do")) {
+		} else if (command.equals("/sortProduct.do")) {
 			try {
 				forward = new ProductSortingAction().execute(req, res);
 			} catch (Exception e) {

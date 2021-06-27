@@ -25,6 +25,7 @@ public class PriceFilterAction implements Action {
 		
 		System.out.println(amount);
 		
+//		String[] str = amount.split(" ~ ");
 		String[] str = amount.split(" - ");
 		String strMin=str[0].substring(1);
 		String strMax=str[1].substring(1);
