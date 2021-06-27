@@ -11,6 +11,7 @@ import java.util.Collection;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.ProductDAO;
@@ -23,8 +24,8 @@ public class AddProductAction implements Action {
 		ProductDAO proDAO = new ProductDAO();
 		Product pro = new Product();
 		ActionForward forward = new ActionForward();
-		
-		// 상품 등록페이지에서 테이블에 들어갈 내용을 입력받아 파라미터로 전달
+		HttpSession session = req.getSession();
+		// �긽�뭹 �벑濡앺럹�씠吏��뿉�꽌 �뀒�씠釉붿뿉 �뱾�뼱媛� �궡�슜�쓣 �엯�젰諛쏆븘 �뙆�씪誘명꽣濡� �쟾�떖
 		
 		pro.setName(req.getParameter("name"));
 		
@@ -48,17 +49,17 @@ public class AddProductAction implements Action {
 			
 			if(p.getSize() ==0) continue;
 			
-			Part filePart=p; //file이라는 이름의 파일을 받아옴
+			Part filePart=p; //file�씠�씪�뒗 �씠由꾩쓽 �뙆�씪�쓣 諛쏆븘�샂
 			String fileName = filePart.getSubmittedFileName();
 			
 			builder.append(fileName);
 			
 			builder.append(",");
 			
-			InputStream fis =filePart.getInputStream(); // 바이너리파일 받는법
+			InputStream fis =filePart.getInputStream(); // 諛붿씠�꼫由ы뙆�씪 諛쏅뒗踰�
 
 			
-			//절대경로가 필요 실제 물리경로를 알수있음 루트로부터 경로
+			//�젅��寃쎈줈媛� �븘�슂 �떎�젣 臾쇰━寃쎈줈瑜� �븣�닔�엳�쓬 猷⑦듃濡쒕��꽣 寃쎈줈
 			String realPath = req.getServletContext().getRealPath("/upload");
 			System.out.println(realPath);
 			
@@ -71,11 +72,11 @@ public class AddProductAction implements Action {
 
 			String filePath = realPath + File.separator + fileName;
 			FileOutputStream fos = new FileOutputStream(filePath);
-			//int b = fis.read(); // read가 1바이트단위로 읽어옴 반환은 int 형(다 읽었다고 표현하기위해 정수형) 다읽었으면 -1을 반환
-			byte[] buf = new byte[1024];		//바이트단위로 읽어오기 위한 선언
+			//int b = fis.read(); // read媛� 1諛붿씠�듃�떒�쐞濡� �씫�뼱�샂 諛섑솚�� int �삎(�떎 �씫�뿀�떎怨� �몴�쁽�븯湲곗쐞�빐 �젙�닔�삎) �떎�씫�뿀�쑝硫� -1�쓣 諛섑솚
+			byte[] buf = new byte[1024];		//諛붿씠�듃�떒�쐞濡� �씫�뼱�삤湲� �쐞�븳 �꽑�뼵
 			int size = 0;
-			while((size = fis.read(buf))!=-1) { //바이트 단위로 읽어옴
-				fos.write(buf,0,size); //바이트단위만 읽을수있고 마지막에 바이트가 안되는 단위면 못읽기에 0부터 size 갯수까지
+			while((size = fis.read(buf))!=-1) { //諛붿씠�듃 �떒�쐞濡� �씫�뼱�샂
+				fos.write(buf,0,size); //諛붿씠�듃�떒�쐞留� �씫�쓣�닔�엳怨� 留덉�留됱뿉 諛붿씠�듃媛� �븞�릺�뒗 �떒�쐞硫� 紐살씫湲곗뿉 0遺��꽣 size 媛��닔源뚯�
 
 
 
@@ -85,13 +86,13 @@ public class AddProductAction implements Action {
 			fis.close();
 		}
 		pro.setFiles(builder.toString());
-		builder.delete(builder.length()-1, builder.length()); //마지막에 쉼표를 제거해주기위해 마지막을 제거
+		builder.delete(builder.length()-1, builder.length()); //留덉�留됱뿉 �돹�몴瑜� �젣嫄고빐二쇨린�쐞�빐 留덉�留됱쓣 �젣嫄�
 		PrintWriter out = res.getWriter();
 		if(proDAO.newPro(pro)) {
-			// 관리자가 상품추가하기 버튼을 눌렀던 화면으로 이동
-			out.println("<script>alert('상품이 등록되었습니다'); location.href='관리자상품 추가 페이지'</script>");
+			// 愿�由ъ옄媛� �긽�뭹異붽��븯湲� 踰꾪듉�쓣 �닃���뜕 �솕硫댁쑝濡� �씠�룞
+			out.println("<script>alert('�긽�뭹�씠 �벑濡앸릺�뿀�뒿�땲�떎'); location.href='愿�由ъ옄�긽�뭹 異붽� �럹�씠吏�'</script>");
 		} else {
-			out.println("<script>alert('상품등록에 실패하였습니다.'); location.href='관리자상품 추가 페이지'</script>");
+			out.println("<script>alert('�긽�뭹�벑濡앹뿉 �떎�뙣�븯���뒿�땲�떎.'); location.href='愿�由ъ옄�긽�뭹 異붽� �럹�씠吏�'</script>");
 		}
 		ArrayList<Product> datas = proDAO.showP();					
 		req.setAttribute("datas", datas);						

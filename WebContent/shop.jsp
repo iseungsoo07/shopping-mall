@@ -239,7 +239,7 @@
 								<h6>단위 : 원화</h6>
 							</div>
 							<form method="post" action="./priceFilter.do">
-								<input type="hidden" value="${products}">
+								<%-- <input type="hidden" value="${products}" name="products"> --%>
 								<!-- 가격조정에 따른  상품 정렬-->
 								<div class="price-box-slider">
 									<div id="slider-range"></div>
@@ -267,9 +267,10 @@
 								<span>Sort by </span>
 								<form action="./sortProduct.do">
 									<!-- 설정에따른 배열 -->
-									<input type="hidden" value="${products}"> <select
-										id="basic" class="selectpicker show-tick form-control"
-										name="sortBy" data-placeholder="$ USD">
+									<%-- <input type="hidden" value="${products}" name="products"> --%>
+									<select id="basic" class="selectpicker show-tick form-control"
+										name="sortBy" data-placeholder="$ USD"
+										onchange="this.form.submit()">
 										<option data-display="Select">Nothing</option>
 										<option value="popularity">Popularity</option>
 										<option value="highPrice">High Price</option>

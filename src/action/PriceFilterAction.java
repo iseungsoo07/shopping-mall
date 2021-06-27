@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ProductDAO;
 import model.Product;
@@ -16,8 +17,11 @@ public class PriceFilterAction implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
 		ProductDAO productDAO = new ProductDAO();
+		HttpSession session = req.getSession();
 		
-		ArrayList<Product> products = new ArrayList<>();
+		@SuppressWarnings("unchecked")
+		ArrayList<Product> products = (ArrayList<Product>) session.getAttribute("products");
+		ArrayList<Product> products2 = new ArrayList<Product>();
 		
 //		int min = Integer.parseInt(req.getParameter("min"));
 //		int max = Integer.parseInt(req.getParameter("max"));
@@ -33,10 +37,15 @@ public class PriceFilterAction implements Action {
 		System.out.println("strMax : "+strMax);
 		int min=Integer.parseInt(strMin);
 		int max=Integer.parseInt(strMax);
-		products = productDAO.showPscope(min, max);
+//		products = productDAO.showPscope(min, max);
 		
-		System.out.println(products);
-		req.setAttribute("products", products);
+		for(Product v : products) {
+			if(v.getPrice()<max&&v.getPrice()>=min) {
+				products2.add(v);
+			}
+		}
+		System.out.println(products2);
+		session.setAttribute("products", products2);
 		
 		forward.setRedirect(false);
 		forward.setPath("shop.jsp");

@@ -2,20 +2,32 @@ package action;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ProductDAO;
 import model.Product;
 
 public class ProductSortingAction implements Action {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
-		ArrayList<Product> products = new ArrayList<>();
+		HttpSession session = req.getSession();
+		
+		
+		ArrayList<Product> products = (ArrayList<Product>) session.getAttribute("products");
+		
+		System.out.println("productSort");
+		for(Product v : products) {
+			System.out.println(v);
+		}
 		
 		ProductDAO productDAO = new ProductDAO();
 		
@@ -28,14 +40,37 @@ public class ProductSortingAction implements Action {
 		// sortProduct.do?sortBy= + value
 		
 		if(sortBy.equals("lowPrice")) {
-			products = productDAO.showPorderasc("price");
+			Collections.sort(products, new Comparator<Product>() {
+				@Override
+				public int compare(Product o1, Product o2) {
+					return o1.getPrice()<o2.getPrice()?-1:(o1.getPrice() == o2.getPrice() ? 0 : 1);
+				}
+			});
+//			products = productDAO.showPorderasc("price");
 		} else if (sortBy.equals("highPrice")) {
-			products = productDAO.showPorderde("price");
+			Collections.sort(products, new Comparator<Product>() {
+				@Override
+				public int compare(Product o1, Product o2) {
+					return o1.getPrice()>o2.getPrice()?-1:(o1.getPrice() == o2.getPrice() ? 0 : 1);
+				}
+			});
+//			products = productDAO.showPorderde("price");
 		} else if (sortBy.equals("popularity")) {
+			Collections.sort(products, new Comparator<Product>() {
+				@Override
+				public int compare(Product o1, Product o2) {
+					return o1.getVisit()<o2.getVisit()?-1:(o1.getVisit() == o2.getVisit() ? 0 : 1);
+				}
+			});
 			products = productDAO.showPorderde("visit");
+		}
+
+		for(Product v : products) {
+			System.out.println(v);
 		}
 		
 		req.setAttribute("products", products);
+		
 		
 		forward.setRedirect(false);
 		forward.setPath("shop.jsp");
