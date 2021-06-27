@@ -18,11 +18,17 @@ public class CategoryAction implements Action {
 		ActionForward forward = new ActionForward();
 		
 		ProductDAO productDAO = new ProductDAO();
-		String category = req.getParameter("category"); // a태그에 카테고리를 파라미터로 넘겨주는 식
+		//String category = req.getParameter("category"); // a�깭洹몄뿉 移댄뀒怨좊━瑜� �뙆�씪誘명꽣濡� �꽆寃⑥＜�뒗 �떇
+		String sort = req.getParameter("sort");
+		System.out.println(sort);
 		ArrayList<Product> datas = new ArrayList<>();
 		
-		datas = productDAO.showPByCategory(category);
+		
+		datas = productDAO.showPByCategory(sort);
 		req.setAttribute("datas", datas);
+		for(Product v : datas) {
+			System.out.println(v);
+		}
 		
 		forward.setRedirect(false);
 		forward.setPath("shop.jsp"); 

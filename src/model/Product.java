@@ -1,18 +1,29 @@
 package model;
 
+/**
+ * @author abc17
+ *
+ */
 public class Product {
-	private int pid; // 상품 id
-	private String name; // 상품 명
-	private int price; // 상품 가격
-	private int visit; // 조회수
+	private int pid; // �긽�뭹 id
+	private String name; // �긽�뭹 紐�
+	private int price; // �긽�뭹 媛�寃�
+	private int visit; // 議고쉶�닔
 	
-	private String cate; // 카테고리
-	private int ssize; // 상품 사이즈
-	private int msize; // 상품 사이즈
-	private int lsize; // 상품 사이즈
-	private int xlsize; // 상품 사이즈
+	private String cate; // 移댄뀒怨좊━
+	private int ssize; // �긽�뭹 �궗�씠利�
+	private int msize; // �긽�뭹 �궗�씠利�
+	private int lsize; // �긽�뭹 �궗�씠利�
+	private int xlsize; // �긽�뭹 �궗�씠利�
 	public int getSsize() {
 		return ssize;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [pid=" + pid + ", name=" + name + ", price=" + price + ", visit=" + visit + ", cate=" + cate
+				+ ", ssize=" + ssize + ", msize=" + msize + ", lsize=" + lsize + ", xlsize=" + xlsize + ", xxlsize="
+				+ xxlsize + ", pcon=" + pcon + ", gender=" + gender + ", files=" + files + ", day=" + day + "]";
 	}
 
 	public void setSsize(int ssize) {
@@ -51,12 +62,12 @@ public class Product {
 		this.xxlsize = xxlsize;
 	}
 
-	private int xxlsize; // 상품 사이즈
+	private int xxlsize; // �긽�뭹 �궗�씠利�
 	
-	private String pcon; // 상품 설명
-	private String gender; // 성별
-	private String files; // 이미지 경로
-	private String day; // 등록 날짜
+	private String pcon; // �긽�뭹 �꽕紐�
+	private String gender; // �꽦蹂�
+	private String files; // �씠誘몄� 寃쎈줈
+	private String day; // �벑濡� �궇吏�
 
 	public int getVisit() {
 		return visit;
