@@ -10,7 +10,7 @@ public class Member {
 	private String addr;
 	private int rank;
 	private int point;
-	private int purchase; // ±∏∏≈±›æ◊
+	private int purchase; // Ï¥ù Íµ¨Îß§ Í∏àÏï°
 
 	public String getId() {
 		return id;
@@ -90,6 +90,56 @@ public class Member {
 
 	public void setPurchase(int purchase) {
 		this.purchase = purchase;
+	}
+
+	public int calcDiscount() {
+		int discount = 0;
+
+		if (this.rank == 10) {
+			discount = 10;
+		} else if (this.rank == 9) {
+			discount = 11;
+		} else if (this.rank == 8) {
+			discount = 12;
+		} else if (this.rank == 7) {
+			discount = 13;
+		} else if (this.rank == 6) {
+			discount = 14;
+		} else if (this.rank == 5) {
+			discount = 15;
+		} else if (this.rank == 4) {
+			discount = 16;
+		} else if (this.rank == 3) {
+			discount = 17;
+		} else if (this.rank == 2) {
+			discount = 18;
+		} else {
+			discount = 20;
+		}
+
+		return 100 - discount;
+	}
+
+	public void changeRank() {
+		if (this.purchase == 100000) {
+			this.rank = 9;
+		} else if (this.purchase == 200000) {
+			this.rank = 8;
+		} else if (this.purchase == 300000) {
+			this.rank = 7;
+		} else if (this.purchase == 400000) {
+			this.rank = 6;
+		} else if (this.purchase == 500000) {
+			this.rank = 5;
+		} else if (this.purchase == 600000) {
+			this.rank = 4;
+		} else if (this.purchase == 700000) {
+			this.rank = 3;
+		} else if (this.purchase == 800000) {
+			this.rank = 2;
+		} else if (this.purchase == 1000000) {
+			this.rank = 1;
+		}
 	}
 
 }
