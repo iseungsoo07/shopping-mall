@@ -195,6 +195,7 @@
 			range: true,
 			min: 0,
 			max: 100000,
+			step: 1000,
 			values: [10000, 30000],
 			slide: function(event, ui) {
 				$("#amount").val(ui.values[0] + " ~ " + ui.values[1]);

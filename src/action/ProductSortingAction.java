@@ -32,6 +32,7 @@ public class ProductSortingAction implements Action {
 		ProductDAO productDAO = new ProductDAO();
 		
 		String sortBy = req.getParameter("sortBy"); // �젙�젹 湲곗��쓣 �뙆�씪誘명꽣濡� �쟾�떖�빐 諛쏆븘�샂
+		req.setAttribute("sortBy", sortBy);
 		
 		System.out.println("sortBy : "+sortBy);
 		

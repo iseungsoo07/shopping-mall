@@ -44,66 +44,8 @@
 <body>
 
 	<!-- Start Main Top -->
-	<div class="main-top">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="text-slid-box">
-						<div id="offer-box" class="carouselTicker">
-							<ul class="offer-box">
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<!-- <div class="custom-select-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>¥ JPY</option>
-							<option>$ USD</option>
-							<option>€ EUR</option>
-						</select>
-					</div> -->
-					<div class="right-phone-box">
-						<p>Call US : 010-1111-1111</p>
-					</div>
-					<div class="our-link">
-						<ul>
-							<li class="dropdown">
-								<custom:logined />
-							</li>
-
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Main Top -->
-
+	<custom:main_top />
+	
 	<!-- Start Main Top -->
 	<header class="main-header">
 		<!-- Start Navigation -->
@@ -149,14 +91,14 @@
 			<div class="row">
 				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
 					<div class="product-categori">
-						<div class="search-product">
+						<!-- <div class="search-product">
 							<form action="#">
 								<input class="form-control" placeholder="Search here..." type="text">
 								<button type="submit">
 									<i class="fa fa-search"></i>
 								</button>
 							</form>
-						</div>
+						</div> -->
 						<div class="filter-sidebar-left">
 							<div class="title-left">
 								<h3>Categories</h3>
@@ -268,18 +210,17 @@
 						<!-- 상품코드  -->
 						<div class="col-12 col-sm-8 text-center text-sm-left">
 							<div class="toolbar-sorter-right">
-								<span>Sort by </span>
+								<!-- <span>Sort by </span> -->
 								<form action="./sortProduct.do">
 									<!-- 설정에따른 배열 -->
 									<select id="basic" class="selectpicker show-tick form-control" name="sortBy" data-placeholder="$ USD"
 										onchange="this.form.submit()"
 									>
-										<option data-display="Select">Nothing</option>
-										<option value="popularity">Popularity</option>
-										<option value="highPrice">High Price</option>
-										<option value="lowPrice">Low Price</option>
-										<option value="bestselling">Best Selling</option>
-
+										<%-- <custom:sort_option > --%>
+										<option data-display="Select" selected>상품 정렬하기</option>
+										<option value="popularity">인기순</option>
+										<option value="highPrice">높은 가격순</option>
+										<option value="lowPrice">낮은 가격순</option>
 									</select>
 								</form>
 							</div>
@@ -304,9 +245,8 @@
 							<div role="tabpanel" class="tab-pane fade show active" id="grid-view">
 
 								<div class="row">
-
-									<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-										<c:forEach var="v" items="${products}">
+									<c:forEach var="v" items="${products}">
+										<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
 											<div class="products-single fix">
 
 												<div class="box-img-hover">
@@ -341,45 +281,10 @@
 													</h5>
 												</div>
 											</div>
-										</c:forEach>
-									</div>
-
-									<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-										<div class="products-single fix">
-											<div class="box-img-hover">
-												<div class="type-lb">
-													<p class="new">New</p>
-												</div>
-
-												<div class="mask-icon">
-													<ul>
-														<li>
-															<a href="shop-detail.jsp" data-toggle="tooltip" data-placement="right" title="View"><i
-																class="fas fa-eye"
-															></i></a>
-														</li>
-														<li>
-															<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
-														</li>
-														<li>
-															<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i
-																class="far fa-heart"
-															></i></a>
-														</li>
-													</ul>
-													<a class="cart" href="#">Add to Cart</a>
-												</div>
-											</div>
-											<div class="why-text">
-												<a href="shop-detail.jsp">${v.name}</a>
-												<h5>${v.price }</h5>
-											</div>
 										</div>
-									</div>
+									</c:forEach>
+
 									<!-- 상품 코드 마무리 -->
-
-
-
 
 									<!-- list view 시작 -->
 									<!-- list view 수정필요 -->
@@ -389,94 +294,41 @@
 							<div role="tabpanel" class="tab-pane fade" id="list-view">
 								<div class="list-view-box">
 									<div class="row">
-										<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-											<div class="products-single fix">
-												<div class="box-img-hover">
-													<div class="type-lb">
-														<p class="new">New</p>
-													</div>
-													<c:forTokens var="fileName" items="${v.files }" delims="," varStatus="st">
-														<img src="./upload/${fileName }" class="img-fluid" alt="Image">
-													</c:forTokens>
-													<div class="mask-icon">
-														<ul>
-															<li>
-																<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
-															</li>
-															<li>
-																<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
-															</li>
-															<li>
-																<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i
-																	class="far fa-heart"
-																></i></a>
-															</li>
-														</ul>
-
+										<c:forEach var="v" items="${products}">
+											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+												<div class="products-single fix">
+													<div class="box-img-hover">
+														<div class="type-lb">
+															<p class="new">New</p>
+														</div>
+														<c:forTokens var="fileName" items="${ v.files }" delims="," varStatus="st">
+															<img src="./upload/${ fileName }" class="img-fluid" alt="Image">
+														</c:forTokens>
 													</div>
 												</div>
 											</div>
-										</div>
 
-										<div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
-											<div class="why-text full-width">
-												<h4>${v.name}</h4>
-												<h5>
-													<del>86,000원</del>
-													${v.price }
-												</h5>
+											<div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+												<div class="why-text full-width">
+													<h4>${ v.name}</h4>
+													<p style="height: 180px; font-size: 17px; overflow: hidden">${ v.pcon }</p>
+													<h5>
+														<c:if test="${ member == null }">
+															<h5>${ v.price }원</h5>
+														</c:if>
+														<c:if test="${ member != null }">
+															<del style="font-size: 15px">${ v.price }원</del>
+															<span style="color: #d33b33">${ Math.round( v.price * member.calcDiscount() / 100) }원</span>
+														</c:if>
+													</h5>
 
-												<a class="btn hvr-hover" href="cart.jsp">장바구니 담기</a>
-											</div>
-										</div>
-
-									</div>
-								</div>
-								<div class="list-view-box">
-									<div class="row">
-										<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-											<div class="products-single fix">
-												<div class="box-img-hover">
-													<div class="type-lb">
-														<p class="sale">Sale</p>
-													</div>
-
-
-
-													<div class="mask-icon">
-
-														<ul>
-															<li>
-																<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
-															</li>
-															<li>
-																<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
-															</li>
-															<li>
-																<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i
-																	class="far fa-heart"
-																></i></a>
-															</li>
-														</ul>
-
-													</div>
+													<a class="btn hvr-hover" href="cart.jsp">장바구니 담기</a>
 												</div>
 											</div>
-										</div>
-										<div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
-											<div class="why-text full-width">
-												<h4>우먼즈 플루이드 블레이저</h4>
-												<h5>
-													<del>86,900원</del>
-													76,900원
-												</h5>
-												<p>베이식한 디자인의 블레이저. 4%의 폴리우레탄이 포함된 양방향 스트레치 T/R원단을 사용하여 신축성이 뛰어나며 덕분에 자유로운 활동성을 보장한다. 2버튼 여밈에 노치트 라펠, 플랩
-													포켓 등 테일러드 재킷의 기본에 충실한 사양으로 구성하여 디자인했다.</p>
-												<a class="btn hvr-hover" href="cart.jsp">장바구니 담기</a>
-											</div>
-										</div>
+										</c:forEach>
 									</div>
 								</div>
+
 
 							</div>
 
@@ -491,212 +343,29 @@
 	<!-- list view 끝 -->
 
 	<!-- Start Instagram Feed  -->
-	<div class="instagram-box">
-		<div class="main-instagram owl-carousel owl-theme">
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-01.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-						<!--  인스타그램 없 -->
-					</div>
-				</div>
-			</div>
-
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-02.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-03.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-04.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-05.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-06.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-07.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-08.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-09.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="ins-inner-box">
-					<img src="images/instagram-img-05.jpg" alt="" />
-					<div class="hov-in">
-						<a onclick="instargramClick()"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-	<!-- End Instagram Feed  -->
-
+	<custom:instagram_feed />
 
 	<!-- Start Footer  -->
-	<footer>
-		<div class="footer-main">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-widget">
-							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-								commodo consequat.</p>
-							<ul>
-								<li>
-									<a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-link">
-							<h4>Information</h4>
-							<ul>
-								<li>
-									<a href="#">About Us</a>
-								</li>
-								<li>
-									<a href="#">Customer Service</a>
-								</li>
-								<li>
-									<a href="#">Our Sitemap</a>
-								</li>
-								<li>
-									<a href="#">Terms &amp; Conditions</a>
-								</li>
-								<li>
-									<a href="#">Privacy Policy</a>
-								</li>
-								<li>
-									<a href="#">Delivery Information</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-link-contact">
-							<h4>Contact Us</h4>
-							<ul>
-								<li>
-									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br>
-										KS 67213
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a>
-									</p>
-								</li>
+	<custom:footer />
 
-
-
-							</ul>
-							</li>
-
-
-
-
-
-
-							<!-- Start copyright  -->
-							<div class="footer-copyright">
-								<p class="footer-company">
-									All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html
-										design</a>
-								</p>
-							</div>
-							<!-- End copyright  -->
-
-							<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
-							<!-- ALL JS FILES -->
-							<script src="js/jquery-3.2.1.min.js"></script>
-							<script src="js/popper.min.js"></script>
-							<script src="js/bootstrap.min.js"></script>
-							<!-- ALL PLUGINS -->
-							<script src="js/jquery.superslides.min.js"></script>
-							<script src="js/bootstrap-select.js"></script>
-							<script src="js/inewsticker.js"></script>
-							<script src="js/bootsnav.js"></script>
-							<script src="js/images-loded.min.js"></script>
-							<script src="js/isotope.min.js"></script>
-							<script src="js/owl.carousel.min.js"></script>
-							<script src="js/baguetteBox.min.js"></script>
-							<script src="js/jquery-ui.js"></script>
-							<script src="js/jquery.nicescroll.min.js"></script>
-							<script src="js/form-validator.min.js"></script>
-							<script src="js/contact-form-script.js"></script>
-							<script src="js/custom.js"></script>
+	<!-- ALL JS FILES -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- ALL PLUGINS -->
+	<script src="js/jquery.superslides.min.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	<script src="js/inewsticker.js"></script>
+	<script src="js/bootsnav.js"></script>
+	<script src="js/images-loded.min.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/baguetteBox.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+	<script src="js/contact-form-script.js"></script>
+	<script src="js/custom.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib tagdir="/WEB-INF/tags" prefix="custom" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,71 +40,13 @@
 </script>
 </head>
 <body>
-	 <!-- Start Main Top -->
-	<div class="main-top">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="text-slid-box">
-						<div id="offer-box" class="carouselTicker">
-							<ul class="offer-box">
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<!-- <div class="custom-select-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>¥ JPY</option>
-							<option>$ USD</option>
-							<option>€ EUR</option>
-						</select>
-					</div> -->
-					<div class="right-phone-box">
-						<p>
-							Call US : <a href="#">010-1111-1111</a>
-						</p>
-					</div>
-					<div class="our-link">
-						<ul>
-							<li class="dropdown"><custom:logined /></li>
-
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Main Top -->
+	<!-- Start Main Top -->
+	<custom:main_top />s
 
 	<!-- Start Main Top -->
 	<header class="main-header">
 		<!-- Start Navigation -->
-		<custom:navigationBar/>
+		<custom:navigationBar />
 		<!-- End Navigation -->
 	</header>
 	<!-- End Main Top -->
@@ -129,7 +71,9 @@
 		</div>
 
 		<div class="bodytext_area box_inner form_box">
-			<div class="show_txt">임시 비밀번호 : ${ new_pw } <br> 로그인 후 비밀번호 변경을 진행해주세요. </div>
+			<div class="show_txt">
+				임시 비밀번호 : ${ new_pw } <br> 로그인 후 비밀번호 변경을 진행해주세요.
+			</div>
 			<p class="btn_line">
 				<a href="login.jsp" class="btn_basecolor" style="border: none; cursor: pointer; width: 150px; font-size: 17px;">로그인</a>
 			</p>
@@ -138,106 +82,9 @@
 	</div>
 
 	<!-- container 끝 -->
-	<!-- Start Footer  -->
-	<footer>
-		<div class="footer-main">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-widget">
-							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-								commodo consequat.</p>
-							<ul>
-								<li>
-									<a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-link">
-							<h4>Information</h4>
-							<ul>
-								<li>
-									<a href="#">About Us</a>
-								</li>
-								<li>
-									<a href="#">Customer Service</a>
-								</li>
-								<li>
-									<a href="#">Our Sitemap</a>
-								</li>
-								<li>
-									<a href="#">Terms &amp; Conditions</a>
-								</li>
-								<li>
-									<a href="#">Privacy Policy</a>
-								</li>
-								<li>
-									<a href="#">Delivery Information</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-link-contact">
-							<h4>Contact Us</h4>
-							<ul>
-								<li>
-									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br />Preston Street Wichita,<br /> KS
-										67213
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a>
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End Footer  -->
 
-	<!-- Start copyright  -->
-	<div class="footer-copyright">
-		<p class="footer-company">
-			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html
-				design</a>
-		</p>
-	</div>
-	<!-- End copyright  -->
-
-	<a href="#" id="back-to-top" title="Back to top" style="display: none">&uarr;</a>
+	<!-- Start Footer -->
+	<custom:footer />
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib tagdir="/WEB-INF/tags" prefix="custom" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,7 +94,7 @@
 		const phone = document.getElementById("phone");
 		const agree = document.getElementById("agree");
 		const idCheck = document.getElementById("idCheck");
-		
+
 		// 전화번호 정규식
 		const expTel = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/
 
@@ -120,112 +120,55 @@
 			alert("개인정보활용동의에 체크해주세요.");
 			return false;
 		}
-		
+
 		if (idCheck.value == "unchecked") {
 			alert("아이디 중복체크를 진행하세요.");
 			return false;
 		}
 
 	}
-	
+
 	function passwordCheckFunc() {
 		let pw = $("#pw").val();
 		let checkPw = $("#checkPw").val();
-		
-		if(pw == checkPw) {
+
+		if (pw == checkPw) {
 			$("#checkPwMsg").html("");
 		} else {
 			$("#checkPwMsg").html("비밀번호와 비밀번호 확인의 값이 다릅니다.");
 		}
 	}
-	
+
 	function openIdDupCheck() {
 		const idCheck = document.getElementById("idCheck");
 		const id = $("#id").val();
-		
-		if(id == "") {
+
+		if (id == "") {
 			alert('아이디를 입력해주세요');
 		} else {
-			window.open("idCheck.jsp", "_blank", "titlebar=no,location=no,scrollbars=no,resizeable=no,menubar=no,toolbar=no,width=500,height=300")
+			window
+					.open(
+							"idCheck.jsp",
+							"_blank",
+							"titlebar=no,location=no,scrollbars=no,resizeable=no,menubar=no,toolbar=no,width=500,height=300")
 		}
-		
+
 	}
 
 	function inputIdCheck() {
 		const idCheck = document.getElementById("idCheck");
-		idCheck.value = "unchecked";		
+		idCheck.value = "unchecked";
 	}
-	
-	
-
 </script>
 </head>
 <body>
-	 <!-- Start Main Top -->
-	<div class="main-top">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="text-slid-box">
-						<div id="offer-box" class="carouselTicker">
-							<ul class="offer-box">
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-								</li>
-								<li>
-									<i class="fab fa-opencart"></i> Off 50%! Shop Now
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<!-- <div class="custom-select-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>¥ JPY</option>
-							<option>$ USD</option>
-							<option>€ EUR</option>
-						</select>
-					</div> -->
-					<div class="right-phone-box">
-						<p>
-							Call US : <a href="#">010-1111-1111</a>
-						</p>
-					</div>
-					<div class="our-link">
-						<ul>
-							<li class="dropdown"><custom:logined /></li>
-
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Main Top -->
+	<!-- Start Main Top -->
+	<custom:main_top />
 
 	<!-- Start Main Top -->
 	<header class="main-header">
 		<!-- Start Navigation -->
-		<custom:navigationBar/>
+		<custom:navigationBar />
 		<!-- End Navigation -->
 	</header>
 	<!-- End Main Top -->
@@ -272,7 +215,9 @@
 						<li class="clear">
 							<label for="checkPw" class="tit_lbl pilsoo_item"> 비밀번호 확인 </label>
 							<div class="app_content">
-								<input type="password" class="w100p" id="checkPw" name="checkPw" placeholder="비밀번호 확인을 입력하세요" onkeyup="passwordCheckFunc()" required />
+								<input type="password" class="w100p" id="checkPw" name="checkPw" placeholder="비밀번호 확인을 입력하세요"
+									onkeyup="passwordCheckFunc()" required
+								/>
 								<div id="checkPwMsg" style="color: #d33b33"></div>
 							</div>
 						</li>
@@ -322,11 +267,11 @@
 							<div class="app_content" style="padding-top: 10px">
 								<input type="checkbox" class="css-checkbox" id="agree" name="agree" />
 								<label for="agree">동의함</label>
-								
+
 								<custom:agree />
 							</div>
 						</li>
-						
+
 					</ul>
 					<p class="btn_line">
 						<input type="submit" value="등록" class="btn_basecolor" style="border: none; cursor: pointer;" />
@@ -337,106 +282,9 @@
 		<!-- 본문 끝 -->
 	</div>
 	<!-- container 끝 -->
-	<!-- Start Footer  -->
-	<footer>
-		<div class="footer-main">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-widget">
-							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-								commodo consequat.</p>
-							<ul>
-								<li>
-									<a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-link">
-							<h4>Information</h4>
-							<ul>
-								<li>
-									<a href="#">About Us</a>
-								</li>
-								<li>
-									<a href="#">Customer Service</a>
-								</li>
-								<li>
-									<a href="#">Our Sitemap</a>
-								</li>
-								<li>
-									<a href="#">Terms &amp; Conditions</a>
-								</li>
-								<li>
-									<a href="#">Privacy Policy</a>
-								</li>
-								<li>
-									<a href="#">Delivery Information</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-link-contact">
-							<h4>Contact Us</h4>
-							<ul>
-								<li>
-									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br>
-										KS 67213
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a>
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End Footer  -->
 
-	<!-- Start copyright  -->
-	<div class="footer-copyright">
-		<p class="footer-company">
-			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html
-				design</a>
-		</p>
-	</div>
-	<!-- End copyright  -->
-
-	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+	<!-- Start Footer -->
+	<custom:footer />
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
