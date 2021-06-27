@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -18,35 +17,27 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Summernote with Bootstrap 4</title>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
+></script>
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-	crossorigin="anonymous">
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"
+>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"
+></script>
 
-<link
-	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 <!-- Site Icons -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- fontawesome -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -136,7 +127,9 @@
 					</div>
 					<div class="our-link">
 						<ul>
-							<li class="dropdown"><custom:logined /></li>
+							<li class="dropdown">
+								<custom:logined />
+							</li>
 
 						</ul>
 					</div>
@@ -149,7 +142,7 @@
 	<!-- Start Main Top -->
 	<header class="main-header">
 		<!-- Start Navigation -->
-		<custom:navigationBar/>
+		<custom:navigationBar />
 		<!-- End Navigation -->
 	</header>
 	<!-- End Main Top -->
@@ -160,8 +153,7 @@
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-search"></i></span>
 				<input type="text" class="form-control" placeholder="Search">
-				<span class="input-group-addon close-search"><i
-					class="fa fa-times"></i></span>
+				<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
 			</div>
 		</div>
 	</div>
@@ -174,7 +166,9 @@
 				<div class="col-lg-12">
 					<h2>관리자</h2>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item">
+							<a href="#">Home</a>
+						</li>
 						<li class="breadcrumb-item active">상품 등록</li>
 					</ul>
 				</div>
@@ -193,50 +187,57 @@
 
 	<div id="container">
 		<div class="bodytext_area box_inner">
-			<form action="./addProduct.do" method="POST" id="boardForm"
-				class="appForm" enctype="multipart/form-data">
+			<form action="./addProduct.do" method="POST" id="boardForm" class="appForm" enctype="multipart/form-data">
 				<ul class="app_list no_padding">
-					<li class="clear"><label for="product-name_lbl"
-						class="tit_lbl"> 상품명 </label>
+					<li class="clear">
+						<label for="product-name_lbl" class="tit_lbl"> 상품명 </label>
 						<div class="app_content">
-							<input type="text" class="form-control" name="name"
-								placeholder="상품명을 입력해주세요!" required
-								data-error="Please enter product name" />
-						</div></li>
-					<li class="clear"><label for="product-price_lbl"
-						class="tit_lbl"> 상품가격 </label>
+							<input type="text" class="form-control" name="name" placeholder="상품명을 입력해주세요!" required
+								data-error="Please enter product name"
+							/>
+						</div>
+					</li>
+					<li class="clear">
+						<label for="product-price_lbl" class="tit_lbl"> 상품가격 </label>
 						<div class="app_content">
-							<input type="text" class="form-control" name="price"
-								placeholder="상품가격을 입력해주세요!" required>
-						</div></li>
-					<li class="clear"><label for="product-size_lbl"
-						class="tit_lbl"> 사이즈별 재고 </label>
+							<input type="text" class="form-control" name="price" placeholder="상품가격을 입력해주세요!" required>
+						</div>
+					</li>
+					<li class="clear">
+						<label for="product-size_lbl" class="tit_lbl"> 사이즈별 재고 </label>
 						<div class="app-content size-form">
 
-							<input type="text" class="form-control size-input" name="xxlsize"
-								placeholder="XXL" required
-								data-error="Please enter product stock"> <input
-								type="text" class="form-control size-input" name="xlsize"
-								placeholder="XL" required
-								data-error="Please enter product stock"> <input
-								type="text" class="form-control size-input" name="lsize"
-								placeholder="L" required data-error="Please enter product stock">
+							<input type="text" class="form-control size-input" name="xxlsize" placeholder="XXL" required
+								data-error="Please enter product stock"
+							>
+							<input type="text" class="form-control size-input" name="xlsize" placeholder="XL" required
+								data-error="Please enter product stock"
+							>
+							<input type="text" class="form-control size-input" name="lsize" placeholder="L" required
+								data-error="Please enter product stock"
+							>
 
-							<input type="text" class="form-control size-input" name="msize"
-								placeholder="M" required data-error="Please enter product stock">
+							<input type="text" class="form-control size-input" name="msize" placeholder="M" required
+								data-error="Please enter product stock"
+							>
 
-							<input type="text" class="form-control size-input" name="ssize"
-								placeholder="S" required data-error="Please enter product stock">
+							<input type="text" class="form-control size-input" name="ssize" placeholder="S" required
+								data-error="Please enter product stock"
+							>
 
-						</div></li>
-					<li class="clear"><span class="tit_lbl">상품 성별 선택</span>
+						</div>
+					</li>
+					<li class="clear">
+						<span class="tit_lbl">상품 성별 선택</span>
 						<div class="app_content radio_area" style="padding-top: 10px;">
-							<input type="radio" class="css-radio" id="mmm_lbl" name="gender" />
-							<label for="mmm_lbl" value="남">남</label> <input type="radio"
-								class="css-radio" id="www_lbl" name="gender" /> <label
-								for="www_lbl" value="여">여</label>
-						</div></li>
-					<li class="clear"><span class="tit_lbl">상품 카테고리</span>
+							<input type="radio" class="css-radio" id="mmm_lbl" name="gender" value="남" />
+							<label for="mmm_lbl">남</label>
+							<input type="radio" class="css-radio" id="www_lbl" name="gender" value="여" />
+							<label for="www_lbl">여</label>
+						</div>
+					</li>
+					<li class="clear">
+						<span class="tit_lbl">상품 카테고리</span>
 						<div class="app_content radio_area">
 							<div class="select_common">
 								<select title="상품 카테고리 목록" name="cate">
@@ -250,20 +251,23 @@
 									<option value="bag">가방</option>
 								</select>
 							</div>
-						</div></li>
-					<li class="clear"><label for="product-content_lbl"
-						class="tit_lbl"> 상품 설명 </label>
+						</div>
+					</li>
+					<li class="clear">
+						<label for="product-content_lbl" class="tit_lbl"> 상품 설명 </label>
 						<div class="app_content">
 							<textarea id="summernote" name="pcon"> </textarea>
-						</div></li>
-					<li class="clear"><label for="phone_lbl" class="tit_lbl">
-							상품 사진 </label>
+						</div>
+					</li>
+					<li class="clear">
+						<label for="phone_lbl" class="tit_lbl"> 상품 사진 </label>
 						<div class="app_content">
-							<input type="file" name="file">
-						</div></li>
+							<input type="file" name="file" multiple>
+						</div>
+					</li>
 				</ul>
 				<p class="btn_line">
-					<input type="submit" class="btn_basecolor">등록</a>
+					<input type="submit" class="btn_basecolor" value="상품 등록" style="border: none">
 				</p>
 			</form>
 		</div>
@@ -391,25 +395,31 @@
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-widget">
 							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+								commodo consequat.</p>
 							<ul>
-								<li><a href="#"><i class="fab fa-facebook"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-google-plus"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+								<li>
+									<a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
 								</li>
-								<li><a href="#"><i class="fab fa-pinterest-p"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-whatsapp"
-										aria-hidden="true"></i></a></li>
+								<li>
+									<a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -417,12 +427,24 @@
 						<div class="footer-link">
 							<h4>Information</h4>
 							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Customer Service</a></li>
-								<li><a href="#">Our Sitemap</a></li>
-								<li><a href="#">Terms &amp; Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Delivery Information</a></li>
+								<li>
+									<a href="#">About Us</a>
+								</li>
+								<li>
+									<a href="#">Customer Service</a>
+								</li>
+								<li>
+									<a href="#">Our Sitemap</a>
+								</li>
+								<li>
+									<a href="#">Terms &amp; Conditions</a>
+								</li>
+								<li>
+									<a href="#">Privacy Policy</a>
+								</li>
+								<li>
+									<a href="#">Delivery Information</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -432,20 +454,18 @@
 							<ul>
 								<li>
 									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days
-										3756 <br>Preston Street Wichita,<br> KS 67213
+										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br>
+										KS 67213
 									</p>
 								</li>
 								<li>
 									<p>
-										<i class="fas fa-phone-square"></i>Phone: <a
-											href="tel:+1-888705770">+1-888 705 770</a>
+										<i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a>
 									</p>
 								</li>
 								<li>
 									<p>
-										<i class="fas fa-envelope"></i>Email: <a
-											href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
+										<i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
 									</p>
 								</li>
 							</ul>
@@ -460,8 +480,8 @@
 	<!-- Start copyright  -->
 	<div class="footer-copyright">
 		<p class="footer-company">
-			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By
-			: <a href="https://html.design/">html design</a>
+			All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html
+				design</a>
 		</p>
 	</div>
 	<!-- End copyright  -->

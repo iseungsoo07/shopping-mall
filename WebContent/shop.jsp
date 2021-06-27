@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -14,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Site Metas -->
-<title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+<title>ThewayShop | 상품</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -24,8 +23,7 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- fontawesome -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -53,18 +51,30 @@
 					<div class="text-slid-box">
 						<div id="offer-box" class="carouselTicker">
 							<ul class="offer-box">
-								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
-								<li><i class="fab fa-opencart"></i> 50% - 80% off on
-									Fashion</li>
-								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase
-									Promo code: offT20</li>
-								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
-								<li><i class="fab fa-opencart"></i> Off 10%! Shop Now Man</li>
-								<li><i class="fab fa-opencart"></i> 50% - 80% off on
-									Fashion</li>
-								<li><i class="fab fa-opencart"></i> 20% off Entire Purchase
-									Promo code: offT20</li>
-								<li><i class="fab fa-opencart"></i> Off 50%! Shop Now</li>
+								<li>
+									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> Off 50%! Shop Now
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+								</li>
+								<li>
+									<i class="fab fa-opencart"></i> Off 50%! Shop Now
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -78,13 +88,13 @@
 						</select>
 					</div> -->
 					<div class="right-phone-box">
-						<p>
-							Call US : <a href="#">010-1111-1111</a>
-						</p>
+						<p>Call US : 010-1111-1111</p>
 					</div>
 					<div class="our-link">
 						<ul>
-							<li class="dropdown"><custom:logined /></li>
+							<li class="dropdown">
+								<custom:logined />
+							</li>
 
 						</ul>
 					</div>
@@ -108,8 +118,7 @@
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-search"></i></span>
 				<input type="text" class="form-control" placeholder="Search">
-				<span class="input-group-addon close-search"><i
-					class="fa fa-times"></i></span>
+				<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
 			</div>
 		</div>
 	</div>
@@ -122,7 +131,9 @@
 				<div class="col-lg-12">
 					<h2>Shop</h2>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item">
+							<a href="#">Home</a>
+						</li>
 						<li class="breadcrumb-item active">Shop</li>
 					</ul>
 				</div>
@@ -140,8 +151,7 @@
 					<div class="product-categori">
 						<div class="search-product">
 							<form action="#">
-								<input class="form-control" placeholder="Search here..."
-									type="text">
+								<input class="form-control" placeholder="Search here..." type="text">
 								<button type="submit">
 									<i class="fa fa-search"></i>
 								</button>
@@ -152,77 +162,73 @@
 								<h3>Categories</h3>
 							</div>
 							<!-- 카테고리 상품 -->
-							<div
-								class="list-group list-group-collapse list-group-sm list-group-tree"
-								id="list-group-men" data-children=".sub-men">
+							<div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men"
+								data-children=".sub-men"
+							>
 								<div class="list-group-collapse sub-men">
 									<!-- 카테고리 상품 -->
-									<a class="list-group-item list-group-item-action"
-										href="#sub-men1" data-toggle="collapse" aria-expanded="true"
-										aria-controls="sub-men1">상의<small class="text-muted">(7)</small>
+									<a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true"
+										aria-controls="sub-men1"
+									>상의<small class="text-muted">(7)</small>
 									</a>
-									<div class="collapse show" id="sub-men1"
-										data-parent="#list-group-men">
+									<div class="collapse show" id="sub-men1" data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort=outer"
-												class="list-group-item list-group-item-action active">아우터
-												<small class="text-muted">(2)</small>
-											</a> <a href="category.do?sort=shirts"
-												class="list-group-item list-group-item-action"> 셔츠&블라우스
-												<small class="text-muted">(1)</small>
+											<a href="category.do?sort=outer" class="list-group-item list-group-item-action active">아우터 <small
+												class="text-muted"
+											>(2)</small>
+											</a> <a href="category.do?sort=shirts" class="list-group-item list-group-item-action"> 셔츠&블라우스 <small
+												class="text-muted"
+											>(1)</small>
 											</a>
 											<!-- 카테고리 상품끝 -->
 										</div>
 									</div>
 								</div>
 								<div class="list-group-collapse sub-men">
-									<a class="list-group-item list-group-item-action"
-										href="#sub-men2" data-toggle="collapse" aria-expanded="false"
-										aria-controls="sub-men2">바지<small class="text-muted">(5)</small>
+									<a class="list-group-item list-group-item-action" href="#sub-men2" data-toggle="collapse" aria-expanded="false"
+										aria-controls="sub-men2"
+									>바지<small class="text-muted">(5)</small>
 									</a>
-									<div class="collapse" id="sub-men2"
-										data-parent="#list-group-men">
+									<div class="collapse" id="sub-men2" data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort=jean"
-												class="list-group-item list-group-item-action">청바지 <small
-												class="text-muted">(2)</small>
-											</a> <a href="category.do?sort=slacks"
-												class="list-group-item list-group-item-action">슬렉스 <small
-												class="text-muted">(1)</small>
+											<a href="category.do?sort=jean" class="list-group-item list-group-item-action">청바지 <small
+												class="text-muted"
+											>(2)</small>
+											</a> <a href="category.do?sort=slacks" class="list-group-item list-group-item-action">슬렉스 <small
+												class="text-muted"
+											>(1)</small>
 											</a>
 
 										</div>
 									</div>
 								</div>
 								<div class="list-group-collapse sub-men">
-									<a class="list-group-item list-group-item-action"
-										href="#sub-men3" data-toggle="collapse" aria-expanded="false"
-										aria-controls="sub-men2">신발<small class="text-muted">(5)</small>
+									<a class="list-group-item list-group-item-action" href="#sub-men3" data-toggle="collapse" aria-expanded="false"
+										aria-controls="sub-men2"
+									>신발<small class="text-muted">(5)</small>
 									</a>
-									<div class="collapse" id="sub-men3"
-										data-parent="#list-group-men">
+									<div class="collapse" id="sub-men3" data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort=converse"
-												class="list-group-item list-group-item-action">컨버스 <small
-												class="text-muted">(2)</small>
-											</a> <a href="category.do?sort=dressShoes"
-												class="list-group-item list-group-item-action">구두&로퍼 <small
-												class="text-muted">(1)</small>
+											<a href="category.do?sort=converse" class="list-group-item list-group-item-action">컨버스 <small
+												class="text-muted"
+											>(2)</small>
+											</a> <a href="category.do?sort=dressShoes" class="list-group-item list-group-item-action">구두&로퍼 <small
+												class="text-muted"
+											>(1)</small>
 											</a>
 										</div>
 									</div>
 								</div>
 								<div class="list-group-collapse sub-men">
-									<a class="list-group-item list-group-item-action"
-										href="#sub-men4" data-toggle="collapse" aria-expanded="false"
-										aria-controls="sub-men4">악세서리<small class="text-muted">(3)</small>
+									<a class="list-group-item list-group-item-action" href="#sub-men4" data-toggle="collapse" aria-expanded="false"
+										aria-controls="sub-men4"
+									>악세서리<small class="text-muted">(3)</small>
 									</a>
-									<div class="collapse" id="sub-men4"
-										data-parent="#list-group-men">
+									<div class="collapse" id="sub-men4" data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort=bag"
-												class="list-group-item list-group-item-action">가방 <small
-												class="text-muted">(2)</small>
+											<a href="category.do?sort=bag" class="list-group-item list-group-item-action">가방 <small
+												class="text-muted"
+											>(2)</small>
 											</a>
 										</div>
 									</div>
@@ -239,13 +245,11 @@
 								<h6>단위 : 원화</h6>
 							</div>
 							<form method="post" action="./priceFilter.do">
-								<%-- <input type="hidden" value="${products}" name="products"> --%>
 								<!-- 가격조정에 따른  상품 정렬-->
 								<div class="price-box-slider">
 									<div id="slider-range"></div>
 									<p>
-										<input type="text" name="amount" id="amount"
-											style="border: 0; color: #fbb714; font-weight: bold;">
+										<input type="text" name="amount" id="amount" style="border: 0; color: #fbb714; font-weight: bold;">
 										<button class="btn hvr-hover" type="submit">Filter</button>
 									</p>
 							</form>
@@ -267,10 +271,9 @@
 								<span>Sort by </span>
 								<form action="./sortProduct.do">
 									<!-- 설정에따른 배열 -->
-									<%-- <input type="hidden" value="${products}" name="products"> --%>
-									<select id="basic" class="selectpicker show-tick form-control"
-										name="sortBy" data-placeholder="$ USD"
-										onchange="this.form.submit()">
+									<select id="basic" class="selectpicker show-tick form-control" name="sortBy" data-placeholder="$ USD"
+										onchange="this.form.submit()"
+									>
 										<option data-display="Select">Nothing</option>
 										<option value="popularity">Popularity</option>
 										<option value="highPrice">High Price</option>
@@ -284,20 +287,21 @@
 						</div>
 						<div class="col-12 col-sm-4 text-center text-sm-right">
 							<ul class="nav nav-tabs ml-auto">
-								<li><a class="nav-link active" href="#grid-view"
-									data-toggle="tab"> <i class="fa fa-th"></i>
-								</a></li>
-								<li><a class="nav-link" href="#list-view" data-toggle="tab">
-										<i class="fa fa-list-ul"></i>
-								</a></li>
+								<li>
+									<a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i>
+									</a>
+								</li>
+								<li>
+									<a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>
 
 					<div class="row product-categorie-box">
 						<div class="tab-content">
-							<div role="tabpanel" class="tab-pane fade show active"
-								id="grid-view">
+							<div role="tabpanel" class="tab-pane fade show active" id="grid-view">
 
 								<div class="row">
 
@@ -312,31 +316,29 @@
 													<div class="type-lb">
 														<p class="sale">Sale</p>
 													</div>
-													<c:forTokens var="fileName" items="${v.files }" delims=","
-														varStatus="st">
-														<a href="./upload/${fileName}" style="${style}"> <img
-															src="./upload/${fileName }" class="img-fluid" alt="Image">
+													<c:forTokens var="fileName" items="${v.files }" delims="," varStatus="st">
+														<a href="./upload/${fileName}" style="${style}"> <img src="./upload/${fileName }" class="img-fluid"
+															alt="Image"
+														>
 														</a>
 													</c:forTokens>
 													<div class="mask-icon">
-														<ul>
-															<li><a href="shop-detail2.jsp" data-toggle="tooltip"
-																data-placement="right" title="View"><i
-																	class="fas fa-eye"></i></a></li>
-															<li><a href="#" data-toggle="tooltip"
-																data-placement="right" title="Compare"><i
-																	class="fas fa-sync-alt"></i></a></li>
-															<li><a href="#" data-toggle="tooltip"
-																data-placement="right" title="Add to Wishlist"><i
-																	class="far fa-heart"></i></a></li>
-														</ul>
-														<a class="cart" href="#">Add to Cart</a>
+														<a class="cart" href="#">장바구니에 담기</a>
 													</div>
 												</div>
 
 												<div class="why-text">
-													<a href="shop-detail2.jsp">${v.name }</a>
-													<h5>${v.price}</h5>
+													<a href="showProductDetail.do?pid=${ v.pid }">${ v.name }</a>
+
+													<h5>
+														<c:if test="${ member == null }">
+															<h5>${ v.price }원</h5>
+														</c:if>
+														<c:if test="${ member != null }">
+															<del style="font-size: 15px">${ v.price }원</del>
+															<span style="color: #d33b33">${ Math.round( v.price * member.calcDiscount() / 100) }원</span>
+														</c:if>
+													</h5>
 												</div>
 											</div>
 										</c:forEach>
@@ -351,15 +353,19 @@
 
 												<div class="mask-icon">
 													<ul>
-														<li><a href="shop-detail.jsp" data-toggle="tooltip"
-															data-placement="right" title="View"><i
-																class="fas fa-eye"></i></a></li>
-														<li><a href="#" data-toggle="tooltip"
-															data-placement="right" title="Compare"><i
-																class="fas fa-sync-alt"></i></a></li>
-														<li><a href="#" data-toggle="tooltip"
-															data-placement="right" title="Add to Wishlist"><i
-																class="far fa-heart"></i></a></li>
+														<li>
+															<a href="shop-detail.jsp" data-toggle="tooltip" data-placement="right" title="View"><i
+																class="fas fa-eye"
+															></i></a>
+														</li>
+														<li>
+															<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
+														</li>
+														<li>
+															<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i
+																class="far fa-heart"
+															></i></a>
+														</li>
 													</ul>
 													<a class="cart" href="#">Add to Cart</a>
 												</div>
@@ -389,22 +395,22 @@
 													<div class="type-lb">
 														<p class="new">New</p>
 													</div>
-													<c:forTokens var="fileName" items="${v.files }" delims=","
-														varStatus="st">
-														<img src="./upload/${fileName }" class="img-fluid"
-															alt="Image">
+													<c:forTokens var="fileName" items="${v.files }" delims="," varStatus="st">
+														<img src="./upload/${fileName }" class="img-fluid" alt="Image">
 													</c:forTokens>
 													<div class="mask-icon">
 														<ul>
-															<li><a href="#" data-toggle="tooltip"
-																data-placement="right" title="View"><i
-																	class="fas fa-eye"></i></a></li>
-															<li><a href="#" data-toggle="tooltip"
-																data-placement="right" title="Compare"><i
-																	class="fas fa-sync-alt"></i></a></li>
-															<li><a href="#" data-toggle="tooltip"
-																data-placement="right" title="Add to Wishlist"><i
-																	class="far fa-heart"></i></a></li>
+															<li>
+																<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+															</li>
+															<li>
+																<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
+															</li>
+															<li>
+																<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i
+																	class="far fa-heart"
+																></i></a>
+															</li>
 														</ul>
 
 													</div>
@@ -440,15 +446,17 @@
 													<div class="mask-icon">
 
 														<ul>
-															<li><a href="#" data-toggle="tooltip"
-																data-placement="right" title="View"><i
-																	class="fas fa-eye"></i></a></li>
-															<li><a href="#" data-toggle="tooltip"
-																data-placement="right" title="Compare"><i
-																	class="fas fa-sync-alt"></i></a></li>
-															<li><a href="#" data-toggle="tooltip"
-																data-placement="right" title="Add to Wishlist"><i
-																	class="far fa-heart"></i></a></li>
+															<li>
+																<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+															</li>
+															<li>
+																<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
+															</li>
+															<li>
+																<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i
+																	class="far fa-heart"
+																></i></a>
+															</li>
 														</ul>
 
 													</div>
@@ -462,9 +470,8 @@
 													<del>86,900원</del>
 													76,900원
 												</h5>
-												<p>베이식한 디자인의 블레이저. 4%의 폴리우레탄이 포함된 양방향 스트레치 T/R원단을 사용하여
-													신축성이 뛰어나며 덕분에 자유로운 활동성을 보장한다. 2버튼 여밈에 노치트 라펠, 플랩 포켓 등 테일러드
-													재킷의 기본에 충실한 사양으로 구성하여 디자인했다.</p>
+												<p>베이식한 디자인의 블레이저. 4%의 폴리우레탄이 포함된 양방향 스트레치 T/R원단을 사용하여 신축성이 뛰어나며 덕분에 자유로운 활동성을 보장한다. 2버튼 여밈에 노치트 라펠, 플랩
+													포켓 등 테일러드 재킷의 기본에 충실한 사양으로 구성하여 디자인했다.</p>
 												<a class="btn hvr-hover" href="cart.jsp">장바구니 담기</a>
 											</div>
 										</div>
@@ -582,24 +589,31 @@
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-widget">
 							<h4>About ThewayShop</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+								commodo consequat.</p>
 							<ul>
-								<li><a href="#"><i class="fab fa-facebook"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-google-plus"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-pinterest-p"
-										aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fab fa-whatsapp"
-										aria-hidden="true"></i></a></li>
+								<li>
+									<a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -607,12 +621,24 @@
 						<div class="footer-link">
 							<h4>Information</h4>
 							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Customer Service</a></li>
-								<li><a href="#">Our Sitemap</a></li>
-								<li><a href="#">Terms &amp; Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Delivery Information</a></li>
+								<li>
+									<a href="#">About Us</a>
+								</li>
+								<li>
+									<a href="#">Customer Service</a>
+								</li>
+								<li>
+									<a href="#">Our Sitemap</a>
+								</li>
+								<li>
+									<a href="#">Terms &amp; Conditions</a>
+								</li>
+								<li>
+									<a href="#">Privacy Policy</a>
+								</li>
+								<li>
+									<a href="#">Delivery Information</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -622,14 +648,13 @@
 							<ul>
 								<li>
 									<p>
-										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days
-										3756 <br>Preston Street Wichita,<br> KS 67213
+										<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br>
+										KS 67213
 									</p>
 								</li>
 								<li>
 									<p>
-										<i class="fas fa-phone-square"></i>Phone: <a
-											href="tel:+1-888705770">+1-888 705 770</a>
+										<i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a>
 									</p>
 								</li>
 
@@ -646,14 +671,13 @@
 							<!-- Start copyright  -->
 							<div class="footer-copyright">
 								<p class="footer-company">
-									All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a>
-									Design By : <a href="https://html.design/">html design</a>
+									All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By : <a href="https://html.design/">html
+										design</a>
 								</p>
 							</div>
 							<!-- End copyright  -->
 
-							<a href="#" id="back-to-top" title="Back to top"
-								style="display: none;">&uarr;</a>
+							<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
 							<!-- ALL JS FILES -->
 							<script src="js/jquery-3.2.1.min.js"></script>
