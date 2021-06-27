@@ -194,15 +194,29 @@
 		$("#slider-range").slider({
 			range: true,
 			min: 0,
-			max: 4000,
-			values: [1000, 3000],
+			max: 100000,
+			values: [10000, 30000],
 			slide: function(event, ui) {
-				$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+				$("#amount").val(ui.values[0] + "원 ~ " + ui.values[1]+"원");
 			}
 		});
-		$("#amount").val("$" + $("#slider-range").slider("values", 0) +
-			" - $" + $("#slider-range").slider("values", 1));
+		$("#amount").val(  $("#slider-range").slider("values", 0) +"원 ~ "
+	  + $("#slider-range").slider("values", 1)+"원");
 	});
+	
+//	$(function() {
+//		$("#slider-range").slider({
+//			range: true,
+//			min: 0,
+//			max: 4000,
+//			values: [1000, 3000],
+//			slide: function(event, ui) {
+//				$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+//			}
+//		});
+//		$("#amount").val("$" + $("#slider-range").slider("values", 0) +
+//			" - $" + $("#slider-range").slider("values", 1));
+//	});
 
 	/* ..............................................
 	   NiceScroll

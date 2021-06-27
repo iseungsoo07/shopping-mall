@@ -181,16 +181,16 @@
 							<a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="cart.jsp">Cart</a>
+									<a href="cart.jsp">장바구니</a>
 								</li>
 								<li>
-									<a href="checkout.jsp">Checkout</a>
+									<a href="checkout.jsp">주문</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a href="my-account.html">My Account</a>
-								</li>
+								</li> -->
 								<li>
-									<a href="wishlist.html">Wishlist</a>
+									<a href="wishlist.html">위시리스트</a>
 								</li>
 								<li>
 									<a href="shop-detail.html">Shop Detail</a>
