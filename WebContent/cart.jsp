@@ -123,7 +123,7 @@
 										<td class="total-pr">
 											<p>${v.total }</p> <!-- 총 금액 구현필요  -->
 										</td>
-										<td class="remove-pr"><a href="#"> <i
+										<td class="remove-pr"><a href="./delCart.do?cid=${v.cid}&&id=${member.id}"> <i
 												class="fas fa-times"></i> <!-- 삭제 구현필요 -->
 										</a></td>
 									</tr>
