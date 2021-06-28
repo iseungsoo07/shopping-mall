@@ -253,18 +253,12 @@
 
 													<!-- custom:productArray: 페이지 연결문제로 밑에 코드는 남겨둠, 일단 보류 -->
 
-													<div class="type-lb">
-														<p class="sale">Sale</p>
-													</div>
 													<c:forTokens var="fileName" items="${v.files }" delims="," varStatus="st">
-														<a href="./upload/${fileName}" style="${style}"> <img src="./upload/${fileName }" class="img-fluid"
+														<a href="showProductDetail.do?pid=${ v.pid }" style="${style}"> <img src="./upload/${fileName }" class="img-fluid"
 															alt="Image"
 														>
 														</a>
 													</c:forTokens>
-													<div class="mask-icon">
-														<a class="cart" href="#">장바구니에 담기</a>
-													</div>
 												</div>
 
 												<div class="why-text">
@@ -298,9 +292,6 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
 												<div class="products-single fix">
 													<div class="box-img-hover">
-														<div class="type-lb">
-															<p class="new">New</p>
-														</div>
 														<c:forTokens var="fileName" items="${ v.files }" delims="," varStatus="st">
 															<img src="./upload/${ fileName }" class="img-fluid" alt="Image">
 														</c:forTokens>
@@ -310,7 +301,7 @@
 
 											<div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
 												<div class="why-text full-width">
-													<h4>${ v.name}</h4>
+													<h4>${ v.name }</h4>
 													<p style="height: 180px; font-size: 17px; overflow: hidden">${ v.pcon }</p>
 													<h5>
 														<c:if test="${ member == null }">
@@ -322,7 +313,7 @@
 														</c:if>
 													</h5>
 
-													<a class="btn hvr-hover" href="cart.jsp">장바구니 담기</a>
+													<a class="btn hvr-hover" href="showProductDetail.do?pid=${ v.pid }">바로 구매</a>
 												</div>
 											</div>
 										</c:forEach>

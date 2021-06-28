@@ -194,9 +194,8 @@ a:link, a:visited {
 
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn" style="text-align: right;">
-								<a class="btn hvr-hover" data-fancybox-close="" href="checkout.jsp">바로구매 </a> <a class="btn hvr-hover"
-									data-fancybox-close="" href="cart.jsp"
-								>장바구니 </a>
+								<a class="btn hvr-hover" data-fancybox-close="" href="payment.do?pid=${ product.pid }">바로구매 </a> 
+								<a class="btn hvr-hover"data-fancybox-close="" href="cart.jsp">장바구니 </a>
 							</div>
 						</div>
 
