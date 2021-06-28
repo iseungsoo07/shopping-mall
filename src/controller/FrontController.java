@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.ActionForward;
+import action.AddCartAction;
 import action.AddProductAction;
 import action.CategoryAction;
 import action.ChangeInfoAction;
 import action.ChangePwAction;
+import action.DelCartAction;
 import action.DelNotiAction;
 import action.DelProductAction;
 import action.DelQnAAction;
@@ -38,6 +40,7 @@ import action.RegistAction;
 import action.SearchNAction;
 import action.SearchQAction;
 import action.ShowAllProductAction;
+import action.ShowCartAction;
 import action.ShowNconAction;
 import action.ShowNotiAction;
 import action.ShowProductDetailAction;
@@ -309,6 +312,24 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/writeReview.do")) {
 			try {
 				forward = new WriteProductReviewAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/addCart.do")) {
+			try {
+				forward = new AddCartAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delCart.do")) {
+			try {
+				forward = new DelCartAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/showCart.do")) {
+			try {
+				forward = new ShowCartAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -263,7 +263,7 @@
 														</a>
 													</c:forTokens>
 													<div class="mask-icon">
-														<a class="cart" href="#">장바구니에 담기</a>
+														<a class="cart"  href="./addCart.do?id=${member.id }&&count=1&&name=${v.name}&&price=${v.price}&&pid=${v.pid}&&file=${v.files}">장바구니에 담기</a>
 													</div>
 												</div>
 
@@ -322,7 +322,7 @@
 														</c:if>
 													</h5>
 
-													<a class="btn hvr-hover" href="cart.jsp">장바구니 담기</a>
+													<a class="btn hvr-hover" href="./addCart.do?id=${member.id }&&count=1&&name=${v.name}&&price=${v.price}&&pid=${v.pid}&&file=${v.files}">장바구니 담기</a>
 												</div>
 											</div>
 										</c:forEach>

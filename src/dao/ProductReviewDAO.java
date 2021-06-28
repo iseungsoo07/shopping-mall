@@ -70,7 +70,7 @@ public class ProductReviewDAO {
 		try {
 			conn = DBConnection.connect();
 
-			String sql = "select * from productreview where pid=? order by reviewid desc";
+			String sql = "select * from productreview where productid=? order by reviewid desc";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, productId);
 //			pstmt.setInt(1, pro.getPid());

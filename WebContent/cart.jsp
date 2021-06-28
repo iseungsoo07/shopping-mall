@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -22,7 +25,8 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- fontawesome -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -59,7 +63,8 @@
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-search"></i></span>
 				<input type="text" class="form-control" placeholder="Search">
-				<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+				<span class="input-group-addon close-search"><i
+					class="fa fa-times"></i></span>
 			</div>
 		</div>
 	</div>
@@ -72,9 +77,7 @@
 				<div class="col-lg-12">
 					<h2>카트</h2>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item">
-							<a href="#">쇼핑</a>
-						</li>
+						<li class="breadcrumb-item"><a href="#">쇼핑</a></li>
 						<li class="breadcrumb-item active">카트</li>
 					</ul>
 				</div>
@@ -101,75 +104,30 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td class="thumbnail-img">
-										<a href="#"> <img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-										</a>
-									</td>
-									<td class="name-pr">
-										<a href="#"> Lorem ipsum dolor sit amet </a>
-									</td>
-									<td class="price-pr">
-										<p>$ 80.0</p>
-									</td>
-									<td class="quantity-box">
-										<input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text">
-									</td>
-									<td class="total-pr">
-										<p>$ 80.0</p>
-										<!-- 총 금액 구현필요  -->
-									</td>
-									<td class="remove-pr">
-										<a href="#"> <i class="fas fa-times"></i> <!-- 삭제 구현필요 -->
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="thumbnail-img">
-										<a href="#"> <img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-										</a>
-									</td>
-									<td class="name-pr">
-										<a href="#"> Lorem ipsum dolor sit amet </a>
-									</td>
-									<td class="price-pr">
-										<p>$ 60.0</p>
-									</td>
-									<td class="quantity-box">
-										<input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text">
-									</td>
-									<td class="total-pr">
-										<p>$ 80.0</p>
-										<!--총 금액 구현필요  -->
-									</td>
-									<td class="remove-pr">
-										<a href="#"> <i class="fas fa-times"></i> <!-- 삭제 구현필요 -->
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td class="thumbnail-img">
-										<a href="#"> <img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-										</a>
-									</td>
-									<td class="name-pr">
-										<a href="#"> Lorem ipsum dolor sit amet </a>
-									</td>
-									<td class="price-pr">
-										<p>$ 30.0</p>
-									</td>
-									<td class="quantity-box">
-										<input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text">
-									</td>
-									<td class="total-pr">
-										<p>$ 80.0</p>
-										<!-- 총 금액 구현필요  -->
-									</td>
-									<td class="remove-pr">
-										<a href="#"> <i class="fas fa-times"></i> <!-- 삭제 구현필요 -->
-										</a>
-									</td>
-								</tr>
+								<c:forEach var="v" items="${datas }">
+									<tr>
+										<td class="thumbnail-img"><c:forTokens var="fileName"
+												items="${v.files }" delims="," varStatus="st">
+												<img src="./upload/${fileName }" class="img-fluid"
+													alt="Image">
+											</c:forTokens></td>
+
+										<td>
+											<p>${v.name }</p>
+										</td>
+										<td class="price-pr">
+											<p>${v.price }</p>
+										</td>
+										<td class="quantity-box"><input type="number" size="4"
+											value="1" min="0" step="1" class="c-input-text qty text"></td>
+										<td class="total-pr">
+											<p>${v.total }</p> <!-- 총 금액 구현필요  -->
+										</td>
+										<td class="remove-pr"><a href="#"> <i
+												class="fas fa-times"></i> <!-- 삭제 구현필요 -->
+										</a></td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -180,7 +138,8 @@
 				<div class="col-lg-6 col-sm-6">
 					<div class="coupon-box">
 						<div class="input-group input-group-sm">
-							<input class="form-control" placeholder="쿠폰 번호를 입력하세요 !" aria-label="Coupon code" type="text">
+							<input class="form-control" placeholder="쿠폰 번호를 입력하세요 !"
+								aria-label="Coupon code" type="text">
 							<div class="input-group-append">
 								<button class="btn btn-theme" type="button">쿠폰 적용하기</button>
 							</div>

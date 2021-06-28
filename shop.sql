@@ -72,6 +72,19 @@ create table productreview(
 	constraint fk2 foreign key (productid) references product(pid) on delete cascade
 );
 
+create table cart(
+	cid int primary key, --장바구니 번호
+	id varchar(20), --사용자 아이디
+	pid int, 	--상품번호
+	name varchar(30), --상품이름
+	count int, -- 주문 상품갯수
+	day varchar(20), --장바구니 넣은 날짜
+	files varchar(50), 
+	price int, --상품금액
+	total int, --총금액
+	foreign key(id) references member(id),
+	foreign key(pid) references product(pid)
+);
 drop table product;
 
 INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VALUES ('a','pw','name','phone','email',123,'addr',1,100,1000)
@@ -134,6 +147,7 @@ select * from notice
 select * from QnA
 select * from reply
 select * from product
+select * from cart
 drop table notice;
 drop table reply;
 drop table QnA;

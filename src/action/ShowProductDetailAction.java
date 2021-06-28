@@ -22,7 +22,7 @@ public class ShowProductDetailAction implements Action {
 		Product product = new Product();
 		
 		int pid=Integer.parseInt(req.getParameter("pid"));
-		
+		System.out.println(pid);
 		product = productDAO.showP(pid);
 		req.setAttribute("product", product);
 		
