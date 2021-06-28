@@ -145,28 +145,29 @@ a:link, a:visited {
 							<h3>상품 배송</h3>
 						</div>
 						<div class="mb-4">
+						<div >
 							<div class="custom-control custom-radio">
-								<input id="shippingOption1" name="shipping-option"
-									class="custom-control-input" checked="checked" type="radio">
+								<input id="shippingOption1"  name ="deli"
+									class="custom-control-input" checked="checked" type="radio" value = 0>
 								<label class="custom-control-label" for="shippingOption1">택배</label>
 								<span class="float-right font-weight-bold">무료배송</span>
 							</div>
 							<div class="ml-4 mb-2 small">(영업일 기준 2~5일)</div>
 							<div class="custom-control custom-radio">
-								<input id="shippingOption2" name="shipping-option"
-									class="custom-control-input" type="radio"> <label
+								<input id="shippingOption2"  name ="deli"
+									class="custom-control-input" type="radio" value =2500> <label
 									class="custom-control-label" for="shippingOption2">당일
 									배송</label> <span class="float-right font-weight-bold">2,500원</span>
 							</div>
 							<div class="ml-4 mb-2 small">(다음날 배송 도착 보장)</div>
 							<div class="custom-control custom-radio">
-								<input id="shippingOption3" name="shipping-option"
-									class="custom-control-input" type="radio"> <label
+								<input id="shippingOption3"  name ="deli"
+									class="custom-control-input" type="radio" value=5000> <label
 									class="custom-control-label" for="shippingOption3">당일 퀵
 									배송</label> <span class="float-right font-weight-bold">5,000원</span>
 							</div>
 						</div>
-					
+						</div>
 						<ul>
 							<li>
 								<div class="form-group size-st">
@@ -193,12 +194,11 @@ a:link, a:visited {
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn" style="text-align: right;">
 
-								<a class="btn hvr-hover" data-fancybox-close=""
-									href="checkout.jsp">바로구매 </a> <input class="btn hvr-hover" type="submit" value ="장바구니"
+								<input class="btn hvr-hover"  data-fancybox-close="" type="submit" value ="장바구니"
 									data-fancybox-close="" >
 
 								<a class="btn hvr-hover" data-fancybox-close="" href="payment.do?pid=${ product.pid }">바로구매 </a> 
-								<a class="btn hvr-hover"data-fancybox-close="" href="cart.jsp">장바구니 </a>
+								
 
 							</div>
 						</div>

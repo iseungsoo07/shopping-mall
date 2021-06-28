@@ -10,6 +10,27 @@ public class Cart {
 	private int price;
 	private int total;
 	private String files;
+	private int deli;
+	private int pay;
+	private int discount;
+	public int getPay() {
+		return pay;
+	}
+	public void setPay(int pay) {
+		this.pay = pay;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+	public int getDeli() {
+		return deli;
+	}
+	public void setDeli(int deli) {
+		this.deli = deli;
+	}
 	public String getFiles() {
 		return files;
 	}

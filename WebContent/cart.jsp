@@ -95,17 +95,21 @@
 						<table class="table">
 							<thead>
 								<tr>
+									<th>주문일자</th>
 									<th>사진</th>
 									<th>상품</th>
 									<th>가격</th>
 									<th>개수</th>
 									<th>총 금액</th>
 									<th>삭제</th>
+									
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="v" items="${datas }">
+									
 									<tr>
+										<td> <p>${v.day }</p></td>
 										<td class="thumbnail-img"><c:forTokens var="fileName"
 												items="${v.files }" delims="," varStatus="st">
 												<img src="./upload/${fileName }" class="img-fluid"
@@ -118,8 +122,9 @@
 										<td class="price-pr">
 											<p>${v.price }</p>
 										</td>
-										<td class="quantity-box"><input type="number" size="4"
-											value="1" min="0" step="1" class="c-input-text qty text"></td>
+										<td class="quantity-box">
+											<p>${v.count }</p>
+										</td>
 										<td class="total-pr">
 											<p>${v.total }</p> <!-- 총 금액 구현필요  -->
 										</td>
@@ -134,27 +139,19 @@
 				</div>
 			</div>
 
-			<div class="row my-5">
-				<div class="col-lg-6 col-sm-6">
-					<div class="coupon-box">
-						<div class="input-group input-group-sm">
-							<input class="form-control" placeholder="쿠폰 번호를 입력하세요 !"
-								aria-label="Coupon code" type="text">
-							<div class="input-group-append">
-								<button class="btn btn-theme" type="button">쿠폰 적용하기</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-sm-6">
-					<div class="update-box">
-						<input value="카트 저장하기" type="submit">
-						<!-- 용도를 알수없음 카트 수정후 저장하는 용도로 우선 생각해둠. -->
-					</div>
-				</div>
-			</div>
+			
 
 			<!--결제금액 변동을 위한 처리 필요 -->
+			<c:set var ="ordertotal" value ="0" />
+			<c:set var ="discounttotal" value ="0" />
+			<c:set var ="delitotal" value ="0" />
+			<c:set var ="paytotal" value ="0" />	
+			<c:forEach var="v" items="${datas }">
+			<c:set var = "ordertotal" value = "${ordertotal+v.total}"/>
+			<c:set var = "discounttotal" value = "${discounttotal+v.discount}"/>
+			<c:set var = "delitotal" value = "${delitotal+v.deli}"/>
+			<c:set var = "paytotal" value = "${paytotal+v.pay}" />
+			</c:forEach>
 			<div class="row my-5">
 				<div class="col-lg-8 col-sm-12"></div>
 				<div class="col-lg-4 col-sm-12">
@@ -162,29 +159,22 @@
 						<h3>결제 금액 정보</h3>
 						<div class="d-flex">
 							<h4>주문 금액</h4>
-							<div class="ml-auto font-weight-bold">$ 130</div>
+							
+							<div class="ml-auto font-weight-bold"><c:out value ="${ordertotal } "/>원</div>
 						</div>
 						<div class="d-flex">
 							<h4>할인</h4>
-							<div class="ml-auto font-weight-bold">- $ 40</div>
+							<div class="ml-auto font-weight-bold">-<c:out value ="${discounttotal} "/>원</div>
 						</div>
 						<hr class="my-1">
 						<div class="d-flex">
-							<h4>쿠폰 할인</h4>
-							<div class="ml-auto font-weight-bold">- $ 10</div>
-						</div>
-						<div class="d-flex">
-							<h4>부가세</h4>
-							<div class="ml-auto font-weight-bold">$ 2</div>
-						</div>
-						<div class="d-flex">
 							<h4>배송비</h4>
-							<div class="ml-auto font-weight-bold">0</div>
+							<div class="ml-auto font-weight-bold"><c:out value ="${delitotal } "/>원</div>
 						</div>
 						<hr>
 						<div class="d-flex gr-total">
 							<h5>결제금액</h5>
-							<div class="ml-auto h5">$ 78</div>
+							<div class="ml-auto h5"><c:out value ="${paytotal } "/>원</div>
 						</div>
 						<hr>
 					</div>
@@ -193,7 +183,8 @@
 					<a href="checkout.jsp" class="ml-auto btn hvr-hover">주문하기</a>
 				</div>
 			</div>
-
+			
+		
 		</div>
 	</div>
 	<!-- End Cart -->
