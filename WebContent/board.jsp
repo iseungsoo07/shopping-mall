@@ -74,7 +74,7 @@
 						</select>
 					</div>
 					<input type="text" class="tbox" title="검색어를 입력하세요." name="s" placeholder="검색어를 입력하세요." />
-					<input type="submit" class="btn_srch" value="검색" style="border: none" />
+					<input type="submit" class="btn_srch" value="검색" style="border: none; cursor: pointer" />
 				</fieldset>
 			</form>
 			<table class="bbsListTbl" summary="번호, 제목, 조회수, 작성일 등을 제공하는 표">
@@ -114,11 +114,7 @@
 			<div class="pagination">
 				<a href="#" class="firstpage pbtn"> <img src="./images/btn_firstpage.png" alt="첫 페이지로 이동" />
 				</a> <a href="#" class="prevpage pbtn"> <img src="./images/btn_prevpage.png" alt="이전 페이지로 이동" />
-				</a> <a href="#"><span class="pagenum currentPage">1</span></a> <a href="#"><span class="pagenum">2</span></a> <a
-					href="#"
-				><span class="pagenum">3</span></a> <a href="#"><span class="pagenum">4</span></a> <a href="#"><span
-					class="pagenum"
-				>5</span></a> <a href="#" class="nextpage pbtn"> <img src="./images/btn_nextpage.png" alt="다음 페이지로 이동" />
+				</a> <custom:paging/> <a href="#" class="nextpage pbtn"> <img src="./images/btn_nextpage.png" alt="다음 페이지로 이동" />
 				</a> <a href="#" class="lastpage pbtn"> <img src="./images/btn_lastpage.png" alt="마지막 페이지로 이동" />
 				</a>
 			</div>
@@ -161,7 +157,7 @@
 	<script src="js/jquery.superslides.min.js"></script>
 	<script src="js/bootstrap-select.js"></script>
 	<script src="js/inewsticker.js"></script>
-	<script src="js/bootsnav.js."></script>
+	<script src="js/bootsnav.js"></script>
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
