@@ -106,7 +106,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="v" items="${datas }">
+								<c:forEach var="v" items="${carts}">
 									
 									<tr>
 										<td> <p>${v.day }</p></td>
@@ -146,7 +146,7 @@
 			<c:set var ="discounttotal" value ="0" />
 			<c:set var ="delitotal" value ="0" />
 			<c:set var ="paytotal" value ="0" />	
-			<c:forEach var="v" items="${datas }">
+			<c:forEach var="v" items="${carts }">
 			<c:set var = "ordertotal" value = "${ordertotal+v.total}"/>
 			<c:set var = "discounttotal" value = "${discounttotal+v.discount}"/>
 			<c:set var = "delitotal" value = "${delitotal+v.deli}"/>

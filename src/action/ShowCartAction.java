@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.CartDAO;
 import dao.ProductDAO;
@@ -17,16 +18,18 @@ public class ShowCartAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
-		
+		HttpSession session = req.getSession();
 		CartDAO cartDAO = new CartDAO();
 		ArrayList<Cart> carts = new ArrayList<>();
 		
-		String id = req.getParameter("id");
+		String id = (String)session.getAttribute("id");
+		System.out.println("id : "+id);
+		
 		carts = cartDAO.showC(id);
 		
 	
 		
-		req.setAttribute("carts", carts);
+		session.setAttribute("carts", carts);
 		
 		forward.setRedirect(false);
 		forward.setPath("cart.jsp");

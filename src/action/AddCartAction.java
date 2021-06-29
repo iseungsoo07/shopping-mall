@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.CartDAO;
 import model.Cart;
@@ -18,7 +19,7 @@ public class AddCartAction implements Action{
 
 
 		ActionForward forward = new ActionForward();
-
+		HttpSession session = req.getSession();
 
 		CartDAO cartDAO = new CartDAO();
 		Cart c = new Cart();
@@ -59,19 +60,20 @@ public class AddCartAction implements Action{
 
 		PrintWriter out = res.getWriter();
 		if(!cartDAO.newCart(c)) {
-			System.out.println("카트 추가 실패");
+			System.out.println("移댄듃 異붽� �떎�뙣");
 		} else {
-			out.println("<script>alert('장바구니 등록 완료!');</script>");
+			out.println("<script>alert('�옣諛붽뎄�땲 �벑濡� �셿猷�!');</script>");
 		}
 
 
 
 
 
-		String id = req.getParameter("id");
+//		String id = req.getParameter("id");
+		String id = (String)session.getAttribute("id");
 		System.out.println(id);
 		ArrayList<Cart> datas=cartDAO.showC(req.getParameter("id"));
-		req.setAttribute("datas", datas); 				// QnA게시글목록과 댓글 목록을 한번에 보여줌
+		req.setAttribute("carts", datas); 				// QnA寃뚯떆湲�紐⑸줉怨� �뙎湲� 紐⑸줉�쓣 �븳踰덉뿉 蹂댁뿬以�
 
 
 		forward.setRedirect(false);

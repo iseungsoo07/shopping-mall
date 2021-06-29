@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/action/AddCartAction.java=UTF-8
 encoding//src/action/AddProductAction.java=UTF-8
 encoding//src/action/CategoryAction.java=UTF-8
+encoding//src/action/LoginAction.java=UTF-8
 encoding//src/action/NewProductReviewAction.java=UTF-8
 encoding//src/action/NewQnAAction.java=UTF-8
 encoding//src/action/ProductSortingAction.java=UTF-8
