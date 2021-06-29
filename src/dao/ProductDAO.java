@@ -416,6 +416,78 @@ public class ProductDAO {
 
 		return datas;
 	}
+	
+	public ArrayList<Product> showBestSeller() { // product 목록 전체 조회
+
+		ArrayList<Product> datas = new ArrayList<>();
+
+		try {
+			conn = DBConnection.connect();
+			String sql = "SELECT * FROM (SELECT A.*, ROWNUM AS RNUM FROM (SELECT * FROM product ORDER BY visit DESC) A WHERE ROWNUM <= 4) WHERE RNUM > 0 ORDER BY visit DESC";
+			
+			pstmt = conn.prepareStatement(sql);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Product pro = new Product();
+
+				pro.setPid(rs.getInt("pid"));
+				pro.setName(rs.getString("name"));
+				pro.setPrice(rs.getInt("price"));
+			
+				pro.setFiles(rs.getString("files"));
+				pro.setVisit(rs.getInt("visit"));
+				pro.setCate(rs.getString("cate"));
+				pro.setGender(rs.getString("gender"));
+				pro.setSsize(rs.getInt("ssize"));
+				pro.setMsize(rs.getInt("msize"));
+				pro.setLsize(rs.getInt("lsize"));
+				pro.setXlsize(rs.getInt("xlsize"));
+				pro.setXxlsize(rs.getInt("xxlsize"));
+				pro.setPcon(rs.getString("pcon"));
+				pro.setDay(rs.getString("day"));
+
+				datas.add(pro);
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		} finally {
+			disconnect();
+		}
+
+		return datas;
+	}
+	
+	public void updateStock(int pid, int ssize, int msize, int lsize, int xlsize, int xxlsize) {
+		ArrayList<Product> datas = new ArrayList<>();
+
+		try {
+			conn = DBConnection.connect();
+			String sql = "UPDATE product SET ssize = ?, msize = ?, lsize = ?, xlsize = ?, xxlsize = ? WHERE pid = ?"; 
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ssize);
+			pstmt.setInt(2, msize);
+			pstmt.setInt(3, lsize);
+			pstmt.setInt(4, xlsize);
+			pstmt.setInt(5, xxlsize);
+			pstmt.setInt(6, pid);
+
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		} finally {
+			disconnect();
+		}
+
+	}
+	
 
 	public ArrayList<Product> showPorderde(String s) { // product 내림차순 정렬 return
 
