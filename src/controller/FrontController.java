@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -24,7 +23,9 @@ import action.DelQnAAction;
 import action.DelReplyAction;
 import action.DelReviewAction;
 import action.DeleteAction;
+import action.DirectPaymentAction;
 import action.FindIdAction;
+import action.GoPaymentPageAction;
 import action.HomeAction;
 import action.IdCheckAction;
 import action.LoginAction;
@@ -34,6 +35,7 @@ import action.NewNotiAction;
 import action.NewPwAction;
 import action.NewQnAAction;
 import action.NewReplyAction;
+import action.PaymentAction;
 import action.PriceFilterAction;
 import action.ProductSortingAction;
 import action.RegistAction;
@@ -48,16 +50,15 @@ import action.ShowQAction;
 import action.ShowQnAconAction;
 import action.UpdateAction;
 import action.UpdateReviewAction;
+import action.UseAllPointAction;
 import action.WriteProductReviewAction;
 
 /**
  * Servlet implementation class FrontController
  */
 @WebServlet("/FrontController")
-@MultipartConfig(
-		fileSizeThreshold=1024*1024,
-		maxFileSize=1024*1024*50, //�뙆�씪�븳媛쒕떦 �겕湲곗젣�븳 50硫붽�
-		maxRequestSize=1024*1024*50*5 // 50硫붽� 5媛�
+@MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 50, // �뙆�씪�븳媛쒕떦 �겕湲곗젣�븳 50硫붽�
+		maxRequestSize = 1024 * 1024 * 50 * 5 // 50硫붽� 5媛�
 )
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -226,7 +227,7 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/newQnA.do")) {
 			try {
 				forward = new NewQnAAction().execute(req, res);
-				System.out.println(req.getParameter("qcon")+"�뚢뫂�뱜嚥▲끇�쑎占쎈퓠占쎄퐣 占쎌깈�빊�뮆留�");
+				System.out.println(req.getParameter("qcon") + "�뚢뫂�뱜嚥▲끇�쑎占쎈퓠占쎄퐣 占쎌깈�빊�뮆留�");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -330,6 +331,30 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/showCart.do")) {
 			try {
 				forward = new ShowCartAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/gopayment.do")) {
+			try {
+				forward = new GoPaymentPageAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/useAllPoint.do")) {
+			try {
+				forward = new UseAllPointAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/payment.do")) {
+			try {
+				forward = new PaymentAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/directPayment.do")) {
+			try {
+				forward = new DirectPaymentAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

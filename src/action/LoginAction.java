@@ -51,7 +51,7 @@ public class LoginAction implements Action {
 			session.setAttribute("id", id);
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("home.jsp");
+			forward.setPath("home.do");
 			System.out.println(session.getAttribute("id"));
 		} else {
 			req.setCharacterEncoding("UTF-8");

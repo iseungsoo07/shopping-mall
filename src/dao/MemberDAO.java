@@ -301,4 +301,42 @@ public class MemberDAO {
 		}
 		return false;
 	}
+	
+	public void updatePointAndPurchase(String id, int point, int purchase) {
+		conn = DBConnection.connect();
+
+		String sql = "UPDATE member SET point = ?, purchase = ? WHERE id = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, point);
+			pstmt.setInt(2, purchase);
+			pstmt.setString(3, id);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+	}
+	
+	public void updateRank(String id, int rank) {
+		conn = DBConnection.connect();
+
+		String sql = "UPDATE member SET rank = ? WHERE id = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, rank);
+			pstmt.setString(2, id);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		
+	}
 }

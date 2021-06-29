@@ -31,7 +31,8 @@ public class CartDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}	
+	}
+
 	public boolean newCart(Cart c) {
 		try {
 			conn = DBConnection.connect();
@@ -48,14 +49,14 @@ public class CartDAO {
 			pstmt.setInt(1, c.getPid());
 			pstmt.setString(2, c.getId());
 			pstmt.setInt(3, c.getCount());
-			pstmt.setString(4, c.getSize());
+			pstmt.setString(4, c.getPsize());
 			pstmt.setString(5, c.getName());
 			pstmt.setInt(6, c.getPrice());
 			pstmt.setInt(7, c.getTotal());
 			pstmt.setString(8, c.getFiles());
 			pstmt.setInt(9, c.getDeli());
 			pstmt.setInt(10, c.getDiscount());
-			pstmt.setInt(11, c.getPay());			
+			pstmt.setInt(11, c.getPay());
 			pstmt.setString(12, time1);
 
 			pstmt.executeUpdate();
@@ -72,7 +73,7 @@ public class CartDAO {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}	
+		}
 
 		return true;
 	}
@@ -83,8 +84,7 @@ public class CartDAO {
 			conn = DBConnection.connect();
 			String sql = "select * from cart where id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,id);
-
+			pstmt.setString(1, id);
 
 			ResultSet rs = pstmt.executeQuery();
 
@@ -97,7 +97,7 @@ public class CartDAO {
 				c.setName(rs.getString("name"));
 				c.setCount(rs.getInt("count"));
 				c.setPrice(rs.getInt("price"));
-				c.setSize(rs.getString("psize"));
+				c.setPsize(rs.getString("psize"));
 				c.setTotal(rs.getInt("total"));
 				c.setFiles(rs.getString("files"));
 				c.setDeli(rs.getInt("deli"));
@@ -116,16 +116,16 @@ public class CartDAO {
 
 		return datas;
 	}
+
 	public boolean delCart(int cid) {
 		try {
 			conn = DBConnection.connect();
 			String sql = "delete from cart where cid=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1,  cid);
+			pstmt.setInt(1, cid);
 			pstmt.executeUpdate();
 
-		}
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
@@ -137,52 +137,50 @@ public class CartDAO {
 
 	public double grade(String id) {
 		int rank;
-		double i=0;
+		double i = 0;
 		try {
 			conn = DBConnection.connect();
 			String sql = "select rank from member where id=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,  id);
+			pstmt.setString(1, id);
 			ResultSet rs = pstmt.executeQuery();
-			while (rs.next())  { 
-				rank =rs.getInt("rank");
+			while (rs.next()) {
+				rank = rs.getInt("rank");
 
-				if(rank==10) {
+				if (rank == 10) {
 					i = 0.10;
 
-				} else if(rank==9) {
+				} else if (rank == 9) {
 					i = 0.11;
 
-				} else if(rank==8) {
+				} else if (rank == 8) {
 					i = 0.12;
 
-				} else if(rank==7) {
+				} else if (rank == 7) {
 					i = 0.13;
 
-				} else if(rank==6) {
+				} else if (rank == 6) {
 					i = 0.14;
 
-				} else if(rank==5) {
+				} else if (rank == 5) {
 					i = 0.15;
 
-				} else if(rank==4) {
+				} else if (rank == 4) {
 					i = 0.16;
 
-				} else if(rank==3) {
+				} else if (rank == 3) {
 					i = 0.17;
 
-				} else if(rank==2) {
+				} else if (rank == 2) {
 					i = 0.18;
 
-				} 
-				else {
+				} else {
 					i = 0.20;
-					
+
 				}
 			}
 
-		}
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 

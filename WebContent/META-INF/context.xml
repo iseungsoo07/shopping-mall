@@ -3,7 +3,7 @@
 	<Resource auth="Container" name="jdbc/orcl"
 		type="javax.sql.DataSource"
 		driverClassName="oracle.jdbc.driver.OracleDriver"
-		url="jdbc:oracle:thin:@localhost:1521:xe" username="kim"
+		url="jdbc:oracle:thin:@localhost:1521:xe" username="iss07"
 		password="1234" maxTotal="10" maxIdle="5" />
 
 </Context>

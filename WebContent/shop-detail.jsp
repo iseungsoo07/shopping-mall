@@ -86,6 +86,12 @@
 a:link, a:visited {
 	color: #fff;
 }
+
+.price-box-bar input.btn {
+	padding: 9px 20px;
+	color: #fff;
+	font-weight: 700;
+ }
 </style>
 
 </head>
@@ -245,12 +251,7 @@ a:link, a:visited {
 									<!-- paymantAction in to formaction="..." -->
 									<input class="btn hvr-hover" data-fancybox-close=""
 										type="submit" value="바로구매" data-fancybox-close=""
-										formaction="" style="color:white"/> 
-									<%-- <a
-										class="btn hvr-hover" data-fancybox-close=""
-										href="payment.do?pid=${ product.pid }">바로구매 </a> --%>
-
-
+										formaction="./directPayment.do" style="color:white"/> 
 								</div>
 							</div>
 
