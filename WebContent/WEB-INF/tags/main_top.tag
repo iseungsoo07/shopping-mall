@@ -8,28 +8,28 @@
 					<div id="offer-box" class="carouselTicker">
 						<ul class="offer-box">
 							<li>
-								<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+								<i class="fab fa-opencart"></i> THEWAYSHOP에 오신걸 환영합니다 ! 
 							</li>
 							<li>
-								<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+								<i class="fab fa-opencart"></i> 악세사리 10% ~ 30% 할인 ! 
 							</li>
 							<li>
-								<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+								<i class="fab fa-opencart"></i> 20% 할인 프로모션 코드 : offT20
 							</li>
 							<li>
-								<i class="fab fa-opencart"></i> Off 50%! Shop Now
+								<i class="fab fa-opencart"></i> 오픈 기념 15% 추가 할인 !
 							</li>
 							<li>
-								<i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+								<i class="fab fa-opencart"></i> THEWAYSHOP에 오신걸 환영합니다 ! 
 							</li>
 							<li>
-								<i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+								<i class="fab fa-opencart"></i> 악세사리 10% ~ 30% 할인 !
 							</li>
 							<li>
-								<i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+								<i class="fab fa-opencart"></i> 20% 할인 프로모션 코드 : offT20
 							</li>
 							<li>
-								<i class="fab fa-opencart"></i> Off 50%! Shop Now
+								<i class="fab fa-opencart"></i> 오픈 기념 15% 추가 할인 !
 							</li>
 						</ul>
 					</div>
