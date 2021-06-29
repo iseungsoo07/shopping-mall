@@ -32,6 +32,8 @@ public class CategoryAction implements Action {
 			System.out.println(v);
 		}
 		
+		req.setAttribute("sort", sort);
+		
 		forward.setRedirect(false);
 		forward.setPath("shop.jsp"); 
 

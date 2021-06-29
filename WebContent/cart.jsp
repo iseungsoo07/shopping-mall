@@ -153,7 +153,7 @@ table td, table th {
 
 
 			<div class="col-12 d-flex shopping-box">
-				<a href="gopayment.do" class="ml-auto btn hvr-hover">주문하기</a>
+				<a href="gopayment.do" class="ml-auto btn hvr-hover" style="color: #fff">주문하기</a>
 			</div>
 		</div>
 

@@ -1,6 +1,7 @@
 package action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -17,12 +18,12 @@ public class GoPaymentPageAction implements Action {
 		ActionForward forward = new ActionForward();
 		HttpSession session = req.getSession();
 		ArrayList<Cart> carts = new ArrayList<>();
-		
+
 		carts = (ArrayList<Cart>) session.getAttribute("carts");
-		
+
 		forward.setRedirect(false);
 		forward.setPath("payment.jsp");
-		
+
 		return forward;
 	}
 }

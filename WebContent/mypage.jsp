@@ -182,8 +182,8 @@
 									<div class="reg_content">${ member.rank }</div>
 								</li>
 								<li class="clear">
-									<span class="tit_lbl">보유 포인트</span>
-									<div class="reg_content">${ member.point }</div>
+									<span class="tit_lbl">총 구매 금액</span>
+									<div class="reg_content">${ member.purchase }원</div>
 								</li>
 							</ul>
 							<p class="btn_line">

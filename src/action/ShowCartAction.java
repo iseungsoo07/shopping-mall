@@ -19,6 +19,9 @@ public class ShowCartAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
+		req.setCharacterEncoding("UTF-8");
+		res.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		CartDAO cartDAO = new CartDAO();
 		ArrayList<Cart> carts = new ArrayList<>();
@@ -27,11 +30,7 @@ public class ShowCartAction implements Action {
 		System.out.println("id : " + id);
 
 		if (id == null) { // if no login
-			req.setCharacterEncoding("UTF-8");
-			res.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = res.getWriter();
-
-			out.println("<script>alert('You need Login'); location.href='home.jsp'; </script>");
+			out.println("<script>alert('You need Login'); location.href='home.do'; </script>");
 		} else { // if login
 			carts = cartDAO.showC(id);
 

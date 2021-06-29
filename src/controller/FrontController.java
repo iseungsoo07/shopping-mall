@@ -18,6 +18,7 @@ import action.ChangeInfoAction;
 import action.ChangePwAction;
 import action.DelCartAction;
 import action.DelNotiAction;
+import action.DelOrderAction;
 import action.DelProductAction;
 import action.DelQnAAction;
 import action.DelReplyAction;
@@ -355,6 +356,12 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("/directPayment.do")) {
 			try {
 				forward = new DirectPaymentAction().execute(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/delOrder.do")) {
+			try {
+				forward = new DelOrderAction().execute(req, res);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -65,7 +65,7 @@ public class AddCartAction implements Action {
 		String id = (String) session.getAttribute("id");
 		System.out.println(id);
 		ArrayList<Cart> datas = cartDAO.showC(req.getParameter("id"));
-		req.setAttribute("carts", datas); // QnA寃뚯떆湲�紐⑸줉怨� �뙎湲� 紐⑸줉�쓣 �븳踰덉뿉 蹂댁뿬以�
+		session.setAttribute("carts", datas); // QnA寃뚯떆湲�紐⑸줉怨� �뙎湲� 紐⑸줉�쓣 �븳踰덉뿉 蹂댁뿬以�
 
 		forward.setRedirect(false);
 		forward.setPath("cart.jsp");

@@ -1964,6 +1964,12 @@ ul.cart-list>li.total>.btn:hover {
     border-left: 1px solid #ced4da;
 }
 
+.list-group-tree .active {
+	color: #d33b33;
+    background-color: #fff;
+    font-weight: 700;
+}
+
 .list-group-tree .list-group-item.active {
     color: #d33b33;
     background-color: #fff;

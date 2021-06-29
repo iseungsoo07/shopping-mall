@@ -42,6 +42,14 @@
 <style>
 table td, table th {
 	text-align: center;
+	padding: 3px;
+}
+
+table caption {
+	caption-side: top;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
 }
 
 a:visited, a:link {
@@ -119,6 +127,7 @@ a:visited, a:link {
 								</tr>
 							</thead>
 							<tbody>
+
 								<c:forEach var="v" items="${ carts }">
 									<tr>
 										<td>
@@ -146,7 +155,7 @@ a:visited, a:link {
 											<!-- 총 금액 구현필요  -->
 										</td>
 										<td class="remove-pr">
-											<a href="./delCart.do?cid=${v.cid}&&id=${member.id}" style="color: #000"> <i class="fas fa-times"></i> <!-- 삭제 구현필요 -->
+											<a href="./delOrder.do?cid=${v.cid}&&id=${member.id}" style="color: #000"> <i class="fas fa-times"></i> <!-- 삭제 구현필요 -->
 											</a>
 										</td>
 									</tr>
@@ -157,11 +166,125 @@ a:visited, a:link {
 				</div>
 			</div>
 
-			<custom:point />
+
+			<c:if test="${ carts != null }">
+				<!--결제금액 변동을 위한 처리 필요 -->
+				<c:set var="ordertotal" value="0" />
+				<c:set var="discounttotal" value="0" />
+				<c:set var="delitotal" value="0" />
+				<c:set var="paytotal" value="0" />
+				<c:set var="point" value="0" />
+
+				<c:forEach var="v" items="${carts }">
+					<c:set var="ordertotal" value="${ordertotal+v.total}" />
+					<c:set var="discounttotal" value="${discounttotal+v.discount}" />
+					<c:set var="delitotal" value="${delitotal+v.deli}" />
+					<c:set var="paytotal" value="${paytotal+v.pay}" />
+				</c:forEach>
+				<div class="row my-5">
+					<div class="col-lg-8 col-sm-12">
+						<h2 style="font-size: 16px; font-weight: bold">배송지 정보</h2>
+						<div class="margin-bottom15">받는 사람 : ${ member.name }</div>
+						<div class="margin-bottom15">핸드폰 번호 : ${ member.phone }</div>
+						<div class="margin-bottom15">배송지 : ${ member.addr }</div>
+						<hr>
+						<h2 style="font-size: 16px; font-weight: bold">회원 등급 할인</h2>
+						<div class="explainRank" style="margin-bottom: 15px;">
+							<table border="1">
+								<caption>[TheWayShop 회원 등급 제도]</caption>
+								<tr>
+									<th>1 등급</th>
+									<th>2 등급</th>
+									<th>3 등급</th>
+									<th>4 등급</th>
+									<th>5 등급</th>
+									<th>6 등급</th>
+									<th>7 등급</th>
+									<th>8 등급</th>
+									<th>9 등급</th>
+									<th>10 등급</th>
+								</tr>
+								<tr>
+									<td>100만원 이상</td>
+									<td>80만원 이상</td>
+									<td>70만원 이상</td>
+									<td>60만원 이상</td>
+									<td>50만원 이상</td>
+									<td>40만원 이상</td>
+									<td>30만원 이상</td>
+									<td>20만원 이상</td>
+									<td>10만원 이상</td>
+									<td>기본 회원 등급</td>
+								</tr>
+								<tr>
+									<td>20% 할인</td>
+									<td>18% 할인</td>
+									<td>17% 할인</td>
+									<td>16% 할인</td>
+									<td>15% 할인</td>
+									<td>14% 할인</td>
+									<td>13% 할인</td>
+									<td>12% 할인</td>
+									<td>11% 할인</td>
+									<td>10% 할인</td>
+								</tr>
+							</table>
+						</div>
+						<div class="margin-bottom15">
+							<span style="color: #d33b33; font-size: 20px; font-weight: bold;">회원님의 등급은 ${ member.rank }등급입니다</span>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-12">
+						<div class="order-box">
+							<h3>결제 금액 정보</h3>
+							<div class="d-flex">
+								<h4>주문 금액</h4>
+
+								<div class="ml-auto font-weight-bold">
+									<c:out value="${ordertotal } " />
+									원
+								</div>
+							</div>
+							<div class="d-flex">
+								<h4>회원 등급 할인</h4>
+								<div class="ml-auto font-weight-bold">
+									-
+									<c:out value="${ discounttotal} " />
+									원
+								</div>
+							</div>
+							<hr class="my-1">
+							<div class="d-flex">
+								<h4>배송비</h4>
+								<div class="ml-auto font-weight-bold">
+									<c:out value="${ delitotal } " />
+									원
+								</div>
+							</div>
+							<hr>
+							<div class="d-flex gr-total">
+								<h5>결제금액</h5>
+								<div class="ml-auto h5">
+									<span id="totalPrice"><c:out value="${ paytotal } " /></span> 원
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					<div class="col-12 d-flex shopping-box" style="justify-content: flex-end;">
+						<form action="payment.do" method="post">
+							<input type="hidden" name="purchase" value="${ paytotal }" />
+							<input type="submit" value="결제하기" class="ml-auto btn hvr-hover btn_basecolor" style="line-height: 45px" />
+						</form>
+					</div>
+				</div>
+			</c:if>
 		</div>
 
 
 	</div>
+
+
 	<!-- End Cart -->
 
 	<!-- Start Instagram Feed  -->
