@@ -8,11 +8,19 @@ public class Cart {
 	private String day;
 	private String name;
 	private int price;
+	private String size;
 	private int total;
 	private String files;
 	private int deli;
 	private int pay;
 	private int discount;
+	
+	public String getSize() {
+		return size;
+	}
+	public void setSize(String size) {
+		this.size = size;
+	}
 	public int getPay() {
 		return pay;
 	}

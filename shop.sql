@@ -1,17 +1,17 @@
 CREATE TABLE member (
-	id varchar(20) primary key, -- 아이디
-	pw varchar(20) not null, -- 비밀번호
-	name varchar(10) not null, -- 이름
-	phone varchar(15) not null, -- 전화번호
-	email varchar(30), -- 이메일
-	zipcode int not null, -- 우편번호 (주소따오는 api에서 우편번호가 나오는데 마이페이지에서 우편번호를 불러오기 위함)
-	addr varchar(200) not null, -- 주소
-	rank int default 10, -- 회원 등급 (회원이기만 하면 10등급 시작. 10부터 1까지)
-	point int default 0, -- 포인트
-	purchase int default 0 -- 구매 금액
+	id varchar(20) primary key,
+	pw varchar(20) not null,
+	name varchar(10) not null, 
+	phone varchar(15) not null,
+	email varchar(30), 
+	zipcode int not null,
+	addr varchar(200) not null,
+	rank int default 10,
+	point int default 0, 
+	purchase int default 0
 );
 
-create table notice( -- 공지사항
+create table notice(
    nid int primary key,    
    ntitle varchar (20),          
    ncon varchar(100) not null,       
@@ -34,39 +34,39 @@ create table QnA (
 
 create table reply(
 
-   rid int primary key,   --답변 id
-   qid int not null,      --qna id
-   day varchar(30),            --답변 게시일자
-   id varchar(20),         --관리자 id
-   rcon varchar(50) not null,   --답변 내용
+   rid int primary key,
+   qid int not null,   
+   day varchar(30),       
+   id varchar(20),    
+   rcon varchar(50) not null,  
 
    foreign key(id) references member(id),
    constraint fk foreign key (qid) references QnA(qid) on delete cascade
 );
 
 create table product(
-   pid int primary key, --상품 id
-   name varchar(30),   --상품이름
-   price int not null, -- 상품가격
-   visit int not null,   --조회수
-   cate varchar(10) not null, --분류 category
-   ssize int default 0, --상품사이즈(size로 속성을 주면 에러나서 바꿈)
+   pid int primary key,
+   name varchar(30),
+   price int not null,
+   visit int not null,  
+   cate varchar(10) not null, 
+   ssize int default 0, 
    msize int default 0,
    lsize int default 0,
    xlsize int default 0,
    xxlsize int default 0,
-   pcon varchar(1000), --상품 디테일 내용
-   gender varchar(10), -- 성별
-   files varchar(50), --사진파일 
-   day varchar(30) --업로드 날짜
+   pcon varchar(1000), 
+   gender varchar(10),
+   files varchar(50),
+   day varchar(30) 
 );
 
 create table productreview(
 	reviewid int primary key, -- review id
-	productid int not null, -- 리뷰한 product id
-	userid varchar(20), --리뷰를 쓴 사용자 id
+	productid int not null, 
+	userid varchar(20), 
 	productsize varchar(10),
-	rating int,	-- 평점 1~5
+	rating int,	
 	reviewcon varchar(1000),
 	day varchar(30),
 	foreign key(userid) references member(id),
@@ -74,15 +74,16 @@ create table productreview(
 );
 
 create table cart(
-	cid int primary key, --장바구니 번호
-	id varchar(20), --사용자 아이디
-	pid int, 	--상품번호
-	name varchar(30), --상품이름
-	count int, -- 주문 상품갯수
-	day varchar(20), --장바구니 넣은 날짜
+	cid int primary key,
+	id varchar(20),
+	pid int, 	
+	name varchar(30),
+	count int,
+	psize varchar(10),
+	day varchar(20), 
 	files varchar(50), 
-	price int, --상품금액
-	total int, --총금액
+	price int,
+	total int,
 	deli int,
 	pay int,
 	discount int,

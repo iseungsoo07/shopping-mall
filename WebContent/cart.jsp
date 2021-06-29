@@ -95,9 +95,10 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>주문일자</th>
+									<th>장바구니 추가 일자</th>
 									<th>사진</th>
 									<th>상품</th>
+									<th>사이즈</th>
 									<th>가격</th>
 									<th>개수</th>
 									<th>총 금액</th>
@@ -118,6 +119,9 @@
 
 										<td>
 											<p>${v.name }</p>
+										</td>
+										<td>
+											<p>${v.size }</p>
 										</td>
 										<td class="price-pr">
 											<p>${v.price }</p>

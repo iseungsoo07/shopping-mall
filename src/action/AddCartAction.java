@@ -27,6 +27,7 @@ public class AddCartAction implements Action{
 		int deli = Integer.parseInt(req.getParameter("deli"));
 		int count =Integer.parseInt(req.getParameter("count"));
 		int price = Integer.parseInt(req.getParameter("price"));
+		String size=req.getParameter("size");
 		int total = price*count;
 		int pay;
 		int discount;
@@ -38,7 +39,7 @@ public class AddCartAction implements Action{
 
 		c.setId(req.getParameter("id"));
 		c.setPid(Integer.parseInt(req.getParameter("pid")));
-
+		c.setSize(size);
 		c.setCount(count);
 		c.setName(req.getParameter("name"));
 		double grade = cartDAO.grade(req.getParameter("id"));

@@ -36,6 +36,47 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="css/custom.css">
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	function checkForm() {
+		const size = document.getElementById("size");
+		const count = document.getElementById("count");
+		const sizevalue = document.getElementById("size").value;
+		const countvalue = document.getElementById("count").value;
+		if (sizevalue == 0) {
+			alert("사이즈를 선택해주세요.");
+			size.focus();
+			return false;
+		}
+		if(sizevalue=='s'&&countvalue>${product.ssize}){
+			alert("sSize 재고 부족.");
+			count.focus();
+			return false;
+		}
+		if(sizevalue=='m'&&countvalue>${product.msize}){
+			alert("재고 부족.");
+			count.focus();
+			return false;
+		}
+		if(sizevalue=='l'&&countvalue>${product.lsize}){
+			alert("재고 부족.");
+			count.focus();
+			return false;
+		}
+		if(sizevalue=='xl'&&countvalue>${product.xlsize}){
+			alert("재고 부족.");
+			count.focus();
+			return false;
+		}
+		if(sizevalue=='xxl'&&countvalue>${product.xxlsize}){
+			alert("재고 부족.");
+			count.focus();
+			return false;
+		}
+		
+	}
+</script>
+
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -119,7 +160,7 @@ a:link, a:visited {
 				</div>
 
 				<div class="col-xl-7 col-lg-7 col-md-6">
-					<form method="post" action="addCart.do">
+					<form method="post" onsubmit="return checkForm();">
 						<div class="single-product-details">
 							<h2>${ product.name }</h2>
 							<!-- 상품명 -->
@@ -133,7 +174,7 @@ a:link, a:visited {
 								</c:if>
 							</h5>
 							<p>
-							<h4>제품 설명</h4>
+								<h4>제품 설명</h4>
 							<!-- 상품설명 -->
 							<p>${ product.pcon }</p>
 							<input type="hidden" name="price" value=${product.price }>
@@ -172,14 +213,15 @@ a:link, a:visited {
 							<ul>
 								<li>
 									<div class="form-group size-st">
-										<label class="size-label">Size</label> <select id="basic"
-											class="selectpicker show-tick form-control">
+										<label class="size-label">Size</label> 
+										<select id="size" name="size"
+											class="selectpicker show-tick form-control" onchange="">
 											<option value="0">Size</option>
-											<option value="0">S (수량 : ${ product.ssize })</option>
-											<option value="1">M (수량 : ${ product.msize })</option>
-											<option value="1">L (수량 : ${ product.lsize })</option>
-											<option value="1">XL (수량 : ${ product.xlsize })</option>
-											<option value="1">XXL (수량 : ${ product.xxlsize })</option>
+											<option value="s">S (수량 : ${ product.ssize })</option>
+											<option value="m">M (수량 : ${ product.msize })</option>
+											<option value="l">L (수량 : ${ product.lsize })</option>
+											<option value="xl">XL (수량 : ${ product.xlsize })</option>
+											<option value="xxl">XXL (수량 : ${ product.xxlsize })</option>
 
 										</select>
 									</div>
@@ -188,7 +230,7 @@ a:link, a:visited {
 									<div class="form-group quantity-box">
 										<label class="control-label">구매수량</label> <input
 											class="form-control" value="1" min="0" max="20" type="number"
-											name="count">
+											name="count" id="count">
 									</div>
 								</li>
 							</ul>
@@ -197,9 +239,16 @@ a:link, a:visited {
 								<div class="cart-and-bay-btn" style="text-align: right;">
 
 									<input class="btn hvr-hover" data-fancybox-close=""
-										type="submit" value="장바구니" data-fancybox-close=""> <a
+										type="submit" value="장바구니" data-fancybox-close=""
+										formaction="./addCart.do"/> 
+										
+									<!-- paymantAction in to formaction="..." -->
+									<input class="btn hvr-hover" data-fancybox-close=""
+										type="submit" value="바로구매" data-fancybox-close=""
+										formaction=""/> 
+									<%-- <a
 										class="btn hvr-hover" data-fancybox-close=""
-										href="payment.do?pid=${ product.pid }">바로구매 </a>
+										href="payment.do?pid=${ product.pid }">바로구매 </a> --%>
 
 
 								</div>
@@ -270,7 +319,8 @@ a:link, a:visited {
 
 						<p class="bbs_line txt_right">
 							<!-- 댓글아이디와 상풍id전달 -->
-							<a href="./delReview.do?reviewid=${r.reviewid}&&pid=${r.productid}">
+							<a
+								href="./delReview.do?reviewid=${r.reviewid}&&pid=${r.productid}">
 								<button type="button" class="btn_bbs" style="border: none;">댓글삭제</button>
 							</a>
 						</p>
@@ -505,8 +555,10 @@ a:link, a:visited {
 	<custom:footer />
 
 	<!-- ALL JS FILES -->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js">
+		
+	</script>
+								<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<!-- ALL PLUGINS -->
 	<script src="js/jquery.superslides.min.js"></script>
@@ -520,6 +572,7 @@ a:link, a:visited {
 	<script src="js/form-validator.min.js"></script>
 	<script src="js/contact-form-script.js"></script>
 	<script src="js/custom.js"></script>
-</body>
+
+							</body>
 
 </html>

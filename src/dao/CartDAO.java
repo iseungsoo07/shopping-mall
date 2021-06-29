@@ -35,7 +35,7 @@ public class CartDAO {
 	public boolean newCart(Cart c) {
 		try {
 			conn = DBConnection.connect();
-			String sql = "insert into cart (cid,pid,id,count,name,price,total,files,deli,discount,pay,day) values((select nvl(max(cid), 0) + 1 from cart),?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into cart (cid,pid,id,count,psize,name,price,total,files,deli,discount,pay,day) values((select nvl(max(cid), 0) + 1 from cart),?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			pstmt = conn.prepareStatement(sql);
 
@@ -48,14 +48,15 @@ public class CartDAO {
 			pstmt.setInt(1, c.getPid());
 			pstmt.setString(2, c.getId());
 			pstmt.setInt(3, c.getCount());
-			pstmt.setString(4, c.getName());
-			pstmt.setInt(5, c.getPrice());
-			pstmt.setInt(6, c.getTotal());
-			pstmt.setString(7, c.getFiles());
-			pstmt.setInt(8, c.getDeli());
-			pstmt.setInt(9, c.getDiscount());
-			pstmt.setInt(10, c.getPay());			
-			pstmt.setString(11, time1);
+			pstmt.setString(4, c.getSize());
+			pstmt.setString(5, c.getName());
+			pstmt.setInt(6, c.getPrice());
+			pstmt.setInt(7, c.getTotal());
+			pstmt.setString(8, c.getFiles());
+			pstmt.setInt(9, c.getDeli());
+			pstmt.setInt(10, c.getDiscount());
+			pstmt.setInt(11, c.getPay());			
+			pstmt.setString(12, time1);
 
 			pstmt.executeUpdate();
 
@@ -96,6 +97,7 @@ public class CartDAO {
 				c.setName(rs.getString("name"));
 				c.setCount(rs.getInt("count"));
 				c.setPrice(rs.getInt("price"));
+				c.setSize(rs.getString("psize"));
 				c.setTotal(rs.getInt("total"));
 				c.setFiles(rs.getString("files"));
 				c.setDeli(rs.getInt("deli"));
