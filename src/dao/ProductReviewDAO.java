@@ -38,7 +38,7 @@ public class ProductReviewDAO {
 	public boolean newProReview(ProductReview proreview) {
 		try {
 			conn = DBConnection.connect();
-			String sql = "insert into productreview (reviewid,productid,userid,productsize,rating,reviewcon,day) values((select nvl(max(reviewid), 0) + 1 from productreview),?,?,?,?,?,?)";
+			String sql = "insert into productreview (reviewid,productid,userid,productsize,rating,reviewcon,day) values((select nvl(max(reviewid), 0) + 1 from productreview),?,?,'0',?,?,?)";
 			// reviewid�뒗 �옄�룞利앷� �꽕�젙�빐�몺
 			pstmt = conn.prepareStatement(sql);
 			SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -49,10 +49,10 @@ public class ProductReviewDAO {
 
 			pstmt.setInt(1, proreview.getProductid());
 			pstmt.setString(2, proreview.getUserid());
-			pstmt.setString(3, proreview.getProductsize());
-			pstmt.setInt(4, proreview.getRating());
-			pstmt.setString(5, proreview.getReviewcon());
-			pstmt.setString(6, time1);
+//			pstmt.setString(3, proreview.getProductsize());
+			pstmt.setInt(3, proreview.getRating());
+			pstmt.setString(4, proreview.getReviewcon());
+			pstmt.setString(5, time1);
 			pstmt.executeUpdate();
 
 		} catch (Exception e) {

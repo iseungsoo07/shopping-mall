@@ -284,8 +284,8 @@ a:link, a:visited {
 					<input type="hidden" name="pid" value="${product.pid }"> <input
 						type="hidden" name="id" value="${member.id }">
 					<custom:ratinginput />
-					<input type="hidden" name="reviewedid" value="${reviewedid}">
-					<textarea name="reviewcon" value="${reviewcon}" cols="114" rows="2"
+					<%-- <input type="hidden" name="reviewedid" value="${reviewedid}"> --%>
+					<textarea name="reviewcon" cols="114" rows="2"
 						placeholder="후기를 입력해주세요" style="resize: none"></textarea>
 
 
