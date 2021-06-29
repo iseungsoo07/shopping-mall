@@ -24,7 +24,7 @@ public class ShowAllProductAction implements Action {
 		
 		
 		products = productDAO.showP(); // 전체 상품 가져오기
-		
+		System.out.println(products);
 		session.setAttribute("products", products);
 		
 		forward.setRedirect(false);

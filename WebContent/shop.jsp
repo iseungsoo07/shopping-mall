@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -23,7 +24,8 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- fontawesome -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -45,7 +47,7 @@
 
 	<!-- Start Main Top -->
 	<custom:main_top />
-	
+
 	<!-- Start Main Top -->
 	<header class="main-header">
 		<!-- Start Navigation -->
@@ -60,7 +62,8 @@
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-search"></i></span>
 				<input type="text" class="form-control" placeholder="Search">
-				<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+				<span class="input-group-addon close-search"><i
+					class="fa fa-times"></i></span>
 			</div>
 		</div>
 	</div>
@@ -73,9 +76,7 @@
 				<div class="col-lg-12">
 					<h2>Shop</h2>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item">
-							<a href="#">Home</a>
-						</li>
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
 						<li class="breadcrumb-item active">Shop</li>
 					</ul>
 				</div>
@@ -104,73 +105,83 @@
 								<h3>Categories</h3>
 							</div>
 							<!-- 카테고리 상품 -->
-							<div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men"
-								data-children=".sub-men"
-							>
+							<div
+								class="list-group list-group-collapse list-group-sm list-group-tree"
+								id="list-group-men" data-children=".sub-men">
 								<div class="list-group-collapse sub-men">
 									<!-- 카테고리 상품 -->
-									<a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true"
-										aria-controls="sub-men1"
-									>상의<small class="text-muted">(7)</small>
+									<a href="./showAllProduct.do">전체 보기<!-- <small
+										class="text-muted">(7)</small> -->
+									</a> <a class="list-group-item list-group-item-action"
+										href="#sub-men1" data-toggle="collapse" aria-expanded="true"
+										aria-controls="sub-men1">상의<small
+										class="text-muted">(7)</small>
 									</a>
-									<div class="collapse show" id="sub-men1" data-parent="#list-group-men">
+									<div class="collapse show" id="sub-men1"
+										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort=outer" class="list-group-item list-group-item-action active">아우터 <small
-												class="text-muted"
-											>(2)</small>
-											</a> <a href="category.do?sort=shirts" class="list-group-item list-group-item-action"> 셔츠&블라우스 <small
-												class="text-muted"
-											>(1)</small>
+											<a href="category.do?sort=outer"
+												class="list-group-item list-group-item-action active">아우터
+												<small class="text-muted">(2)</small>
+											</a> <a href="category.do?sort=shirts"
+												class="list-group-item list-group-item-action"> 셔츠&블라우스
+												<small class="text-muted">(1)</small>
 											</a>
 											<!-- 카테고리 상품끝 -->
 										</div>
 									</div>
 								</div>
 								<div class="list-group-collapse sub-men">
-									<a class="list-group-item list-group-item-action" href="#sub-men2" data-toggle="collapse" aria-expanded="false"
-										aria-controls="sub-men2"
-									>바지<small class="text-muted">(5)</small>
+									<a class="list-group-item list-group-item-action"
+										href="#sub-men2" data-toggle="collapse" aria-expanded="false"
+										aria-controls="sub-men2">바지<small
+										class="text-muted">(5)</small>
 									</a>
-									<div class="collapse" id="sub-men2" data-parent="#list-group-men">
+									<div class="collapse" id="sub-men2"
+										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort=jean" class="list-group-item list-group-item-action">청바지 <small
-												class="text-muted"
-											>(2)</small>
-											</a> <a href="category.do?sort=slacks" class="list-group-item list-group-item-action">슬렉스 <small
-												class="text-muted"
-											>(1)</small>
+											<a href="category.do?sort=jean"
+												class="list-group-item list-group-item-action">청바지 <small
+												class="text-muted">(2)</small>
+											</a> <a href="category.do?sort=slacks"
+												class="list-group-item list-group-item-action">슬렉스 <small
+												class="text-muted">(1)</small>
 											</a>
 
 										</div>
 									</div>
 								</div>
 								<div class="list-group-collapse sub-men">
-									<a class="list-group-item list-group-item-action" href="#sub-men3" data-toggle="collapse" aria-expanded="false"
-										aria-controls="sub-men2"
-									>신발<small class="text-muted">(5)</small>
+									<a class="list-group-item list-group-item-action"
+										href="#sub-men3" data-toggle="collapse" aria-expanded="false"
+										aria-controls="sub-men2">신발<small
+										class="text-muted">(5)</small>
 									</a>
-									<div class="collapse" id="sub-men3" data-parent="#list-group-men">
+									<div class="collapse" id="sub-men3"
+										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort=converse" class="list-group-item list-group-item-action">컨버스 <small
-												class="text-muted"
-											>(2)</small>
-											</a> <a href="category.do?sort=dressShoes" class="list-group-item list-group-item-action">구두&로퍼 <small
-												class="text-muted"
-											>(1)</small>
+											<a href="category.do?sort=converse"
+												class="list-group-item list-group-item-action">컨버스 <small
+												class="text-muted">(2)</small>
+											</a> <a href="category.do?sort=dressShoes"
+												class="list-group-item list-group-item-action">구두&로퍼 <small
+												class="text-muted">(1)</small>
 											</a>
 										</div>
 									</div>
 								</div>
 								<div class="list-group-collapse sub-men">
-									<a class="list-group-item list-group-item-action" href="#sub-men4" data-toggle="collapse" aria-expanded="false"
-										aria-controls="sub-men4"
-									>악세서리<small class="text-muted">(3)</small>
+									<a class="list-group-item list-group-item-action"
+										href="#sub-men4" data-toggle="collapse" aria-expanded="false"
+										aria-controls="sub-men4">악세서리<small
+										class="text-muted">(3)</small>
 									</a>
-									<div class="collapse" id="sub-men4" data-parent="#list-group-men">
+									<div class="collapse" id="sub-men4"
+										data-parent="#list-group-men">
 										<div class="list-group">
-											<a href="category.do?sort=bag" class="list-group-item list-group-item-action">가방 <small
-												class="text-muted"
-											>(2)</small>
+											<a href="category.do?sort=bag"
+												class="list-group-item list-group-item-action">가방 <small
+												class="text-muted">(2)</small>
 											</a>
 										</div>
 									</div>
@@ -191,7 +202,8 @@
 								<div class="price-box-slider">
 									<div id="slider-range"></div>
 									<p>
-										<input type="text" name="amount" id="amount" style="border: 0; color: #fbb714; font-weight: bold;">
+										<input type="text" name="amount" id="amount"
+											style="border: 0; color: #fbb714; font-weight: bold;">
 										<button class="btn hvr-hover" type="submit">Filter</button>
 									</p>
 							</form>
@@ -213,14 +225,14 @@
 								<!-- <span>Sort by </span> -->
 								<form action="./sortProduct.do">
 									<!-- 설정에따른 배열 -->
-									<select id="basic" class="selectpicker show-tick form-control" name="sortBy" data-placeholder="$ USD"
-										onchange="this.form.submit()"
-									>
-										<%-- <custom:sort_option > --%>
-										<option data-display="Select" selected>상품 정렬하기</option>
+									<select id="basic" class="selectpicker show-tick form-control"
+										name="sortBy" data-placeholder="$ USD"
+										onchange="this.form.submit()">
+										<custom:sort_option />
+										<!-- <option data-display="Select" selected>상품 정렬하기</option>
 										<option value="popularity">인기순</option>
 										<option value="highPrice">높은 가격순</option>
-										<option value="lowPrice">낮은 가격순</option>
+										<option value="lowPrice">낮은 가격순</option> -->
 									</select>
 								</form>
 							</div>
@@ -228,21 +240,20 @@
 						</div>
 						<div class="col-12 col-sm-4 text-center text-sm-right">
 							<ul class="nav nav-tabs ml-auto">
-								<li>
-									<a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i>
-									</a>
-								</li>
-								<li>
-									<a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i>
-									</a>
-								</li>
+								<li><a class="nav-link active" href="#grid-view"
+									data-toggle="tab"> <i class="fa fa-th"></i>
+								</a></li>
+								<li><a class="nav-link" href="#list-view" data-toggle="tab">
+										<i class="fa fa-list-ul"></i>
+								</a></li>
 							</ul>
 						</div>
 					</div>
 
 					<div class="row product-categorie-box">
 						<div class="tab-content">
-							<div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+							<div role="tabpanel" class="tab-pane fade show active"
+								id="grid-view">
 
 								<div class="row">
 									<c:forEach var="v" items="${products}">
@@ -253,10 +264,11 @@
 
 													<!-- custom:productArray: 페이지 연결문제로 밑에 코드는 남겨둠, 일단 보류 -->
 
-													<c:forTokens var="fileName" items="${v.files }" delims="," varStatus="st">
-														<a href="showProductDetail.do?pid=${ v.pid }" style="${style}"> <img src="./upload/${fileName }" class="img-fluid"
-															alt="Image"
-														>
+													<c:forTokens var="fileName" items="${v.files }" delims=","
+														varStatus="st">
+														<a href="showProductDetail.do?pid=${ v.pid }"
+															style="${style}"> <img src="./upload/${fileName }"
+															class="img-fluid" alt="Image">
 														</a>
 													</c:forTokens>
 												</div>
@@ -292,8 +304,10 @@
 											<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
 												<div class="products-single fix">
 													<div class="box-img-hover">
-														<c:forTokens var="fileName" items="${ v.files }" delims="," varStatus="st">
-															<img src="./upload/${ fileName }" class="img-fluid" alt="Image">
+														<c:forTokens var="fileName" items="${ v.files }"
+															delims="," varStatus="st">
+															<img src="./upload/${ fileName }" class="img-fluid"
+																alt="Image">
 														</c:forTokens>
 													</div>
 												</div>
@@ -314,8 +328,9 @@
 													</h5>
 
 
-													<a class="btn hvr-hover" href="showProductDetail.do?pid=${ v.pid }">바로 구매</a>
-											</div>
+													<a class="btn hvr-hover"
+														href="showProductDetail.do?pid=${ v.pid }">바로 구매</a>
+												</div>
 											</div>
 										</c:forEach>
 									</div>

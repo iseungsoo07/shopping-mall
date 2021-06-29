@@ -23,7 +23,7 @@ public class Product {
 	public String toString() {
 		return "Product [pid=" + pid + ", name=" + name + ", price=" + price + ", visit=" + visit + ", cate=" + cate
 				+ ", ssize=" + ssize + ", msize=" + msize + ", lsize=" + lsize + ", xlsize=" + xlsize + ", xxlsize="
-				+ xxlsize + ", pcon=" + pcon + ", gender=" + gender + ", files=" + files + ", day=" + day + "]";
+				+ xxlsize + ", pcon=" + pcon + ", gender=" + gender + ", files=" + files + ", day=" + day + "]\n";
 	}
 
 	public void setSsize(int ssize) {
