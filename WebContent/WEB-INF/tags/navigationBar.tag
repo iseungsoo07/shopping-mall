@@ -150,7 +150,7 @@
 								<c:set var="paytotal" value="${paytotal+v.pay}" />
 								<c:set var="cartcnt" value="${cartcnt+1}" />
 							</c:forEach>
-							<li class="total"><a href="#"
+							<li class="total"><a href="./showCart.do"
 								class="btn btn-default hvr-hover btn-cart">VIEW CART</a> <span
 								class="float-right"><strong>Total</strong>:${paytotal}원</span></li>
 						</ul>

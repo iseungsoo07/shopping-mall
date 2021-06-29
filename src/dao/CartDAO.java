@@ -134,6 +134,24 @@ public class CartDAO {
 		}
 		return true;
 	}
+	
+	public boolean delCartList(String uid) {
+		try {
+			conn = DBConnection.connect();
+			String sql = "delete from cart where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, uid);
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		} finally {
+			disconnect();
+		}
+		return true;
+	}
 
 	public double grade(String id) {
 		int rank;

@@ -76,7 +76,10 @@ public class PaymentAction implements Action {
 			
 		}
 		
-		session.removeAttribute("carts");
+		cartDAO.delCartList(id);
+		datas = cartDAO.showC(id);
+		
+		session.setAttribute("carts",datas);
 		
 		forward.setPath("payment_ok.jsp");
 		forward.setRedirect(false);
