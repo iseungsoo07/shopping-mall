@@ -16,30 +16,8 @@
 				<div class="col-lg-4 col-md-12 col-sm-12">
 					<div class="footer-widget">
 						<h4>About ThewayShop</h4>
-						<p>분위기 최고조 웹 개발 프로젝트로 만들어진 TheWayShop은 고객들이 원하는 상품을 구매할 수 있는 홈페이지입니다. 쇼핑을 즐기세요!</p>
-						<ul>
-							<li>
-								<a><i class="fas fa-comments" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a><i class="fab fa-twitter" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a><i class="fa fa-rss" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-							</li>
-						</ul>
+						<p>분위기 최고조 웹 개발 프로젝트로 만들어진 <strong>TheWayShop</strong>은 고객들이 원하는 상품을 구매할 수 있는 홈페이지입니다. 쇼핑을 즐기세요!</p>
+						
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-12 col-sm-12">
@@ -50,19 +28,10 @@
 								<a href="about.jsp">About Us</a>
 							</li>
 							<li>
-								<a>Customer Service</a>
+								<a href="./showN.do">공지사항</a>
 							</li>
 							<li>
-								<a>Our Sitemap</a>
-							</li>
-							<li>
-								<a>Terms &amp; Conditions</a>
-							</li>
-							<li>
-								<a>Privacy Policy</a>
-							</li>
-							<li>
-								<a>Delivery Information</a>
+								<a href="./showQ.do">QnA</a>
 							</li>
 						</ul>
 					</div>
@@ -73,8 +42,7 @@
 						<ul>
 							<li>
 								<p>
-									<i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS
-									67213
+									<i class="fas fa-map-marker-alt"></i>주소 : 서울특별시 강남구 테헤란로 146 <br>현익빌딩 3층,4층<br>코리아 IT아카데미 강남점
 								</p>
 							</li>
 							<li>

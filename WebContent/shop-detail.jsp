@@ -237,15 +237,15 @@ a:link, a:visited {
 
 							<div class="price-box-bar">
 								<div class="cart-and-bay-btn" style="text-align: right;">
-
+									<c:if test="${ member != null }">
 									<input class="btn hvr-hover" data-fancybox-close=""
 										type="submit" value="장바구니" data-fancybox-close=""
-										formaction="./addCart.do"/> 
-										
+										formaction="./addCart.do" style="color:white"/> 
+									</c:if>	
 									<!-- paymantAction in to formaction="..." -->
 									<input class="btn hvr-hover" data-fancybox-close=""
 										type="submit" value="바로구매" data-fancybox-close=""
-										formaction=""/> 
+										formaction="" style="color:white"/> 
 									<%-- <a
 										class="btn hvr-hover" data-fancybox-close=""
 										href="payment.do?pid=${ product.pid }">바로구매 </a> --%>
