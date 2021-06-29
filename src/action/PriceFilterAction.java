@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.ProductDAO;
 import model.Product;
 
 public class PriceFilterAction implements Action {
@@ -16,7 +15,6 @@ public class PriceFilterAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();
-		ProductDAO productDAO = new ProductDAO();
 		HttpSession session = req.getSession();
 		
 		@SuppressWarnings("unchecked")
@@ -29,10 +27,12 @@ public class PriceFilterAction implements Action {
 		
 		System.out.println(amount);
 		
-//		String[] str = amount.split(" ~ ");
-		String[] str = amount.split(" - ");
-		String strMin=str[0].substring(1);
-		String strMax=str[1].substring(1);
+		String[] str = amount.split(" ~ ");
+//		String[] str = amount.split(" - ");
+
+		String strMin=str[0];
+		String strMax=str[1];
+		
 		System.out.println("strMin : "+strMin);
 		System.out.println("strMax : "+strMax);
 		int min=Integer.parseInt(strMin);
