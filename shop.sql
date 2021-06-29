@@ -67,8 +67,9 @@ create table productreview(
 	userid varchar(20), --리뷰를 쓴 사용자 id
 	productsize varchar(10),
 	rating int,	-- 평점 1~5
-	reveiwcon varchar(1000),
+	reviewcon varchar(1000),
 	day varchar(30),
+	foreign key(userid) references member(id),
 	constraint fk2 foreign key (productid) references product(pid) on delete cascade
 );
 
@@ -107,6 +108,7 @@ select * from QnA
 select * from reply
 select * from product
 select * from cart
+select * from PRODUCTREVIEW
 drop table notice;
 drop table reply;
 drop table QnA;

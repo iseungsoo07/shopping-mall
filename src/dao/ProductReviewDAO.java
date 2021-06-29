@@ -85,6 +85,7 @@ public class ProductReviewDAO {
 				proReview.setProductsize(rs.getString("productsize"));
 				proReview.setReviewcon(rs.getString("reviewcon"));
 				proReview.setDay(rs.getString("day"));
+				proReview.setRating(rs.getInt("rating"));
 				datas.add(proReview);
 			}
 		} catch (SQLException e) {
