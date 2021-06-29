@@ -275,7 +275,8 @@
 
 												<div class="why-text">
 													<a href="showProductDetail.do?pid=${ v.pid }">${ v.name }</a>
-
+													<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♥${v.visit}</span>
+													
 													<h5>
 														<c:if test="${ member == null }">
 															<h5>${ v.price }원</h5>

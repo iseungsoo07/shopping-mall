@@ -20,6 +20,6 @@
 		<center>
 			<input type="submit" value="작성">
 		</center>
-	
+	</form>
 </c:if>
 

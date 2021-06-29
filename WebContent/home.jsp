@@ -161,7 +161,7 @@
 								</c:forTokens>
 							</div>
 							<div class="why-text">
-								<h4>${ v.name }</h4>
+								<h4>${ v.name }<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♥${v.visit}</span></h4>
 								<h5>
 														<c:if test="${ member == null }">
 															<h5>${ v.price }원</h5>
