@@ -90,14 +90,13 @@ create table cart(
 	foreign key(id) references member(id),
 	constraint fk3 foreign key(pid) references product(pid) on delete cascade
 );
+
 drop table product;
 drop table cart;
 INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VALUES ('ab','pw','name','phone','email',123,'addr',1,100,1000000)
 
-
-
 INSERT INTO QnA (qid,id,qtitle,qcon,qstate,day,sort) values (100,'a','title','con','state','day','sort')
-
+INSERT INTO member (id, pw, name, phone, email, zipcode, addr, rank ,point, purchase) values ('seungsoo', '1234', '송승수', '01012341234', 'asdf@asdf.com', 12345, 'asdfasdfasdfa', 5, 900, 0);
 update member set purchase = 100000 where id = 'admin';
 
 DELETE FROM member WHERE id = 'admin';
@@ -120,6 +119,8 @@ select * from QnA;
 select * from Notice where ncon like '%as%'
 
 select * from reply where qid = 4;
+
+delete from cart WHERE cid = 2;
 CREATE SEQUENCE cnt START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
 CREATE SEQUENCE cnt2 START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;

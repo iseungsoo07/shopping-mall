@@ -131,37 +131,7 @@
 	<!-- End Slider -->
 
 	<!-- Start Categories  -->
-	<div class="categories-shop">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<div class="shop-cat-box">
-						<img class="img-fluid" src="images/t-shirts-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">T-shirts</a>
-					</div>
-					<div class="shop-cat-box">
-						<img class="img-fluid" src="images/shirt-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Shirt</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<div class="shop-cat-box">
-						<img class="img-fluid" src="images/wallet-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Wallet</a>
-					</div>
-					<div class="shop-cat-box">
-						<img class="img-fluid" src="images/women-bag-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Bags</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<div class="shop-cat-box">
-						<img class="img-fluid" src="images/shoes-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Shoes</a>
-					</div>
-					<div class="shop-cat-box">
-						<img class="img-fluid" src="images/women-shoes-img.jpg" alt="" /> <a class="btn hvr-hover" href="#">Women
-							Shoes</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- End Categories -->
 
 	<!-- Start Products  -->
@@ -170,139 +140,156 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-all text-center">
-						<h1>Featured Products</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="special-menu text-center">
-						<div class="button-group filter-button-group">
-							<button class="active" data-filter="*">All</button>
-							<button data-filter=".top-featured">Top featured</button>
-							<button data-filter=".best-seller">Best seller</button>
-						</div>
+						<h1>인기 상품</h1>
+						<p>the way shop 인기 상품</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="row special-list">
-				<div class="col-lg-3 col-md-6 special-grid best-seller">
-					<div class="products-single fix">
-						<div class="box-img-hover">
-							<div class="type-lb">
-								<p class="sale">Sale</p>
+				<c:forEach var="v" items="${ bestSell }">
+					<div class="col-lg-3 col-md-6 special-grid best-seller">
+						<div class="products-single fix">
+							<div class="box-img-hover">
+								<div class="type-lb">
+									<p class="sale">Best</p>
+								</div>
+								<c:forTokens var="fileName" items="${v.files }" delims="," varStatus="st">
+									<a href="showProductDetail.do?pid=${ v.pid }" style="${style}"> 
+										<img src="./upload/${ fileName }" class="img-fluid" alt="Image">
+									</a>
+								</c:forTokens>
 							</div>
-							<img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
-							<div class="mask-icon">
-								<ul>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
-									</li>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
-									</li>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-									</li>
-								</ul>
-								<a class="cart" href="#">Add to Cart</a>
+							<div class="why-text">
+								<h4>${ v.name }</h4>
+								<h5>
+														<c:if test="${ member == null }">
+															<h5>${ v.price }원</h5>
+														</c:if>
+														<c:if test="${ member != null }">
+															<del style="font-size: 15px">${ v.price }원</del>
+															<span style="color: #d33b33">${ Math.round( v.price * member.calcDiscount() / 100) }원</span>
+														</c:if>
+													</h5>
 							</div>
-						</div>
-						<div class="why-text">
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>$7.79</h5>
 						</div>
 					</div>
-				</div>
+				</c:forEach>
+				<!-- <div class="col-lg-3 col-md-6 special-grid best-seller">
+               <div class="products-single fix">
+                  <div class="box-img-hover">
+                     <div class="type-lb">
+                        <p class="sale">Sale</p>
+                     </div>
+                     <img src="images/아우터1.jpg" class="img-fluid" alt="Image">
+                     <div class="mask-icon">
+                        <ul>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+                           </li>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="Compare"><i
+                                 class="fas fa-sync-alt"></i></a></li>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="Add to Wishlist"><i
+                                 class="far fa-heart"></i></a></li>
+                        </ul>
+                        <a class="cart" href="#">장바구니</a>
+                     </div>
+                  </div>
+                  <div class="why-text">
+                     <h4>베이직 블레이저</h4>
+                     <h5>20,000</h5>
+                  </div>
+               </div>
+            </div>
 
-				<div class="col-lg-3 col-md-6 special-grid top-featured">
-					<div class="products-single fix">
-						<div class="box-img-hover">
-							<div class="type-lb">
-								<p class="new">New</p>
-							</div>
-							<img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-							<div class="mask-icon">
-								<ul>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
-									</li>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
-									</li>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-									</li>
-								</ul>
-								<a class="cart" href="#">Add to Cart</a>
-							</div>
-						</div>
-						<div class="why-text">
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>$9.79</h5>
-						</div>
-					</div>
-				</div>
+            <div class="col-lg-3 col-md-6 special-grid top-featured">
+               <div class="products-single fix">
+                  <div class="box-img-hover">
+                     <div class="type-lb">
+                        <p class="new">New</p>
+                     </div>
+                     <img src="images/아우터3.jpg" class="img-fluid" alt="Image">
+                     <div class="mask-icon">
+                        <ul>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+                           </li>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="Compare"><i
+                                 class="fas fa-sync-alt"></i></a></li>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="Add to Wishlist"><i
+                                 class="far fa-heart"></i></a></li>
+                        </ul>
+                        <a class="cart" href="#">장바구니</a>
+                     </div>
+                  </div>
+                  <div class="why-text">
+                     <h4>여성 블레이저</h4>
+                     <h5>50,000</h5>
+                  </div>
+               </div>
+            </div>
 
-				<div class="col-lg-3 col-md-6 special-grid top-featured">
-					<div class="products-single fix">
-						<div class="box-img-hover">
-							<div class="type-lb">
-								<p class="sale">Sale</p>
-							</div>
-							<img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-							<div class="mask-icon">
-								<ul>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
-									</li>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
-									</li>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-									</li>
-								</ul>
-								<a class="cart" href="#">Add to Cart</a>
-							</div>
-						</div>
-						<div class="why-text">
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>$10.79</h5>
-						</div>
-					</div>
-				</div>
+            <div class="col-lg-3 col-md-6 special-grid top-featured">
+               <div class="products-single fix">
+                  <div class="box-img-hover">
+                     <div class="type-lb">
+                        <p class="sale">Sale</p>
+                     </div>
+                     <img src="images/맨투맨.jpg" class="img-fluid" alt="Image">
+                     <div class="mask-icon">
+                        <ul>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+                           </li>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="Compare"><i
+                                 class="fas fa-sync-alt"></i></a></li>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="Add to Wishlist"><i
+                                 class="far fa-heart"></i></a></li>
+                        </ul>
+                        <a class="cart" href="#">장바구니</a>
+                     </div>
+                  </div>
+                  <div class="why-text">
+                     <h4>맨투맨</h4>
+                     <h5>50,000</h5>
+                  </div>
+               </div>
+            </div>
 
-				<div class="col-lg-3 col-md-6 special-grid best-seller">
-					<div class="products-single fix">
-						<div class="box-img-hover">
-							<div class="type-lb">
-								<p class="sale">Sale</p>
-							</div>
-							<img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
-							<div class="mask-icon">
-								<ul>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>
-									</li>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>
-									</li>
-									<li>
-										<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-									</li>
-								</ul>
-								<a class="cart" href="#">Add to Cart</a>
-							</div>
-						</div>
-						<div class="why-text">
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>$15.79</h5>
-						</div>
-					</div>
-				</div>
+            <div class="col-lg-3 col-md-6 special-grid best-seller">
+               <div class="products-single fix">
+                  <div class="box-img-hover">
+                     <div class="type-lb">
+                        <p class="sale">Sale</p>
+                     </div>
+                     <img src="images/티셔츠.jpg" class="img-fluid" alt="Image">
+                     <div class="mask-icon">
+                        <ul>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="View"><i class="fas fa-eye"></i></a>
+                           </li>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="Compare"><i
+                                 class="fas fa-sync-alt"></i></a></li>
+                           <li><a href="#" data-toggle="tooltip"
+                              data-placement="right" title="Add to Wishlist"><i
+                                 class="far fa-heart"></i></a></li>
+                        </ul>
+                        <a class="cart" href="#">장바구니</a>
+                     </div>
+                  </div>
+                  <div class="why-text">
+                     <h4>티셔츠</h4>
+                     <h5>50,000</h5>
+                  </div>
+               </div>
+            </div> -->
 			</div>
 		</div>
 	</div>
@@ -314,8 +301,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-all text-center">
-						<h1>latest blog</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+						<h1>다른 쇼핑몰 둘러보기</h1>
+						<p>더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을 둘러보세요</p>
 					</div>
 				</div>
 			</div>
@@ -323,24 +310,21 @@
 				<div class="col-md-6 col-lg-4 col-xl-4">
 					<div class="blog-box">
 						<div class="blog-img">
-							<img class="img-fluid" src="images/blog-img.jpg" alt="" />
+							<img class="img-fluid" src="images/무신사.jpg" alt="" />
 						</div>
 						<div class="blog-content">
 							<div class="title-blog">
-								<h3>Fusce in augue non nisi fringilla</h3>
-								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat.
-									Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+								<h3>무신사 스토어</h3>
+								<p>무신사 스토어 둘러보기</p>
 							</div>
 							<ul class="option-blog">
+
 								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a>
+									<a href="https://magazine.musinsa.com/" target="_blank" data-toggle="tooltip" data-placement="right" title="Views"><i
+										class="fas fa-eye"
+									></i></a>
 								</li>
-								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a>
-								</li>
-								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a>
-								</li>
+
 							</ul>
 						</div>
 					</div>
@@ -348,24 +332,21 @@
 				<div class="col-md-6 col-lg-4 col-xl-4">
 					<div class="blog-box">
 						<div class="blog-img">
-							<img class="img-fluid" src="images/blog-img-01.jpg" alt="" />
+							<img class="img-fluid" src="images/커버낫.jpg" alt="" />
 						</div>
 						<div class="blog-content">
 							<div class="title-blog">
-								<h3>Fusce in augue non nisi fringilla</h3>
-								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat.
-									Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+								<h3>커버낫 홈</h3>
+								<p>커버낫 둘러보기</p>
 							</div>
 							<ul class="option-blog">
+
 								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a>
+									<a href="https://covernat.net/" target="_blank" data-toggle="tooltip" data-placement="right" title="Views"><i
+										class="fas fa-eye"
+									></i></a>
 								</li>
-								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a>
-								</li>
-								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a>
-								</li>
+
 							</ul>
 						</div>
 					</div>
@@ -373,24 +354,21 @@
 				<div class="col-md-6 col-lg-4 col-xl-4">
 					<div class="blog-box">
 						<div class="blog-img">
-							<img class="img-fluid" src="images/blog-img-02.jpg" alt="" />
+							<img class="img-fluid" src="images/마크곤잘레스.jpg" alt="" />
 						</div>
 						<div class="blog-content">
 							<div class="title-blog">
-								<h3>Fusce in augue non nisi fringilla</h3>
-								<p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat.
-									Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+								<h3>마크 곤잘레스</h3>
+								<p>마크곤잘레스 둘러보기</p>
 							</div>
 							<ul class="option-blog">
+
 								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a>
+									<a href="https://markgonzales.co.kr/" target="" data-toggle="tooltip" data-placement="right" title="Views"><i
+										class="fas fa-eye"
+									></i></a>
 								</li>
-								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a>
-								</li>
-								<li>
-									<a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i class="far fa-comments"></i></a>
-								</li>
+
 							</ul>
 						</div>
 					</div>

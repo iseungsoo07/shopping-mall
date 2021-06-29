@@ -25,7 +25,7 @@ public class DeleteAction implements Action {
 			req.setCharacterEncoding("UTF-8");
 			res.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = res.getWriter();
-			out.println("<script>alert('회원 탈퇴가 완료되었습니다.'); location.href='home.jsp'; </script>");
+			out.println("<script>alert('회원 탈퇴가 완료되었습니다.'); location.href='home.do'; </script>");
 		} else {
 			req.setCharacterEncoding("UTF-8");
 			res.setContentType("text/html; charset=UTF-8");

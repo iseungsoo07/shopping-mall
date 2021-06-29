@@ -12,7 +12,8 @@ import javax.servlet.http.HttpSession;
 import dao.CartDAO;
 import model.Cart;
 
-public class AddCartAction implements Action {
+public class DirectPaymentAction implements Action {
+
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
@@ -68,8 +69,9 @@ public class AddCartAction implements Action {
 		req.setAttribute("carts", datas); // QnA寃뚯떆湲�紐⑸줉怨� �뙎湲� 紐⑸줉�쓣 �븳踰덉뿉 蹂댁뿬以�
 
 		forward.setRedirect(false);
-		forward.setPath("cart.jsp");
+		forward.setPath("gopayment.do");
 		return forward;
+
 	}
 
 }

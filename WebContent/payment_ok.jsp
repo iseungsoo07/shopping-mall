@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Site Metas -->
-<title>ThewayShop | 결제 페이지</title>
+<title>ThewayShop | 결제 완료</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -40,19 +40,29 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
-table td, table th {
-	text-align: center;
+
+.flex { 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-a:visited, a:link {
-	color: #fff;
+.font28 { 
+	font-weight: bold;
+	font-size: 28px;
 }
 
-.margin-bottom15 {
-	margin-bottom: 15px;
+.font {
+	font-size: 24px;
 }
+
 </style>
-
+<script>
+	function goHome() {
+		location.href= "home.do";
+	}
+</script>
 
 </head>
 
@@ -101,66 +111,12 @@ a:visited, a:link {
 
 	<!-- Start Cart  -->
 	<div class="cart-box-main">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="table-main table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>주문일자</th>
-									<th>사진</th>
-									<th>상품명</th>
-									<th>사이즈</th>
-									<th>가격</th>
-									<th>개수</th>
-									<th>총 금액</th>
-									<th>삭제</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="v" items="${ carts }">
-									<tr>
-										<td>
-											<p>${ v.day }</p>
-										</td>
-										<td class="thumbnail-img">
-											<c:forTokens var="fileName" items="${ v.files }" delims="," varStatus="st">
-												<img src="./upload/${ fileName }" class="img-fluid" alt="Image">
-											</c:forTokens>
-										</td>
-										<td class="name-pr">
-											<p>${ v.name }</p>
-										</td>
-										<td class="size-pr">
-											<p>${ v.psize }</p>
-										</td>
-										<td class="price-pr">
-											<span>￦ </span><span id="price">${ v.price }</span>
-										</td>
-										<td class="quantity-box">
-											<p>${ v.count }</p>
-										</td>
-										<td class="total-pr">
-											<span>￦ </span><span id="totalPrice">${ v.price * v.count }</span>
-											<!-- 총 금액 구현필요  -->
-										</td>
-										<td class="remove-pr">
-											<a href="./delCart.do?cid=${v.cid}&&id=${member.id}" style="color: #000"> <i class="fas fa-times"></i> <!-- 삭제 구현필요 -->
-											</a>
-										</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-
-			<custom:point />
+		<div class="flex">
+			<p class="font28">결제가 완료되었습니다.</p>
+			<p class="font">또 이용해주세요!</p>
+		
+			<button onclick="goHome()" class="btn_basecolor" style="width: 200px; border: none; cursor: pointer;">홈으로 돌아가기</button>
 		</div>
-
-
 	</div>
 	<!-- End Cart -->
 
