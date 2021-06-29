@@ -101,8 +101,7 @@
 				<!--  <li class="search"><a href="#"><i class="fa fa-search"></i></a>
                                 </li> -->
 				<li class="side-menu"><a href="#"> <i
-						class="fa fa-shopping-bag"></i> 
-						<c:if test="${member==null}">
+						class="fa fa-shopping-bag"></i> <c:if test="${member==null}">
 							<span class="badge"></span>
 						</c:if> <c:if test="${member!=null}">
 							<c:set var="cartcnt" value="0" />
@@ -145,7 +144,8 @@
 										<a href="#">${v.name} </a>
 									</h6>
 									<p>
-										${v.count}x - <span class="price">${v.price} 원</span>
+										${v.size} - ${v.count}개 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+											class="price">${v.price} 원</span>
 									</p></li>
 								<c:set var="paytotal" value="${paytotal+v.pay}" />
 								<c:set var="cartcnt" value="${cartcnt+1}" />

@@ -60,7 +60,9 @@ create table product(
    files varchar(50),
    day varchar(30) 
 );
-
+select * from product;
+update product set visit=((select visit from product where pid=1)+1) where pid=1;
+select visit from product where pid=1;
 create table productreview(
 	reviewid int primary key, -- review id
 	productid int not null, 

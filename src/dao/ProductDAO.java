@@ -505,4 +505,26 @@ public class ProductDAO {
 		return datas;
 	}
 	
+	public void visitUp(int pid) {
+		try {
+			conn = DBConnection.connect();
+
+			String sql = "update product set visit=((select visit from product where pid=?)+1) where pid=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, pid);
+			pstmt.setInt(2, pid);
+
+			rs = pstmt.executeQuery();
+
+			System.out.println("visit ++");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		} finally {
+			disconnect();
+		}
+
+	}
+	
 }

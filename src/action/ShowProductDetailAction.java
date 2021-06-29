@@ -24,6 +24,7 @@ public class ShowProductDetailAction implements Action {
 		int pid=Integer.parseInt(req.getParameter("pid"));
 		System.out.println(pid);
 		product = productDAO.showP(pid);
+		productDAO.visitUp(pid);
 		req.setAttribute("product", product);
 		
 		ArrayList<ProductReview> reviews = reviewDAO.showR(pid);
