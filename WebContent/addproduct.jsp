@@ -107,7 +107,7 @@
 					<h2>관리자</h2>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item">
-							<a href="#">Home</a>
+							Home</a>
 						</li>
 						<li class="breadcrumb-item active">상품 등록</li>
 					</ul>

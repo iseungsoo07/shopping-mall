@@ -74,7 +74,7 @@
 					<h2>Shop</h2>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item">
-							<a href="#">Home</a>
+							Home
 						</li>
 						<li class="breadcrumb-item active">Shop</li>
 					</ul>

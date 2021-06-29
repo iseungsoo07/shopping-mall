@@ -54,7 +54,7 @@
 						<h2>고객센터</h2>
 						<ul class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="#">Home</a>
+								Home
 							</li>
 							<li class="breadcrumb-item active">공지사항</li>
 						</ul>
@@ -111,13 +111,7 @@
 			<p class="btn_line txt_right">
 				<board:writeN />
 			</p>
-			<div class="pagination">
-				<a href="#" class="firstpage pbtn"> <img src="./images/btn_firstpage.png" alt="첫 페이지로 이동" />
-				</a> <a href="#" class="prevpage pbtn"> <img src="./images/btn_prevpage.png" alt="이전 페이지로 이동" />
-				</a> <custom:paging/> <a href="#" class="nextpage pbtn"> <img src="./images/btn_nextpage.png" alt="다음 페이지로 이동" />
-				</a> <a href="#" class="lastpage pbtn"> <img src="./images/btn_lastpage.png" alt="마지막 페이지로 이동" />
-				</a>
-			</div>
+			
 			<p>
 				<!-- <form method="post" action="./searchN.do">
 				<table>

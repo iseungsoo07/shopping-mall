@@ -49,7 +49,7 @@
 						<h2>고객센터</h2>
 						<ul class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="#">Home</a>
+								Home
 							</li>
 							<li class="breadcrumb-item active">공지사항</li>
 						</ul>

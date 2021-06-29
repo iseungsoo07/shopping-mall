@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="custom"%>
 <!DOCTYPE html>
@@ -21,7 +22,8 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- fontawesome -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -58,7 +60,8 @@
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-search"></i></span>
 				<input type="text" class="form-control" placeholder="Search">
-				<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+				<span class="input-group-addon close-search"><i
+					class="fa fa-times"></i></span>
 			</div>
 		</div>
 	</div>
@@ -67,8 +70,7 @@
 	<!-- Start Slider -->
 	<div id="slides-shop" class="cover-slides">
 		<ul class="slides-container">
-			<li class="text-left">
-				<img src="images/banner-01.jpg" alt="">
+			<li class="text-left"><img src="images/banner-01.jpg" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -76,17 +78,13 @@
 								<strong>Welcome To <br> Thewayshop
 								</strong>
 							</h1>
-							<p class="m-b-40">
-								See how your users experience your website in realtime or view <br> trends to see any changes in
-								performance over time.
-							</p>
+							<p class="m-b-40">저희 쇼핑몰은 "좋은 상품은 누구에게나 언제든지, 자연스럽고 편안하게 다가갈
+								수 있어야 한다" 라는 단순하지만 명확한 신념으로 만듭니다.</p>
 
 						</div>
 					</div>
-				</div>
-			</li>
-			<li class="text-center">
-				<img src="images/banner-02.jpg" alt="">
+				</div></li>
+			<li class="text-center"><img src="images/banner-02.jpg" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -94,17 +92,13 @@
 								<strong>Welcome To <br> Thewayshop
 								</strong>
 							</h1>
-							<p class="m-b-40">
-								See how your users experience your website in realtime or view <br> trends to see any changes in
-								performance over time.
-							</p>
+							<p class="m-b-40">The wayShop은 합리적인 가격과 믿을 수 있는 상품으로 온라인 쇼핑몰
+								업계의 대표주자로 자리매김 하였으며,</p>
 
 						</div>
 					</div>
-				</div>
-			</li>
-			<li class="text-right">
-				<img src="images/banner-03.jpg" alt="">
+				</div></li>
+			<li class="text-right"><img src="images/banner-03.jpg" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -112,20 +106,17 @@
 								<strong>Welcome To <br> Thewayshop
 								</strong>
 							</h1>
-							<p class="m-b-40">
-								See how your users experience your website in realtime or view <br> trends to see any changes in
-								performance over time.
-							</p>
+							<p class="m-b-40">고객님들의 니즈에 부응하는 퀄리티 높은 자체제작 상품으로 '좋은 상품'의
+								신념을 지켜나가겠습니다.</p>
 
 						</div>
 					</div>
-				</div>
-			</li>
+				</div></li>
 		</ul>
 		<div class="slides-navigation">
-			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <a href="#" class="prev"><i
-				class="fa fa-angle-left" aria-hidden="true"
-			></i></a>
+			<a href="#" class="next"><i class="fa fa-angle-right"
+				aria-hidden="true"></i></a> <a href="#" class="prev"><i
+				class="fa fa-angle-left" aria-hidden="true"></i></a>
 		</div>
 	</div>
 	<!-- End Slider -->
@@ -154,23 +145,26 @@
 								<div class="type-lb">
 									<p class="sale">Best</p>
 								</div>
-								<c:forTokens var="fileName" items="${v.files }" delims="," varStatus="st">
-									<a href="showProductDetail.do?pid=${ v.pid }" style="${style}"> 
-										<img src="./upload/${ fileName }" class="img-fluid" alt="Image">
+								<c:forTokens var="fileName" items="${v.files }" delims=","
+									varStatus="st">
+									<a href="showProductDetail.do?pid=${ v.pid }" style="${style}">
+										<img src="./upload/${ fileName }" class="img-fluid"
+										alt="Image">
 									</a>
 								</c:forTokens>
 							</div>
 							<div class="why-text">
-								<h4>${ v.name }<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♥${v.visit}</span></h4>
+								<h4>${ v.name }<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♥${v.visit}</span>
+								</h4>
 								<h5>
-														<c:if test="${ member == null }">
-															<h5>${ v.price }원</h5>
-														</c:if>
-														<c:if test="${ member != null }">
-															<del style="font-size: 15px">${ v.price }원</del>
-															<span style="color: #d33b33">${ Math.round( v.price * member.calcDiscount() / 100) }원</span>
-														</c:if>
-													</h5>
+									<c:if test="${ member == null }">
+										<h5>${ v.price }원</h5>
+									</c:if>
+									<c:if test="${ member != null }">
+										<del style="font-size: 15px">${ v.price }원</del>
+										<span style="color: #d33b33">${ Math.round( v.price * member.calcDiscount() / 100) }원</span>
+									</c:if>
+								</h5>
 							</div>
 						</div>
 					</div>
@@ -302,7 +296,8 @@
 				<div class="col-lg-12">
 					<div class="title-all text-center">
 						<h1>다른 쇼핑몰 둘러보기</h1>
-						<p>더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을 둘러보세요</p>
+						<p>더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을 둘러보세요더 많은 쇼핑몰을
+							둘러보세요</p>
 					</div>
 				</div>
 			</div>
@@ -319,11 +314,9 @@
 							</div>
 							<ul class="option-blog">
 
-								<li>
-									<a href="https://magazine.musinsa.com/" target="_blank" data-toggle="tooltip" data-placement="right" title="Views"><i
-										class="fas fa-eye"
-									></i></a>
-								</li>
+								<li><a href="https://magazine.musinsa.com/" target="_blank"
+									data-toggle="tooltip" data-placement="right" title="Views"><i
+										class="fas fa-eye"></i></a></li>
 
 							</ul>
 						</div>
@@ -341,11 +334,9 @@
 							</div>
 							<ul class="option-blog">
 
-								<li>
-									<a href="https://covernat.net/" target="_blank" data-toggle="tooltip" data-placement="right" title="Views"><i
-										class="fas fa-eye"
-									></i></a>
-								</li>
+								<li><a href="https://covernat.net/" target="_blank"
+									data-toggle="tooltip" data-placement="right" title="Views"><i
+										class="fas fa-eye"></i></a></li>
 
 							</ul>
 						</div>
@@ -363,11 +354,9 @@
 							</div>
 							<ul class="option-blog">
 
-								<li>
-									<a href="https://markgonzales.co.kr/" target="" data-toggle="tooltip" data-placement="right" title="Views"><i
-										class="fas fa-eye"
-									></i></a>
-								</li>
+								<li><a href="https://markgonzales.co.kr/" target=""
+									data-toggle="tooltip" data-placement="right" title="Views"><i
+										class="fas fa-eye"></i></a></li>
 
 							</ul>
 						</div>

@@ -80,7 +80,7 @@
 						<h2>My Page</h2>
 						<ul class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="#">Home</a>
+								Home
 							</li>
 							<li class="breadcrumb-item active">비밀번호 변경</li>
 						</ul>

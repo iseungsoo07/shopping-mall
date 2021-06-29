@@ -68,7 +68,7 @@
 						<h2>로그인</h2>
 						<ul class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="#">Home</a>
+								Home
 							</li>
 							<li class="breadcrumb-item active">아이디 · 비밀번호 찾기</li>
 						</ul>

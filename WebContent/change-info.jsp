@@ -141,7 +141,7 @@
 						<h2>My Page</h2>
 						<ul class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="#">Home</a>
+								Home
 							</li>
 							<li class="breadcrumb-item active">회원 정보 수정</li>
 						</ul>

@@ -99,7 +99,7 @@
 					<h2>주문</h2>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item">
-							<a href="#">쇼핑</a>
+							쇼핑
 						</li>
 						<li class="breadcrumb-item active">결제</li>
 					</ul>

@@ -79,7 +79,7 @@ table td, table th {
 					<h2>카트</h2>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item">
-							<a href="#">쇼핑</a>
+							쇼핑
 						</li>
 						<li class="breadcrumb-item active">카트</li>
 					</ul>

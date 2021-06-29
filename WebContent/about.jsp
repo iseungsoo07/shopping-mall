@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Site Metas -->
-<title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+<title>ThewayShop | About us</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -75,7 +75,7 @@
 				<div class="col-lg-12">
 					<h2>ABOUT US</h2>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item">Home</a></li>
 						<li class="breadcrumb-item active">ABOUT US</li>
 					</ul>
 				</div>
@@ -125,19 +125,15 @@
 										E-mail: ex45@naver.com
 									</span>
 								</div>
-								<ul class="social">
-									<li><a class="fas fa-comments"></a></li>
-									<li><a class="far fa-envelope"></a></li>
-								</ul>
+								
 								<div class="icon">
 									<i class="fa fa-plus" aria-hidden="true"></i>
 								</div>
 							</div>
 							<div class="team-description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Praesent urna diam, maximus ut ullamcorper quis, placerat id
-									eros. Duis semper justo sed condimentum rutrum. Nunc tristique
-									purus turpis. Maecenas vulputate.</p>
+								<p>조장<br> 
+								고객센터 모델(M) 담당<br> 
+								상품관련 모델(M) 담당<br> 상품출력 및 후기관리</p>
 							</div>
 							<hr class="my-0">
 						</div>
@@ -152,19 +148,14 @@
 										E-mail: abc1775@naver.com
 									</span>
 								</div>
-								<ul class="social">
-									<li><a class="fas fa-comments"></a></li>
-									<li><a class="far fa-envelope"></a></li>
-								</ul>
+								
 								<div class="icon">
 									<i class="fa fa-plus" aria-hidden="true"></i>
 								</div>
 							</div>
 							<div class="team-description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Praesent urna diam, maximus ut ullamcorper quis, placerat id
-									eros. Duis semper justo sed condimentum rutrum. Nunc tristique
-									purus turpis. Maecenas vulputate.</p>
+								<p>마이페이지/로그인 진행 담당<br>
+								 상품관련 모델(M) 담당<br> 상품필터 및 장바구니기능 구현<br> 전체적인 코드 및 로직관리</p>
 							</div>
 							<hr class="my-0">
 						</div>
@@ -179,19 +170,13 @@
 										iseungsoo07@gmail.com
 									</span>
 								</div>
-								<ul class="social">
-									<li><a class="fas fa-comments"></a></li>
-									<li><a class="far fa-envelope"></a></li>
-								</ul>
+							
 								<div class="icon">
 									<i class="fa fa-plus" aria-hidden="true"></i>
 								</div>
 							</div>
 							<div class="team-description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Praesent urna diam, maximus ut ullamcorper quis, placerat id
-									eros. Duis semper justo sed condimentum rutrum. Nunc tristique
-									purus turpis. Maecenas vulputate.</p>
+								<p>마이페이지/로그인 진행 담당<br>상품관련 컨트롤러(C)담당<br> 상품필터 및 결제기능 구현<br> 전체적인 코드 및 로직관리</p>
 							</div>
 							<hr class="my-0">
 						</div>
@@ -206,19 +191,14 @@
 										E-mail: seo5795@naver.com
 									</span>
 								</div>
-								<ul class="social">
-									<li><a class="fas fa-comments"></a></li>
-									<li><a class="far fa-envelope"></a></li>
-								</ul>
+								
 								<div class="icon">
 									<i class="fa fa-plus" aria-hidden="true"></i>
 								</div>
 							</div>
 							<div class="team-description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Praesent urna diam, maximus ut ullamcorper quis, placerat id
-									eros. Duis semper justo sed condimentum rutrum. Nunc tristique
-									purus turpis. Maecenas vulputate.</p>
+								<p>고객센터 컨트롤러(C) 담당<br> 상품관련 뷰(V) 담당<br> ppt 발표준비 및 발표<br></p>
+								<br>
 							</div>
 							<hr class="my-0">
 						</div>
@@ -234,19 +214,13 @@
 										E-mail: jisoo3299@gmail.com
 									</span>
 								</div>
-								<ul class="social">
-									<li><a class="fas fa-comments"></a></li>
-									<li><a class="far fa-envelope"></a></li>
-								</ul>
+								
 								<div class="icon">
 									<i class="fa fa-plus" aria-hidden="true"></i>
 								</div>
 							</div>
 							<div class="team-description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Praesent urna diam, maximus ut ullamcorper quis, placerat id
-									eros. Duis semper justo sed condimentum rutrum. Nunc tristique
-									purus turpis. Maecenas vulputate.</p>
+								<p>마이페이지/로그인 진행 담당<br> 상품관련 뷰(V) 담당<br> ppt 자료준비</p>
 							</div>
 							<hr class="my-0">
 						</div>
@@ -261,19 +235,13 @@
 										E-mail: jmjpyh@naver.com
 									</span>
 								</div>
-								<ul class="social">
-									<li><a class="fas fa-comments"></a></li>
-									<li><a class="far fa-envelope"></a></li>
-								</ul>
+								
 								<div class="icon">
 									<i class="fa fa-plus" aria-hidden="true"></i>
 								</div>
 							</div>
 							<div class="team-description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Praesent urna diam, maximus ut ullamcorper quis, placerat id
-									eros. Duis semper justo sed condimentum rutrum. Nunc tristique
-									purus turpis. Maecenas vulputate.</p>
+								<p>고객센터 뷰(V) 담당<br> 상품관련 뷰(V) 담당<br> ppt 자료준비</p>
 							</div>
 							<hr class="my-0">
 						</div>
@@ -288,19 +256,13 @@
 										E-mail: nrewq1122@gmail.com
 									</span>
 								</div>
-								<ul class="social">
-									<li><a class="fas fa-comments"></a></li>
-									<li><a class="far fa-envelope"></a></li>
-								</ul>
+								
 								<div class="icon">
 									<i class="fa fa-plus" aria-hidden="true"></i>
 								</div>
 							</div>
 							<div class="team-description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Praesent urna diam, maximus ut ullamcorper quis, placerat id
-									eros. Duis semper justo sed condimentum rutrum. Nunc tristique
-									purus turpis. Maecenas vulputate.</p>
+								<p>마이페이지/로그인 진행 담당<br> 상품관련 뷰(V) 담당 </p><br>
 							</div>
 							<hr class="my-0">
 						</div>
