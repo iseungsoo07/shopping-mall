@@ -144,7 +144,7 @@
 										<a href="#">${v.name} </a>
 									</h6>
 									<p>
-										${v.size} - ${v.count}개 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+										${v.psize} - ${v.count}개 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
 											class="price">${v.price} 원</span>
 									</p></li>
 								<c:set var="paytotal" value="${paytotal+v.pay}" />
