@@ -249,9 +249,16 @@ a:link, a:visited {
 										formaction="./addCart.do" style="color:white"/> 
 									</c:if>	
 									<!-- paymantAction in to formaction="..." -->
+									<c:if test="${ member != null }">
 									<input class="btn hvr-hover" data-fancybox-close=""
 										type="submit" value="바로구매" data-fancybox-close=""
 										formaction="./directPayment.do" style="color:white"/> 
+									</c:if>
+									<c:if test = "${member == null }">
+									<input class="btn hvr-hover" data-fancybox-close=""
+										type="submit" value="바로구매" data-fancybox-close=""
+										formaction="./login.do" style="color:white"/> 
+									</c:if>
 								</div>
 							</div>
 
