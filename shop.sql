@@ -99,6 +99,7 @@ INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VAL
 
 INSERT INTO QnA (qid,id,qtitle,qcon,qstate,day,sort) values (100,'a','title','con','state','day','sort')
 INSERT INTO member (id, pw, name, phone, email, zipcode, addr, rank ,point, purchase) values ('seungsoo', '1234', '송승수', '01012341234', 'asdf@asdf.com', 12345, 'asdfasdfasdfa', 5, 900, 0);
+INSERT INTO member (id, pw, name, phone, email, zipcode, addr, rank ,point, purchase) values ('sss', '1234', '송승수', '01012341234', 'asdf@asdf.com', 12345, 'asdfasdfasdfa', 10, 0, 0);
 update member set purchase = 100000 where id = 'admin';
 
 DELETE FROM member WHERE id = 'admin';
@@ -121,6 +122,8 @@ select * from QnA;
 select * from Notice where ncon like '%as%'
 
 select * from reply where qid = 4;
+
+UPDATE member SET purchase = 0, rank = 10 WHERE id = 'ddd';
 
 delete from cart WHERE cid = 2;
 CREATE SEQUENCE cnt START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;

@@ -97,12 +97,12 @@
 			<form action="idCheck.do" method="post" class="form">
 				<label for="id"> 아이디 </label>
 				<input type="text" class="w50p" placeholder="아이디를 입력하세요" name="id" id="id" onchange="changeValue()">
-				<input type="button" id="clickBtn" value="중복체크" class="btn_bbs" onclick="idCheck()">
+				<input type="button" id="clickBtn" value="중복체크" class="btn_bbs" onclick="idCheck()" style="cursor: pointer">
 			</form>
 		</div>
 		<div class="msg">
 			<div id="checkMsg"></div>
-			<input id="useBtn" type="button" value="사용하기" class="btn_bbs center" onclick="sendCheckValue()">
+			<input id="useBtn" type="button" value="사용하기" class="btn_bbs center" onclick="sendCheckValue()" style="cursor: pointer;">
 		</div>
 	</div>
 </body>

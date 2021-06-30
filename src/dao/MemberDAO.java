@@ -26,7 +26,7 @@ public class MemberDAO {
 		}
 	}
 
-	//  회원가입
+	// 회원가입
 	public boolean regist(Member member) {
 		conn = DBConnection.connect();
 
@@ -54,7 +54,7 @@ public class MemberDAO {
 		return true;
 	}
 
-	//  로그인
+	// 로그인
 	public boolean login(String id, String pw) {
 		conn = DBConnection.connect();
 
@@ -213,7 +213,7 @@ public class MemberDAO {
 		return true;
 	}
 
-	//  아이디 찾기
+	// 아이디 찾기
 	public ArrayList<String> findID(String name, String email) {
 		conn = DBConnection.connect();
 
@@ -301,18 +301,17 @@ public class MemberDAO {
 		}
 		return false;
 	}
-	
-	public void updatePointAndPurchase(String id, int point, int purchase) {
+
+	public void updatePurchase(String id, int purchase) {
 		conn = DBConnection.connect();
 
-		String sql = "UPDATE member SET point = ?, purchase = ? WHERE id = ?";
+		String sql = "UPDATE member SET purchase = ? WHERE id = ?";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, point);
-			pstmt.setInt(2, purchase);
-			pstmt.setString(3, id);
-			
+			pstmt.setInt(1, purchase);
+			pstmt.setString(2, id);
+
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -320,23 +319,47 @@ public class MemberDAO {
 			disconnect();
 		}
 	}
-	
-	public void updateRank(String id, int rank) {
+
+	public void updateRank(String id, int purchase) {
 		conn = DBConnection.connect();
 
+		int rank = 10;
+
 		String sql = "UPDATE member SET rank = ? WHERE id = ?";
+
+		if (purchase < 100000) {
+			rank = 10;
+		} else if (purchase < 200000) {
+			rank = 9;
+		} else if (purchase < 300000) {
+			rank = 8;
+		} else if (purchase < 400000) {
+			rank = 7;
+		} else if (purchase < 500000) {
+			rank = 6;
+		} else if (purchase < 600000) {
+			rank = 5;
+		} else if (purchase < 700000) {
+			rank = 4;
+		} else if (purchase < 800000) {
+			rank = 3;
+		} else if (purchase < 900000) {
+			rank = 2;
+		} else if (purchase < 1000000) {
+			rank = 1;
+		}
 
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, rank);
 			pstmt.setString(2, id);
-			
+
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			disconnect();
 		}
-		
+
 	}
 }

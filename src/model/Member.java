@@ -120,30 +120,4 @@ public class Member {
 		return 100 - discount;
 	}
 
-	public int changeRank() {
-		if (this.purchase < 100000) {
-			this.rank = 10;
-		} else if (this.purchase < 200000) {
-			this.rank = 9;
-		} else if (this.purchase < 300000) {
-			this.rank = 8;
-		} else if (this.purchase < 400000) {
-			this.rank = 7;
-		} else if (this.purchase < 500000) {
-			this.rank = 6;
-		} else if (this.purchase < 600000) {
-			this.rank = 5;
-		} else if (this.purchase < 700000) {
-			this.rank = 4;
-		} else if (this.purchase < 800000) {
-			this.rank = 3;
-		} else if (this.purchase < 1000000) {
-			this.rank = 2;
-		} else {
-			this.rank = 1;
-		}
-		
-		return rank;
-	}
-
 }

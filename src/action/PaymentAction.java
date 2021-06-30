@@ -40,15 +40,12 @@ public class PaymentAction implements Action {
 
 			Member member = memberDAO.getMember(id);
 			int curPurchase = member.getPurchase();
-			int curPoint = member.getPoint();
-
 			int purchase = Integer.parseInt(req.getParameter("purchase"));
-			int point = (int) Math.round(purchase * 0.005);
+			
+			int totalPurchase = curPurchase + purchase;
 
-			memberDAO.updatePointAndPurchase(id, curPoint + point, curPurchase + purchase);
-			int rank = member.changeRank();
-
-			memberDAO.updateRank(id, rank);
+			memberDAO.updatePurchase(id, totalPurchase);
+			memberDAO.updateRank(id, totalPurchase);
 
 			for (Cart cart : datas) {
 				int pid = cart.getPid();
