@@ -98,8 +98,8 @@ drop table cart;
 INSERT INTO MEMBER (id,pw,name,phone,email,zipcode,addr,rank,point,purchase) VALUES ('ab','pw','name','phone','email',123,'addr',1,100,1000000)
 
 INSERT INTO QnA (qid,id,qtitle,qcon,qstate,day,sort) values (100,'a','title','con','state','day','sort')
-INSERT INTO member (id, pw, name, phone, email, zipcode, addr, rank ,point, purchase) values ('seungsoo', '1234', '송승수', '01012341234', 'asdf@asdf.com', 12345, 'asdfasdfasdfa', 5, 900, 0);
-INSERT INTO member (id, pw, name, phone, email, zipcode, addr, rank ,point, purchase) values ('sss', '1234', '송승수', '01012341234', 'asdf@asdf.com', 12345, 'asdfasdfasdfa', 10, 0, 0);
+INSERT INTO member (id, pw, name, phone, email, zipcode, addr, rank ,point, purchase) values ('aaa', '1234', 'aaaa', '01012341234', 'asdf@asdf.com', 12345, 'asdfasdfasdfa', 5, 900, 0);
+INSERT INTO member (id, pw, name, phone, email, zipcode, addr, rank ,point, purchase) values ('sss', '1234', '1414', '01012341234', 'asdf@asdf.com', 12345, 'asdfasdfasdfa', 10, 0, 0);
 update member set purchase = 100000 where id = 'admin';
 
 DELETE FROM member WHERE id = 'admin';

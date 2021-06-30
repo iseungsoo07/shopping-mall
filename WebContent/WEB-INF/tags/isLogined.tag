@@ -13,7 +13,7 @@
 				<a href="./mypage.do">내정보</a>
 			</c:when>
 			<c:otherwise>
-				<a href="./mypage.jsp">내 정보</a>
+				<a href="./mypage.do">내 정보</a>
 			</c:otherwise>
 		</c:choose>
 	</li>
